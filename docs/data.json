@@ -1,0 +1,1500 @@
+{
+ "generated_at": "2026-10-15T22:30+03:00",
+ "movies": [
+  {
+   "title": "Avengers: Endgame",
+   "title_he": "הנוקמים: סוף המשחק הדרן",
+   "cc_id": "6576",
+   "cc_url": "https://www.cinema-city.co.il/movie/6576",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/49f77263-4097-4372-b1f8-e3b2969a30b8",
+   "genre": "מדע בדיוני",
+   "duration": 186.0,
+   "rating_age": "מותר לכל",
+   "language": "en",
+   "date_started": "2026-09-24",
+   "versions": [
+    "Infinity Vision"
+   ],
+   "next_show": "2026-10-16T11:50:00Z",
+   "imdb_id": "tt4154796",
+   "imdb_url": "https://www.imdb.com/title/tt4154796/",
+   "imdb_title": "Avengers: Endgame",
+   "year": 2019,
+   "imdb": 8.4,
+   "imdb_votes": 1499932,
+   "directors": [
+    "Anthony Russo",
+    "Joe Russo"
+   ],
+   "actors": [
+    "Robert Downey Jr.",
+    "Chris Evans",
+    "Mark Ruffalo"
+   ],
+   "rt": 94,
+   "rt_url": "https://www.rottentomatoes.com/m/avengers_endgame"
+  },
+  {
+   "title": "THE ODYSSEY",
+   "title_he": "האודיסאה",
+   "cc_id": "6286",
+   "cc_url": "https://www.cinema-city.co.il/movie/6286",
+   "poster": "https://cdn.presglobal.pro/nlc/feature/cb867e5a-7837-4d34-9dca-53e66ce95cac",
+   "genre": "אקשן",
+   "duration": 172.0,
+   "rating_age": "הותר מגיל 14",
+   "language": "en",
+   "date_started": "2026-07-16",
+   "versions": [],
+   "next_show": "2026-10-16T10:10:00Z",
+   "imdb_id": "tt33764258",
+   "imdb_url": "https://www.imdb.com/title/tt33764258/",
+   "imdb_title": "The Odyssey",
+   "year": 2026,
+   "imdb": 8.4,
+   "imdb_votes": 528999,
+   "directors": [
+    "Christopher Nolan"
+   ],
+   "actors": [
+    "Matt Damon",
+    "Tom Holland",
+    "Anne Hathaway"
+   ],
+   "rt": 94,
+   "rt_url": "https://www.rottentomatoes.com/m/the_odyssey_2026"
+  },
+  {
+   "title": "SPIDERMAN: BRAND NEW DAY",
+   "title_he": "ספיידרמן: יום חדש",
+   "cc_id": "6381",
+   "cc_url": "https://www.cinema-city.co.il/movie/6381",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/ff521b7c-31fe-42d9-9161-c1d2dff69c98",
+   "genre": "פנטזיה",
+   "duration": 150.0,
+   "rating_age": "מותר לכל",
+   "language": "en",
+   "date_started": "2026-07-29",
+   "versions": [],
+   "next_show": "2026-10-16T10:40:00Z",
+   "imdb_id": "tt22084616",
+   "imdb_url": "https://www.imdb.com/title/tt22084616/",
+   "imdb_title": "Spider-Man: Brand New Day",
+   "year": 2026,
+   "imdb": 7.9,
+   "imdb_votes": 349458,
+   "directors": [
+    "Destin Daniel Cretton"
+   ],
+   "actors": [
+    "Tom Holland",
+    "Zendaya",
+    "Mark Ruffalo"
+   ],
+   "rt": 90,
+   "rt_url": "https://www.rottentomatoes.com/m/spider_man_brand_new_day"
+  },
+  {
+   "title": "Madama Butterfly",
+   "title_he": "אופרה בשלייקס: מאדאם באטרפליי",
+   "cc_id": "6619",
+   "cc_url": "https://www.cinema-city.co.il/movie/6619",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/50cf9a0f-844a-45ad-867c-8d8939fa94cd",
+   "genre": "",
+   "duration": 126.0,
+   "rating_age": "מותר לכל",
+   "language": "it",
+   "date_started": "2026-10-06",
+   "versions": [],
+   "next_show": "2026-10-20T11:30:00Z",
+   "imdb_id": "tt0256165",
+   "imdb_url": "https://www.imdb.com/title/tt0256165/",
+   "imdb_title": "Madama Butterfly",
+   "year": 1975,
+   "imdb": 7.8,
+   "imdb_votes": 143,
+   "directors": [
+    "Jean-Pierre Ponnelle"
+   ],
+   "actors": [
+    "Mirella Freni",
+    "Plácido Domingo",
+    "Christa Ludwig"
+   ],
+   "rt": null,
+   "rt_url": "https://www.rottentomatoes.com/m/madama_butterfly"
+  },
+  {
+   "title": "קופה ראשית: הסרט",
+   "title_he": "קופה ראשית: הסרט",
+   "cc_id": "6419",
+   "cc_url": "https://www.cinema-city.co.il/movie/6419",
+   "poster": "https://cdn.presglobal.pro/nlc/feature/dfea8349-5299-4ec2-a980-9dca2ed5fb6d",
+   "genre": "קומדיה",
+   "duration": 91.0,
+   "rating_age": "מותר לכל",
+   "language": "he",
+   "date_started": "2026-06-17",
+   "versions": [],
+   "next_show": "2026-10-16T10:15:00Z",
+   "imdb_id": "tt43612870",
+   "imdb_url": "https://www.imdb.com/title/tt43612870/",
+   "imdb_title": "Checkout: The Movie",
+   "year": 2026,
+   "imdb": 7.8,
+   "imdb_votes": 100,
+   "directors": [
+    "Kobi Havia"
+   ],
+   "actors": [
+    "Keren Mor",
+    "Noa Koler",
+    "Amir Shurush"
+   ]
+  },
+  {
+   "title": "Matchmaking 3",
+   "title_he": "בחורים טובים 3",
+   "cc_id": "6555",
+   "cc_url": "https://www.cinema-city.co.il/movie/6555",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/1db58658-06e9-47b8-bc26-909e91fd4b41",
+   "genre": "קומדיה",
+   "duration": 105.0,
+   "rating_age": "מותר לכל",
+   "language": "he",
+   "date_started": "2026-09-24",
+   "versions": [],
+   "next_show": "2026-10-15T22:00:00Z",
+   "imdb_id": "tt46437739",
+   "imdb_url": "https://www.imdb.com/title/tt46437739/",
+   "imdb_title": "Matchmaking 3",
+   "year": 2026,
+   "imdb": 7.8,
+   "imdb_votes": 15,
+   "directors": [
+    "Erez Tadmor"
+   ],
+   "actors": [
+    "Maor Schwietzer",
+    "Niv Sultan",
+    "Irit Kaplan"
+   ]
+  },
+  {
+   "title": "Forgotten Island",
+   "title_he": "האי הנעלם",
+   "cc_id": "6466",
+   "cc_url": "https://www.cinema-city.co.il/movie/6466",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/bf2cb3a6-3e8e-49dc-bcc7-88f928d61ede",
+   "genre": "הרפתקה",
+   "duration": 109.0,
+   "rating_age": "עד גיל 9 בליווי מבוגר",
+   "language": "en",
+   "date_started": "2026-09-24",
+   "versions": [
+    "אנגלית",
+    "מדובב"
+   ],
+   "next_show": "2026-10-16T10:00:00Z",
+   "imdb_id": "tt36583977",
+   "imdb_url": "https://www.imdb.com/title/tt36583977/",
+   "imdb_title": "Forgotten Island",
+   "year": 2026,
+   "imdb": 7.7,
+   "imdb_votes": 6173,
+   "directors": [
+    "Joel Crawford",
+    "Januel P. Mercado"
+   ],
+   "actors": [
+    "H.E.R.",
+    "Liza Soberano",
+    "Dave Franco"
+   ],
+   "rt": 96,
+   "rt_url": "https://www.rottentomatoes.com/m/forgotten_island"
+  },
+  {
+   "title": "Resident Evil",
+   "title_he": "האויב שבפנים",
+   "cc_id": "6433",
+   "cc_url": "https://www.cinema-city.co.il/movie/6433",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/f92ac40b-c230-42b9-b27b-df41e5d9f29a",
+   "genre": "אימה",
+   "duration": 90.0,
+   "rating_age": "הותר מגיל 16",
+   "language": "en",
+   "date_started": "2026-09-17",
+   "versions": [],
+   "next_show": "2026-10-15T22:50:00Z",
+   "imdb_id": "tt35538033",
+   "imdb_url": "https://www.imdb.com/title/tt35538033/",
+   "imdb_title": "Resident Evil",
+   "year": 2026,
+   "imdb": 7.6,
+   "imdb_votes": 104184,
+   "directors": [
+    "Zach Cregger"
+   ],
+   "actors": [
+    "Austin Abrams",
+    "Zach Cherry",
+    "Kali Reis"
+   ],
+   "rt": 96,
+   "rt_url": "https://www.rottentomatoes.com/m/resident_evil_2026"
+  },
+  {
+   "title": "Tell Me Everything",
+   "title_he": "עצמאות",
+   "cc_id": "6541",
+   "cc_url": "https://www.cinema-city.co.il/movie/6541",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/1e97a4c1-9b5a-4d4a-a8ce-da57143c23c3",
+   "genre": "דרמה",
+   "duration": 109.0,
+   "rating_age": "הותר מגיל 12",
+   "language": "he",
+   "date_started": "2026-09-03",
+   "versions": [],
+   "next_show": "2026-10-15T22:00:00Z",
+   "imdb_id": "tt39149971",
+   "imdb_url": "https://www.imdb.com/title/tt39149971/",
+   "imdb_title": "Tell Me Everything",
+   "year": 2026,
+   "imdb": 7.6,
+   "imdb_votes": 260,
+   "directors": [
+    "Moshe Rosenthal"
+   ],
+   "actors": [
+    "Yair Mazor",
+    "Ido Tako",
+    "Assi Cohen"
+   ],
+   "rt": 77,
+   "rt_url": "https://www.rottentomatoes.com/m/tell_me_everything"
+  },
+  {
+   "title": "WAVES",
+   "title_he": "גלים של תקווה",
+   "cc_id": "6589",
+   "cc_url": "https://www.cinema-city.co.il/movie/6589",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/5656f618-5fa9-4421-ab8d-45c5c0ce6810",
+   "genre": "דרמה",
+   "duration": 131.0,
+   "rating_age": "מותר לכל",
+   "language": "cs",
+   "date_started": "2026-10-08",
+   "versions": [],
+   "next_show": "2026-10-16T11:00:00Z",
+   "imdb_id": "tt8652728",
+   "imdb_url": "https://www.imdb.com/title/tt8652728/",
+   "imdb_title": "Waves",
+   "year": 2019,
+   "imdb": 7.5,
+   "imdb_votes": 39405,
+   "directors": [
+    "Trey Edward Shults"
+   ],
+   "actors": [
+    "Taylor Russell",
+    "Kelvin Harrison Jr.",
+    "Alexa Demie"
+   ],
+   "rt": 84,
+   "rt_url": "https://www.rottentomatoes.com/m/waves_2019"
+  },
+  {
+   "title": "Digger",
+   "title_he": "דיגר",
+   "cc_id": "6531",
+   "cc_url": "https://www.cinema-city.co.il/movie/6531",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/999abd82-c696-42c5-ac29-647da4c2b3de",
+   "genre": "קומדיה",
+   "duration": 128.0,
+   "rating_age": "מותר לכל",
+   "language": "en",
+   "date_started": "2026-10-01",
+   "versions": [],
+   "next_show": "2026-10-16T10:40:00Z",
+   "imdb_id": "tt31450459",
+   "imdb_url": "https://www.imdb.com/title/tt31450459/",
+   "imdb_title": "Digger",
+   "year": 2026,
+   "imdb": 7.5,
+   "imdb_votes": 35458,
+   "directors": [
+    "Alejandro G. Iñárritu"
+   ],
+   "actors": [
+    "Tom Cruise",
+    "Riz Ahmed",
+    "John Goodman"
+   ],
+   "rt": 53,
+   "rt_url": "https://www.rottentomatoes.com/m/digger_2026"
+  },
+  {
+   "title": "Left-Handed Girl",
+   "title_he": "הילדה השמאלית",
+   "cc_id": "6620",
+   "cc_url": "https://www.cinema-city.co.il/movie/6620",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/f041f15a-628f-4b96-b3fb-4da8cee87fed",
+   "genre": "דרמה",
+   "duration": 108.0,
+   "rating_age": "הותר מגיל 14",
+   "language": "zh",
+   "date_started": "2026-10-08",
+   "versions": [],
+   "next_show": "2026-10-17T10:40:00Z",
+   "imdb_id": "tt27722618",
+   "imdb_url": "https://www.imdb.com/title/tt27722618/",
+   "imdb_title": "Left-Handed Girl",
+   "year": 2025,
+   "imdb": 7.3,
+   "imdb_votes": 10099,
+   "directors": [
+    "Shih-Ching Tsou"
+   ],
+   "actors": [
+    "Janel Tsai",
+    "Shih-Yuan Ma",
+    "Nina Ye"
+   ],
+   "rt": 98,
+   "rt_url": "https://www.rottentomatoes.com/m/left_handed_girl"
+  },
+  {
+   "title": "Coyote vs. Acme",
+   "title_he": "לוני טונס מציגים: קיוטי נגד אקמי",
+   "cc_id": "6492",
+   "cc_url": "https://www.cinema-city.co.il/movie/6492",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/adc97e2b-4738-4c16-90cc-2fd55db33fa0",
+   "genre": "קומדיה, אנימציה",
+   "duration": 101.0,
+   "rating_age": "מותר לכל",
+   "language": "he",
+   "date_started": "2026-08-20",
+   "versions": [
+    "מדובב"
+   ],
+   "next_show": "2026-10-16T12:10:00Z",
+   "imdb_id": "tt1756855",
+   "imdb_url": "https://www.imdb.com/title/tt1756855/",
+   "imdb_title": "Coyote vs. Acme",
+   "year": 2026,
+   "imdb": 7.3,
+   "imdb_votes": 43737,
+   "directors": [
+    "Dave Green"
+   ],
+   "actors": [
+    "Will Forte",
+    "Lana Condor",
+    "John Cena"
+   ],
+   "rt": 96,
+   "rt_url": "https://www.rottentomatoes.com/m/coyote_vs_acme"
+  },
+  {
+   "title": "Toy Story 5",
+   "title_he": "צעצוע של סיפור 5",
+   "cc_id": "6306",
+   "cc_url": "https://www.cinema-city.co.il/movie/6306",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/5a28d91f-9c25-4353-81e3-7d367ebc9fb3",
+   "genre": "אנימציה",
+   "duration": 102.0,
+   "rating_age": "מותר לכל",
+   "language": "he",
+   "date_started": "2026-06-18",
+   "versions": [
+    "מדובב"
+   ],
+   "next_show": "2026-10-16T12:25:00Z",
+   "imdb_id": "tt29355505",
+   "imdb_url": "https://www.imdb.com/title/tt29355505/",
+   "imdb_title": "Toy Story 5",
+   "year": 2026,
+   "imdb": 7.3,
+   "imdb_votes": 99950,
+   "directors": [
+    "Andrew Stanton",
+    "McKenna Harris"
+   ],
+   "actors": [
+    "Tom Hanks",
+    "Tim Allen",
+    "Joan Cusack"
+   ]
+  },
+  {
+   "title": "Shaun the Sheep: The Beast of Mossy Bottom",
+   "title_he": "שון כבשון: מצמרר מצחוק",
+   "cc_id": "6624",
+   "cc_url": "https://www.cinema-city.co.il/movie/6624",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/99f5da3f-7d14-4b3a-8fe8-5eff40d0b270",
+   "genre": "ילדים, אנימציה, הרפתקה",
+   "duration": 81.0,
+   "rating_age": "מותר לכל",
+   "language": null,
+   "date_started": "2026-10-15",
+   "versions": [
+    "מדובב"
+   ],
+   "next_show": "2026-10-16T10:00:00Z",
+   "imdb_id": "tt36841161",
+   "imdb_url": "https://www.imdb.com/title/tt36841161/",
+   "imdb_title": "Shaun the Sheep: The Beast of Mossy Bottom",
+   "year": 2026,
+   "imdb": 7.2,
+   "imdb_votes": 1433,
+   "directors": [
+    "Steve Cox",
+    "Matthew Walker"
+   ],
+   "actors": [
+    "Justin Fletcher",
+    "John Sparkes",
+    "Nina Sosanya"
+   ],
+   "rt": 99,
+   "rt_url": "https://www.rottentomatoes.com/m/shaun_the_sheep_the_beast_of_mossy_bottom"
+  },
+  {
+   "title": "HEART OF THE BEAST",
+   "title_he": "בלב הפרא",
+   "cc_id": "6528",
+   "cc_url": "https://www.cinema-city.co.il/movie/6528",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/03e10a08-c455-40d4-a7a2-faac708d78cd",
+   "genre": "מותחן",
+   "duration": 101.0,
+   "rating_age": "מותר לכל",
+   "language": "en",
+   "date_started": "2026-09-24",
+   "versions": [],
+   "next_show": "2026-10-15T22:30:00Z",
+   "imdb_id": "tt7526136",
+   "imdb_url": "https://www.imdb.com/title/tt7526136/",
+   "imdb_title": "Heart of the Beast",
+   "year": 2026,
+   "imdb": 7.2,
+   "imdb_votes": 26338,
+   "directors": [
+    "David Ayer"
+   ],
+   "actors": [
+    "Brad Pitt",
+    "J.K. Simmons",
+    "Anna Lambe"
+   ],
+   "rt": 85,
+   "rt_url": "https://www.rottentomatoes.com/m/heart_of_the_beast"
+  },
+  {
+   "title": "Primavera",
+   "title_he": "פרימוורה",
+   "cc_id": "6400",
+   "cc_url": "https://www.cinema-city.co.il/movie/6400",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/a653d8b8-a440-4b10-a1df-84bb92c62544",
+   "genre": "דרמה",
+   "duration": 110.0,
+   "rating_age": "הותר מגיל 12",
+   "language": "it",
+   "date_started": "2026-09-24",
+   "versions": [],
+   "next_show": "2026-10-20T10:00:00Z",
+   "imdb_id": "tt33586629",
+   "imdb_url": "https://www.imdb.com/title/tt33586629/",
+   "imdb_title": "Primavera",
+   "year": 2025,
+   "imdb": 7.1,
+   "imdb_votes": 1961,
+   "directors": [
+    "Damiano Michieletto"
+   ],
+   "actors": [
+    "Michele Riondino",
+    "Tecla Insolia",
+    "Andrea Pennacchi"
+   ],
+   "rt": null,
+   "rt_url": "https://www.rottentomatoes.com/m/primavera"
+  },
+  {
+   "title": "The Weight",
+   "title_he": "משא כבד",
+   "cc_id": "6593",
+   "cc_url": "https://www.cinema-city.co.il/movie/6593",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/612986ef-d346-4410-9ba4-3f99e8d89079",
+   "genre": "מותחן, אקשן, דרמה",
+   "duration": 112.0,
+   "rating_age": "הותר מגיל 12",
+   "language": "en",
+   "date_started": "2026-10-15",
+   "versions": [],
+   "next_show": "2026-10-15T22:00:00Z",
+   "imdb_id": "tt10794054",
+   "imdb_url": "https://www.imdb.com/title/tt10794054/",
+   "imdb_title": "The Weight",
+   "year": 2026,
+   "imdb": 6.9,
+   "imdb_votes": 3780,
+   "directors": [
+    "Padraic McKinley"
+   ],
+   "actors": [
+    "Ethan Hawke",
+    "Russell Crowe",
+    "Julia Jones"
+   ],
+   "rt": 94,
+   "rt_url": "https://www.rottentomatoes.com/m/the_weight_2026"
+  },
+  {
+   "title": "The Social Reckoning",
+   "title_he": "החשבון החברתי",
+   "cc_id": "6542",
+   "cc_url": "https://www.cinema-city.co.il/movie/6542",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/f215d4c4-bc44-4710-be4e-3f807db25ac1",
+   "genre": "דרמה",
+   "duration": 112.0,
+   "rating_age": "מותר לכל",
+   "language": "en",
+   "date_started": "2026-10-08",
+   "versions": [],
+   "next_show": "2026-10-16T10:00:00Z",
+   "imdb_id": "tt37510326",
+   "imdb_url": "https://www.imdb.com/title/tt37510326/",
+   "imdb_title": "The Social Reckoning",
+   "year": 2026,
+   "imdb": 6.7,
+   "imdb_votes": 6283,
+   "directors": [
+    "Aaron Sorkin"
+   ],
+   "actors": [
+    "Jeremy Allen White",
+    "Mikey Madison",
+    "Wunmi Mosaku"
+   ],
+   "rt": 54,
+   "rt_url": "https://www.rottentomatoes.com/m/the_social_reckoning"
+  },
+  {
+   "title": "By Any Means",
+   "title_he": "בכל מחיר",
+   "cc_id": "6523",
+   "cc_url": "https://www.cinema-city.co.il/movie/6523",
+   "poster": "https://cdn.presglobal.pro/nlc/feature/e9321030-bc1f-451f-a30e-09d59fb7292c",
+   "genre": "מותחן",
+   "duration": 106.0,
+   "rating_age": "הותר מגיל 14",
+   "language": "en",
+   "date_started": "2026-09-03",
+   "versions": [],
+   "next_show": "2026-10-20T13:10:00Z",
+   "imdb_id": "tt34379051",
+   "imdb_url": "https://www.imdb.com/title/tt34379051/",
+   "imdb_title": "By Any Means",
+   "year": 2026,
+   "imdb": 6.7,
+   "imdb_votes": 3781,
+   "directors": [
+    "Elegance Bratton"
+   ],
+   "actors": [
+    "Yahya Abdul-Mateen II",
+    "Mark Wahlberg",
+    "Nicole Beharie"
+   ],
+   "rt": 50,
+   "rt_url": "https://www.rottentomatoes.com/m/by_any_means_2026"
+  },
+  {
+   "title": "Spinned",
+   "title_he": "מרגלים מהאגדות",
+   "cc_id": "6603",
+   "cc_url": "https://www.cinema-city.co.il/movie/6603",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/fb5445ed-2234-4074-b568-fcc9a836068c",
+   "genre": "ילדים, אנימציה, הרפתקה",
+   "duration": 96.0,
+   "rating_age": "מותר לכל",
+   "language": "he",
+   "date_started": "2026-09-24",
+   "versions": [
+    "מדובב"
+   ],
+   "next_show": "2026-10-16T13:10:00Z",
+   "imdb_id": "tt36435943",
+   "imdb_url": "https://www.imdb.com/title/tt36435943/",
+   "imdb_title": "Spinned",
+   "year": 2025,
+   "imdb": 6.7,
+   "imdb_votes": 12,
+   "directors": [
+    "Alex Tsitsilin"
+   ],
+   "actors": [
+    "Marc Thompson",
+    "Mike Pollock",
+    "Tyler Bunch"
+   ],
+   "rt": null,
+   "rt_url": "https://www.rottentomatoes.com/m/spinned"
+  },
+  {
+   "title": "Whalefall",
+   "title_he": "נפילת הלוויתן",
+   "cc_id": "6533",
+   "cc_url": "https://www.cinema-city.co.il/movie/6533",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/a6525196-daa7-4061-afc7-d4888575e2fb",
+   "genre": "מותחן, דרמה",
+   "duration": 106.0,
+   "rating_age": "הותר מגיל 12",
+   "language": "en",
+   "date_started": "2026-10-15",
+   "versions": [],
+   "next_show": "2026-10-15T22:00:00Z",
+   "imdb_id": "tt28535715",
+   "imdb_url": "https://www.imdb.com/title/tt28535715/",
+   "imdb_title": "Whalefall",
+   "year": 2026,
+   "imdb": 6.6,
+   "imdb_votes": 306,
+   "directors": [
+    "Brian Duffield"
+   ],
+   "actors": [
+    "Austin Abrams",
+    "Elisabeth Shue",
+    "Josh Brolin"
+   ],
+   "rt": 71,
+   "rt_url": "https://www.rottentomatoes.com/m/whalefall"
+  },
+  {
+   "title": "Tad and the Magic Lamp",
+   "title_he": "טד החוקר ומנורת הקסמים",
+   "cc_id": "6561",
+   "cc_url": "https://www.cinema-city.co.il/movie/6561",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/7e6a517c-a8d2-4e13-af40-651af58a5dc0",
+   "genre": "ילדים, אנימציה, הרפתקה",
+   "duration": 94.0,
+   "rating_age": "מותר לכל",
+   "language": "he",
+   "date_started": "2026-09-10",
+   "versions": [
+    "מדובב"
+   ],
+   "next_show": "2026-10-16T13:15:00Z",
+   "imdb_id": "tt36164852",
+   "imdb_url": "https://www.imdb.com/title/tt36164852/",
+   "imdb_title": "Tad and the Magic Lamp",
+   "year": 2026,
+   "imdb": 6.5,
+   "imdb_votes": 314,
+   "directors": [
+    "Enrique Gato"
+   ],
+   "actors": [
+    "Óscar Barberán",
+    "Luis Posada",
+    "Michelle Jenner"
+   ],
+   "rt": null,
+   "rt_url": "https://www.rottentomatoes.com/m/tad_and_the_magic_lamp"
+  },
+  {
+   "title": "VOTEMOS",
+   "title_he": "מי בעד",
+   "cc_id": "6622",
+   "cc_url": "https://www.cinema-city.co.il/movie/6622",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/102858f8-36d5-4f30-b629-d1da4163a10f",
+   "genre": "דרמה",
+   "duration": 88.0,
+   "rating_age": "מותר לכל",
+   "language": "es",
+   "date_started": "2026-10-08",
+   "versions": [],
+   "next_show": "2026-10-16T20:10:00Z",
+   "imdb_id": "tt34383359",
+   "imdb_url": "https://www.imdb.com/title/tt34383359/",
+   "imdb_title": "All in Favor",
+   "year": 2025,
+   "imdb": 6.5,
+   "imdb_votes": 1398,
+   "directors": [
+    "Santiago Requejo"
+   ],
+   "actors": [
+    "Raúl Fernández de Pablo",
+    "Clara Lago",
+    "Tito Valverde"
+   ]
+  },
+  {
+   "title": "THE DESERT CHILD",
+   "title_he": "ילד המדבר",
+   "cc_id": "6524",
+   "cc_url": "https://www.cinema-city.co.il/movie/6524",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/a6b05991-3d2c-4759-9595-42aa08488c57",
+   "genre": "הרפתקה",
+   "duration": 92.0,
+   "rating_age": "מותר לכל",
+   "language": "he",
+   "date_started": "2026-09-10",
+   "versions": [
+    "מדובב"
+   ],
+   "next_show": "2026-10-16T12:20:00Z",
+   "imdb_id": "tt37495239",
+   "imdb_url": "https://www.imdb.com/title/tt37495239/",
+   "imdb_title": "L'enfant du désert",
+   "year": 2026,
+   "imdb": 6.4,
+   "imdb_votes": 358,
+   "directors": [
+    "Gilles de Maistre"
+   ],
+   "actors": [
+    "Nahel Tran",
+    "Nahil Bouazzaoui",
+    "Zayn Sekkat"
+   ]
+  },
+  {
+   "title": "Minions & Monsters",
+   "title_he": "מיניונים ומפלצות",
+   "cc_id": "6367",
+   "cc_url": "https://www.cinema-city.co.il/movie/6367",
+   "poster": "https://cdn.presglobal.pro/nlc/feature/500c0b23-b405-4f9f-8429-d87499eed520",
+   "genre": "אנימציה",
+   "duration": 90.0,
+   "rating_age": "מותר לכל",
+   "language": "he",
+   "date_started": "2026-07-01",
+   "versions": [
+    "מדובב"
+   ],
+   "next_show": "2026-10-16T12:10:00Z",
+   "imdb_id": "tt32890033",
+   "imdb_url": "https://www.imdb.com/title/tt32890033/",
+   "imdb_title": "Minions & Monsters",
+   "year": 2026,
+   "imdb": 6.3,
+   "imdb_votes": 34938,
+   "directors": [
+    "Pierre Coffin",
+    "Patrick Delage"
+   ],
+   "actors": [
+    "Pierre Coffin",
+    "Trey Parker",
+    "Allison Janney"
+   ],
+   "rt": 89,
+   "rt_url": "https://www.rottentomatoes.com/m/minions_and_monsters"
+  },
+  {
+   "title": "Runner",
+   "title_he": "ראנר",
+   "cc_id": "6572",
+   "cc_url": "https://www.cinema-city.co.il/movie/6572",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/186ab42d-db19-4dcc-bb31-2a9e9b69dee1",
+   "genre": "קומדיית אקשן",
+   "duration": 93.0,
+   "rating_age": "הותר מגיל 12",
+   "language": "en",
+   "date_started": "2026-09-17",
+   "versions": [],
+   "next_show": "2026-10-15T22:30:00Z",
+   "imdb_id": "tt31349844",
+   "imdb_url": "https://www.imdb.com/title/tt31349844/",
+   "imdb_title": "Runner",
+   "year": 2026,
+   "imdb": 6.3,
+   "imdb_votes": 13830,
+   "directors": [
+    "Scott Waugh"
+   ],
+   "actors": [
+    "Alan Ritchson",
+    "Owen Wilson",
+    "Rodrigo Santoro"
+   ],
+   "rt": 78,
+   "rt_url": "https://www.rottentomatoes.com/m/runner_2026"
+  },
+  {
+   "title": "The Magic Faraway Tree",
+   "title_he": "המסע המופלא לעץ הקסמים",
+   "cc_id": "6486",
+   "cc_url": "https://www.cinema-city.co.il/movie/6486",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/1791c38b-5e9e-41b0-a663-9d8651fa33fc",
+   "genre": "הרפתקה",
+   "duration": 110.0,
+   "rating_age": "מותר לכל",
+   "language": "he",
+   "date_started": "2026-07-30",
+   "versions": [
+    "מדובב"
+   ],
+   "next_show": "2026-10-17T10:50:00Z",
+   "imdb_id": "tt7734244",
+   "imdb_url": "https://www.imdb.com/title/tt7734244/",
+   "imdb_title": "The Magic Faraway Tree",
+   "year": 2026,
+   "imdb": 6.2,
+   "imdb_votes": 6298,
+   "directors": [
+    "Ben Gregor"
+   ],
+   "actors": [
+    "Andrew Garfield",
+    "Claire Foy",
+    "Nonso Anozie"
+   ],
+   "rt": 80,
+   "rt_url": "https://www.rottentomatoes.com/m/the_magic_faraway_tree"
+  },
+  {
+   "title": "Paw Patrol: The Dino Movie",
+   "title_he": "מפרץ ההרפתקאות: אי הדינוזאורים",
+   "cc_id": "6459",
+   "cc_url": "https://www.cinema-city.co.il/movie/6459",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/a735c539-2c61-4024-b29f-9cdc013df7ee",
+   "genre": "הרפתקה",
+   "duration": 88.0,
+   "rating_age": "מותר לכל",
+   "language": "he",
+   "date_started": "2026-08-06",
+   "versions": [
+    "מדובב"
+   ],
+   "next_show": "2026-10-16T10:00:00Z",
+   "imdb_id": "tt29356163",
+   "imdb_url": "https://www.imdb.com/title/tt29356163/",
+   "imdb_title": "PAW Patrol: The Dino Movie",
+   "year": 2026,
+   "imdb": 6.1,
+   "imdb_votes": 2828,
+   "directors": [
+    "Cal Brunker"
+   ],
+   "actors": [
+    "Carter Young",
+    "Mckenna Grace",
+    "Terry Crews"
+   ],
+   "rt": 83,
+   "rt_url": "https://www.rottentomatoes.com/m/paw_patrol_the_dino_movie"
+  },
+  {
+   "title": "The Wizard of the Kremlin",
+   "title_he": "סודות מהקרמלין",
+   "cc_id": "6651",
+   "cc_url": "https://www.cinema-city.co.il/movie/6651",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/bf01ff39-2848-4e6b-9b71-2cc222ae73b9",
+   "genre": "מותחן, דרמה, פשע",
+   "duration": 143.0,
+   "rating_age": "הותר מגיל 12",
+   "language": "en",
+   "date_started": "2026-10-15",
+   "versions": [],
+   "next_show": "2026-10-16T11:10:00Z",
+   "imdb_id": "tt32386654",
+   "imdb_url": "https://www.imdb.com/title/tt32386654/",
+   "imdb_title": "The Wizard of the Kremlin",
+   "year": 2025,
+   "imdb": 6.1,
+   "imdb_votes": 7543,
+   "directors": [
+    "Olivier Assayas"
+   ],
+   "actors": [
+    "Paul Dano",
+    "Alicia Vikander",
+    "Tom Sturridge"
+   ],
+   "rt": 44,
+   "rt_url": "https://www.rottentomatoes.com/m/the_wizard_of_the_kremlin"
+  },
+  {
+   "title": "STREET FIGHTER",
+   "title_he": "סטריט פייטר",
+   "cc_id": "6546",
+   "cc_url": "https://www.cinema-city.co.il/movie/6546",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/3c5c50ab-9eaa-4f1b-b7a3-015d58c1b981",
+   "genre": "אקשן",
+   "duration": 119.0,
+   "rating_age": "הותר מגיל 9",
+   "language": "en",
+   "date_started": "2026-10-15",
+   "versions": [],
+   "next_show": "2026-10-15T22:00:00Z",
+   "imdb_id": "tt27419420",
+   "imdb_url": "https://www.imdb.com/title/tt27419420/",
+   "imdb_title": "Street Fighter",
+   "year": 2026,
+   "imdb": 6.1,
+   "imdb_votes": 476,
+   "directors": [
+    "Kitao Sakurai"
+   ],
+   "actors": [
+    "Noah Centineo",
+    "Andrew Koji",
+    "Callina Liang"
+   ],
+   "rt": 39,
+   "rt_url": "https://www.rottentomatoes.com/m/street_fighter_2026"
+  },
+  {
+   "title": "MASHA & THE BEAR – WONDER PARK",
+   "title_he": "מאשה והדוב-ההרפתקה הגדולה",
+   "cc_id": "6357",
+   "cc_url": "https://www.cinema-city.co.il/movie/6357",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/4bbab8fc-2b2a-4dd4-b718-bff5e8b60ae8",
+   "genre": "אנימציה",
+   "duration": 73.0,
+   "rating_age": "מותר לכל",
+   "language": "he",
+   "date_started": "2026-07-16",
+   "versions": [
+    "מדובב"
+   ],
+   "next_show": "2026-10-17T10:50:00Z",
+   "imdb_id": "tt30060761",
+   "imdb_url": "https://www.imdb.com/title/tt30060761/",
+   "imdb_title": "Masha and the Bear: Wonder Park",
+   "year": 2024,
+   "imdb": 6.1,
+   "imdb_votes": 53,
+   "directors": [
+    "Vasiliy Bedoshvili",
+    "Elena Chernova"
+   ],
+   "actors": [
+    "Boris Kutnevich",
+    "Matvey Berkovskiy",
+    "Sofia Calasso"
+   ]
+  },
+  {
+   "title": "Verity",
+   "title_he": "תעתוע",
+   "cc_id": "6424",
+   "cc_url": "https://www.cinema-city.co.il/movie/6424",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/cbc9c343-011f-4e86-8611-79b7acbcaab4",
+   "genre": "מותחן",
+   "duration": 116.0,
+   "rating_age": "הותר מגיל 14",
+   "language": "en",
+   "date_started": "2026-10-01",
+   "versions": [],
+   "next_show": "2026-10-15T22:20:00Z",
+   "imdb_id": "tt32261958",
+   "imdb_url": "https://www.imdb.com/title/tt32261958/",
+   "imdb_title": "Verity",
+   "year": 2026,
+   "imdb": 6,
+   "imdb_votes": 16986,
+   "directors": [
+    "Michael Showalter"
+   ],
+   "actors": [
+    "Anne Hathaway",
+    "Dakota Johnson",
+    "Josh Hartnett"
+   ],
+   "rt": 31,
+   "rt_url": "https://www.rottentomatoes.com/m/verity"
+  },
+  {
+   "title": "Parallel Tales",
+   "title_he": "מעשיות מקבילות",
+   "cc_id": "6614",
+   "cc_url": "https://www.cinema-city.co.il/movie/6614",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/b965d7e6-c2b0-4e83-b610-c27b85c1145f",
+   "genre": "דרמה",
+   "duration": 139.0,
+   "rating_age": "מותר לכל",
+   "language": "fr",
+   "date_started": "2026-10-08",
+   "versions": [],
+   "next_show": "2026-10-16T17:00:00Z",
+   "imdb_id": "tt36646880",
+   "imdb_url": "https://www.imdb.com/title/tt36646880/",
+   "imdb_title": "Parallel Tales",
+   "year": 2026,
+   "imdb": 5.9,
+   "imdb_votes": 1429,
+   "directors": [
+    "Asghar Farhadi"
+   ],
+   "actors": [
+    "Isabelle Huppert",
+    "Virginie Efira",
+    "Vincent Cassel"
+   ],
+   "rt": 19,
+   "rt_url": "https://www.rottentomatoes.com/m/parallel_tales"
+  },
+  {
+   "title": "STICH HEAD",
+   "title_he": "פרנקי והמפלצות",
+   "cc_id": "6477",
+   "cc_url": "https://www.cinema-city.co.il/movie/6477",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/d249ef69-f6ed-401a-8b2d-97f1a8fa3a14",
+   "genre": "ילדים, אנימציה",
+   "duration": 92.0,
+   "rating_age": "מותר לכל",
+   "language": "he",
+   "date_started": "2026-08-06",
+   "versions": [
+    "מדובב"
+   ],
+   "next_show": "2026-10-17T10:00:00Z",
+   "imdb_id": "tt26720001",
+   "imdb_url": "https://www.imdb.com/title/tt26720001/",
+   "imdb_title": "Stitch Head",
+   "year": 2025,
+   "imdb": 5.8,
+   "imdb_votes": 1250,
+   "directors": [
+    "Steve Hudson"
+   ],
+   "actors": [
+    "Asa Butterfield",
+    "Joel Fry",
+    "Tia Bannon"
+   ]
+  },
+  {
+   "title": "MUTINY",
+   "title_he": "נקמה בלב ים",
+   "cc_id": "6510",
+   "cc_url": "https://www.cinema-city.co.il/movie/6510",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/3c519096-abac-4f24-8896-e6a8d06c8b98",
+   "genre": "אקשן",
+   "duration": 95.0,
+   "rating_age": "הותר מגיל 14",
+   "language": "en",
+   "date_started": "2026-08-20",
+   "versions": [],
+   "next_show": "2026-10-15T22:00:00Z",
+   "imdb_id": "tt32338669",
+   "imdb_url": "https://www.imdb.com/title/tt32338669/",
+   "imdb_title": "Mutiny",
+   "year": 2026,
+   "imdb": 5.7,
+   "imdb_votes": 23931,
+   "directors": [
+    "Jean-François Richet"
+   ],
+   "actors": [
+    "Jason Statham",
+    "Chaneil Kular",
+    "Ramon Tikaram"
+   ],
+   "rt": 50,
+   "rt_url": "https://www.rottentomatoes.com/m/mutiny_2026"
+  },
+  {
+   "title": "The Cut",
+   "title_he": "עד הקצה",
+   "cc_id": "6613",
+   "cc_url": "https://www.cinema-city.co.il/movie/6613",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/cc36c23b-98ed-46d7-abb0-e238f1082420",
+   "genre": "דרמה",
+   "duration": 99.0,
+   "rating_age": "הותר מגיל 14",
+   "language": "en",
+   "date_started": "2026-10-08",
+   "versions": [],
+   "next_show": "2026-10-15T22:10:00Z",
+   "imdb_id": "tt26697087",
+   "imdb_url": "https://www.imdb.com/title/tt26697087/",
+   "imdb_title": "The Cut",
+   "year": 2024,
+   "imdb": 5.5,
+   "imdb_votes": 2332,
+   "directors": [
+    "Sean Ellis"
+   ],
+   "actors": [
+    "Caitríona Balfe",
+    "John Turturro",
+    "Orlando Bloom"
+   ],
+   "rt": 67,
+   "rt_url": "https://www.rottentomatoes.com/m/the_cut_2024"
+  },
+  {
+   "title": "Other Mommy",
+   "title_he": "אין כמו אמא",
+   "cc_id": "6604",
+   "cc_url": "https://www.cinema-city.co.il/movie/6604",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/037609ab-dd76-4140-8965-875bda8bab94",
+   "genre": "אימה",
+   "duration": 93.0,
+   "rating_age": "הותר מגיל 14",
+   "language": "en",
+   "date_started": "2026-10-08",
+   "versions": [],
+   "next_show": "2026-10-15T22:15:00Z",
+   "imdb_id": "tt36586020",
+   "imdb_url": "https://www.imdb.com/title/tt36586020/",
+   "imdb_title": "Other Mommy",
+   "year": 2026,
+   "imdb": 5.4,
+   "imdb_votes": 8673,
+   "directors": [
+    "Rob Savage"
+   ],
+   "actors": [
+    "Jessica Chastain",
+    "Jay Duplass",
+    "Arabella Olivia Clark"
+   ],
+   "rt": 16,
+   "rt_url": "https://www.rottentomatoes.com/m/other_mommy"
+  },
+  {
+   "title": "Fall 2: Deadpoint",
+   "title_he": "תלויה באוויר 2",
+   "cc_id": "6558",
+   "cc_url": "https://www.cinema-city.co.il/movie/6558",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/021ab6ee-aeaa-48ff-b336-057a49e70d12",
+   "genre": "מותחן",
+   "duration": 98.0,
+   "rating_age": "הותר מגיל 9",
+   "language": "en",
+   "date_started": "2026-09-17",
+   "versions": [],
+   "next_show": "2026-10-15T22:20:00Z",
+   "imdb_id": "tt31192372",
+   "imdb_url": "https://www.imdb.com/title/tt31192372/",
+   "imdb_title": "Fall 2: Deadpoint",
+   "year": 2026,
+   "imdb": 5.3,
+   "imdb_votes": 9986,
+   "directors": [
+    "Michael Spierig",
+    "Peter Spierig"
+   ],
+   "actors": [
+    "Harriet Slater",
+    "Arsema Thomas",
+    "Tom Brittney"
+   ],
+   "rt": 53,
+   "rt_url": "https://www.rottentomatoes.com/m/fall_2_deadpoint"
+  },
+  {
+   "title": "CHARLIE THE WONDERDOG",
+   "title_he": "וונדר-דוג",
+   "cc_id": "6519",
+   "cc_url": "https://www.cinema-city.co.il/movie/6519",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/355da70c-6c53-4d68-a0a7-cd44677f8abd",
+   "genre": "ילדים, אנימציה, הרפתקה",
+   "duration": 92.0,
+   "rating_age": "מותר לכל",
+   "language": "he",
+   "date_started": "2026-09-24",
+   "versions": [
+    "מדובב"
+   ],
+   "next_show": "2026-10-16T11:00:00Z",
+   "imdb_id": "tt29612071",
+   "imdb_url": "https://www.imdb.com/title/tt29612071/",
+   "imdb_title": "Charlie the Wonderdog",
+   "year": 2025,
+   "imdb": 5.2,
+   "imdb_votes": 958,
+   "directors": [
+    "Shea Wageman"
+   ],
+   "actors": [
+    "Owen Wilson",
+    "Tabitha St. Germain",
+    "Sebastian Billingsley-Rodriguez"
+   ],
+   "rt": 38,
+   "rt_url": "https://www.rottentomatoes.com/m/charlie_the_wonderdog"
+  },
+  {
+   "title": "SPA WEEKEND",
+   "title_he": "ספא וויקנד",
+   "cc_id": "6458",
+   "cc_url": "https://www.cinema-city.co.il/movie/6458",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/aac4e924-32d2-447a-8b1c-8f791f808a54",
+   "genre": "קומדיה",
+   "duration": 97.0,
+   "rating_age": "הותר מגיל 14",
+   "language": "en",
+   "date_started": "2026-08-20",
+   "versions": [],
+   "next_show": "2026-10-16T11:10:00Z",
+   "imdb_id": "tt33305867",
+   "imdb_url": "https://www.imdb.com/title/tt33305867/",
+   "imdb_title": "Spa Weekend",
+   "year": 2026,
+   "imdb": 5.1,
+   "imdb_votes": 2875,
+   "directors": [
+    "Jon Lucas",
+    "Scott Moore"
+   ],
+   "actors": [
+    "Leslie Mann",
+    "Isla Fisher",
+    "Michelle Buteau"
+   ],
+   "rt": 29,
+   "rt_url": "https://www.rottentomatoes.com/m/spa_weekend"
+  },
+  {
+   "title": "THE POUT POUT FISH",
+   "title_he": "דג ושמו באסה",
+   "cc_id": "6521",
+   "cc_url": "https://www.cinema-city.co.il/movie/6521",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/e7725afe-779e-4640-8d9c-6ed080e77a80",
+   "genre": "קומדיה, ילדים, אנימציה",
+   "duration": 93.0,
+   "rating_age": "מותר לכל",
+   "language": "he",
+   "date_started": "2026-08-20",
+   "versions": [
+    "מדובב"
+   ],
+   "next_show": "2026-10-16T13:30:00Z",
+   "imdb_id": "tt12824390",
+   "imdb_url": "https://www.imdb.com/title/tt12824390/",
+   "imdb_title": "The Pout-Pout Fish",
+   "year": 2026,
+   "imdb": 5,
+   "imdb_votes": 1229,
+   "directors": [
+    "Ricard Cussó",
+    "Rio Harrington"
+   ],
+   "actors": [
+    "Grant Denyer",
+    "Nadine Bates",
+    "Nick Offerman"
+   ],
+   "rt": 61,
+   "rt_url": "https://www.rottentomatoes.com/m/the_pout_pout_fish"
+  },
+  {
+   "title": "The Land of Sometimes",
+   "title_he": "אספן המשאלות",
+   "cc_id": "6578",
+   "cc_url": "https://www.cinema-city.co.il/movie/6578",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/00f7ec24-99ca-4022-84a9-5f981e372f7e",
+   "genre": "ילדים, אנימציה, הרפתקה",
+   "duration": 93.0,
+   "rating_age": "מותר לכל",
+   "language": "he",
+   "date_started": "2026-09-24",
+   "versions": [
+    "מדובב"
+   ],
+   "next_show": "2026-10-16T13:15:00Z",
+   "imdb_id": "tt3517106",
+   "imdb_url": "https://www.imdb.com/title/tt3517106/",
+   "imdb_title": "The Land of Sometimes",
+   "year": 2026,
+   "imdb": 4.6,
+   "imdb_votes": 220,
+   "directors": [
+    "Leon Joosen"
+   ],
+   "actors": [
+    "Ewan McGregor",
+    "Helena Bonham Carter",
+    "Asa Butterfield"
+   ],
+   "rt": null,
+   "rt_url": "https://www.rottentomatoes.com/m/the_land_of_sometimes"
+  },
+  {
+   "title": "Her Private Hell",
+   "title_he": "הגיהנום שבפנים",
+   "cc_id": "6565",
+   "cc_url": "https://www.cinema-city.co.il/movie/6565",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/8f384e10-644f-497b-a0c8-e3c6fe7a61e4",
+   "genre": "אימה",
+   "duration": 109.0,
+   "rating_age": "הותר מגיל 14",
+   "language": "en",
+   "date_started": "2026-10-01",
+   "versions": [],
+   "next_show": "2026-10-15T23:20:00Z",
+   "imdb_id": "tt36629665",
+   "imdb_url": "https://www.imdb.com/title/tt36629665/",
+   "imdb_title": "Her Private Hell",
+   "year": 2026,
+   "imdb": 4.5,
+   "imdb_votes": 4627,
+   "directors": [
+    "Nicolas Winding Refn"
+   ],
+   "actors": [
+    "Sophie Thatcher",
+    "Charles Melton",
+    "Havana Rose Liu"
+   ],
+   "rt": 41,
+   "rt_url": "https://www.rottentomatoes.com/m/her_private_hell"
+  },
+  {
+   "title": "Ice Cream Man",
+   "title_he": "איש הגלידה",
+   "cc_id": "6489",
+   "cc_url": "https://www.cinema-city.co.il/movie/6489",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/4266aa1b-16ca-4b24-8b84-da80b15a05cc",
+   "genre": "אימה",
+   "duration": 86.0,
+   "rating_age": "הותר מגיל 18",
+   "language": "en",
+   "date_started": "2026-08-06",
+   "versions": [],
+   "next_show": "2026-10-15T23:20:00Z",
+   "imdb_id": "tt36893729",
+   "imdb_url": "https://www.imdb.com/title/tt36893729/",
+   "imdb_title": "Ice Cream Man",
+   "year": 2026,
+   "imdb": 4,
+   "imdb_votes": 8040,
+   "directors": [
+    "Eli Roth"
+   ],
+   "actors": [
+    "Kiori Mirza Waldman",
+    "Carina Battrick",
+    "Charlie Zeltzer"
+   ],
+   "rt": 25,
+   "rt_url": "https://www.rottentomatoes.com/m/ice_cream_man_2026"
+  },
+  {
+   "title": "The Bay",
+   "title_he": "מפרץ האימה",
+   "cc_id": "6592",
+   "cc_url": "https://www.cinema-city.co.il/movie/6592",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/a5cd7288-688c-450b-86b9-f67f886e2e9c",
+   "genre": "אימה",
+   "duration": 86.0,
+   "rating_age": "הותר מגיל 12",
+   "language": "en",
+   "date_started": "2026-10-08",
+   "versions": [],
+   "next_show": "2026-10-15T22:30:00Z",
+   "imdb_id": "tt30217600",
+   "imdb_url": "https://www.imdb.com/title/tt30217600/",
+   "imdb_title": "The Bay",
+   "year": 2026,
+   "imdb": 3.8,
+   "imdb_votes": 1358,
+   "directors": [
+    "Phil Volken"
+   ],
+   "actors": [
+    "Francesca Eastwood",
+    "Dani Oliveros",
+    "Alexander Wraith"
+   ],
+   "rt": null,
+   "rt_url": "https://www.rottentomatoes.com/m/the_bay_2026"
+  },
+  {
+   "title": "סולטיז הסרט",
+   "title_he": "סולטיז הסרט-וולוג ה-100",
+   "cc_id": "6508",
+   "cc_url": "https://www.cinema-city.co.il/movie/6508",
+   "poster": "https://cdn.presglobal.pro/nlc/feature/62ede9f4-6b65-428c-ab89-51ea9526dba5",
+   "genre": "הרפתקה",
+   "duration": 100.0,
+   "rating_age": "מותר לכל",
+   "language": "he",
+   "date_started": "2026-07-15",
+   "versions": [],
+   "next_show": "2026-10-17T13:10:00Z"
+  },
+  {
+   "title": "תמונות יפואיות 2",
+   "title_he": "תמונות יפואיות 2",
+   "cc_id": "6450",
+   "cc_url": "https://www.cinema-city.co.il/movie/6450",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/80f765fb-7d88-4e82-bf3a-d2d128297f51",
+   "genre": "ישראלי, קומדיה",
+   "duration": 87.0,
+   "rating_age": "מותר לכל",
+   "language": "he",
+   "date_started": "2026-10-22",
+   "versions": [],
+   "next_show": "2026-10-20T10:00:00Z"
+  },
+  {
+   "title": "Before We Leave Tuscany",
+   "title_he": "להתאהב בטוסקנה",
+   "cc_id": "6573",
+   "cc_url": "https://www.cinema-city.co.il/movie/6573",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/ca3d93d4-b676-4253-9e8d-cde75d87e407",
+   "genre": "רומנטי",
+   "duration": 91.0,
+   "rating_age": "מותר לכל",
+   "language": "en",
+   "date_started": "2026-09-17",
+   "versions": [],
+   "next_show": "2026-10-16T10:10:00Z",
+   "imdb_id": "tt34547698",
+   "imdb_url": "https://www.imdb.com/title/tt34547698/",
+   "imdb_title": "Before We Leave Tuscany",
+   "year": 2026,
+   "imdb": null,
+   "imdb_votes": 0,
+   "directors": [
+    "Péter Szajki",
+    "Adél Vörös"
+   ],
+   "actors": [
+    "Lili Bordán",
+    "Steve Pound",
+    "Paolo Spezzaferri"
+   ],
+   "rt": null,
+   "rt_url": "https://www.rottentomatoes.com/m/900121672"
+  },
+  {
+   "title": "גבעה 338",
+   "title_he": "גבעה 338",
+   "cc_id": "6525",
+   "cc_url": "https://www.cinema-city.co.il/movie/6525",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/fd0b7d80-84ee-4ca3-86a4-fdd9b7d56aa2",
+   "genre": "קומדיה",
+   "duration": 106.0,
+   "rating_age": "הותר מגיל 9",
+   "language": "he",
+   "date_started": "2026-08-06",
+   "versions": [],
+   "next_show": "2026-10-15T23:30:00Z"
+  },
+  {
+   "title": "האהבות שלנו",
+   "title_he": "האהבות שלנו",
+   "cc_id": "6553",
+   "cc_url": "https://www.cinema-city.co.il/movie/6553",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/14ae8e88-8825-40d7-8156-5ac4f02c5f91",
+   "genre": "דרמה",
+   "duration": 117.0,
+   "rating_age": "הותר מגיל 12",
+   "language": "he",
+   "date_started": "2026-10-15",
+   "versions": [],
+   "next_show": "2026-10-15T22:00:00Z"
+  }
+ ]
+}
