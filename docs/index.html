@@ -83,7 +83,7 @@ const sorters = {
 function render() {
   const q = document.getElementById("q").value.trim().toLowerCase();
   const rows = data.filter(m => {
-    if (hideDub && !m.has_original) return false;
+    if (hideDub && m.has_original === false) return false;
     if (!q) return true;
     return [m.title, m.title_he, ...(m.actors||[]), ...(m.directors||[]), m.genre].join(" ").toLowerCase().includes(q);
   }).sort(sorters[sort]);
@@ -99,7 +99,7 @@ function render() {
           ${m.genre ? `<span class="tag">${esc(m.genre)}</span>` : ""}
           ${m.duration ? `<span class="tag">${m.duration} דק׳</span>` : ""}
           ${runTag(m)}
-          ${m.has_original ? m.versions.map(v => `<span class="tag">${esc(VERSION_LABEL[v] || v)}</span>`).join("") : `<span class="tag">מדובב בלבד</span>`}
+          ${m.has_original !== false ? m.versions.map(v => `<span class="tag">${esc(VERSION_LABEL[v] || v)}</span>`).join("") : `<span class="tag">מדובב בלבד</span>`}
         </div>
       </div>
       <div class="scores">

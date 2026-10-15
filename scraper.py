@@ -94,7 +94,7 @@ def now_showing(items, now):
             "poster": it.get("image"), "genre": ", ".join(it.get("genre") or []),
             "duration": it.get("duration"), "rating_age": it.get("ratingName"),
             "language": p.get("originalLanguageISO"), "date_started": started,
-            "versions": [], "next_show": nxt,
+            "versions": [], "next_show": nxt, "has_original": False,
         })
         if not version.startswith("מדובב"):
             m["has_original"] = True
