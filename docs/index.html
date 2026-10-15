@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מה בסינמה סיטי השבוע</title>
+<style>
+  :root { --bg:#0f1115; --card:#181b22; --line:#262a33; --text:#eceef2; --muted:#9aa1ad; --imdb:#f5c518; --good:#3fbf6f; --mid:#e0a43a; --bad:#e05a4f; }
+  @media (prefers-color-scheme: light) { :root { --bg:#f6f6f4; --card:#fff; --line:#e4e4e0; --text:#16181d; --muted:#626873; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:15px/1.45 system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
+  header { padding:20px 16px 8px; max-width:900px; margin:auto; }
+  h1 { margin:0 0 4px; font-size:22px; }
+  .meta { color:var(--muted); font-size:13px; }
+  .bar { display:flex; gap:8px; flex-wrap:wrap; align-items:center; padding:10px 16px; max-width:900px; margin:auto; position:sticky; top:0; background:var(--bg); z-index:2; border-bottom:1px solid var(--line); }
+  .bar input { flex:1 1 160px; min-width:0; padding:8px 10px; border-radius:8px; border:1px solid var(--line); background:var(--card); color:var(--text); font:inherit; }
+  .chip { padding:7px 12px; border-radius:999px; border:1px solid var(--line); background:var(--card); color:var(--text); cursor:pointer; font:inherit; font-size:13px; }
+  .chip.on { background:var(--text); color:var(--bg); }
+  main { max-width:900px; margin:auto; padding:8px 16px 40px; }
+  .m { display:grid; grid-template-columns:64px 1fr auto; gap:12px; padding:12px; background:var(--card); border:1px solid var(--line); border-radius:12px; margin-bottom:10px; align-items:start; }
+  .m img { width:64px; height:92px; object-fit:cover; border-radius:6px; background:var(--line); }
+  .t { font-weight:650; font-size:16px; }
+  .t a { color:inherit; text-decoration:none; }
+  .he { color:var(--muted); font-size:13px; }
+  .ppl { font-size:13px; margin-top:4px; }
+  .ppl b { color:var(--muted); font-weight:500; }
+  .tags { margin-top:6px; display:flex; gap:6px; flex-wrap:wrap; }
+  .tag { font-size:11px; padding:2px 7px; border-radius:6px; border:1px solid var(--line); color:var(--muted); }
+  .scores { display:flex; flex-direction:column; gap:6px; align-items:flex-end; }
+  .sc { display:inline-flex; gap:5px; align-items:center; font-weight:700; font-variant-numeric:tabular-nums; text-decoration:none; color:var(--text); font-size:15px; }
+  .imdb .lbl { background:var(--imdb); color:#000; font-size:10px; font-weight:800; padding:1px 4px; border-radius:3px; }
+  .rt .dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
+  .na { color:var(--muted); font-weight:400; }
+  .empty { color:var(--muted); text-align:center; padding:40px 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🎬 מה בסינמה סיטי השבוע</h1>
+  <div class="meta" id="meta">טוען…</div>
+</header>
+<div class="bar">
+  <input id="q" type="search" placeholder="חיפוש סרט, שחקן, במאי…">
+  <button class="chip on" data-sort="imdb">IMDb</button>
+  <button class="chip" data-sort="rt">Rotten Tomatoes</button>
+  <button class="chip" data-sort="title">שם</button>
+  <button class="chip" id="nokids">בלי מדובבים</button>
+</div>
+<main id="list"></main>
+<script>
+let data = [], sort = "imdb", hideDub = false;
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const rtColor = v => v == null ? "var(--line)" : v >= 75 ? "var(--good)" : v >= 60 ? "var(--mid)" : "var(--bad)";
+const sorters = {
+  imdb: (a, b) => (b.imdb ?? -1) - (a.imdb ?? -1) || (b.rt ?? -1) - (a.rt ?? -1),
+  rt: (a, b) => (b.rt ?? -1) - (a.rt ?? -1) || (b.imdb ?? -1) - (a.imdb ?? -1),
+  title: (a, b) => a.title.localeCompare(b.title),
+};
+function render() {
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const rows = data.filter(m => {
+    if (hideDub && m.versions.length && m.versions.every(v => v.startsWith("מדובב"))) return false;
+    if (!q) return true;
+    return [m.title, m.title_he, ...(m.actors||[]), ...(m.directors||[]), m.genre].join(" ").toLowerCase().includes(q);
+  }).sort(sorters[sort]);
+  document.getElementById("list").innerHTML = rows.length ? rows.map(m => `
+    <article class="m">
+      <a href="${esc(m.cc_url)}" target="_blank" rel="noopener"><img loading="lazy" src="${esc(m.poster)}" alt=""></a>
+      <div>
+        <div class="t" dir="ltr" style="text-align:right"><a href="${esc(m.cc_url)}" target="_blank" rel="noopener">${esc(m.title)}</a>${m.year ? ` <span class="he">(${m.year})</span>` : ""}</div>
+        ${m.title_he && m.title_he !== m.title ? `<div class="he">${esc(m.title_he)}</div>` : ""}
+        ${m.directors?.length ? `<div class="ppl"><b>במאי:</b> <span dir="ltr">${esc(m.directors.join(", "))}</span></div>` : ""}
+        ${m.actors?.length ? `<div class="ppl"><b>שחקנים:</b> <span dir="ltr">${esc(m.actors.join(", "))}</span></div>` : ""}
+        <div class="tags">
+          ${m.genre ? `<span class="tag">${esc(m.genre)}</span>` : ""}
+          ${m.duration ? `<span class="tag">${m.duration} דק׳</span>` : ""}
+          ${m.rating_age ? `<span class="tag">${esc(m.rating_age)}</span>` : ""}
+          ${m.versions.map(v => `<span class="tag">${esc(v)}</span>`).join("")}
+        </div>
+      </div>
+      <div class="scores">
+        <a class="sc imdb" href="${esc(m.imdb_url || "#")}" target="_blank" rel="noopener"><span class="lbl">IMDb</span>${m.imdb ? m.imdb.toFixed(1) : '<span class="na">–</span>'}</a>
+        <a class="sc rt" href="${esc(m.rt_url || "#")}" target="_blank" rel="noopener"><span class="dot" style="background:${rtColor(m.rt)}"></span>${m.rt != null ? m.rt + "%" : '<span class="na">–</span>'}</a>
+      </div>
+    </article>`).join("") : `<div class="empty">אין תוצאות</div>`;
+}
+document.querySelectorAll("[data-sort]").forEach(b => b.onclick = () => {
+  sort = b.dataset.sort;
+  document.querySelectorAll("[data-sort]").forEach(x => x.classList.toggle("on", x === b));
+  render();
+});
+document.getElementById("nokids").onclick = e => { hideDub = !hideDub; e.target.classList.toggle("on", hideDub); render(); };
+document.getElementById("q").oninput = render;
+fetch("data.json?" + Date.now()).then(r => r.json()).then(d => {
+  data = d.movies;
+  const dt = new Date(d.generated_at);
+  document.getElementById("meta").textContent = `${data.length} סרטים מוקרנים · עודכן ${dt.toLocaleString("he-IL", {weekday:"long", day:"numeric", month:"numeric", hour:"2-digit", minute:"2-digit"})}`;
+  render();
+}).catch(() => document.getElementById("meta").textContent = "עדיין אין נתונים. הסריקה הראשונה תרוץ בקרוב.");
+</script>
+</body>
+</html>
