@@ -154,31 +154,33 @@ def imdb_details(tt):
 
 # ---------- Rotten Tomatoes ----------
 
+RT_ALGOLIA = ("https://79frdp12pn-dsn.algolia.net/1/indexes/*/queries"
+              "?x-algolia-application-id=79FRDP12PN&x-algolia-api-key=175588f6e5f8319b27702e4cc4013561")
+
+
 def rt_lookup(title, year):
+    # RT's own site search index (Algolia). The RT website itself blocks GitHub's servers.
+    body = json.dumps({"requests": [{"indexName": "content_rt", "query": title,
+                                     "params": "filters=isEmsSearchable%20%3D%201&hitsPerPage=8"}]}).encode()
     try:
-        page = http("https://www.rottentomatoes.com/search?search=" + urllib.parse.quote(title), tries=3,
-                    headers={"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"})
-    except Exception:
+        res = json.loads(http(RT_ALGOLIA, data=body, tries=3,
+                              headers={"Content-Type": "application/json",
+                                       "Referer": "https://www.rottentomatoes.com/"}))
+    except Exception as e:
+        print("rt fail", title, e)
         return {}
-    sec = re.search(r'<search-page-result[^>]*type="movie"[^>]*>(.*?)</search-page-result>', page, re.S)
-    if not sec:
-        return {}
-    best = None
-    for row in re.findall(r"<search-page-media-row(.*?)</search-page-media-row>", sec.group(1), re.S):
-        ry = re.search(r'release-year="(\d*)"', row)
-        sc = re.search(r'tomatometer-score="(\d*)"', row)
-        link = re.search(r'href="(https://www\.rottentomatoes\.com/m/[^"]+)"[^>]*slot="title"[^>]*>\s*([^<]+)', row)
-        if not link:
+    for h in res["results"][0].get("hits", []):
+        if h.get("type") != "movie":
             continue
-        rtitle = html.unescape(link.group(2).strip())
-        ryear = int(ry.group(1)) if ry and ry.group(1) else None
-        if norm(rtitle) != norm(title):
+        if norm(title) not in {norm(t) for t in [h.get("title")] + (h.get("titles") or [])}:
             continue
-        if year and ryear and abs(ryear - year) > 1:
+        ry = h.get("releaseYear")
+        if year and ry and abs(ry - year) > 1:
             continue
-        best = {"rt": int(sc.group(1)) if sc and sc.group(1) else None, "rt_url": link.group(1)}
-        break
-    return best or {}
+        score = (h.get("rottenTomatoes") or {}).get("criticsScore")
+        return {"rt": score if isinstance(score, int) else None,
+                "rt_url": f"https://www.rottentomatoes.com/m/{h['vanity']}" if h.get("vanity") else None}
+    return {}
 
 
 # ---------- notify ----------
