@@ -1,17 +1,12 @@
-import re, time, urllib.request, urllib.parse
-H = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
-     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "Accept-Language": "en-US,en;q=0.9"}
-def get(u, h):
+import json, re, urllib.request, urllib.parse
+UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+def get(u, data=None, h=None):
     try:
-        r = urllib.request.urlopen(urllib.request.Request(u, headers=h), timeout=30); return r.status, r.read().decode()
-    except urllib.error.HTTPError as e: return e.code, ""
-for name, h in [("ua-only", {"User-Agent": H["User-Agent"]}), ("full", H)]:
-    for t in ["Toy Story 5", "Verity", "Madama Butterfly"]:
-        c, p = get("https://www.rottentomatoes.com/search?search=" + urllib.parse.quote(t), h)
-        n = len(re.findall("search-page-media-row", p)); print(name, t, c, n); time.sleep(1)
-c, p = get("https://www.rottentomatoes.com/m/toy_story_5", H); print("direct", c, len(p))
-for k in ['"aggregateRating"', "criticsScore", "tomatometer-score", "ratingValue"]:
-    i = p.find(k); print(k, i, re.sub(r"\s+", " ", p[max(0,i-80):i+300]) if i >= 0 else "")
-c, p = get("https://www.rottentomatoes.com/search?search=Toy%20Story%205", H)
-sec = re.search(r'<search-page-result[^>]*type="movie"[^>]*>(.*?)</search-page-result>', p, re.S)
-for row in re.findall(r"<search-page-media-row(.*?)</search-page-media-row>", sec.group(1) if sec else "", re.S)[:3]: print("ROW", re.sub(r"\s+", " ", row)[:700])
+        r = urllib.request.urlopen(urllib.request.Request(u, data=data, headers={"User-Agent": UA, **(h or {})}), timeout=40); return r.status, r.read().decode()
+    except urllib.error.HTTPError as e: return e.code, e.read().decode()[:300]
+    except Exception as e: return 0, str(e)
+body = json.dumps({"requests": [{"indexName": "content_rt", "query": "Toy Story 5", "params": "filters=isEmsSearchable%20%3D%201&hitsPerPage=3"}]}).encode()
+c, p = get("https://79frdp12pn-dsn.algolia.net/1/indexes/*/queries?x-algolia-application-id=79FRDP12PN&x-algolia-api-key=175588f6e5f8319b27702e4cc4013561", body, {"Content-Type": "application/json", "Referer": "https://www.rottentomatoes.com/"})
+print("algolia", c, p[:1500])
+c, p = get("https://r.jina.ai/https://www.rottentomatoes.com/m/toy_story_5")
+print("jina", c, p[:1200])

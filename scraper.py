@@ -29,12 +29,18 @@ VERSION_RE = re.compile(r"\s*-\s*(מדובב.*|אנגלית|מתורגם.*|Infin
 FOREIGN_DUB_RE = re.compile(r"(לרוסית|לצרפתית)")
 
 
-def http(url, data=None, headers=None, timeout=30):
-    h = {"User-Agent": UA}
+def http(url, data=None, headers=None, timeout=30, tries=1):
+    h = {"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"}
     h.update(headers or {})
-    req = urllib.request.Request(url, data=data, headers=h)
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read().decode("utf-8")
+    for i in range(tries):
+        try:
+            req = urllib.request.Request(url, data=data, headers=h)
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return r.read().decode("utf-8")
+        except Exception:
+            if i == tries - 1:
+                raise
+            time.sleep(3 * (i + 1))
 
 
 def norm(s):
@@ -89,6 +95,8 @@ def now_showing(items, now):
             "language": p.get("originalLanguageISO"), "date_started": started,
             "versions": [], "next_show": nxt,
         })
+        if not version.startswith("מדובב"):
+            m["has_original"] = True
         if version and version not in m["versions"]:
             m["versions"].append(version)
         if nxt < m["next_show"]:
@@ -148,7 +156,8 @@ def imdb_details(tt):
 
 def rt_lookup(title, year):
     try:
-        page = http("https://www.rottentomatoes.com/search?search=" + urllib.parse.quote(title))
+        page = http("https://www.rottentomatoes.com/search?search=" + urllib.parse.quote(title), tries=3,
+                    headers={"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"})
     except Exception:
         return {}
     sec = re.search(r'<search-page-result[^>]*type="movie"[^>]*>(.*?)</search-page-result>', page, re.S)
@@ -183,7 +192,14 @@ def fmt_line(m):
     if m.get("actors"):
         people.append(", ".join(m["actors"][:2]))
     he = f" ({m['title_he']})" if m.get("title_he") and norm(m["title_he"]) != norm(m["title"]) else ""
-    return f"{imdb} {rt} {m['title']}{he}" + (" · " + " · ".join(people) if people else "")
+    new = "🆕 " if age_days(m) is not None and age_days(m) < 8 else ""
+    return f"{new}{imdb} {rt} {m['title']}{he}" + (" · " + " · ".join(people) if people else "")
+
+
+def age_days(m):
+    if not m.get("date_started"):
+        return None
+    return (datetime.now(IL).date() - datetime.fromisoformat(m["date_started"]).date()).days
 
 
 def notify(movies):
@@ -224,6 +240,10 @@ def main():
                 print("already ran today"); return
         except Exception:
             pass
+    try:
+        prev_movies = {norm(x["title"]): x for x in json.load(open(DATA_PATH, encoding="utf-8"))["movies"]}
+    except Exception:
+        prev_movies = {}
     movies = now_showing(fetch_cinema_city(), now)
     print(f"{len(movies)} movies now showing")
     for m in movies:
@@ -235,6 +255,10 @@ def main():
         except Exception as e:
             print("imdb fail", m["title"], e)
         m.update(rt_lookup(m["title"], m.get("year") or hint))
+        old = prev_movies.get(norm(m["title"]), {})
+        for k in ("imdb", "imdb_url", "year", "directors", "actors", "rt", "rt_url"):
+            if m.get(k) in (None, []) and old.get(k) not in (None, []):
+                m[k] = old[k]  # a lookup was blocked this run; keep last week's value
         print(" ", fmt_line(m))
         time.sleep(0.5)
     movies.sort(key=sort_key)
