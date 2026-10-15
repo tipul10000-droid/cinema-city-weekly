@@ -29,7 +29,7 @@ VERSION_RE = re.compile(r"\s*-\s*(מדובב.*|אנגלית|מתורגם.*|Infin
 FOREIGN_DUB_RE = re.compile(r"(לרוסית|לצרפתית)")
 
 
-def http(url, data=None, headers=None, timeout=30, tries=1):
+def http(url, data=None, headers=None, timeout=30, tries=1, wait=5):
     h = {"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"}
     h.update(headers or {})
     for i in range(tries):
@@ -40,7 +40,7 @@ def http(url, data=None, headers=None, timeout=30, tries=1):
         except Exception:
             if i == tries - 1:
                 raise
-            time.sleep(5 * (i + 1) ** 2)
+            time.sleep(wait * (i + 1) ** 2)
 
 
 def norm(s):
@@ -51,14 +51,14 @@ def norm(s):
 # ---------- Cinema City ----------
 
 def fetch_cinema_city():
-    tokens = json.loads(http(f"{SITE}/_api/v1/access-tokens", tries=4))
+    tokens = json.loads(http(f"{SITE}/_api/v1/access-tokens", tries=4, wait=30))
     inst = tokens["apps"][WIX_CODE_APP]["instance"]
     items, offset = [], 0
     while True:
         body = json.dumps({"dataCollectionId": "SyncFeatures",
                            "query": {"paging": {"limit": 100, "offset": offset}},
                            "returnTotalCount": True}).encode()
-        res = json.loads(http(f"{SITE}/_api/cloud-data/v2/items/query", data=body, tries=4,
+        res = json.loads(http(f"{SITE}/_api/cloud-data/v2/items/query", data=body, tries=4, wait=30,
                               headers={"Authorization": inst,
                                        "Content-Type": "application/json"}))
         items += [d["data"] for d in res.get("dataItems", [])]
@@ -232,7 +232,8 @@ def sort_key(m):
 def main():
     now = datetime.now(timezone.utc)
     if "--scheduled" in sys.argv:
-        # cron fires at 05:00 and 06:00 UTC to cover both IST and IDT; run once, at/after 08:00 Israel
+        # cron fires several times on Sunday morning (UTC, covering IST and IDT, plus retries if a site
+        # rate-limits us); the first successful run at/after 08:00 Israel wins
         local = now.astimezone(IL)
         if local.hour < 8:
             print("before 08:00 Israel time, skipping"); return

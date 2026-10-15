@@ -2,10 +2,12 @@ name: Weekly Cinema City scan
 
 on:
   schedule:
-    # Sunday 08:00 Israel time. Two slots cover summer (UTC+3) and winter (UTC+2);
-    # scraper.py --scheduled runs only once per day, at/after 08:00 local.
+    # Sunday 08:00 Israel time. 05/06 UTC cover summer (UTC+3) and winter (UTC+2); later slots are
+    # retries. scraper.py --scheduled runs only once per day, at/after 08:00 local.
     - cron: "0 5 * * 0"
     - cron: "0 6 * * 0"
+    - cron: "0 8 * * 0"
+    - cron: "0 10 * * 0"
   workflow_dispatch:
 
 permissions:
