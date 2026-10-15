@@ -4,6 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>מה בסינמה סיטי השבוע</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="סרטים">
+<meta name="theme-color" content="#0f1115">
 <style>
   :root { --bg:#0f1115; --card:#181b22; --line:#262a33; --text:#eceef2; --muted:#9aa1ad; --imdb:#f5c518; --good:#3fbf6f; --mid:#e0a43a; --bad:#e05a4f; }
   @media (prefers-color-scheme: light) { :root { --bg:#f6f6f4; --card:#fff; --line:#e4e4e0; --text:#16181d; --muted:#626873; } }
@@ -31,6 +37,9 @@
   .imdb .lbl { background:var(--imdb); color:#000; font-size:10px; font-weight:800; padding:1px 4px; border-radius:3px; }
   .rt .dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
   .na { color:var(--muted); font-weight:400; }
+  .push { margin-top:10px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; font-size:13px; color:var(--muted); }
+  .push button { padding:8px 14px; border-radius:999px; border:0; background:var(--imdb); color:#000; font:inherit; font-weight:650; cursor:pointer; }
+  .push button[disabled] { opacity:.6; cursor:default; }
   .empty { color:var(--muted); text-align:center; padding:40px 0; }
 </style>
 </head>
@@ -38,6 +47,7 @@
 <header>
   <h1>🎬 מה בסינמה סיטי השבוע</h1>
   <div class="meta" id="meta">טוען…</div>
+  <div class="push" id="push" hidden><button id="pushBtn">🔔 הפעל התראות</button><span id="pushMsg"></span></div>
 </header>
 <div class="bar">
   <input id="q" type="search" placeholder="חיפוש סרט, שחקן, במאי…">
@@ -91,6 +101,37 @@ document.querySelectorAll("[data-sort]").forEach(b => b.onclick = () => {
 });
 document.getElementById("nokids").onclick = e => { hideDub = !hideDub; e.target.classList.toggle("on", hideDub); render(); };
 document.getElementById("q").oninput = render;
+// ---- web push ----
+const PUSH_API = "https://emgtyfksnofzzlutngbf.supabase.co/functions/v1/cinema-push";
+const b64ToBytes = s => Uint8Array.from(atob((s + "=".repeat((4 - s.length % 4) % 4)).replace(/-/g, "+").replace(/_/g, "/")), c => c.charCodeAt(0));
+(async () => {
+  const box = document.getElementById("push"), btn = document.getElementById("pushBtn"), msg = document.getElementById("pushMsg");
+  const ios = /iPhone|iPad|iPod/.test(navigator.userAgent);
+  const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+  if (!("serviceWorker" in navigator)) return;
+  const reg = await navigator.serviceWorker.register("sw.js");
+  box.hidden = false;
+  if (!("PushManager" in window)) {
+    btn.hidden = true;
+    msg.textContent = ios && !standalone ? "להתראות: שתף ← הוסף למסך הבית, ופתח משם" : "הדפדפן הזה לא תומך בהתראות";
+    return;
+  }
+  const existing = await reg.pushManager.getSubscription();
+  const done = () => { btn.disabled = true; btn.textContent = "🔔 התראות פעילות"; msg.textContent = "כל יום ראשון ב-08:00"; };
+  if (existing && Notification.permission === "granted") done();
+  btn.onclick = async () => {
+    btn.disabled = true; msg.textContent = "מפעיל…";
+    try {
+      if (await Notification.requestPermission() !== "granted") throw new Error("לא ניתן אישור להתראות");
+      const { publicKey } = await (await fetch(PUSH_API + "?action=pubkey")).json();
+      const sub = existing || await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64ToBytes(publicKey) });
+      const r = await fetch(PUSH_API + "?action=subscribe", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(sub) });
+      if (!r.ok) throw new Error("השמירה נכשלה");
+      done();
+    } catch (e) { btn.disabled = false; msg.textContent = e.message; }
+  };
+})();
+
 fetch("data.json?" + Date.now()).then(r => r.json()).then(d => {
   data = d.movies;
   const dt = new Date(d.generated_at);
