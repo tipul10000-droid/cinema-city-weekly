@@ -39,6 +39,7 @@ def http(url, data=None, headers=None, timeout=30, tries=1, wait=5):
                 return r.read().decode("utf-8")
         except Exception:
             if i == tries - 1:
+                print("request failed:", url.split("?")[0])
                 raise
             time.sleep(wait * (i + 1) ** 2)
 
