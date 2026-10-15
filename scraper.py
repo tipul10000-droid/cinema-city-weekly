@@ -187,7 +187,7 @@ def fmt_line(m):
 
 
 def notify(movies):
-    topic = os.environ.get("NTFY_TOPIC")
+    topic = os.environ.get("NTFY_TOPIC", "").strip().lstrip("\ufeff")
     if not topic:
         print("NTFY_TOPIC not set, skipping push")
         return
@@ -243,7 +243,10 @@ def main():
         json.dump({"generated_at": now.astimezone(IL).isoformat(timespec="minutes"),
                    "movies": movies}, f, ensure_ascii=False, indent=1)
     if "--no-push" not in sys.argv:
-        notify(movies)
+        try:
+            notify(movies)
+        except Exception as e:
+            print("push failed:", e)
 
 
 if __name__ == "__main__":
