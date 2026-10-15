@@ -40,7 +40,7 @@ def http(url, data=None, headers=None, timeout=30, tries=1):
         except Exception:
             if i == tries - 1:
                 raise
-            time.sleep(3 * (i + 1))
+            time.sleep(5 * (i + 1) ** 2)
 
 
 def norm(s):
@@ -51,14 +51,14 @@ def norm(s):
 # ---------- Cinema City ----------
 
 def fetch_cinema_city():
-    tokens = json.loads(http(f"{SITE}/_api/v1/access-tokens"))
+    tokens = json.loads(http(f"{SITE}/_api/v1/access-tokens", tries=4))
     inst = tokens["apps"][WIX_CODE_APP]["instance"]
     items, offset = [], 0
     while True:
         body = json.dumps({"dataCollectionId": "SyncFeatures",
                            "query": {"paging": {"limit": 100, "offset": offset}},
                            "returnTotalCount": True}).encode()
-        res = json.loads(http(f"{SITE}/_api/cloud-data/v2/items/query", data=body,
+        res = json.loads(http(f"{SITE}/_api/cloud-data/v2/items/query", data=body, tries=4,
                               headers={"Authorization": inst,
                                        "Content-Type": "application/json"}))
         items += [d["data"] for d in res.get("dataItems", [])]
@@ -112,7 +112,7 @@ def imdb_find(title, year_hint):
     q = urllib.parse.quote(title.lower()[:60])
     first = q[0] if q and q[0].isalnum() else "x"
     try:
-        res = json.loads(http(f"https://v3.sg.media-imdb.com/suggestion/{first}/{q}.json"))
+        res = json.loads(http(f"https://v3.sg.media-imdb.com/suggestion/{first}/{q}.json", tries=3))
     except Exception:
         return None
     cands = [d for d in res.get("d", []) if d.get("id", "").startswith("tt")
