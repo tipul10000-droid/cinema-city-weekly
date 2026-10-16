@@ -50,60 +50,90 @@ def norm(s):
 
 
 # ---------- Cinema City ----------
+# The site is Wix; its pages read two public data collections:
+#   SyncPresentations: every screening (movie, cinema, hall type, time) - the source of truth here
+#   SyncFeatures: one row per movie (poster, premiere date) - nice to have
+# Wix rate-limits these queries, so pages are spaced out and SyncFeatures is optional.
+
+SPECIAL_HALLS = ("Lounge", "ONYX", "VIP", "Prime")
+
+
+def wix_query(inst, collection, cursor=None):
+    q = {"cursorPaging": {"limit": 1000, "cursor": cursor}} if cursor else {"paging": {"limit": 1000}}
+    body = json.dumps({"dataCollectionId": collection, "query": q}).encode()
+    res = json.loads(http(f"{SITE}/_api/cloud-data/v2/items/query", data=body, tries=4, wait=30,
+                          headers={"Authorization": inst, "Content-Type": "application/json"}))
+    meta = res.get("pagingMetadata", {})
+    nxt = meta.get("cursors", {}).get("next") if meta.get("hasNext") else None
+    return [d["data"] for d in res.get("dataItems", [])], nxt
+
 
 def fetch_cinema_city():
     tokens = json.loads(http(f"{SITE}/_api/v1/access-tokens", tries=4, wait=30))
     inst = tokens["apps"][WIX_CODE_APP]["instance"]
-    items, offset = [], 0
-    while True:
-        body = json.dumps({"dataCollectionId": "SyncFeatures",
-                           "query": {"paging": {"limit": 100, "offset": offset}},
-                           "returnTotalCount": True}).encode()
-        res = json.loads(http(f"{SITE}/_api/cloud-data/v2/items/query", data=body, tries=4, wait=30,
-                              headers={"Authorization": inst,
-                                       "Content-Type": "application/json"}))
-        items += [d["data"] for d in res.get("dataItems", [])]
-        total = res.get("pagingMetadata", {}).get("total", 0)
-        offset += 100
-        if offset >= total:
-            return items
+    pres, cursor = wix_query(inst, "SyncPresentations")
+    while cursor:
+        time.sleep(12)
+        page, cursor = wix_query(inst, "SyncPresentations", cursor)
+        pres += page
+    try:
+        time.sleep(12)
+        feats = {str(f.get("externalId")): f for f in wix_query(inst, "SyncFeatures")[0]}
+    except Exception as e:
+        print("SyncFeatures unavailable, using last week's posters/dates:", e)
+        feats = {}
+    return [json.loads(p["payloadJson"]) if isinstance(p.get("payloadJson"), str) else p for p in pres], feats
 
 
-def now_showing(items, now):
-    horizon = now + timedelta(days=7)
+def short_loc(name):
+    return (name or "").replace("סינמה סיטי", "").strip(" -")
+
+
+def now_showing(pres, feats, now):
+    today = now.astimezone(IL).date()
+    last = today + timedelta(days=6)
     movies = {}
-    for it in items:
-        p = it.get("payloadJson") or {}
-        en = (p.get("additionalName") or "").strip()
-        he = (it.get("name") or "").strip()
-        nxt = (it.get("closestPresentationDateTime") or {}).get("$date")
-        if p.get("featureTypeId") != 1 or not en or not nxt:
-            continue  # events/shows, or nothing scheduled
-        if FOREIGN_DUB_RE.search(he):
+    for p in pres:
+        en = (p.get("featureAdditionalName") or "").strip()
+        he = (p.get("featureName") or "").strip()
+        day = datetime.fromisoformat(p["businessDate"][:10]).date()
+        if p.get("featureTypeId") != 1 or not en or not (today <= day <= last):
+            continue  # events/shows, or not this week
+        if FOREIGN_DUB_RE.search(he) or re.search(r"[\u0400-\u04ff]", en):
             continue  # Russian/French dubs duplicate the main entry
-        nxt_dt = datetime.fromisoformat(nxt.replace("Z", "+00:00"))
-        started = p.get("dateStarted")
-        if nxt_dt > horizon or (started and datetime.fromisoformat(started).replace(tzinfo=IL) > horizon):
-            continue  # pre-sale for a far-away premiere
         version = (VERSION_RE.search(he).group(1) if VERSION_RE.search(he) else "")
-        he_clean = VERSION_RE.sub("", he).strip()
-        key = norm(en)
-        m = movies.setdefault(key, {
-            "title": en, "title_he": he_clean, "cc_id": it.get("externalId"),
-            "cc_url": f"{SITE}/movie/{it.get('externalId')}",
-            "poster": it.get("image"), "genre": ", ".join(it.get("genre") or []),
-            "duration": it.get("duration"), "rating_age": it.get("ratingName"),
-            "language": p.get("originalLanguageISO"), "date_started": started,
-            "versions": [], "next_show": nxt, "has_original": False,
+        if version.startswith("Infinity"):
+            version = "Infinity Vision"
+        fid = str(p.get("featureId"))
+        f = feats.get(fid, {})
+        m = movies.setdefault(norm(en), {
+            "title": en, "title_he": VERSION_RE.sub("", he).strip(), "cc_id": fid,
+            "cc_url": f"{SITE}/movie/{fid}", "poster": f.get("image"),
+            "genre": p.get("featureCategoryName") or "", "duration": p.get("durationInMinutes"),
+            "language": p.get("languageISO"),
+            "date_started": (f.get("payloadJson") or {}).get("dateStarted"),
+            "versions": [], "has_original": False, "next_show": p["dateTime"],
+            "screenings": 0, "cinemas": set(), "halls": {},
         })
-        if not version.startswith("מדובב"):
+        dubbed = version.startswith("מדובב") or bool(p.get("dubbedLanguageISO"))
+        if not dubbed:
             m["has_original"] = True
+            if not version:  # link to the original-language entry when there is one
+                m["cc_id"], m["cc_url"] = fid, f"{SITE}/movie/{fid}"
+                m["poster"] = f.get("image") or m["poster"]
+                m["date_started"] = (f.get("payloadJson") or {}).get("dateStarted") or m["date_started"]
         if version and version not in m["versions"]:
             m["versions"].append(version)
-        if nxt < m["next_show"]:
-            m["next_show"] = nxt
-        if not version:  # link to the original-language entry when there is one
-            m["cc_id"], m["cc_url"] = it.get("externalId"), f"{SITE}/movie/{it.get('externalId')}"
+        m["screenings"] += 1
+        m["cinemas"].add(short_loc(p.get("locationName")))
+        m["next_show"] = min(m["next_show"], p["dateTime"])
+        hall = "Infinity Vision" if version == "Infinity Vision" else p.get("venueTypeName")
+        if hall in SPECIAL_HALLS + ("Infinity Vision",):
+            m["halls"].setdefault(hall, set()).add(short_loc(p.get("locationName")))
+    for m in movies.values():
+        m["cinemas"] = sorted(m["cinemas"])
+        m["halls"] = {k: sorted(v) for k, v in sorted(m["halls"].items())}
+        m["versions"] = [v for v in m["versions"] if v != "Infinity Vision"]
     return list(movies.values())
 
 
@@ -248,10 +278,12 @@ def main():
         prev_movies = {norm(x["title"]): x for x in json.load(open(DATA_PATH, encoding="utf-8"))["movies"]}
     except Exception:
         prev_movies = {}
-    movies = now_showing(fetch_cinema_city(), now)
+    pres, feats = fetch_cinema_city()
+    movies = now_showing(pres, feats, now)
     print(f"{len(movies)} movies now showing")
     for m in movies:
         hint = int(m["date_started"][:4]) if m.get("date_started") else None
+        hit = None
         try:
             hit = imdb_find(m["title"], hint)
             if hit:
@@ -260,9 +292,11 @@ def main():
             print("imdb fail", m["title"], e)
         m.update(rt_lookup(m["title"], m.get("year") or hint))
         old = prev_movies.get(norm(m["title"]), {})
-        for k in ("imdb", "imdb_url", "year", "directors", "actors", "rt", "rt_url"):
+        for k in ("imdb", "imdb_url", "year", "directors", "actors", "rt", "rt_url", "poster", "date_started"):
             if m.get(k) in (None, []) and old.get(k) not in (None, []):
                 m[k] = old[k]  # a lookup was blocked this run; keep last week's value
+        if not m.get("poster") and hit and hit.get("i"):
+            m["poster"] = hit["i"]["imageUrl"].replace("._V1_.", "._V1_UX300_.")
         print(" ", fmt_line(m))
         time.sleep(0.5)
     movies.sort(key=sort_key)
