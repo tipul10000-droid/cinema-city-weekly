@@ -20,9 +20,9 @@
   h1 { margin:0 0 4px; font-size:22px; }
   .meta { color:var(--muted); font-size:13px; }
   .bar { display:flex; gap:8px; flex-wrap:wrap; align-items:center; padding:10px 16px; max-width:900px; margin:auto; position:sticky; top:0; background:var(--bg); z-index:2; border-bottom:1px solid var(--line); }
-  .bar { flex-direction:column; align-items:stretch; gap:6px; }
-  .row { display:flex; gap:6px; align-items:center; overflow-x:auto; scrollbar-width:none; }
-  .row::-webkit-scrollbar { display:none; }
+  .bar { flex-direction:column; align-items:stretch; gap:6px; position:static; }
+  .row { display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+  .bar input { flex:none !important; }
   .row .lbl2 { color:var(--muted); font-size:12px; flex:none; min-width:34px; }
   .row .chip { flex:none; }
   .seg { display:inline-flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; flex:none; }
