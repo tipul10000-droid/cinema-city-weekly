@@ -356,7 +356,8 @@ def main():
                 m[k] = old[k]  # a lookup was blocked this run; keep last week's value
         m["top_people"] = [p for p in m.get("directors") or [] if p in TOP_DIRECTORS] + \
                           [p for p in m.get("actors") or [] if p in TOP_ACTORS]
-        m["prev_screenings"] = old.get("screenings")
+        # last week's count is comparable only if it covered the same cinemas (older scans were nationwide)
+        m["prev_screenings"] = old.get("screenings") if set(old.get("cinemas") or ["?"]) <= CENTRAL else None
         m["leaving"] = is_leaving(m, now)
         if not m.get("poster") and hit and hit.get("i"):
             m["poster"] = hit["i"]["imageUrl"].replace("._V1_.", "._V1_UX300_.")
