@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-16T08:02+03:00",
+ "generated_at": "2026-10-16T08:23+03:00",
  "movies": [
   {
    "title": "THE ODYSSEY",
@@ -10,16 +10,14 @@
    "genre": "אקשן",
    "duration": 172,
    "language": "en",
+   "kids": false,
    "date_started": "2026-07-16",
    "versions": [],
    "has_original": true,
    "next_show": "2026-10-16 10:10",
-   "screenings": 21,
+   "screenings": 17,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
     "ראשל\"צ"
    ],
    "halls": {
@@ -28,11 +26,9 @@
     ],
     "ONYX": [
      "גלילות"
-    ],
-    "Prime": [
-     "חדרה"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt33764258",
    "imdb_url": "https://www.imdb.com/title/tt33764258/",
    "imdb_title": "The Odyssey",
@@ -48,7 +44,15 @@
     "Anne Hathaway"
    ],
    "rt": 94,
-   "rt_url": "https://www.rottentomatoes.com/m/the_odyssey_2026"
+   "rt_url": "https://www.rottentomatoes.com/m/the_odyssey_2026",
+   "top_people": [
+    "Christopher Nolan",
+    "Matt Damon",
+    "Tom Holland",
+    "Anne Hathaway"
+   ],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "Avengers: Endgame",
@@ -59,26 +63,22 @@
    "genre": "מדע בדיוני",
    "duration": 186,
    "language": "en",
+   "kids": false,
    "date_started": "2026-09-24",
    "versions": [],
    "has_original": true,
-   "next_show": "2026-10-16 11:50",
-   "screenings": 11,
+   "next_show": "2026-10-16 13:50",
+   "screenings": 4,
    "cinemas": [
-    "אשדוד",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "ראשל\"צ"
    ],
    "halls": {
     "Infinity Vision": [
      "גלילות"
-    ],
-    "Prime": [
-     "חדרה"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt4154796",
    "imdb_url": "https://www.imdb.com/title/tt4154796/",
    "imdb_title": "Avengers: Endgame",
@@ -95,7 +95,15 @@
     "Mark Ruffalo"
    ],
    "rt": 94,
-   "rt_url": "https://www.rottentomatoes.com/m/avengers_endgame"
+   "rt_url": "https://www.rottentomatoes.com/m/avengers_endgame",
+   "top_people": [
+    "Anthony Russo",
+    "Joe Russo",
+    "Robert Downey Jr.",
+    "Chris Evans"
+   ],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "SPIDERMAN: BRAND NEW DAY",
@@ -106,25 +114,23 @@
    "genre": "פנטזיה",
    "duration": 150,
    "language": "en",
+   "kids": false,
    "date_started": "2026-07-29",
    "versions": [],
    "has_original": true,
-   "next_show": "2026-10-16 10:40",
-   "screenings": 14,
+   "next_show": "2026-10-16 14:10",
+   "screenings": 11,
    "cinemas": [
-    "אשדוד",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "נתניה",
     "ראשל\"צ"
    ],
    "halls": {
     "Prime": [
-     "חדרה",
      "נתניה"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt22084616",
    "imdb_url": "https://www.imdb.com/title/tt22084616/",
    "imdb_title": "Spider-Man: Brand New Day",
@@ -140,7 +146,14 @@
     "Mark Ruffalo"
    ],
    "rt": 90,
-   "rt_url": "https://www.rottentomatoes.com/m/spider_man_brand_new_day"
+   "rt_url": "https://www.rottentomatoes.com/m/spider_man_brand_new_day",
+   "top_people": [
+    "Destin Daniel Cretton",
+    "Tom Holland",
+    "Zendaya"
+   ],
+   "prev_screenings": null,
+   "leaving": true
   },
   {
    "title": "Matchmaking 3",
@@ -151,17 +164,14 @@
    "genre": "קומדיה",
    "duration": 105,
    "language": "he",
+   "kids": false,
    "date_started": "2026-09-24",
    "versions": [],
    "has_original": true,
-   "next_show": "2026-10-16 10:15",
-   "screenings": 277,
+   "next_show": "2026-10-16 10:30",
+   "screenings": 143,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
@@ -171,15 +181,14 @@
      "גלילות"
     ],
     "Prime": [
-     "חדרה",
      "כפר-סבא",
      "נתניה"
     ],
     "VIP": [
-     "ירושלים",
      "ראשל\"צ"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt46437739",
    "imdb_url": "https://www.imdb.com/title/tt46437739/",
    "imdb_title": "Matchmaking 3",
@@ -193,43 +202,10 @@
     "Maor Schwietzer",
     "Niv Sultan",
     "Irit Kaplan"
-   ]
-  },
-  {
-   "title": "Madama Butterfly",
-   "title_he": "אופרה בשלייקס: מאדאם באטרפליי",
-   "cc_id": "6619",
-   "cc_url": "https://www.cinema-city.co.il/movie/6619",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/50cf9a0f-844a-45ad-867c-8d8939fa94cd",
-   "genre": "SHOW",
-   "duration": 126,
-   "language": "it",
-   "date_started": "2026-10-06",
-   "versions": [],
-   "has_original": true,
-   "next_show": "2026-10-20 11:30",
-   "screenings": 2,
-   "cinemas": [
-    "גלילות",
-    "ראשל\"צ"
    ],
-   "halls": {},
-   "imdb_id": "tt0256165",
-   "imdb_url": "https://www.imdb.com/title/tt0256165/",
-   "imdb_title": "Madama Butterfly",
-   "year": 1975,
-   "imdb": 7.8,
-   "imdb_votes": 143,
-   "directors": [
-    "Jean-Pierre Ponnelle"
-   ],
-   "actors": [
-    "Mirella Freni",
-    "Plácido Domingo",
-    "Christa Ludwig"
-   ],
-   "rt": null,
-   "rt_url": "https://www.rottentomatoes.com/m/madama_butterfly"
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "Forgotten Island",
@@ -237,23 +213,20 @@
    "cc_id": "6467",
    "cc_url": "https://www.cinema-city.co.il/movie/6467",
    "poster": "https://cdn.presglobal.pro/nlc-prod/feature/50334792-8783-4a16-a9f8-385b1e14ae00",
-   "genre": "ילדים,אנימציה,הרפתקה,KIDSHOW",
+   "genre": "ילדים, אנימציה, הרפתקה",
    "duration": 109,
-   "language": "he",
+   "language": "en",
+   "kids": true,
    "date_started": "2026-09-24",
    "versions": [
     "מדובב",
     "אנגלית"
    ],
    "has_original": true,
-   "next_show": "2026-10-16 10:00",
-   "screenings": 111,
+   "next_show": "2026-10-16 10:50",
+   "screenings": 63,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
@@ -263,6 +236,7 @@
      "כפר-סבא"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt36583977",
    "imdb_url": "https://www.imdb.com/title/tt36583977/",
    "imdb_title": "Forgotten Island",
@@ -279,7 +253,10 @@
     "Dave Franco"
    ],
    "rt": 95,
-   "rt_url": "https://www.rottentomatoes.com/m/forgotten_island"
+   "rt_url": "https://www.rottentomatoes.com/m/forgotten_island",
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "קופה ראשית: הסרט",
@@ -290,28 +267,25 @@
    "genre": "קומדיה",
    "duration": 91,
    "language": "he",
+   "kids": false,
    "date_started": "2026-06-17",
    "versions": [],
    "has_original": true,
    "next_show": "2026-10-16 10:15",
-   "screenings": 81,
+   "screenings": 44,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
    ],
    "halls": {
     "Prime": [
-     "חדרה",
      "כפר-סבא",
      "נתניה"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt43612870",
    "imdb_url": "https://www.imdb.com/title/tt43612870/",
    "imdb_title": "Checkout: The Movie",
@@ -325,7 +299,10 @@
     "Keren Mor",
     "Noa Koler",
     "Amir Shurush"
-   ]
+   ],
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "Resident Evil",
@@ -336,15 +313,14 @@
    "genre": "אימה",
    "duration": 90,
    "language": "en",
+   "kids": false,
    "date_started": "2026-09-17",
    "versions": [],
    "has_original": true,
-   "next_show": "2026-10-16 22:10",
-   "screenings": 22,
+   "next_show": "2026-10-16 22:30",
+   "screenings": 13,
    "cinemas": [
-    "אשדוד",
     "גלילות",
-    "חדרה",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
@@ -354,6 +330,7 @@
      "כפר-סבא"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt35538033",
    "imdb_url": "https://www.imdb.com/title/tt35538033/",
    "imdb_title": "Resident Evil",
@@ -369,7 +346,12 @@
     "Kali Reis"
    ],
    "rt": 96,
-   "rt_url": "https://www.rottentomatoes.com/m/resident_evil_2026"
+   "rt_url": "https://www.rottentomatoes.com/m/resident_evil_2026",
+   "top_people": [
+    "Zach Cregger"
+   ],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "Tell Me Everything",
@@ -380,17 +362,14 @@
    "genre": "דרמה",
    "duration": 109,
    "language": "he",
+   "kids": false,
    "date_started": "2026-09-03",
    "versions": [],
    "has_original": true,
-   "next_show": "2026-10-16 10:10",
-   "screenings": 116,
+   "next_show": "2026-10-16 11:00",
+   "screenings": 71,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
@@ -403,6 +382,7 @@
      "נתניה"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt39149971",
    "imdb_url": "https://www.imdb.com/title/tt39149971/",
    "imdb_title": "Tell Me Everything",
@@ -418,7 +398,10 @@
     "Assi Cohen"
    ],
    "rt": 77,
-   "rt_url": "https://www.rottentomatoes.com/m/tell_me_everything"
+   "rt_url": "https://www.rottentomatoes.com/m/tell_me_everything",
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "WAVES",
@@ -429,6 +412,7 @@
    "genre": "דרמה",
    "duration": 131,
    "language": "cs",
+   "kids": false,
    "date_started": "2026-10-08",
    "versions": [],
    "has_original": true,
@@ -439,6 +423,7 @@
     "ראשל\"צ"
    ],
    "halls": {},
+   "foreign": true,
    "imdb_id": "tt8652728",
    "imdb_url": "https://www.imdb.com/title/tt8652728/",
    "imdb_title": "Waves",
@@ -454,7 +439,12 @@
     "Alexa Demie"
    ],
    "rt": 84,
-   "rt_url": "https://www.rottentomatoes.com/m/waves_2019"
+   "rt_url": "https://www.rottentomatoes.com/m/waves_2019",
+   "top_people": [
+    "Trey Edward Shults"
+   ],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "Digger",
@@ -465,22 +455,20 @@
    "genre": "קומדיה",
    "duration": 128,
    "language": "en",
+   "kids": false,
    "date_started": "2026-10-01",
    "versions": [],
    "has_original": true,
    "next_show": "2026-10-16 10:40",
-   "screenings": 31,
+   "screenings": 21,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
    ],
    "halls": {},
+   "foreign": false,
    "imdb_id": "tt31450459",
    "imdb_url": "https://www.imdb.com/title/tt31450459/",
    "imdb_title": "Digger",
@@ -496,7 +484,14 @@
     "John Goodman"
    ],
    "rt": 53,
-   "rt_url": "https://www.rottentomatoes.com/m/digger_2026"
+   "rt_url": "https://www.rottentomatoes.com/m/digger_2026",
+   "top_people": [
+    "Alejandro G. Iñárritu",
+    "Tom Cruise",
+    "Riz Ahmed"
+   ],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "Left-Handed Girl",
@@ -507,6 +502,7 @@
    "genre": "דרמה",
    "duration": 108,
    "language": "zh",
+   "kids": false,
    "date_started": "2026-10-08",
    "versions": [],
    "has_original": true,
@@ -517,6 +513,7 @@
     "ראשל\"צ"
    ],
    "halls": {},
+   "foreign": true,
    "imdb_id": "tt27722618",
    "imdb_url": "https://www.imdb.com/title/tt27722618/",
    "imdb_title": "Left-Handed Girl",
@@ -532,7 +529,10 @@
     "Nina Ye"
    ],
    "rt": 98,
-   "rt_url": "https://www.rottentomatoes.com/m/left_handed_girl"
+   "rt_url": "https://www.rottentomatoes.com/m/left_handed_girl",
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "Coyote vs. Acme",
@@ -540,31 +540,29 @@
    "cc_id": "6492",
    "cc_url": "https://www.cinema-city.co.il/movie/6492",
    "poster": "https://cdn.presglobal.pro/nlc-prod/feature/adc97e2b-4738-4c16-90cc-2fd55db33fa0",
-   "genre": "קומדיה,אנימציה,KIDSHOW",
+   "genre": "קומדיה, אנימציה",
    "duration": 101,
-   "language": "he",
+   "language": null,
+   "kids": true,
    "date_started": "2026-08-20",
    "versions": [
     "מדובב"
    ],
    "has_original": false,
    "next_show": "2026-10-16 12:10",
-   "screenings": 28,
+   "screenings": 12,
    "cinemas": [
-    "אשדוד",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
    ],
    "halls": {
     "Prime": [
-     "חדרה",
      "כפר-סבא"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt1756855",
    "imdb_url": "https://www.imdb.com/title/tt1756855/",
    "imdb_title": "Coyote vs. Acme",
@@ -580,7 +578,10 @@
     "John Cena"
    ],
    "rt": 96,
-   "rt_url": "https://www.rottentomatoes.com/m/coyote_vs_acme"
+   "rt_url": "https://www.rottentomatoes.com/m/coyote_vs_acme",
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": true
   },
   {
    "title": "Toy Story 5",
@@ -588,20 +589,19 @@
    "cc_id": "6306",
    "cc_url": "https://www.cinema-city.co.il/movie/6306",
    "poster": "https://cdn.presglobal.pro/nlc-prod/feature/5a28d91f-9c25-4353-81e3-7d367ebc9fb3",
-   "genre": "אנימציה,KIDSHOW",
+   "genre": "אנימציה",
    "duration": 102,
-   "language": "he",
+   "language": null,
+   "kids": true,
    "date_started": "2026-06-18",
    "versions": [
     "מדובב"
    ],
    "has_original": false,
    "next_show": "2026-10-16 12:25",
-   "screenings": 14,
+   "screenings": 9,
    "cinemas": [
-    "אשדוד",
     "גלילות",
-    "ירושלים",
     "כפר-סבא",
     "נתניה"
    ],
@@ -610,6 +610,7 @@
      "נתניה"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt29355505",
    "imdb_url": "https://www.imdb.com/title/tt29355505/",
    "imdb_title": "Toy Story 5",
@@ -626,7 +627,13 @@
     "Joan Cusack"
    ],
    "rt": 92,
-   "rt_url": "https://www.rottentomatoes.com/m/toy_story_5"
+   "rt_url": "https://www.rottentomatoes.com/m/toy_story_5",
+   "top_people": [
+    "Andrew Stanton",
+    "Tom Hanks"
+   ],
+   "prev_screenings": null,
+   "leaving": true
   },
   {
    "title": "Shaun the Sheep: The Beast of Mossy Bottom",
@@ -634,22 +641,19 @@
    "cc_id": "6624",
    "cc_url": "https://www.cinema-city.co.il/movie/6624",
    "poster": "https://cdn.presglobal.pro/nlc-prod/feature/99f5da3f-7d14-4b3a-8fe8-5eff40d0b270",
-   "genre": "ילדים,אנימציה,הרפתקה,KIDSHOW",
+   "genre": "ילדים, אנימציה, הרפתקה",
    "duration": 81,
    "language": null,
+   "kids": true,
    "date_started": "2026-10-15",
    "versions": [
     "מדובב"
    ],
    "has_original": false,
    "next_show": "2026-10-16 10:00",
-   "screenings": 136,
+   "screenings": 73,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
@@ -659,6 +663,7 @@
      "גלילות"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt36841161",
    "imdb_url": "https://www.imdb.com/title/tt36841161/",
    "imdb_title": "Shaun the Sheep: The Beast of Mossy Bottom",
@@ -675,7 +680,10 @@
     "Nina Sosanya"
    ],
    "rt": 99,
-   "rt_url": "https://www.rottentomatoes.com/m/shaun_the_sheep_the_beast_of_mossy_bottom"
+   "rt_url": "https://www.rottentomatoes.com/m/shaun_the_sheep_the_beast_of_mossy_bottom",
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "HEART OF THE BEAST",
@@ -686,17 +694,14 @@
    "genre": "מותחן",
    "duration": 101,
    "language": "en",
+   "kids": false,
    "date_started": "2026-09-24",
    "versions": [],
    "has_original": true,
-   "next_show": "2026-10-16 10:00",
-   "screenings": 118,
+   "next_show": "2026-10-16 10:30",
+   "screenings": 66,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
@@ -713,6 +718,7 @@
      "ראשל\"צ"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt7526136",
    "imdb_url": "https://www.imdb.com/title/tt7526136/",
    "imdb_title": "Heart of the Beast",
@@ -728,7 +734,13 @@
     "Anna Lambe"
    ],
    "rt": 85,
-   "rt_url": "https://www.rottentomatoes.com/m/heart_of_the_beast"
+   "rt_url": "https://www.rottentomatoes.com/m/heart_of_the_beast",
+   "top_people": [
+    "David Ayer",
+    "Brad Pitt"
+   ],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "Primavera",
@@ -739,17 +751,17 @@
    "genre": "דרמה",
    "duration": 110,
    "language": "it",
+   "kids": false,
    "date_started": "2026-09-24",
    "versions": [],
    "has_original": true,
-   "next_show": "2026-10-20 10:00",
-   "screenings": 5,
+   "next_show": "2026-10-20 10:20",
+   "screenings": 1,
    "cinemas": [
-    "אשדוד",
-    "חדרה",
     "כפר-סבא"
    ],
    "halls": {},
+   "foreign": true,
    "imdb_id": "tt33586629",
    "imdb_url": "https://www.imdb.com/title/tt33586629/",
    "imdb_title": "Primavera",
@@ -765,7 +777,10 @@
     "Andrea Pennacchi"
    ],
    "rt": null,
-   "rt_url": "https://www.rottentomatoes.com/m/primavera"
+   "rt_url": "https://www.rottentomatoes.com/m/primavera",
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "The Weight",
@@ -773,33 +788,30 @@
    "cc_id": "6593",
    "cc_url": "https://www.cinema-city.co.il/movie/6593",
    "poster": "https://cdn.presglobal.pro/nlc-prod/feature/612986ef-d346-4410-9ba4-3f99e8d89079",
-   "genre": "מותחן,אקשן,דרמה",
+   "genre": "מותחן, אקשן, דרמה",
    "duration": 112,
    "language": "en",
+   "kids": false,
    "date_started": "2026-10-15",
    "versions": [],
    "has_original": true,
    "next_show": "2026-10-16 10:30",
-   "screenings": 185,
+   "screenings": 97,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
    ],
    "halls": {
     "Prime": [
-     "חדרה",
      "כפר-סבא"
     ],
     "VIP": [
      "ראשל\"צ"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt10794054",
    "imdb_url": "https://www.imdb.com/title/tt10794054/",
    "imdb_title": "The Weight",
@@ -815,7 +827,13 @@
     "Julia Jones"
    ],
    "rt": 94,
-   "rt_url": "https://www.rottentomatoes.com/m/the_weight_2026"
+   "rt_url": "https://www.rottentomatoes.com/m/the_weight_2026",
+   "top_people": [
+    "Ethan Hawke",
+    "Russell Crowe"
+   ],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "Whalefall",
@@ -823,33 +841,30 @@
    "cc_id": "6533",
    "cc_url": "https://www.cinema-city.co.il/movie/6533",
    "poster": "https://cdn.presglobal.pro/nlc-prod/feature/a6525196-daa7-4061-afc7-d4888575e2fb",
-   "genre": "מותחן,דרמה",
+   "genre": "מותחן, דרמה",
    "duration": 106,
    "language": "en",
+   "kids": false,
    "date_started": "2026-10-15",
    "versions": [],
    "has_original": true,
    "next_show": "2026-10-16 13:40",
-   "screenings": 137,
+   "screenings": 74,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
    ],
    "halls": {
     "Prime": [
-     "חדרה",
      "כפר-סבא"
     ],
     "VIP": [
      "ראשל\"צ"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt28535715",
    "imdb_url": "https://www.imdb.com/title/tt28535715/",
    "imdb_title": "Whalefall",
@@ -865,7 +880,12 @@
     "Josh Brolin"
    ],
    "rt": 70,
-   "rt_url": "https://www.rottentomatoes.com/m/whalefall"
+   "rt_url": "https://www.rottentomatoes.com/m/whalefall",
+   "top_people": [
+    "Josh Brolin"
+   ],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "The Social Reckoning",
@@ -876,17 +896,14 @@
    "genre": "דרמה",
    "duration": 112,
    "language": "en",
+   "kids": false,
    "date_started": "2026-10-08",
    "versions": [],
    "has_original": true,
    "next_show": "2026-10-16 10:00",
-   "screenings": 42,
+   "screenings": 25,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
@@ -897,6 +914,7 @@
      "נתניה"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt37510326",
    "imdb_url": "https://www.imdb.com/title/tt37510326/",
    "imdb_title": "The Social Reckoning",
@@ -912,7 +930,14 @@
     "Wunmi Mosaku"
    ],
    "rt": 54,
-   "rt_url": "https://www.rottentomatoes.com/m/the_social_reckoning"
+   "rt_url": "https://www.rottentomatoes.com/m/the_social_reckoning",
+   "top_people": [
+    "Aaron Sorkin",
+    "Jeremy Allen White",
+    "Mikey Madison"
+   ],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "By Any Means",
@@ -923,6 +948,7 @@
    "genre": "מותחן",
    "duration": 106,
    "language": "en",
+   "kids": false,
    "date_started": "2026-09-03",
    "versions": [],
    "has_original": true,
@@ -933,6 +959,7 @@
     "ראשל\"צ"
    ],
    "halls": {},
+   "foreign": false,
    "imdb_id": "tt34379051",
    "imdb_url": "https://www.imdb.com/title/tt34379051/",
    "imdb_title": "By Any Means",
@@ -948,7 +975,12 @@
     "Nicole Beharie"
    ],
    "rt": 50,
-   "rt_url": "https://www.rottentomatoes.com/m/by_any_means_2026"
+   "rt_url": "https://www.rottentomatoes.com/m/by_any_means_2026",
+   "top_people": [
+    "Mark Wahlberg"
+   ],
+   "prev_screenings": null,
+   "leaving": true
   },
   {
    "title": "Spinned",
@@ -956,22 +988,23 @@
    "cc_id": "6603",
    "cc_url": "https://www.cinema-city.co.il/movie/6603",
    "poster": "https://cdn.presglobal.pro/nlc-prod/feature/fb5445ed-2234-4074-b568-fcc9a836068c",
-   "genre": "ילדים,אנימציה,הרפתקה,KIDSHOW",
+   "genre": "ילדים, אנימציה, הרפתקה",
    "duration": 96,
-   "language": "he",
+   "language": null,
+   "kids": true,
    "date_started": "2026-09-24",
    "versions": [
     "מדובב"
    ],
    "has_original": false,
    "next_show": "2026-10-16 13:10",
-   "screenings": 8,
+   "screenings": 3,
    "cinemas": [
-    "אשדוד",
     "גלילות",
     "ראשל\"צ"
    ],
    "halls": {},
+   "foreign": false,
    "imdb_id": "tt36435943",
    "imdb_url": "https://www.imdb.com/title/tt36435943/",
    "imdb_title": "Spinned",
@@ -987,7 +1020,51 @@
     "Tyler Bunch"
    ],
    "rt": null,
-   "rt_url": "https://www.rottentomatoes.com/m/spinned"
+   "rt_url": "https://www.rottentomatoes.com/m/spinned",
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": false
+  },
+  {
+   "title": "VOTEMOS",
+   "title_he": "מי בעד",
+   "cc_id": "6622",
+   "cc_url": "https://www.cinema-city.co.il/movie/6622",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/102858f8-36d5-4f30-b629-d1da4163a10f",
+   "genre": "דרמה",
+   "duration": 88,
+   "language": "es",
+   "kids": false,
+   "date_started": "2026-10-08",
+   "versions": [],
+   "has_original": true,
+   "next_show": "2026-10-16 20:10",
+   "screenings": 14,
+   "cinemas": [
+    "גלילות",
+    "כפר-סבא",
+    "נתניה",
+    "ראשל\"צ"
+   ],
+   "halls": {},
+   "foreign": true,
+   "imdb_id": "tt34383359",
+   "imdb_url": "https://www.imdb.com/title/tt34383359/",
+   "imdb_title": "All in Favor",
+   "year": 2025,
+   "imdb": 6.5,
+   "imdb_votes": 1399,
+   "directors": [
+    "Santiago Requejo"
+   ],
+   "actors": [
+    "Raúl Fernández de Pablo",
+    "Clara Lago",
+    "Tito Valverde"
+   ],
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "Tad and the Magic Lamp",
@@ -995,26 +1072,24 @@
    "cc_id": "6561",
    "cc_url": "https://www.cinema-city.co.il/movie/6561",
    "poster": "https://cdn.presglobal.pro/nlc-prod/feature/7e6a517c-a8d2-4e13-af40-651af58a5dc0",
-   "genre": "ילדים,אנימציה,הרפתקה,KIDSHOW",
+   "genre": "ילדים, אנימציה, הרפתקה",
    "duration": 94,
-   "language": "he",
+   "language": null,
+   "kids": true,
    "date_started": "2026-09-10",
    "versions": [
     "מדובב"
    ],
    "has_original": false,
-   "next_show": "2026-10-16 13:15",
-   "screenings": 23,
+   "next_show": "2026-10-16 15:20",
+   "screenings": 5,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "ראשל\"צ"
    ],
    "halls": {},
+   "foreign": false,
    "imdb_id": "tt36164852",
    "imdb_url": "https://www.imdb.com/title/tt36164852/",
    "imdb_title": "Tad and the Magic Lamp",
@@ -1030,46 +1105,10 @@
     "Michelle Jenner"
    ],
    "rt": null,
-   "rt_url": "https://www.rottentomatoes.com/m/tad_and_the_magic_lamp"
-  },
-  {
-   "title": "VOTEMOS",
-   "title_he": "מי בעד",
-   "cc_id": "6622",
-   "cc_url": "https://www.cinema-city.co.il/movie/6622",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/102858f8-36d5-4f30-b629-d1da4163a10f",
-   "genre": "דרמה",
-   "duration": 88,
-   "language": "es",
-   "date_started": "2026-10-08",
-   "versions": [],
-   "has_original": true,
-   "next_show": "2026-10-16 20:10",
-   "screenings": 19,
-   "cinemas": [
-    "אשדוד",
-    "גלילות",
-    "חדרה",
-    "ירושלים",
-    "כפר-סבא",
-    "נתניה",
-    "ראשל\"צ"
-   ],
-   "halls": {},
-   "imdb_id": "tt34383359",
-   "imdb_url": "https://www.imdb.com/title/tt34383359/",
-   "imdb_title": "All in Favor",
-   "year": 2025,
-   "imdb": 6.5,
-   "imdb_votes": 1399,
-   "directors": [
-    "Santiago Requejo"
-   ],
-   "actors": [
-    "Raúl Fernández de Pablo",
-    "Clara Lago",
-    "Tito Valverde"
-   ]
+   "rt_url": "https://www.rottentomatoes.com/m/tad_and_the_magic_lamp",
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": true
   },
   {
    "title": "THE DESERT CHILD",
@@ -1077,22 +1116,19 @@
    "cc_id": "6524",
    "cc_url": "https://www.cinema-city.co.il/movie/6524",
    "poster": "https://cdn.presglobal.pro/nlc-prod/feature/a6b05991-3d2c-4759-9595-42aa08488c57",
-   "genre": "הרפתקה,KIDSHOW",
+   "genre": "הרפתקה",
    "duration": 92,
-   "language": "he",
+   "language": null,
+   "kids": true,
    "date_started": "2026-09-10",
    "versions": [
     "מדובב"
    ],
    "has_original": false,
-   "next_show": "2026-10-16 12:20",
-   "screenings": 60,
+   "next_show": "2026-10-16 12:30",
+   "screenings": 29,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
@@ -1102,6 +1138,7 @@
      "נתניה"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt37495239",
    "imdb_url": "https://www.imdb.com/title/tt37495239/",
    "imdb_title": "L'enfant du désert",
@@ -1115,7 +1152,10 @@
     "Nahel Tran",
     "Nahil Bouazzaoui",
     "Zayn Sekkat"
-   ]
+   ],
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "Minions & Monsters",
@@ -1123,25 +1163,25 @@
    "cc_id": "6367",
    "cc_url": "https://www.cinema-city.co.il/movie/6367",
    "poster": "https://cdn.presglobal.pro/nlc/feature/500c0b23-b405-4f9f-8429-d87499eed520",
-   "genre": "אנימציה,KIDSHOW",
+   "genre": "אנימציה",
    "duration": 90,
-   "language": "he",
+   "language": null,
+   "kids": true,
    "date_started": "2026-07-01",
    "versions": [
     "מדובב"
    ],
    "has_original": false,
    "next_show": "2026-10-16 12:10",
-   "screenings": 18,
+   "screenings": 11,
    "cinemas": [
-    "אשדוד",
     "גלילות",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
    ],
    "halls": {},
+   "foreign": false,
    "imdb_id": "tt32890033",
    "imdb_url": "https://www.imdb.com/title/tt32890033/",
    "imdb_title": "Minions & Monsters",
@@ -1158,7 +1198,10 @@
     "Allison Janney"
    ],
    "rt": 89,
-   "rt_url": "https://www.rottentomatoes.com/m/minions_and_monsters"
+   "rt_url": "https://www.rottentomatoes.com/m/minions_and_monsters",
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": true
   },
   {
    "title": "Runner",
@@ -1169,17 +1212,17 @@
    "genre": "קומדיית אקשן",
    "duration": 93,
    "language": "en",
+   "kids": false,
    "date_started": "2026-09-17",
    "versions": [],
    "has_original": true,
    "next_show": "2026-10-16 20:00",
-   "screenings": 9,
+   "screenings": 5,
    "cinemas": [
-    "אשדוד",
-    "גלילות",
-    "ירושלים"
+    "גלילות"
    ],
    "halls": {},
+   "foreign": false,
    "imdb_id": "tt31349844",
    "imdb_url": "https://www.imdb.com/title/tt31349844/",
    "imdb_title": "Runner",
@@ -1195,7 +1238,13 @@
     "Rodrigo Santoro"
    ],
    "rt": 78,
-   "rt_url": "https://www.rottentomatoes.com/m/runner_2026"
+   "rt_url": "https://www.rottentomatoes.com/m/runner_2026",
+   "top_people": [
+    "Alan Ritchson",
+    "Owen Wilson"
+   ],
+   "prev_screenings": null,
+   "leaving": true
   },
   {
    "title": "The Magic Faraway Tree",
@@ -1203,9 +1252,10 @@
    "cc_id": "6486",
    "cc_url": "https://www.cinema-city.co.il/movie/6486",
    "poster": "https://cdn.presglobal.pro/nlc-prod/feature/1791c38b-5e9e-41b0-a663-9d8651fa33fc",
-   "genre": "הרפתקה,KIDSHOW",
+   "genre": "הרפתקה",
    "duration": 110,
-   "language": "he",
+   "language": null,
+   "kids": true,
    "date_started": "2026-07-30",
    "versions": [
     "מדובב"
@@ -1218,6 +1268,7 @@
     "ראשל\"צ"
    ],
    "halls": {},
+   "foreign": false,
    "imdb_id": "tt7734244",
    "imdb_url": "https://www.imdb.com/title/tt7734244/",
    "imdb_title": "The Magic Faraway Tree",
@@ -1233,7 +1284,12 @@
     "Nonso Anozie"
    ],
    "rt": 80,
-   "rt_url": "https://www.rottentomatoes.com/m/the_magic_faraway_tree"
+   "rt_url": "https://www.rottentomatoes.com/m/the_magic_faraway_tree",
+   "top_people": [
+    "Andrew Garfield"
+   ],
+   "prev_screenings": null,
+   "leaving": true
   },
   {
    "title": "STREET FIGHTER",
@@ -1244,22 +1300,20 @@
    "genre": "אקשן",
    "duration": 119,
    "language": "en",
+   "kids": false,
    "date_started": "2026-10-15",
    "versions": [],
    "has_original": true,
    "next_show": "2026-10-16 10:30",
-   "screenings": 170,
+   "screenings": 87,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
    ],
    "halls": {},
+   "foreign": false,
    "imdb_id": "tt27419420",
    "imdb_url": "https://www.imdb.com/title/tt27419420/",
    "imdb_title": "Street Fighter",
@@ -1274,8 +1328,13 @@
     "Andrew Koji",
     "Callina Liang"
    ],
-   "rt": 47,
-   "rt_url": "https://www.rottentomatoes.com/m/street_fighter_2026"
+   "rt": 46,
+   "rt_url": "https://www.rottentomatoes.com/m/street_fighter_2026",
+   "top_people": [
+    "Noah Centineo"
+   ],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "MASHA & THE BEAR – WONDER PARK",
@@ -1283,9 +1342,10 @@
    "cc_id": "6357",
    "cc_url": "https://www.cinema-city.co.il/movie/6357",
    "poster": "https://cdn.presglobal.pro/nlc-prod/feature/4bbab8fc-2b2a-4dd4-b718-bff5e8b60ae8",
-   "genre": "אנימציה,KIDSHOW",
+   "genre": "אנימציה",
    "duration": 73,
-   "language": "he",
+   "language": null,
+   "kids": true,
    "date_started": "2026-07-16",
    "versions": [
     "מדובב"
@@ -1297,6 +1357,7 @@
     "ראשל\"צ"
    ],
    "halls": {},
+   "foreign": false,
    "imdb_id": "tt30060761",
    "imdb_url": "https://www.imdb.com/title/tt30060761/",
    "imdb_title": "Masha and the Bear: Wonder Park",
@@ -1311,7 +1372,10 @@
     "Boris Kutnevich",
     "Matvey Berkovskiy",
     "Sofia Calasso"
-   ]
+   ],
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": true
   },
   {
    "title": "Paw Patrol: The Dino Movie",
@@ -1319,27 +1383,25 @@
    "cc_id": "6459",
    "cc_url": "https://www.cinema-city.co.il/movie/6459",
    "poster": "https://cdn.presglobal.pro/nlc-prod/feature/a735c539-2c61-4024-b29f-9cdc013df7ee",
-   "genre": "הרפתקה,KIDSHOW",
+   "genre": "הרפתקה",
    "duration": 88,
-   "language": "he",
+   "language": null,
+   "kids": true,
    "date_started": "2026-08-06",
    "versions": [
     "מדובב"
    ],
    "has_original": false,
    "next_show": "2026-10-16 10:00",
-   "screenings": 20,
+   "screenings": 7,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
    ],
    "halls": {},
+   "foreign": false,
    "imdb_id": "tt29356163",
    "imdb_url": "https://www.imdb.com/title/tt29356163/",
    "imdb_title": "PAW Patrol: The Dino Movie",
@@ -1355,7 +1417,10 @@
     "Terry Crews"
    ],
    "rt": 83,
-   "rt_url": "https://www.rottentomatoes.com/m/paw_patrol_the_dino_movie"
+   "rt_url": "https://www.rottentomatoes.com/m/paw_patrol_the_dino_movie",
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": true
   },
   {
    "title": "The Wizard of the Kremlin",
@@ -1363,18 +1428,17 @@
    "cc_id": "6651",
    "cc_url": "https://www.cinema-city.co.il/movie/6651",
    "poster": "https://cdn.presglobal.pro/nlc-prod/feature/bf01ff39-2848-4e6b-9b71-2cc222ae73b9",
-   "genre": "מותחן,דרמה,פשע",
+   "genre": "מותחן, דרמה, פשע",
    "duration": 143,
    "language": "en",
+   "kids": false,
    "date_started": "2026-10-15",
    "versions": [],
    "has_original": true,
    "next_show": "2026-10-16 11:10",
-   "screenings": 36,
+   "screenings": 25,
    "cinemas": [
-    "באר שבע",
     "גלילות",
-    "חדרה",
     "כפר-סבא",
     "ראשל\"צ"
    ],
@@ -1383,6 +1447,7 @@
      "כפר-סבא"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt32386654",
    "imdb_url": "https://www.imdb.com/title/tt32386654/",
    "imdb_title": "The Wizard of the Kremlin",
@@ -1398,7 +1463,10 @@
     "Tom Sturridge"
    ],
    "rt": 44,
-   "rt_url": "https://www.rottentomatoes.com/m/the_wizard_of_the_kremlin"
+   "rt_url": "https://www.rottentomatoes.com/m/the_wizard_of_the_kremlin",
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "Verity",
@@ -1409,17 +1477,14 @@
    "genre": "מותחן",
    "duration": 116,
    "language": "en",
+   "kids": false,
    "date_started": "2026-10-01",
    "versions": [],
    "has_original": true,
    "next_show": "2026-10-16 10:00",
-   "screenings": 139,
+   "screenings": 76,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
@@ -1436,11 +1501,10 @@
      "נתניה"
     ],
     "VIP": [
-     "באר שבע",
-     "ירושלים",
      "ראשל\"צ"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt32261958",
    "imdb_url": "https://www.imdb.com/title/tt32261958/",
    "imdb_title": "Verity",
@@ -1456,7 +1520,14 @@
     "Josh Hartnett"
    ],
    "rt": 31,
-   "rt_url": "https://www.rottentomatoes.com/m/verity"
+   "rt_url": "https://www.rottentomatoes.com/m/verity",
+   "top_people": [
+    "Michael Showalter",
+    "Anne Hathaway",
+    "Dakota Johnson"
+   ],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "Parallel Tales",
@@ -1467,6 +1538,7 @@
    "genre": "דרמה",
    "duration": 139,
    "language": "fr",
+   "kids": false,
    "date_started": "2026-10-08",
    "versions": [],
    "has_original": true,
@@ -1477,6 +1549,7 @@
     "ראשל\"צ"
    ],
    "halls": {},
+   "foreign": true,
    "imdb_id": "tt36646880",
    "imdb_url": "https://www.imdb.com/title/tt36646880/",
    "imdb_title": "Parallel Tales",
@@ -1492,7 +1565,13 @@
     "Vincent Cassel"
    ],
    "rt": 19,
-   "rt_url": "https://www.rottentomatoes.com/m/parallel_tales"
+   "rt_url": "https://www.rottentomatoes.com/m/parallel_tales",
+   "top_people": [
+    "Asghar Farhadi",
+    "Isabelle Huppert"
+   ],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "STICH HEAD",
@@ -1500,21 +1579,22 @@
    "cc_id": "6477",
    "cc_url": "https://www.cinema-city.co.il/movie/6477",
    "poster": "https://cdn.presglobal.pro/nlc-prod/feature/d249ef69-f6ed-401a-8b2d-97f1a8fa3a14",
-   "genre": "ילדים,אנימציה,KIDSHOW",
+   "genre": "ילדים, אנימציה",
    "duration": 92,
-   "language": "he",
+   "language": null,
+   "kids": true,
    "date_started": "2026-08-06",
    "versions": [
     "מדובב"
    ],
    "has_original": false,
    "next_show": "2026-10-17 10:00",
-   "screenings": 3,
+   "screenings": 2,
    "cinemas": [
-    "באר שבע",
     "גלילות"
    ],
    "halls": {},
+   "foreign": false,
    "imdb_id": "tt26720001",
    "imdb_url": "https://www.imdb.com/title/tt26720001/",
    "imdb_title": "Stitch Head",
@@ -1528,7 +1608,10 @@
     "Asa Butterfield",
     "Joel Fry",
     "Tia Bannon"
-   ]
+   ],
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": true
   },
   {
    "title": "MUTINY",
@@ -1539,16 +1622,14 @@
    "genre": "אקשן",
    "duration": 95,
    "language": "en",
+   "kids": false,
    "date_started": "2026-08-20",
    "versions": [],
    "has_original": true,
-   "next_show": "2026-10-16 19:45",
-   "screenings": 25,
+   "next_show": "2026-10-16 21:00",
+   "screenings": 13,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "ירושלים",
     "נתניה",
     "ראשל\"צ"
    ],
@@ -1557,6 +1638,7 @@
      "גלילות"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt32338669",
    "imdb_url": "https://www.imdb.com/title/tt32338669/",
    "imdb_title": "Mutiny",
@@ -1572,7 +1654,12 @@
     "Ramon Tikaram"
    ],
    "rt": 50,
-   "rt_url": "https://www.rottentomatoes.com/m/mutiny_2026"
+   "rt_url": "https://www.rottentomatoes.com/m/mutiny_2026",
+   "top_people": [
+    "Jason Statham"
+   ],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "The Cut",
@@ -1583,28 +1670,25 @@
    "genre": "דרמה",
    "duration": 99,
    "language": "en",
+   "kids": false,
    "date_started": "2026-10-08",
    "versions": [],
    "has_original": true,
-   "next_show": "2026-10-16 10:50",
-   "screenings": 80,
+   "next_show": "2026-10-16 11:10",
+   "screenings": 49,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
    ],
    "halls": {
     "Prime": [
-     "חדרה",
      "כפר-סבא",
      "נתניה"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt26697087",
    "imdb_url": "https://www.imdb.com/title/tt26697087/",
    "imdb_title": "The Cut",
@@ -1620,7 +1704,10 @@
     "Orlando Bloom"
    ],
    "rt": 67,
-   "rt_url": "https://www.rottentomatoes.com/m/the_cut_2024"
+   "rt_url": "https://www.rottentomatoes.com/m/the_cut_2024",
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "Other Mommy",
@@ -1631,17 +1718,14 @@
    "genre": "אימה",
    "duration": 93,
    "language": "en",
+   "kids": false,
    "date_started": "2026-10-08",
    "versions": [],
    "has_original": true,
-   "next_show": "2026-10-16 13:45",
-   "screenings": 140,
+   "next_show": "2026-10-16 16:00",
+   "screenings": 74,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
@@ -1651,13 +1735,10 @@
      "גלילות"
     ],
     "Prime": [
-     "חדרה",
      "נתניה"
-    ],
-    "VIP": [
-     "באר שבע"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt36586020",
    "imdb_url": "https://www.imdb.com/title/tt36586020/",
    "imdb_title": "Other Mommy",
@@ -1673,7 +1754,12 @@
     "Arabella Olivia Clark"
    ],
    "rt": 16,
-   "rt_url": "https://www.rottentomatoes.com/m/other_mommy"
+   "rt_url": "https://www.rottentomatoes.com/m/other_mommy",
+   "top_people": [
+    "Jessica Chastain"
+   ],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "Fall 2: Deadpoint",
@@ -1684,27 +1770,25 @@
    "genre": "מותחן",
    "duration": 98,
    "language": "en",
+   "kids": false,
    "date_started": "2026-09-17",
    "versions": [],
    "has_original": true,
-   "next_show": "2026-10-16 13:40",
-   "screenings": 41,
+   "next_show": "2026-10-16 20:00",
+   "screenings": 29,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
    ],
    "halls": {
     "Prime": [
-     "חדרה",
      "כפר-סבא",
      "נתניה"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt31192372",
    "imdb_url": "https://www.imdb.com/title/tt31192372/",
    "imdb_title": "Fall 2: Deadpoint",
@@ -1721,7 +1805,10 @@
     "Tom Brittney"
    ],
    "rt": 53,
-   "rt_url": "https://www.rottentomatoes.com/m/fall_2_deadpoint"
+   "rt_url": "https://www.rottentomatoes.com/m/fall_2_deadpoint",
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "CHARLIE THE WONDERDOG",
@@ -1729,27 +1816,25 @@
    "cc_id": "6519",
    "cc_url": "https://www.cinema-city.co.il/movie/6519",
    "poster": "https://cdn.presglobal.pro/nlc-prod/feature/355da70c-6c53-4d68-a0a7-cd44677f8abd",
-   "genre": "ילדים,אנימציה,הרפתקה,KIDSHOW",
+   "genre": "ילדים, אנימציה, הרפתקה",
    "duration": 92,
-   "language": "he",
+   "language": null,
+   "kids": true,
    "date_started": "2026-09-24",
    "versions": [
     "מדובב"
    ],
    "has_original": false,
    "next_show": "2026-10-16 11:00",
-   "screenings": 107,
+   "screenings": 62,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
    ],
    "halls": {},
+   "foreign": false,
    "imdb_id": "tt29612071",
    "imdb_url": "https://www.imdb.com/title/tt29612071/",
    "imdb_title": "Charlie the Wonderdog",
@@ -1765,7 +1850,12 @@
     "Sebastian Billingsley-Rodriguez"
    ],
    "rt": 38,
-   "rt_url": "https://www.rottentomatoes.com/m/charlie_the_wonderdog"
+   "rt_url": "https://www.rottentomatoes.com/m/charlie_the_wonderdog",
+   "top_people": [
+    "Owen Wilson"
+   ],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "SPA WEEKEND",
@@ -1776,13 +1866,13 @@
    "genre": "קומדיה",
    "duration": 97,
    "language": "en",
+   "kids": false,
    "date_started": "2026-08-20",
    "versions": [],
    "has_original": true,
    "next_show": "2026-10-16 11:10",
-   "screenings": 21,
+   "screenings": 17,
    "cinemas": [
-    "באר שבע",
     "גלילות",
     "ראשל\"צ"
    ],
@@ -1791,6 +1881,7 @@
      "גלילות"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt33305867",
    "imdb_url": "https://www.imdb.com/title/tt33305867/",
    "imdb_title": "Spa Weekend",
@@ -1807,45 +1898,10 @@
     "Michelle Buteau"
    ],
    "rt": 29,
-   "rt_url": "https://www.rottentomatoes.com/m/spa_weekend"
-  },
-  {
-   "title": "THE POUT POUT FISH",
-   "title_he": "דג ושמו באסה",
-   "cc_id": "6521",
-   "cc_url": "https://www.cinema-city.co.il/movie/6521",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/e7725afe-779e-4640-8d9c-6ed080e77a80",
-   "genre": "קומדיה,ילדים,אנימציה,KIDSHOW",
-   "duration": 93,
-   "language": "he",
-   "date_started": "2026-08-20",
-   "versions": [
-    "מדובב"
-   ],
-   "has_original": false,
-   "next_show": "2026-10-16 13:30",
-   "screenings": 3,
-   "cinemas": [
-    "אשדוד"
-   ],
-   "halls": {},
-   "imdb_id": "tt12824390",
-   "imdb_url": "https://www.imdb.com/title/tt12824390/",
-   "imdb_title": "The Pout-Pout Fish",
-   "year": 2026,
-   "imdb": 5,
-   "imdb_votes": 1229,
-   "directors": [
-    "Ricard Cussó",
-    "Rio Harrington"
-   ],
-   "actors": [
-    "Grant Denyer",
-    "Nadine Bates",
-    "Nick Offerman"
-   ],
-   "rt": 61,
-   "rt_url": "https://www.rottentomatoes.com/m/the_pout_pout_fish"
+   "rt_url": "https://www.rottentomatoes.com/m/spa_weekend",
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "The Land of Sometimes",
@@ -1853,22 +1909,22 @@
    "cc_id": "6578",
    "cc_url": "https://www.cinema-city.co.il/movie/6578",
    "poster": "https://cdn.presglobal.pro/nlc-prod/feature/00f7ec24-99ca-4022-84a9-5f981e372f7e",
-   "genre": "ילדים,אנימציה,הרפתקה,KIDSHOW",
+   "genre": "ילדים, אנימציה, הרפתקה",
    "duration": 93,
-   "language": "he",
+   "language": null,
+   "kids": true,
    "date_started": "2026-09-24",
    "versions": [
     "מדובב"
    ],
    "has_original": false,
-   "next_show": "2026-10-16 13:15",
-   "screenings": 6,
+   "next_show": "2026-10-17 12:30",
+   "screenings": 1,
    "cinemas": [
-    "אשדוד",
-    "חדרה",
     "ראשל\"צ"
    ],
    "halls": {},
+   "foreign": false,
    "imdb_id": "tt3517106",
    "imdb_url": "https://www.imdb.com/title/tt3517106/",
    "imdb_title": "The Land of Sometimes",
@@ -1884,7 +1940,13 @@
     "Asa Butterfield"
    ],
    "rt": null,
-   "rt_url": "https://www.rottentomatoes.com/m/the_land_of_sometimes"
+   "rt_url": "https://www.rottentomatoes.com/m/the_land_of_sometimes",
+   "top_people": [
+    "Ewan McGregor",
+    "Helena Bonham Carter"
+   ],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "Her Private Hell",
@@ -1895,17 +1957,18 @@
    "genre": "אימה",
    "duration": 109,
    "language": "en",
+   "kids": false,
    "date_started": "2026-10-01",
    "versions": [],
    "has_original": true,
    "next_show": "2026-10-16 23:15",
-   "screenings": 11,
+   "screenings": 10,
    "cinemas": [
-    "אשדוד",
     "גלילות",
     "ראשל\"צ"
    ],
    "halls": {},
+   "foreign": false,
    "imdb_id": "tt36629665",
    "imdb_url": "https://www.imdb.com/title/tt36629665/",
    "imdb_title": "Her Private Hell",
@@ -1921,7 +1984,12 @@
     "Havana Rose Liu"
    ],
    "rt": 40,
-   "rt_url": "https://www.rottentomatoes.com/m/her_private_hell"
+   "rt_url": "https://www.rottentomatoes.com/m/her_private_hell",
+   "top_people": [
+    "Nicolas Winding Refn"
+   ],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "Ice Cream Man",
@@ -1932,6 +2000,7 @@
    "genre": "אימה",
    "duration": 86,
    "language": "en",
+   "kids": false,
    "date_started": "2026-08-06",
    "versions": [],
    "has_original": true,
@@ -1942,6 +2011,7 @@
     "ראשל\"צ"
    ],
    "halls": {},
+   "foreign": false,
    "imdb_id": "tt36893729",
    "imdb_url": "https://www.imdb.com/title/tt36893729/",
    "imdb_title": "Ice Cream Man",
@@ -1957,7 +2027,12 @@
     "Charlie Zeltzer"
    ],
    "rt": 25,
-   "rt_url": "https://www.rottentomatoes.com/m/ice_cream_man_2026"
+   "rt_url": "https://www.rottentomatoes.com/m/ice_cream_man_2026",
+   "top_people": [
+    "Eli Roth"
+   ],
+   "prev_screenings": null,
+   "leaving": true
   },
   {
    "title": "The Bay",
@@ -1968,17 +2043,14 @@
    "genre": "אימה",
    "duration": 86,
    "language": "en",
+   "kids": false,
    "date_started": "2026-10-08",
    "versions": [],
    "has_original": true,
-   "next_show": "2026-10-16 14:45",
-   "screenings": 73,
+   "next_show": "2026-10-16 18:20",
+   "screenings": 39,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
@@ -1988,6 +2060,7 @@
      "כפר-סבא"
     ]
    },
+   "foreign": false,
    "imdb_id": "tt30217600",
    "imdb_url": "https://www.imdb.com/title/tt30217600/",
    "imdb_title": "The Bay",
@@ -2003,77 +2076,10 @@
     "Alexander Wraith"
    ],
    "rt": null,
-   "rt_url": "https://www.rottentomatoes.com/m/the_bay_2026"
-  },
-  {
-   "title": "האהבות שלנו",
-   "title_he": "האהבות שלנו",
-   "cc_id": "6553",
-   "cc_url": "https://www.cinema-city.co.il/movie/6553",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/14ae8e88-8825-40d7-8156-5ac4f02c5f91",
-   "genre": "דרמה",
-   "duration": 117,
-   "language": "he",
-   "date_started": "2026-10-15",
-   "versions": [],
-   "has_original": true,
-   "next_show": "2026-10-16 10:00",
-   "screenings": 334,
-   "cinemas": [
-    "אשדוד",
-    "באר שבע",
-    "גלילות",
-    "חדרה",
-    "ירושלים",
-    "כפר-סבא",
-    "נתניה",
-    "ראשל\"צ"
-   ],
-   "halls": {
-    "Lounge": [
-     "גלילות"
-    ],
-    "ONYX": [
-     "גלילות"
-    ],
-    "Prime": [
-     "כפר-סבא"
-    ]
-   }
-  },
-  {
-   "title": "גבעה 338",
-   "title_he": "גבעה 338",
-   "cc_id": "6525",
-   "cc_url": "https://www.cinema-city.co.il/movie/6525",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/fd0b7d80-84ee-4ca3-86a4-fdd9b7d56aa2",
-   "genre": "קומדיה",
-   "duration": 106,
-   "language": "he",
-   "date_started": "2026-08-06",
-   "versions": [],
-   "has_original": true,
-   "next_show": "2026-10-16 14:20",
-   "screenings": 45,
-   "cinemas": [
-    "אשדוד",
-    "באר שבע",
-    "גלילות",
-    "ירושלים",
-    "כפר-סבא",
-    "ראשל\"צ"
-   ],
-   "halls": {
-    "Lounge": [
-     "גלילות"
-    ],
-    "Prime": [
-     "כפר-סבא"
-    ],
-    "VIP": [
-     "ראשל\"צ"
-    ]
-   }
+   "rt_url": "https://www.rottentomatoes.com/m/the_bay_2026",
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "Before We Leave Tuscany",
@@ -2084,22 +2090,20 @@
    "genre": "רומנטי",
    "duration": 91,
    "language": "en",
+   "kids": false,
    "date_started": "2026-09-17",
    "versions": [],
    "has_original": true,
-   "next_show": "2026-10-16 10:10",
-   "screenings": 59,
+   "next_show": "2026-10-16 10:30",
+   "screenings": 42,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
    ],
    "halls": {},
+   "foreign": false,
    "imdb_id": "tt34547698",
    "imdb_url": "https://www.imdb.com/title/tt34547698/",
    "imdb_title": "Before We Leave Tuscany",
@@ -2116,7 +2120,83 @@
     "Paolo Spezzaferri"
    ],
    "rt": null,
-   "rt_url": "https://www.rottentomatoes.com/m/900121672"
+   "rt_url": "https://www.rottentomatoes.com/m/900121672",
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": false
+  },
+  {
+   "title": "האהבות שלנו",
+   "title_he": "האהבות שלנו",
+   "cc_id": "6553",
+   "cc_url": "https://www.cinema-city.co.il/movie/6553",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/14ae8e88-8825-40d7-8156-5ac4f02c5f91",
+   "genre": "דרמה",
+   "duration": 117,
+   "language": "he",
+   "kids": false,
+   "date_started": "2026-10-15",
+   "versions": [],
+   "has_original": true,
+   "next_show": "2026-10-16 10:00",
+   "screenings": 184,
+   "cinemas": [
+    "גלילות",
+    "כפר-סבא",
+    "נתניה",
+    "ראשל\"צ"
+   ],
+   "halls": {
+    "Lounge": [
+     "גלילות"
+    ],
+    "ONYX": [
+     "גלילות"
+    ],
+    "Prime": [
+     "כפר-סבא"
+    ]
+   },
+   "foreign": false,
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": false
+  },
+  {
+   "title": "גבעה 338",
+   "title_he": "גבעה 338",
+   "cc_id": "6525",
+   "cc_url": "https://www.cinema-city.co.il/movie/6525",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/fd0b7d80-84ee-4ca3-86a4-fdd9b7d56aa2",
+   "genre": "קומדיה",
+   "duration": 106,
+   "language": "he",
+   "kids": false,
+   "date_started": "2026-08-06",
+   "versions": [],
+   "has_original": true,
+   "next_show": "2026-10-16 18:00",
+   "screenings": 23,
+   "cinemas": [
+    "גלילות",
+    "כפר-סבא",
+    "ראשל\"צ"
+   ],
+   "halls": {
+    "Lounge": [
+     "גלילות"
+    ],
+    "Prime": [
+     "כפר-סבא"
+    ],
+    "VIP": [
+     "ראשל\"צ"
+    ]
+   },
+   "foreign": false,
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "תמונות יפואיות 2",
@@ -2124,31 +2204,31 @@
    "cc_id": "6450",
    "cc_url": "https://www.cinema-city.co.il/movie/6450",
    "poster": "https://cdn.presglobal.pro/nlc-prod/feature/80f765fb-7d88-4e82-bf3a-d2d128297f51",
-   "genre": "ישראלי,קומדיה",
+   "genre": "ישראלי, קומדיה",
    "duration": 87,
    "language": "he",
+   "kids": false,
    "date_started": "2026-10-22",
    "versions": [],
    "has_original": true,
    "next_show": "2026-10-20 10:00",
-   "screenings": 44,
+   "screenings": 24,
    "cinemas": [
-    "אשדוד",
-    "באר שבע",
     "גלילות",
-    "חדרה",
-    "ירושלים",
     "כפר-סבא",
     "נתניה",
     "ראשל\"צ"
    ],
    "halls": {
     "Prime": [
-     "חדרה",
      "כפר-סבא",
      "נתניה"
     ]
-   }
+   },
+   "foreign": false,
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": false
   },
   {
    "title": "סולטיז הסרט",
@@ -2159,21 +2239,25 @@
    "genre": "הרפתקה",
    "duration": 100,
    "language": "he",
+   "kids": false,
    "date_started": "2026-07-15",
    "versions": [],
    "has_original": true,
    "next_show": "2026-10-17 13:10",
-   "screenings": 7,
+   "screenings": 3,
    "cinemas": [
     "גלילות",
-    "חדרה",
     "ראשל\"צ"
    ],
    "halls": {
     "ONYX": [
      "גלילות"
     ]
-   }
+   },
+   "foreign": false,
+   "top_people": [],
+   "prev_screenings": null,
+   "leaving": true
   }
  ]
 }
