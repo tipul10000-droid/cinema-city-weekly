@@ -275,7 +275,7 @@ def fmt_line(m):
     if m.get("actors"):
         people.append(", ".join(m["actors"][:2]))
     he = f" ({m['title_he']})" if m.get("title_he") and norm(m["title_he"]) != norm(m["title"]) else ""
-    new = "🆕 " if age_days(m) is not None and age_days(m) < 8 else ""
+    new = "🆕 " if m.get("premiere_week") else ""
     return f"{new}{imdb} {rt} {m['title']}{he}" + (" · " + " · ".join(people) if people else "")
 
 
@@ -290,7 +290,9 @@ def notify(movies):
     if not topic:
         print("NTFY_TOPIC not set, skipping push")
         return
-    lines, size = [], 0
+    premieres = [m["title"] for m in movies if m.get("premiere_week")]
+    lines = [f"🆕 בכורות השבוע: {', '.join(premieres)}", ""] if premieres else []
+    size = len("\n".join(lines).encode())
     for i, m in enumerate(movies):
         line = fmt_line(m)
         if size + len(line.encode()) > 3700:
@@ -304,6 +306,15 @@ def notify(movies):
                  "Click": PAGE_URL, "Tags": "movie_camera", "Markdown": "no"})
     urllib.request.urlopen(req, timeout=30).read()
     print("push sent")
+
+
+def is_premiere_week(m, now, not_in_last_scan):
+    """Premiered in Israel during the last 7 days (premieres are usually Thursday), or opens within this
+    scan's week; a movie missing from last week's scan counts too when its premiere date is unknown."""
+    if m.get("date_started"):
+        days = (now.astimezone(IL).date() - datetime.fromisoformat(m["date_started"][:10]).date()).days
+        return -6 <= days <= 7
+    return not_in_last_scan
 
 
 def is_leaving(m, now):
@@ -359,6 +370,7 @@ def main():
         # last week's count is comparable only if it covered the same cinemas (older scans were nationwide)
         m["prev_screenings"] = old.get("screenings") if set(old.get("cinemas") or ["?"]) <= CENTRAL else None
         m["leaving"] = is_leaving(m, now)
+        m["premiere_week"] = is_premiere_week(m, now, bool(prev_movies) and not old)
         if not m.get("poster") and hit and hit.get("i"):
             m["poster"] = hit["i"]["imageUrl"].replace("._V1_.", "._V1_UX300_.")
         print(" ", fmt_line(m))

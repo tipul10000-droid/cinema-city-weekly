@@ -98,7 +98,8 @@ Deno.serve(async (req) => {
     const { error: dup } = await sb.from("cinema_push_log").insert({ generated_at: data.generated_at, sent: 0 });
     if (dup) return json({ ok: true, result: "already_sent", generated_at: data.generated_at });
     const movies = data.movies || [];
-    const top = movies.slice(0, 12).map(line).join("\n");
+    const premieres = movies.filter((m: any) => m.premiere_week).map((m: any) => m.title);
+    const top = (premieres.length ? `🆕 בכורות השבוע: ${premieres.join(", ")}\n\n` : "") + movies.slice(0, 12).map(line).join("\n");
     const { data: subs } = await sb.from("cinema_push").select("*");
     const sent = await push(sb, subs || [], {
       title: `🎬 סינמה סיטי השבוע: ${movies.length} סרטים`,

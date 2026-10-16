@@ -82,6 +82,7 @@
     <button class="chip" data-f="hideSeen">הסתר שראיתי</button>
     <button class="chip" data-f="special">אולמות מיוחדים</button>
     <button class="chip" data-f="leaving">⏳ לפני ירידה</button>
+    <button class="chip" data-f="premieres">🆕 בכורות השבוע</button>
   </div>
 </div>
 <main><div class="count" id="count"></div><div id="list"></div></main>
@@ -89,13 +90,21 @@
 let data = [];
 const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
 const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
-const st = Object.assign({ sort: "imdb", aud: "all", noDub: false, noForeign: false, stars: false, fav: false, hideSeen: false, special: false, leaving: false }, load("cc-filters", {}));
+const st = Object.assign({ sort: "imdb", aud: "all", noDub: false, noForeign: false, stars: false, fav: false, hideSeen: false, special: false, leaving: false, premieres: false }, load("cc-filters", {}));
 let prefs = load("cc-prefs", { fav: [], seen: [] });  // English titles; synced with the server so phone and desktop match
 const LANG = { fr: "צרפתית", es: "ספרדית", it: "איטלקית", de: "גרמנית", ja: "יפנית", ko: "קוריאנית", hi: "הינדית", ru: "רוסית", zh: "סינית", ar: "ערבית", tr: "טורקית", pt: "פורטוגזית", sv: "שוודית", da: "דנית", pl: "פולנית" };
 const isKids = m => m.kids ?? /KID/.test(m.genre || "");
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const DAY = 864e5;
 const fmtDate = d => `${d.getDate()}.${d.getMonth() + 1}`;
+// premiered in the 7 days before the scan (usually Thursday), or opens during the scanned week
+let scanDate = new Date();
+function isPremiere(m) {
+  if (m.premiere_week != null) return m.premiere_week;
+  if (!m.date_started) return false;
+  const days = Math.floor((scanDate - new Date(m.date_started + "T00:00:00")) / DAY);
+  return days >= -6 && days <= 7;
+}
 function isLeaving(m, weeks) {
   if (m.leaving != null) return m.leaving;
   if (weeks == null) { if (!m.date_started) return false; weeks = Math.floor((Date.now() - new Date(m.date_started + "T00:00:00")) / DAY / 7) + 1; }
@@ -146,6 +155,7 @@ function render() {
     if (st.hideSeen && prefs.seen.includes(m.title)) return false;
     if (st.special && !Object.keys(m.halls || {}).length) return false;
     if (st.leaving && !isLeaving(m)) return false;
+    if (st.premieres && !isPremiere(m)) return false;
     if (!q) return true;
     return [m.title, m.title_he, ...(m.actors||[]), ...(m.directors||[]), m.genre].join(" ").toLowerCase().includes(q);
   }).sort(sorters[st.sort]);
@@ -255,6 +265,9 @@ const b64ToBytes = s => Uint8Array.from(atob((s + "=".repeat((4 - s.length % 4) 
 
 fetch("data.json?" + Date.now()).then(r => r.json()).then(d => {
   data = d.movies;
+  scanDate = new Date(d.generated_at.slice(0, 10) + "T12:00:00");
+  const np = data.filter(isPremiere).length;
+  if (np) document.querySelector('[data-f=premieres]').textContent = `🆕 בכורות השבוע (${np})`;
   const dt = new Date(d.generated_at);
   document.getElementById("meta").textContent = `${data.length} סרטים מוקרנים · עודכן ${dt.toLocaleString("he-IL", {weekday:"long", day:"numeric", month:"numeric", hour:"2-digit", minute:"2-digit"})}`;
   render();
