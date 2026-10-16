@@ -82,7 +82,12 @@ def fetch_cinema_city():
     except Exception as e:
         print("SyncFeatures unavailable, using last week's posters/dates:", e)
         feats = {}
-    return [json.loads(p["payloadJson"]) if isinstance(p.get("payloadJson"), str) else p for p in pres], feats
+    out = []
+    for row in pres:  # hall type (venueTypeName) lives on the row, the rest in payloadJson
+        p = json.loads(row["payloadJson"]) if isinstance(row.get("payloadJson"), str) else dict(row.get("payloadJson") or {})
+        p.setdefault("venueTypeName", row.get("venueTypeName"))
+        out.append(p)
+    return out, feats
 
 
 def short_loc(name):
