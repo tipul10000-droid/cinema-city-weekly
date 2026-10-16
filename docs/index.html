@@ -20,6 +20,19 @@
   h1 { margin:0 0 4px; font-size:22px; }
   .meta { color:var(--muted); font-size:13px; }
   .bar { display:flex; gap:8px; flex-wrap:wrap; align-items:center; padding:10px 16px; max-width:900px; margin:auto; position:sticky; top:0; background:var(--bg); z-index:2; border-bottom:1px solid var(--line); }
+  .bar { flex-direction:column; align-items:stretch; gap:6px; }
+  .row { display:flex; gap:6px; align-items:center; overflow-x:auto; scrollbar-width:none; }
+  .row::-webkit-scrollbar { display:none; }
+  .row .lbl2 { color:var(--muted); font-size:12px; flex:none; min-width:34px; }
+  .row .chip { flex:none; }
+  .seg { display:inline-flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; flex:none; }
+  .seg .chip { border:0; border-radius:0; }
+  .mark { display:flex; gap:4px; }
+  .mark button { background:none; border:1px solid var(--line); border-radius:8px; color:var(--muted); font-size:16px; width:34px; height:30px; cursor:pointer; padding:0; }
+  .mark button.on { color:var(--imdb); border-color:var(--imdb); }
+  .mark button.seen.on { color:var(--good); border-color:var(--good); }
+  .m.watched { opacity:.55; }
+  .count { color:var(--muted); font-size:12px; margin:2px 0 8px; }
   .bar input { flex:1 1 160px; min-width:0; padding:8px 10px; border-radius:8px; border:1px solid var(--line); background:var(--card); color:var(--text); font:inherit; }
   .chip { padding:7px 12px; border-radius:999px; border:1px solid var(--line); background:var(--card); color:var(--text); cursor:pointer; font:inherit; font-size:13px; }
   .chip.on { background:var(--text); color:var(--bg); }
@@ -54,18 +67,40 @@
 </header>
 <div class="bar">
   <input id="q" type="search" placeholder="חיפוש סרט, שחקן, במאי…">
-  <button class="chip on" data-sort="imdb">IMDb</button>
-  <button class="chip" data-sort="rt">Rotten Tomatoes</button>
-  <button class="chip" data-sort="title">שם</button>
-  <button class="chip" id="nokids">בלי מדובבים</button>
-  <button class="chip" id="special">אולמות מיוחדים</button>
+  <div class="row"><span class="lbl2">מיון</span>
+    <button class="chip" data-sort="imdb">IMDb</button>
+    <button class="chip" data-sort="rt">🍅 Rotten Tomatoes</button>
+    <button class="chip" data-sort="new">חדשים קודם</button>
+    <button class="chip" data-sort="title">שם</button>
+  </div>
+  <div class="row"><span class="lbl2">סינון</span>
+    <span class="seg"><button class="chip" data-aud="all">הכל</button><button class="chip" data-aud="adults">מבוגרים</button><button class="chip" data-aud="kids">ילדים</button></span>
+    <button class="chip" data-f="noDub">בלי מדובבים</button>
+    <button class="chip" data-f="noForeign">בלי שפות זרות</button>
+    <button class="chip" data-f="stars">⭐ שמות גדולים</button>
+    <button class="chip" data-f="fav">★ מועדפים</button>
+    <button class="chip" data-f="hideSeen">הסתר שראיתי</button>
+    <button class="chip" data-f="special">אולמות מיוחדים</button>
+    <button class="chip" data-f="leaving">⏳ לפני ירידה</button>
+  </div>
 </div>
-<main id="list"></main>
+<main><div class="count" id="count"></div><div id="list"></div></main>
 <script>
-let data = [], sort = "imdb", hideDub = false, onlySpecial = false;
+let data = [];
+const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
+const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
+const st = Object.assign({ sort: "imdb", aud: "all", noDub: false, noForeign: false, stars: false, fav: false, hideSeen: false, special: false, leaving: false }, load("cc-filters", {}));
+let prefs = load("cc-prefs", { fav: [], seen: [] });  // English titles; synced with the server so phone and desktop match
+const LANG = { fr: "צרפתית", es: "ספרדית", it: "איטלקית", de: "גרמנית", ja: "יפנית", ko: "קוריאנית", hi: "הינדית", ru: "רוסית", zh: "סינית", ar: "ערבית", tr: "טורקית", pt: "פורטוגזית", sv: "שוודית", da: "דנית", pl: "פולנית" };
+const isKids = m => m.kids ?? /KID/.test(m.genre || "");
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const DAY = 864e5;
 const fmtDate = d => `${d.getDate()}.${d.getMonth() + 1}`;
+function isLeaving(m, weeks) {
+  if (m.leaving != null) return m.leaving;
+  if (weeks == null) { if (!m.date_started) return false; weeks = Math.floor((Date.now() - new Date(m.date_started + "T00:00:00")) / DAY / 7) + 1; }
+  return m.screenings != null ? (weeks >= 4 && m.screenings <= 15) || weeks >= 9 : weeks >= 8;
+}
 // how long it has been in Israeli cinemas, from Cinema City's premiere date
 function runTag(m) {
   if (!m.date_started) return "";
@@ -74,8 +109,8 @@ function runTag(m) {
   if (days < 8) return `<span class="tag new">🆕 חדש, עלה ב-${fmtDate(start)}</span>`;
   const weeks = Math.floor(days / 7) + 1;
   // few screenings after a month in cinemas (or two months in, regardless) = probably leaving soon
-  const leaving = m.screenings != null ? (weeks >= 4 && m.screenings <= 15) || weeks >= 9 : weeks >= 8;
-  if (leaving) return `<span class="tag old">⏳ שבוע ${weeks}${m.screenings != null ? `, רק ${m.screenings} הקרנות השבוע` : ""}, כנראה לקראת ירידה</span>`;
+  const leaving = isLeaving(m, weeks);
+  if (leaving) return `<span class="tag old">⏳ שבוע ${weeks}, ${m.screenings} הקרנות השבוע${m.prev_screenings ? ` (היו ${m.prev_screenings})` : ""}, כנראה לקראת ירידה</span>`;
   return `<span class="tag">שבוע ${weeks} בקולנוע</span>`;
 }
 // non-standard halls, with where they are
@@ -97,26 +132,36 @@ const sorters = {
   imdb: (a, b) => (b.imdb ?? -1) - (a.imdb ?? -1) || (b.rt ?? -1) - (a.rt ?? -1),
   rt: (a, b) => (b.rt ?? -1) - (a.rt ?? -1) || (b.imdb ?? -1) - (a.imdb ?? -1),
   title: (a, b) => a.title.localeCompare(b.title),
+  new: (a, b) => (b.date_started || "").localeCompare(a.date_started || "") || (b.imdb ?? -1) - (a.imdb ?? -1),
 };
 function render() {
   const q = document.getElementById("q").value.trim().toLowerCase();
   const rows = data.filter(m => {
-    if (hideDub && m.has_original === false) return false;
-    if (onlySpecial && !Object.keys(m.halls || {}).length) return false;
+    if (st.aud === "kids" && !isKids(m)) return false;
+    if (st.aud === "adults" && isKids(m)) return false;
+    if (st.noDub && m.has_original === false) return false;
+    if (st.noForeign && m.foreign) return false;
+    if (st.stars && !(m.top_people || []).length) return false;
+    if (st.fav && !prefs.fav.includes(m.title)) return false;
+    if (st.hideSeen && prefs.seen.includes(m.title)) return false;
+    if (st.special && !Object.keys(m.halls || {}).length) return false;
+    if (st.leaving && !isLeaving(m)) return false;
     if (!q) return true;
     return [m.title, m.title_he, ...(m.actors||[]), ...(m.directors||[]), m.genre].join(" ").toLowerCase().includes(q);
-  }).sort(sorters[sort]);
+  }).sort(sorters[st.sort]);
+  document.getElementById("count").textContent = rows.length === data.length ? "" : `מוצגים ${rows.length} מתוך ${data.length}`;
   document.getElementById("list").innerHTML = rows.length ? rows.map(m => `
-    <article class="m">
+    <article class="m${prefs.seen.includes(m.title) ? " watched" : ""}">
       <a href="${esc(m.cc_url)}" target="_blank" rel="noopener"><img loading="lazy" src="${esc(m.poster)}" alt=""></a>
       <div>
         <div class="t" dir="ltr" style="text-align:right"><a href="${esc(m.cc_url)}" target="_blank" rel="noopener">${esc(m.title)}</a>${m.year ? ` <span class="he">(${m.year})</span>` : ""}</div>
         ${m.title_he && m.title_he !== m.title ? `<div class="he">${esc(m.title_he)}</div>` : ""}
-        ${m.directors?.length ? `<div class="ppl"><b>במאי:</b> <span dir="ltr">${esc(m.directors.join(", "))}</span></div>` : ""}
-        ${m.actors?.length ? `<div class="ppl"><b>שחקנים:</b> <span dir="ltr">${esc(m.actors.join(", "))}</span></div>` : ""}
+        ${m.directors?.length ? `<div class="ppl"><b>במאי:</b> <span dir="ltr">${people(m, m.directors)}</span></div>` : ""}
+        ${m.actors?.length ? `<div class="ppl"><b>שחקנים:</b> <span dir="ltr">${people(m, m.actors)}</span></div>` : ""}
         <div class="tags">
           ${m.genre ? `<span class="tag">${esc(m.genre)}</span>` : ""}
           ${m.duration ? `<span class="tag">${m.duration} דק׳</span>` : ""}
+          ${m.foreign ? `<span class="tag">🌍 ${esc(LANG[m.language] || m.language)}</span>` : ""}
           ${runTag(m)}
           ${hallTags(m)}
           ${m.has_original !== false ? m.versions.map(v => `<span class="tag">${esc(VERSION_LABEL[v] || v)}</span>`).join("") : `<span class="tag">מדובב בלבד</span>`}
@@ -125,16 +170,49 @@ function render() {
       <div class="scores">
         <a class="sc imdb" href="${esc(m.imdb_url || "#")}" target="_blank" rel="noopener"><span class="lbl">IMDb</span>${m.imdb ? m.imdb.toFixed(1) : '<span class="na">–</span>'}</a>
         <a class="sc rt" href="${esc(m.rt_url || "#")}" target="_blank" rel="noopener">🍅 ${m.rt != null ? m.rt + "%" : '<span class="na">–</span>'}</a>
+        <div class="mark">
+          <button class="${prefs.fav.includes(m.title) ? "on" : ""}" data-mark="fav" data-t="${esc(m.title)}" title="מועדף">${prefs.fav.includes(m.title) ? "★" : "☆"}</button>
+          <button class="seen ${prefs.seen.includes(m.title) ? "on" : ""}" data-mark="seen" data-t="${esc(m.title)}" title="ראיתי">✓</button>
+        </div>
       </div>
     </article>`).join("") : `<div class="empty">אין תוצאות</div>`;
 }
-document.querySelectorAll("[data-sort]").forEach(b => b.onclick = () => {
-  sort = b.dataset.sort;
-  document.querySelectorAll("[data-sort]").forEach(x => x.classList.toggle("on", x === b));
+// big names are bold
+const people = (m, list) => list.map(p => (m.top_people || []).includes(p) ? `<strong>${esc(p)}</strong>` : esc(p)).join(", ");
+function syncChips() {
+  document.querySelectorAll("[data-sort]").forEach(x => x.classList.toggle("on", x.dataset.sort === st.sort));
+  document.querySelectorAll("[data-aud]").forEach(x => x.classList.toggle("on", x.dataset.aud === st.aud));
+  document.querySelectorAll("[data-f]").forEach(x => x.classList.toggle("on", !!st[x.dataset.f]));
+}
+const changed = () => { save("cc-filters", st); syncChips(); render(); };
+document.querySelectorAll("[data-sort]").forEach(b => b.onclick = () => { st.sort = b.dataset.sort; changed(); });
+document.querySelectorAll("[data-aud]").forEach(b => b.onclick = () => { st.aud = b.dataset.aud; changed(); });
+document.querySelectorAll("[data-f]").forEach(b => b.onclick = () => { st[b.dataset.f] = !st[b.dataset.f]; changed(); });
+syncChips();
+document.getElementById("list").onclick = e => {
+  const b = e.target.closest("[data-mark]");
+  if (!b) return;
+  const list = prefs[b.dataset.mark], t = b.dataset.t, i = list.indexOf(t);
+  i < 0 ? list.push(t) : list.splice(i, 1);
+  save("cc-prefs", prefs); render(); pushPrefs();
+};
+// favorites and watched live on the server too, so the phone and the desktop see the same marks
+// and the weekly scan can warn when a favorite is about to leave
+const PREFS_API = "https://emgtyfksnofzzlutngbf.supabase.co/functions/v1/cinema-push";
+let prefsTimer;
+function pushPrefs() {
+  clearTimeout(prefsTimer);
+  prefsTimer = setTimeout(() => fetch(PREFS_API + "?action=prefs", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(prefs) }).catch(() => {}), 600);
+}
+fetch(PREFS_API + "?action=prefs").then(r => r.ok ? r.json() : null).then(p => {
+  if (!p?.prefs) return;
+  const server = p.prefs, local = load("cc-prefs-synced", false);
+  // first visit on this device: merge in anything marked locally before sync existed
+  prefs = local ? server : { fav: [...new Set([...server.fav, ...prefs.fav])], seen: [...new Set([...server.seen, ...prefs.seen])] };
+  save("cc-prefs", prefs); save("cc-prefs-synced", true);
+  if (!local && (prefs.fav.length > server.fav.length || prefs.seen.length > server.seen.length)) pushPrefs();
   render();
-});
-document.getElementById("special").onclick = e => { onlySpecial = !onlySpecial; e.target.classList.toggle("on", onlySpecial); render(); };
-document.getElementById("nokids").onclick = e => { hideDub = !hideDub; e.target.classList.toggle("on", hideDub); render(); };
+}).catch(() => {});
 document.getElementById("q").oninput = render;
 // no zoom: block pinch (iOS gesture events) and double-tap
 document.addEventListener("gesturestart", e => e.preventDefault());

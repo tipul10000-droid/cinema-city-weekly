@@ -2,7 +2,9 @@
 // in the family-apps project, next to the sandwich app's send-reminders.
 //   GET  ?action=pubkey     -> VAPID public key for the page
 //   POST ?action=subscribe  -> store a PushSubscription, send a confirmation push to it
-//   POST ?action=send       -> push the latest scan (docs/data.json on main) to every subscriber, once per scan
+//   POST ?action=send       -> push the latest scan (docs/data.json on main) to every subscriber, once per scan,
+//                              plus a "leaving soon" alert for favorites not yet watched
+//   GET/POST ?action=prefs  -> favorites and watched marks, shared by all of Oren's devices
 import webpush from "npm:web-push@3.6.7";
 import { createClient } from "npm:@supabase/supabase-js@2";
 
@@ -65,6 +67,18 @@ Deno.serve(async (req) => {
 
   if (action === "pubkey") return json({ publicKey: keys.pub });
 
+  if (action === "prefs") {
+    if (req.method === "POST") {
+      const b = await req.json().catch(() => null);
+      const clean = (a: unknown) => Array.isArray(a) ? [...new Set(a.filter((x) => typeof x === "string" && x.length < 200))].slice(0, 500) : [];
+      if (!b) return json({ ok: false }, 400);
+      await sb.from("cinema_prefs").upsert({ id: "default", fav: clean(b.fav), seen: clean(b.seen), updated_at: new Date().toISOString() });
+      return json({ ok: true });
+    }
+    const { data } = await sb.from("cinema_prefs").select("fav,seen").eq("id", "default").maybeSingle();
+    return json({ prefs: { fav: data?.fav || [], seen: data?.seen || [] } });
+  }
+
   if (action === "subscribe" && req.method === "POST") {
     const s = await req.json().catch(() => null);
     if (!s?.endpoint?.startsWith("https://") || !s?.keys?.p256dh || !s?.keys?.auth) return json({ ok: false }, 400);
@@ -92,7 +106,17 @@ Deno.serve(async (req) => {
       url: PAGE_URL, tag: `cinema-${data.generated_at}`,
     });
     await sb.from("cinema_push_log").update({ sent }).eq("generated_at", data.generated_at);
-    return json({ ok: true, sent, subscribers: (subs || []).length });
+    const { data: prefs } = await sb.from("cinema_prefs").select("fav,seen").eq("id", "default").maybeSingle();
+    const fav = new Set(prefs?.fav || []), seen = new Set(prefs?.seen || []);
+    const leaving = movies.filter((m: any) => m.leaving && fav.has(m.title) && !seen.has(m.title));
+    if (leaving.length) {
+      await push(sb, subs || [], {
+        title: leaving.length === 1 ? `⏳ ${leaving[0].title} עומד לרדת מהמסכים` : `⏳ ${leaving.length} סרטים מהמועדפים עומדים לרדת`,
+        body: leaving.map((m: any) => `${m.title}: ${m.screenings} הקרנות השבוע${m.prev_screenings ? ` (היו ${m.prev_screenings})` : ""}, ${(m.cinemas || []).join(", ")}`).join("\n"),
+        url: PAGE_URL, tag: `cinema-leaving-${data.generated_at}`,
+      });
+    }
+    return json({ ok: true, sent, subscribers: (subs || []).length, leaving_favorites: leaving.length });
   }
 
   return json({ ok: false, error: "unknown action" }, 400);

@@ -56,6 +56,44 @@ def norm(s):
 # Wix rate-limits these queries, so pages are spaced out and SyncFeatures is optional.
 
 SPECIAL_HALLS = ("Lounge", "ONYX", "VIP", "Prime")
+# Oren only goes to the center: nothing north of Netanya or south of Rishon LeZion
+CENTRAL = {"גלילות", 'ראשל"צ', "כפר-סבא", "נתניה"}
+# opera / ballet / concerts / musicals / stand-up are not movies
+NOT_MOVIE_RE = re.compile(r"(^|,)\s*SHOW\s*(,|$)|מופע|הצגה|מחזמר|אופרה|בלט|קונצרט|הופעה|סטנדאפ")
+
+# well-known names for the "big names" filter (matched against IMDb principal credits)
+TOP_ACTORS = {
+    "Tom Cruise", "Robert Downey Jr.", "Leonardo DiCaprio", "Brad Pitt", "Denzel Washington", "Tom Hanks",
+    "Meryl Streep", "Scarlett Johansson", "Margot Robbie", "Matt Damon", "Christian Bale", "Cillian Murphy",
+    "Zendaya", "Tom Holland", "Timothée Chalamet", "Florence Pugh", "Emma Stone", "Ryan Gosling",
+    "Anne Hathaway", "Dakota Johnson", "Jennifer Lawrence", "Natalie Portman", "Keanu Reeves", "Will Smith",
+    "Dwayne Johnson", "Jason Statham", "Vin Diesel", "Chris Hemsworth", "Chris Evans", "Chris Pratt",
+    "Mark Wahlberg", "Ryan Reynolds", "Hugh Jackman", "Joaquin Phoenix", "Jake Gyllenhaal", "Austin Butler",
+    "Pedro Pascal", "Glen Powell", "Sydney Sweeney", "Jenna Ortega", "Anya Taylor-Joy", "Saoirse Ronan",
+    "Nicole Kidman", "Julia Roberts", "Sandra Bullock", "Cate Blanchett", "Charlize Theron", "Angelina Jolie",
+    "Johnny Depp", "Harrison Ford", "Samuel L. Jackson", "Morgan Freeman", "Al Pacino", "Robert De Niro",
+    "Russell Crowe", "Ethan Hawke", "Jessica Chastain", "Viola Davis", "Emily Blunt", "Robert Pattinson",
+    "Kristen Stewart", "Rami Malek", "Oscar Isaac", "Michael B. Jordan", "Daniel Craig", "Idris Elba",
+    "Benedict Cumberbatch", "Tom Hardy", "Ralph Fiennes", "Colin Farrell", "Paul Mescal", "Jeremy Allen White",
+    "Mikey Madison", "Ana de Armas", "Gal Gadot", "Jamie Lee Curtis", "Kate Winslet", "Adam Driver",
+    "Bradley Cooper", "Jonah Hill", "Ben Affleck", "George Clooney", "Owen Wilson", "Ben Stiller",
+    "Adam Sandler", "Jim Carrey", "Eddie Murphy", "Kevin Hart", "Steve Carell", "Jack Black",
+    "Ewan McGregor", "Helena Bonham Carter", "Brendan Fraser", "Keira Knightley", "Elizabeth Olsen",
+    "Rebecca Ferguson", "Josh Brolin", "Woody Harrelson", "Willem Dafoe", "Mads Mikkelsen", "Isabelle Huppert",
+    "Riz Ahmed", "Alan Ritchson", "Noah Centineo", "Jodie Comer", "Barry Keoghan", "Andrew Garfield",
+}
+TOP_DIRECTORS = {
+    "Christopher Nolan", "Steven Spielberg", "Martin Scorsese", "Quentin Tarantino", "Denis Villeneuve",
+    "Ridley Scott", "James Cameron", "David Fincher", "Greta Gerwig", "Wes Anderson", "Paul Thomas Anderson",
+    "Alejandro G. Iñárritu", "Alfonso Cuarón", "Guillermo del Toro", "Bong Joon Ho", "Yorgos Lanthimos",
+    "Damien Chazelle", "Jordan Peele", "Taika Waititi", "Sam Mendes", "Darren Aronofsky", "Aaron Sorkin",
+    "Ryan Coogler", "James Gunn", "Matt Reeves", "Rian Johnson", "Edgar Wright", "Guy Ritchie",
+    "Clint Eastwood", "Spike Lee", "Sofia Coppola", "Kathryn Bigelow", "Joseph Kosinski", "Christopher McQuarrie",
+    "Anthony Russo", "Joe Russo", "Chad Stahelski", "Sam Raimi", "Zach Cregger", "David Ayer",
+    "Asghar Farhadi", "Pedro Almodóvar", "Luca Guadagnino", "Park Chan-wook", "Jon M. Chu", "Andrew Stanton",
+    "Pete Docter", "Danny Boyle", "Steve McQueen", "Barry Jenkins", "Emerald Fennell", "Trey Edward Shults",
+    "Nicolas Winding Refn", "Eli Roth", "Michael Showalter", "Destin Daniel Cretton",
+}
 
 
 def wix_query(inst, collection, cursor=None):
@@ -103,7 +141,11 @@ def now_showing(pres, feats, now):
         he = (p.get("featureName") or "").strip()
         day = datetime.fromisoformat(p["businessDate"][:10]).date()
         if p.get("featureTypeId") != 1 or not en or not (today <= day <= last):
-            continue  # events/shows, or not this week
+            continue  # events, or not this week
+        if NOT_MOVIE_RE.search(p.get("featureCategoryName") or "") or NOT_MOVIE_RE.search(he):
+            continue
+        if short_loc(p.get("locationName")) not in CENTRAL:
+            continue
         if FOREIGN_DUB_RE.search(he) or re.search(r"[\u0400-\u04ff]", en):
             continue  # Russian/French dubs duplicate the main entry
         version = (VERSION_RE.search(he).group(1) if VERSION_RE.search(he) else "")
@@ -115,7 +157,7 @@ def now_showing(pres, feats, now):
             "title": en, "title_he": VERSION_RE.sub("", he).strip(), "cc_id": fid,
             "cc_url": f"{SITE}/movie/{fid}", "poster": f.get("image"),
             "genre": p.get("featureCategoryName") or "", "duration": p.get("durationInMinutes"),
-            "language": p.get("languageISO"),
+            "language": None, "kids": "KIDSHOW" in (p.get("featureCategoryName") or ""),
             "date_started": (f.get("payloadJson") or {}).get("dateStarted"),
             "versions": [], "has_original": False, "next_show": p["dateTime"],
             "screenings": 0, "cinemas": set(), "halls": {},
@@ -123,6 +165,7 @@ def now_showing(pres, feats, now):
         dubbed = version.startswith("מדובב") or bool(p.get("dubbedLanguageISO"))
         if not dubbed:
             m["has_original"] = True
+            m["language"] = m["language"] or p.get("languageISO")
             if not version:  # link to the original-language entry when there is one
                 m["cc_id"], m["cc_url"] = fid, f"{SITE}/movie/{fid}"
                 m["poster"] = f.get("image") or m["poster"]
@@ -139,6 +182,8 @@ def now_showing(pres, feats, now):
         m["cinemas"] = sorted(m["cinemas"])
         m["halls"] = {k: sorted(v) for k, v in sorted(m["halls"].items())}
         m["versions"] = [v for v in m["versions"] if v != "Infinity Vision"]
+        m["genre"] = ", ".join(g for g in m["genre"].split(",") if g and "SHOW" not in g)
+        m["foreign"] = bool(m["language"]) and m["language"] not in ("en", "he")
     return list(movies.values())
 
 
@@ -261,6 +306,14 @@ def notify(movies):
     print("push sent")
 
 
+def is_leaving(m, now):
+    """Signs a movie is on its way out: far fewer screenings than last week, or an old movie in few places."""
+    prev, cur, age = m.get("prev_screenings"), m["screenings"], age_days(m)
+    if prev and cur <= prev * 0.5:
+        return True
+    return age is not None and age >= 28 and (cur <= 12 or len(m["cinemas"]) <= 1)
+
+
 def sort_key(m):
     return (m.get("imdb") is None, -(m.get("imdb") or 0), -(m.get("rt") or -1))
 
@@ -301,6 +354,10 @@ def main():
         for k in ("imdb", "imdb_url", "year", "directors", "actors", "rt", "rt_url", "poster", "date_started"):
             if m.get(k) in (None, []) and old.get(k) not in (None, []):
                 m[k] = old[k]  # a lookup was blocked this run; keep last week's value
+        m["top_people"] = [p for p in m.get("directors") or [] if p in TOP_DIRECTORS] + \
+                          [p for p in m.get("actors") or [] if p in TOP_ACTORS]
+        m["prev_screenings"] = old.get("screenings")
+        m["leaving"] = is_leaving(m, now)
         if not m.get("poster") and hit and hit.get("i"):
             m["poster"] = hit["i"]["imageUrl"].replace("._V1_.", "._V1_UX300_.")
         print(" ", fmt_line(m))
