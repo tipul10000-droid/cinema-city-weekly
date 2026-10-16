@@ -194,7 +194,7 @@ document.getElementById("list").onclick = e => {
   if (!b) return;
   const list = prefs[b.dataset.mark], t = b.dataset.t, i = list.indexOf(t);
   i < 0 ? list.push(t) : list.splice(i, 1);
-  save("cc-prefs", prefs); render(); pushPrefs();
+  save("cc-prefs", prefs); save("cc-prefs-dirty", true); render(); pushPrefs();
 };
 // favorites and watched live on the server too, so the phone and the desktop see the same marks
 // and the weekly scan can warn when a favorite is about to leave
@@ -202,10 +202,14 @@ const PREFS_API = "https://emgtyfksnofzzlutngbf.supabase.co/functions/v1/cinema-
 let prefsTimer;
 function pushPrefs() {
   clearTimeout(prefsTimer);
-  prefsTimer = setTimeout(() => fetch(PREFS_API + "?action=prefs", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(prefs) }).catch(() => {}), 600);
+  prefsTimer = setTimeout(sendPrefs, 300);
 }
+const sendPrefs = () => fetch(PREFS_API + "?action=prefs", { method: "POST", keepalive: true, headers: { "Content-Type": "application/json" }, body: JSON.stringify(prefs) })
+  .then(r => { if (r.ok) save("cc-prefs-dirty", false); }).catch(() => {});
+addEventListener("pagehide", () => { if (load("cc-prefs-dirty", false)) sendPrefs(); });
 fetch(PREFS_API + "?action=prefs").then(r => r.ok ? r.json() : null).then(p => {
   if (!p?.prefs) return;
+  if (load("cc-prefs-dirty", false)) { sendPrefs(); return; }  // this device has marks the server hasn't seen yet
   const server = p.prefs, local = load("cc-prefs-synced", false);
   // first visit on this device: merge in anything marked locally before sync existed
   prefs = local ? server : { fav: [...new Set([...server.fav, ...prefs.fav])], seen: [...new Set([...server.seen, ...prefs.seen])] };
