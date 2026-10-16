@@ -266,6 +266,7 @@ def sort_key(m):
 
 
 def main():
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # Windows consoles default to cp1252
     now = datetime.now(timezone.utc)
     if "--scheduled" in sys.argv:
         # cron fires several times on Sunday morning (UTC, covering IST and IDT, plus retries if a site
