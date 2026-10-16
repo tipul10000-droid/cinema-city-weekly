@@ -10,8 +10,11 @@ if ($data.generated_at.StartsWith($today)) { "scan for $today already published"
 $env:PYTHONIOENCODING = "utf-8"
 $env:NTFY_TOPIC = [Environment]::GetEnvironmentVariable("CINEMA_NTFY_TOPIC", "User")
 uv run -q --with tzdata python scraper.py
+if ($LASTEXITCODE) { throw "scraper failed" }
 git add docs/data.json
-git commit -q -m "Weekly movie scan $today (laptop)"
+git -c user.name="cinema-bot (laptop)" -c user.email="tipul10000-droid@users.noreply.github.com" commit -q -m "Weekly movie scan $today (laptop)"
+if ($LASTEXITCODE) { throw "commit failed" }
 git push -q
+if ($LASTEXITCODE) { throw "push failed" }
 Invoke-RestMethod -Method Post "https://emgtyfksnofzzlutngbf.supabase.co/functions/v1/cinema-push?action=send" | Out-Null
 "published from laptop"
