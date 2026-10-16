@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-16T08:23+03:00",
+ "generated_at": "2026-10-16T08:54+03:00",
  "movies": [
   {
    "title": "THE ODYSSEY",
@@ -51,7 +51,7 @@
     "Tom Holland",
     "Anne Hathaway"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 17,
    "leaving": false
   },
   {
@@ -102,7 +102,7 @@
     "Robert Downey Jr.",
     "Chris Evans"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 4,
    "leaving": false
   },
   {
@@ -152,7 +152,7 @@
     "Tom Holland",
     "Zendaya"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 11,
    "leaving": true
   },
   {
@@ -204,7 +204,7 @@
     "Irit Kaplan"
    ],
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 143,
    "leaving": false
   },
   {
@@ -255,7 +255,7 @@
    "rt": 95,
    "rt_url": "https://www.rottentomatoes.com/m/forgotten_island",
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 63,
    "leaving": false
   },
   {
@@ -301,7 +301,7 @@
     "Amir Shurush"
    ],
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 44,
    "leaving": false
   },
   {
@@ -350,7 +350,7 @@
    "top_people": [
     "Zach Cregger"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 13,
    "leaving": false
   },
   {
@@ -400,7 +400,7 @@
    "rt": 77,
    "rt_url": "https://www.rottentomatoes.com/m/tell_me_everything",
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 71,
    "leaving": false
   },
   {
@@ -443,7 +443,7 @@
    "top_people": [
     "Trey Edward Shults"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 16,
    "leaving": false
   },
   {
@@ -490,7 +490,7 @@
     "Tom Cruise",
     "Riz Ahmed"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 21,
    "leaving": false
   },
   {
@@ -531,7 +531,7 @@
    "rt": 98,
    "rt_url": "https://www.rottentomatoes.com/m/left_handed_girl",
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 4,
    "leaving": false
   },
   {
@@ -580,7 +580,7 @@
    "rt": 96,
    "rt_url": "https://www.rottentomatoes.com/m/coyote_vs_acme",
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 12,
    "leaving": true
   },
   {
@@ -632,7 +632,7 @@
     "Andrew Stanton",
     "Tom Hanks"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 9,
    "leaving": true
   },
   {
@@ -682,7 +682,7 @@
    "rt": 99,
    "rt_url": "https://www.rottentomatoes.com/m/shaun_the_sheep_the_beast_of_mossy_bottom",
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 73,
    "leaving": false
   },
   {
@@ -739,7 +739,7 @@
     "David Ayer",
     "Brad Pitt"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 66,
    "leaving": false
   },
   {
@@ -779,7 +779,7 @@
    "rt": null,
    "rt_url": "https://www.rottentomatoes.com/m/primavera",
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 1,
    "leaving": false
   },
   {
@@ -832,7 +832,7 @@
     "Ethan Hawke",
     "Russell Crowe"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 97,
    "leaving": false
   },
   {
@@ -884,7 +884,7 @@
    "top_people": [
     "Josh Brolin"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 74,
    "leaving": false
   },
   {
@@ -936,7 +936,7 @@
     "Jeremy Allen White",
     "Mikey Madison"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 25,
    "leaving": false
   },
   {
@@ -979,7 +979,7 @@
    "top_people": [
     "Mark Wahlberg"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 3,
    "leaving": true
   },
   {
@@ -1022,7 +1022,7 @@
    "rt": null,
    "rt_url": "https://www.rottentomatoes.com/m/spinned",
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 3,
    "leaving": false
   },
   {
@@ -1063,7 +1063,7 @@
     "Tito Valverde"
    ],
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 14,
    "leaving": false
   },
   {
@@ -1107,7 +1107,7 @@
    "rt": null,
    "rt_url": "https://www.rottentomatoes.com/m/tad_and_the_magic_lamp",
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 5,
    "leaving": true
   },
   {
@@ -1154,7 +1154,7 @@
     "Zayn Sekkat"
    ],
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 29,
    "leaving": false
   },
   {
@@ -1200,7 +1200,7 @@
    "rt": 89,
    "rt_url": "https://www.rottentomatoes.com/m/minions_and_monsters",
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 11,
    "leaving": true
   },
   {
@@ -1243,7 +1243,7 @@
     "Alan Ritchson",
     "Owen Wilson"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 5,
    "leaving": true
   },
   {
@@ -1288,7 +1288,7 @@
    "top_people": [
     "Andrew Garfield"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 3,
    "leaving": true
   },
   {
@@ -1333,7 +1333,7 @@
    "top_people": [
     "Noah Centineo"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 87,
    "leaving": false
   },
   {
@@ -1374,7 +1374,7 @@
     "Sofia Calasso"
    ],
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 1,
    "leaving": true
   },
   {
@@ -1419,7 +1419,7 @@
    "rt": 83,
    "rt_url": "https://www.rottentomatoes.com/m/paw_patrol_the_dino_movie",
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 7,
    "leaving": true
   },
   {
@@ -1465,7 +1465,7 @@
    "rt": 44,
    "rt_url": "https://www.rottentomatoes.com/m/the_wizard_of_the_kremlin",
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 25,
    "leaving": false
   },
   {
@@ -1526,7 +1526,7 @@
     "Anne Hathaway",
     "Dakota Johnson"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 76,
    "leaving": false
   },
   {
@@ -1570,7 +1570,7 @@
     "Asghar Farhadi",
     "Isabelle Huppert"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 14,
    "leaving": false
   },
   {
@@ -1610,7 +1610,7 @@
     "Tia Bannon"
    ],
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 2,
    "leaving": true
   },
   {
@@ -1658,7 +1658,7 @@
    "top_people": [
     "Jason Statham"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 13,
    "leaving": false
   },
   {
@@ -1706,7 +1706,7 @@
    "rt": 67,
    "rt_url": "https://www.rottentomatoes.com/m/the_cut_2024",
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 49,
    "leaving": false
   },
   {
@@ -1758,7 +1758,7 @@
    "top_people": [
     "Jessica Chastain"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 74,
    "leaving": false
   },
   {
@@ -1807,7 +1807,7 @@
    "rt": 53,
    "rt_url": "https://www.rottentomatoes.com/m/fall_2_deadpoint",
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 29,
    "leaving": false
   },
   {
@@ -1854,7 +1854,7 @@
    "top_people": [
     "Owen Wilson"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 62,
    "leaving": false
   },
   {
@@ -1900,7 +1900,7 @@
    "rt": 29,
    "rt_url": "https://www.rottentomatoes.com/m/spa_weekend",
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 17,
    "leaving": false
   },
   {
@@ -1945,7 +1945,7 @@
     "Ewan McGregor",
     "Helena Bonham Carter"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 1,
    "leaving": false
   },
   {
@@ -1988,7 +1988,7 @@
    "top_people": [
     "Nicolas Winding Refn"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 10,
    "leaving": false
   },
   {
@@ -2031,7 +2031,7 @@
    "top_people": [
     "Eli Roth"
    ],
-   "prev_screenings": null,
+   "prev_screenings": 3,
    "leaving": true
   },
   {
@@ -2078,7 +2078,7 @@
    "rt": null,
    "rt_url": "https://www.rottentomatoes.com/m/the_bay_2026",
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 39,
    "leaving": false
   },
   {
@@ -2122,7 +2122,7 @@
    "rt": null,
    "rt_url": "https://www.rottentomatoes.com/m/900121672",
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 42,
    "leaving": false
   },
   {
@@ -2159,7 +2159,7 @@
    },
    "foreign": false,
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 184,
    "leaving": false
   },
   {
@@ -2195,7 +2195,7 @@
    },
    "foreign": false,
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 23,
    "leaving": false
   },
   {
@@ -2227,7 +2227,7 @@
    },
    "foreign": false,
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 24,
    "leaving": false
   },
   {
@@ -2256,7 +2256,7 @@
    },
    "foreign": false,
    "top_people": [],
-   "prev_screenings": null,
+   "prev_screenings": 3,
    "leaving": true
   }
  ]
