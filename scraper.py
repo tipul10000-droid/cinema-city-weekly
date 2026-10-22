@@ -195,7 +195,8 @@ def coming_soon(feats, now, days=62):
         p = f.get("payloadJson") or {}
         if isinstance(p, str):
             p = json.loads(p)
-        start = (f.get("dateStarted") or p.get("dateStarted") or "")[:10]
+        start = p.get("dateStarted") or f.get("dateStarted") or ""
+        start = (start.get("$date", "") if isinstance(start, dict) else str(start))[:10]
         he = (f.get("name") or p.get("name") or "").strip()
         en = (f.get("additionalName") or p.get("additionalName") or "").strip()
         if not start or not en or re.search(r"[\u0400-\u04ff]", en) or FOREIGN_DUB_RE.search(he):
