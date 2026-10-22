@@ -203,14 +203,16 @@ def coming_soon(feats, now, days=62):
             continue
         if not (today < datetime.fromisoformat(start).date() <= today + timedelta(days=days)):
             continue
-        if NOT_MOVIE_RE.search(f.get("categoryName") or "") or NOT_MOVIE_RE.search(he):
+        cats = f.get("categoryName") or ""
+        cats = ",".join(map(str, cats)) if isinstance(cats, list) else str(cats)
+        if NOT_MOVIE_RE.search(cats) or NOT_MOVIE_RE.search(he):
             continue
         en = VERSION_RE.sub("", en).strip() or en
         m = out.setdefault(norm(en), {
             "title": en, "title_he": VERSION_RE.sub("", he).strip(), "date_started": start,
             "cc_id": fid, "cc_url": f"{SITE}/movie/{fid}", "poster": f.get("image"),
-            "genre": ", ".join(g for g in (f.get("categoryName") or "").split(",") if g and "SHOW" not in g),
-            "kids": "KIDSHOW" in (f.get("categoryName") or ""), "dubbed_only": True,
+            "genre": ", ".join(g for g in cats.split(",") if g and "SHOW" not in g),
+            "kids": "KIDSHOW" in cats, "dubbed_only": True,
         })
         version = VERSION_RE.search(he).group(1) if VERSION_RE.search(he) else ""
         if not version.startswith("מדובב"):
