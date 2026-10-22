@@ -74,12 +74,11 @@
 <nav class="tabs"><button class="tab on" data-tab="now">🎬 עכשיו בקולנוע</button><button class="tab" data-tab="soon">📅 בקרוב: הלהיטים</button></nav>
 <section id="soonView" hidden><main><div class="count">הסרטים הגדולים שסינמה סיטי הכריזה עליהם לחודשיים הקרובים. תאריכים עשויים להשתנות.</div><div id="soonList"></div></main></section>
 <div class="bar" id="nowBar">
-  <input id="q" type="search" placeholder="חיפוש סרט, שחקן, במאי…">
+  <input id="q" type="search" placeholder="חיפוש באנגלית בלבד: סרט, שחקן, במאי…">
   <div class="row"><span class="lbl2">מיון</span>
     <button class="chip" data-sort="imdb">IMDb</button>
     <button class="chip" data-sort="rt">🍅 Rotten Tomatoes</button>
     <button class="chip" data-sort="new">חדשים קודם</button>
-    <button class="chip" data-sort="title">שם</button>
   </div>
   <div class="row"><span class="lbl2">סינון</span>
     <span class="seg"><button class="chip" data-aud="all">הכל</button><button class="chip" data-aud="adults">מבוגרים</button><button class="chip" data-aud="kids">ילדים</button></span>
@@ -99,6 +98,7 @@ let data = [];
 const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
 const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
 const st = Object.assign({ sort: "imdb", aud: "all", noDub: false, noForeign: false, stars: false, fav: false, hideSeen: false, special: false, leaving: false, premieres: false }, load("cc-filters", {}));
+if (!(st.sort in { imdb: 1, rt: 1, new: 1 })) st.sort = "imdb";  // the name sort was removed
 let prefs = load("cc-prefs", { fav: [], seen: [] });  // English titles; synced with the server so phone and desktop match
 const LANG = { fr: "צרפתית", es: "ספרדית", it: "איטלקית", de: "גרמנית", ja: "יפנית", ko: "קוריאנית", hi: "הינדית", ru: "רוסית", zh: "סינית", ar: "ערבית", tr: "טורקית", pt: "פורטוגזית", sv: "שוודית", da: "דנית", pl: "פולנית" };
 const isKids = m => m.kids ?? /KID/.test(m.genre || "");
@@ -148,7 +148,6 @@ const VERSION_LABEL = { "מדובב": "יש גם מדובב", "אנגלית": "�
 const sorters = {
   imdb: (a, b) => (b.imdb ?? -1) - (a.imdb ?? -1) || (b.rt ?? -1) - (a.rt ?? -1),
   rt: (a, b) => (b.rt ?? -1) - (a.rt ?? -1) || (b.imdb ?? -1) - (a.imdb ?? -1),
-  title: (a, b) => a.title.localeCompare(b.title),
   new: (a, b) => (b.date_started || "").localeCompare(a.date_started || "") || (b.imdb ?? -1) - (a.imdb ?? -1),
 };
 function render() {
