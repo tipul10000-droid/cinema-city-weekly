@@ -11,7 +11,7 @@ $env:PYTHONIOENCODING = "utf-8"
 $env:NTFY_TOPIC = [Environment]::GetEnvironmentVariable("CINEMA_NTFY_TOPIC", "User")
 uv run -q --with tzdata python scraper.py
 if ($LASTEXITCODE) { throw "scraper failed" }
-git add docs/data.json
+git add docs/data.json docs/archive.json
 git -c user.name="cinema-bot (laptop)" -c user.email="tipul10000-droid@users.noreply.github.com" commit -q -m "Weekly movie scan $today (laptop)"
 if ($LASTEXITCODE) { throw "commit failed" }
 git push -q
