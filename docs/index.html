@@ -62,6 +62,9 @@
   .tab.on { background:var(--imdb); color:#000; border-color:var(--imdb); }
   .month { margin:16px 0 8px; font-size:14px; color:var(--muted); font-weight:600; }
   .when { font-weight:700; font-size:14px; color:var(--good); white-space:nowrap; }
+  .m img[data-full] { cursor:zoom-in; }
+  #full { position:fixed; inset:0; z-index:9; background:rgba(0,0,0,.92); display:flex; align-items:center; justify-content:center; padding:16px; cursor:zoom-out; }
+  #full img { max-width:100%; max-height:100%; object-fit:contain; border-radius:8px; }
   .empty { color:var(--muted); text-align:center; padding:40px 0; }
 </style>
 </head>
@@ -92,6 +95,7 @@
     <button class="chip" data-f="premieres">🆕 בכורות השבוע</button>
   </div>
 </div>
+<div id="full" hidden><img alt=""></div>
 <main id="nowView"><div class="count" id="count"></div><div id="list"></div></main>
 <script>
 let data = [];
@@ -169,7 +173,7 @@ function render() {
   document.getElementById("count").textContent = rows.length === data.length ? "" : `מוצגים ${rows.length} מתוך ${data.length}`;
   document.getElementById("list").innerHTML = rows.length ? rows.map(m => `
     <article class="m${prefs.seen.includes(m.title) ? " watched" : ""}">
-      <a href="${esc(m.cc_url)}" target="_blank" rel="noopener"><img loading="lazy" src="${esc(m.poster)}" alt=""></a>
+      <img loading="lazy" src="${esc(m.poster)}" alt="" data-full>
       <div>
         <div class="t" dir="ltr" style="text-align:right"><a href="${esc(m.cc_url)}" target="_blank" rel="noopener">${esc(m.title)}</a>${m.year ? ` <span class="he">(${m.year})</span>` : ""}</div>
         ${m.title_he && m.title_he !== m.title ? `<div class="he">${esc(m.title_he)}</div>` : ""}
@@ -207,7 +211,7 @@ function renderSoon() {
     const head = MONTHS[d.getMonth()] !== month ? `<div class="month">${month = MONTHS[d.getMonth()]}</div>` : "";
     return `${head}
     <article class="m">
-      <a href="${esc(m.cc_url)}" target="_blank" rel="noopener"><img loading="lazy" src="${esc(m.poster)}" alt=""></a>
+      <img loading="lazy" src="${esc(m.poster)}" alt="" data-full>
       <div>
         <div class="t" dir="ltr" style="text-align:right"><a href="${esc(m.cc_url)}" target="_blank" rel="noopener">${esc(m.title)}</a></div>
         ${m.title_he && m.title_he !== m.title ? `<div class="he">${esc(m.title_he)}</div>` : ""}
@@ -246,7 +250,16 @@ document.querySelectorAll("[data-sort]").forEach(b => b.onclick = () => { st.sor
 document.querySelectorAll("[data-aud]").forEach(b => b.onclick = () => { st.aud = b.dataset.aud; changed(); });
 document.querySelectorAll("[data-f]").forEach(b => b.onclick = () => { st[b.dataset.f] = !st[b.dataset.f]; changed(); });
 syncChips();
+// tap a poster to see it full screen; tap anywhere to close
+const full = document.getElementById("full");
+full.onclick = () => full.hidden = true;
 document.getElementById("soonList").onclick = document.getElementById("list").onclick = e => {
+  const img = e.target.closest("[data-full]");
+  if (img && img.src) {  // IMDb posters: load full size instead of the 300px thumbnail
+    full.firstElementChild.src = img.src.replace(/\._V1_[^.]*\./, "._V1_.");
+    full.hidden = false;
+    return;
+  }
   const b = e.target.closest("[data-mark]");
   if (!b) return;
   const list = prefs[b.dataset.mark], t = b.dataset.t, i = list.indexOf(t);
