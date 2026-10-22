@@ -1,16 +1,17 @@
 import json, sys, time
-from datetime import datetime, timezone
 sys.path.insert(0, ".")
 import scraper as s
-tokens = json.loads(s.http(f"{s.SITE}/_api/v1/access-tokens", tries=2, wait=20))
-inst = tokens["apps"][s.WIX_CODE_APP]["instance"]
-feats = {str(f.get("externalId")): f for f in s.wix_query(inst, "SyncFeatures")[0]}
-up = s.coming_soon(feats, datetime.now(timezone.utc))
-print(len(up), "upcoming")
-for f in list(feats.values())[:3]: print(f.get("categoryName"), f.get("tags"), f.get("genre"))
-for m in sorted(up, key=lambda m: m["date_started"]):
-    hit = s.imdb_find(m["title"], 2026)
-    d = s.imdb_details(hit["id"]) if hit else {}
-    print(m["date_started"], m["title"], "|", m["title_he"], "| genre", m["genre"], "kids", m["kids"], "dub", m["dubbed_only"], "| rank", d.get("popularity"), "votes", d.get("imdb_votes"), d.get("year"), d.get("directors"), d.get("actors"))
+names = ["Avengers: Doomsday","Dune: Part Three","The Hunger Games: Sunrise on the Reaping","Wicker","Wildwood","Ramayana: Rise of a Legend","Hexed","The Cat In The Hat","Focker In-Law","Paper Tiger","THE FIX","Wild Horse Nine","Ebenezer","I Play Rocky","How to Rob a Bank","VIOLENT NIGHT 2","The Odyssey","Spider-Man: Brand New Day"]
+for n in names:
+    hit = s.imdb_find(n, 2026)
+    if not hit: print(n, "no hit"); continue
+    q = ('{title(id:"%s"){titleText{text} meterRanking{currentRank} '
+         'engagementStatistics{watchlistStatistics{displayableCount{text}}} '
+         'productionBudget{budget{amount currency}} franchises(first:1){edges{node{franchise{name}}}} }}' % hit["id"])
+    try:
+        r = s.http("https://caching.graphql.imdb.com/", data=json.dumps({"query": q}).encode(),
+            headers={"Content-Type": "application/json", "x-imdb-client-name": "imdb-web-next-localized", "Origin": "https://www.imdb.com", "Referer": "https://www.imdb.com/"})
+        print(n, r[:400])
+    except Exception as e:
+        print(n, "ERR", getattr(e, "read", lambda: b"")()[:400])
     time.sleep(0.3)
-# rerun

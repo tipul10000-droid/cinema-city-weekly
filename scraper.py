@@ -55,6 +55,8 @@ def norm(s):
 #   SyncFeatures: one row per movie (poster, premiere date) - nice to have
 # Wix rate-limits these queries, so pages are spaced out and SyncFeatures is optional.
 
+# "upcoming hits": a title must be this high on IMDb's MOVIEmeter (1 = most-viewed title on IMDb right now)
+BIG_RANK = 60
 SPECIAL_HALLS = ("Lounge", "ONYX", "VIP", "Prime")
 # Oren only goes to the center: nothing north of Netanya or south of Rishon LeZion
 CENTRAL = {"גלילות", 'ראשל"צ', "כפר-סבא", "נתניה"}
@@ -362,6 +364,39 @@ def is_leaving(m, now):
     return age is not None and age >= 28 and (cur <= 12 or len(m["cinemas"]) <= 1)
 
 
+def is_blockbuster(m):
+    """Only the titles everyone is waiting for: high on IMDb's popularity chart (MOVIEmeter), or a big director
+    with an already-buzzing title. Small and local films are left out on purpose."""
+    rank = m.get("popularity")
+    if rank and rank <= BIG_RANK:
+        return True
+    return bool(rank and rank <= BIG_RANK * 3 and any(p in TOP_DIRECTORS for p in m.get("directors") or []))
+
+
+def upcoming_hits(feats, now, prev_upcoming):
+    if not feats:  # SyncFeatures was rate-limited this run: keep last week's list, minus what has opened
+        today = now.astimezone(IL).date().isoformat()
+        return [m for m in prev_upcoming if m["date_started"] > today]
+    hits = []
+    for m in coming_soon(feats, now):
+        try:
+            hit = imdb_find(m["title"], now.year)
+            if hit:
+                m.update(imdb_details(hit["id"]))
+                if not m.get("poster") and hit.get("i"):
+                    m["poster"] = hit["i"]["imageUrl"].replace("._V1_.", "._V1_UX300_.")
+        except Exception as e:
+            print("imdb fail", m["title"], e)
+        m["top_people"] = [p for p in m.get("directors") or [] if p in TOP_DIRECTORS] + \
+                          [p for p in m.get("actors") or [] if p in TOP_ACTORS]
+        big = is_blockbuster(m)
+        print("  soon" + (" ★" if big else "  "), m["date_started"], m["title"], "#", m.get("popularity"))
+        if big:
+            hits.append(m)
+        time.sleep(0.5)
+    return sorted(hits, key=lambda m: m["date_started"])
+
+
 def sort_key(m):
     return (m.get("imdb") is None, -(m.get("imdb") or 0), -(m.get("rt") or -1))
 
@@ -382,9 +417,10 @@ def main():
         except Exception:
             pass
     try:
-        prev_movies = {norm(x["title"]): x for x in json.load(open(DATA_PATH, encoding="utf-8"))["movies"]}
+        prev = json.load(open(DATA_PATH, encoding="utf-8"))
+        prev_movies, prev_upcoming = {norm(x["title"]): x for x in prev["movies"]}, prev.get("upcoming") or []
     except Exception:
-        prev_movies = {}
+        prev_movies, prev_upcoming = {}, []
     pres, feats = fetch_cinema_city()
     movies = now_showing(pres, feats, now)
     print(f"{len(movies)} movies now showing")
@@ -413,10 +449,12 @@ def main():
         print(" ", fmt_line(m))
         time.sleep(0.5)
     movies.sort(key=sort_key)
+    upcoming = upcoming_hits(feats, now, prev_upcoming)
+    print(f"{len(upcoming)} big premieres in the next two months")
     os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)
     with open(DATA_PATH, "w", encoding="utf-8") as f:
         json.dump({"generated_at": now.astimezone(IL).isoformat(timespec="minutes"),
-                   "movies": movies}, f, ensure_ascii=False, indent=1)
+                   "movies": movies, "upcoming": upcoming}, f, ensure_ascii=False, indent=1)
     if "--no-push" not in sys.argv:
         try:
             notify(movies)
