@@ -22,6 +22,10 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
 IL = ZoneInfo("Asia/Jerusalem")
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(ROOT, "docs", "data.json")
+# every movie any scan has ever listed, kept forever so the "watched" log can show movies long after they left
+ARCHIVE_PATH = os.path.join(ROOT, "docs", "archive.json")
+ARCHIVE_FIELDS = ("title", "title_he", "poster", "cc_url", "genre", "kids", "date_started", "year", "imdb", "imdb_url",
+                  "rt", "rt_url", "directors", "actors", "top_people")
 PAGE_URL = os.environ.get("PAGE_URL", "https://tipul10000-droid.github.io/cinema-city-weekly/")
 
 # Hebrew version suffixes on Cinema City titles ("-מדובב", "-אנגלית", ...)
@@ -407,6 +411,20 @@ def upcoming_hits(feats, now, prev_upcoming):
     return sorted(hits, key=lambda m: m["date_started"])
 
 
+def update_archive(movies, scan_date, path=ARCHIVE_PATH):
+    try:
+        archive = json.load(open(path, encoding="utf-8"))
+    except Exception:
+        archive = {}
+    for m in movies:
+        a = archive.setdefault(norm(m["title"]), {"first_shown": scan_date})  # key matches the page's norm()
+        a.update({k: m[k] for k in ARCHIVE_FIELDS if m.get(k) not in (None, [], "")})
+        a["first_shown"] = min(a["first_shown"], scan_date)
+        a["last_shown"] = max(a.get("last_shown", scan_date), scan_date)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(dict(sorted(archive.items())), f, ensure_ascii=False, indent=1)
+
+
 def sort_key(m):
     return (m.get("imdb") is None, -(m.get("imdb") or 0), -(m.get("rt") or -1))
 
@@ -465,6 +483,7 @@ def main():
     with open(DATA_PATH, "w", encoding="utf-8") as f:
         json.dump({"generated_at": now.astimezone(IL).isoformat(timespec="minutes"),
                    "movies": movies, "upcoming": upcoming}, f, ensure_ascii=False, indent=1)
+    update_archive(movies, now.astimezone(IL).date().isoformat())
     if "--no-push" not in sys.argv:
         try:
             notify(movies)
