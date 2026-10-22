@@ -215,7 +215,7 @@ def coming_soon(feats, now, days=62):
         m = out.setdefault(norm(en), {
             "title": en, "title_he": VERSION_RE.sub("", he).strip(), "date_started": start,
             "cc_id": fid, "cc_url": f"{SITE}/movie/{fid}", "poster": f.get("image"),
-            "genre": ", ".join(g for g in cats.split(",") if g and "SHOW" not in g),
+            "genre": ", ".join(f["genre"]) if isinstance(f.get("genre"), list) else "",
             "kids": "KIDSHOW" in cats, "dubbed_only": True,
         })
         version = VERSION_RE.search(he).group(1) if VERSION_RE.search(he) else ""
