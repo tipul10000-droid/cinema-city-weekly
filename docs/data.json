@@ -1838,5 +1838,101 @@
    "leaving": true,
    "premiere_week": false
   }
+ ],
+ "upcoming": [
+  {
+   "title": "The Hunger Games: Sunrise on the Reaping",
+   "title_he": "משחקי הרעב: זריחה על האסיף",
+   "date_started": "2026-11-19",
+   "cc_id": "6305",
+   "cc_url": "https://www.cinema-city.co.il/movie/6305",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/f7ad5a12-4838-4080-b104-c058ddb05db2",
+   "genre": "",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt32558705",
+   "imdb_url": "https://www.imdb.com/title/tt32558705/",
+   "imdb_title": "The Hunger Games: Sunrise on the Reaping",
+   "year": 2026,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 337000,
+   "directors": [
+    "Francis Lawrence"
+   ],
+   "actors": [
+    "Joseph Zada",
+    "Mckenna Grace",
+    "Jennifer Lawrence"
+   ],
+   "top_people": [
+    "Jennifer Lawrence"
+   ]
+  },
+  {
+   "title": "Avengers: Doomsday",
+   "title_he": "הנוקמים: עלייתו של ד\"ר דום",
+   "date_started": "2026-12-16",
+   "cc_id": "6304",
+   "cc_url": "https://www.cinema-city.co.il/movie/6304",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/57e9cc6e-74af-4001-9066-97dcfb8707ee",
+   "genre": "",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt21357150",
+   "imdb_url": "https://www.imdb.com/title/tt21357150/",
+   "imdb_title": "Avengers: Doomsday",
+   "year": 2026,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 708000,
+   "directors": [
+    "Anthony Russo",
+    "Joe Russo"
+   ],
+   "actors": [
+    "Robert Downey Jr.",
+    "Pedro Pascal",
+    "Chris Hemsworth"
+   ],
+   "top_people": [
+    "Anthony Russo",
+    "Joe Russo",
+    "Robert Downey Jr.",
+    "Pedro Pascal",
+    "Chris Hemsworth"
+   ]
+  },
+  {
+   "title": "Dune: Part Three",
+   "title_he": "חולית: חלק שלישי",
+   "date_started": "2026-12-16",
+   "cc_id": "6464",
+   "cc_url": "https://www.cinema-city.co.il/movie/6464",
+   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/5090dfb5-b841-4b54-8887-4e69f40d5fc4",
+   "genre": "",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt31378509",
+   "imdb_url": "https://www.imdb.com/title/tt31378509/",
+   "imdb_title": "Dune: Part Three",
+   "year": 2026,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 496000,
+   "directors": [
+    "Denis Villeneuve"
+   ],
+   "actors": [
+    "Timothée Chalamet",
+    "Zendaya",
+    "Jason Momoa"
+   ],
+   "top_people": [
+    "Denis Villeneuve",
+    "Timothée Chalamet",
+    "Zendaya"
+   ]
+  }
  ]
 }
