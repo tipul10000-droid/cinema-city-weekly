@@ -55,10 +55,10 @@ def norm(s):
 #   SyncFeatures: one row per movie (poster, premiere date) - nice to have
 # Wix rate-limits these queries, so pages are spaced out and SyncFeatures is optional.
 
-# "upcoming hits": this many IMDb users must already have the movie on their watchlist. In Oct 2026 this kept
-# Avengers: Doomsday (708K), Dune: Part Three (496K) and Hunger Games: Sunrise on the Reaping (337K), and cut
-# everything smaller (next was Wild Horse Nine at 221K)
-BIG_WATCHLIST = 250_000
+# "upcoming hits": this many IMDb users must already have the movie on their watchlist (Oren's bar: 200K).
+# In Oct 2026 that kept Avengers: Doomsday (708K), Dune: Part Three (496K), Hunger Games: Sunrise on the
+# Reaping (337K) and Wild Horse Nine (221K); the next title down was Wicker at 160K
+BIG_WATCHLIST = 200_000
 SPECIAL_HALLS = ("Lounge", "ONYX", "VIP", "Prime")
 # Oren only goes to the center: nothing north of Netanya or south of Rishon LeZion
 CENTRAL = {"גלילות", 'ראשל"צ', "כפר-סבא", "נתניה"}
