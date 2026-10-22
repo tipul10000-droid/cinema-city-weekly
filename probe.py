@@ -7,7 +7,7 @@ for n in names:
     if not hit: print(n, "no hit"); continue
     q = ('{title(id:"%s"){titleText{text} meterRanking{currentRank} '
          'engagementStatistics{watchlistStatistics{displayableCount{text}}} '
-         'productionBudget{budget{amount currency}} franchises(first:1){edges{node{franchise{name}}}} }}' % hit["id"])
+         'productionBudget{budget{amount currency}}}}' % hit["id"])
     try:
         r = s.http("https://caching.graphql.imdb.com/", data=json.dumps({"query": q}).encode(),
             headers={"Content-Type": "application/json", "x-imdb-client-name": "imdb-web-next-localized", "Origin": "https://www.imdb.com", "Referer": "https://www.imdb.com/"})
