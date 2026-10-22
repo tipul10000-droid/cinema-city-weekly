@@ -187,6 +187,39 @@ def now_showing(pres, feats, now):
     return list(movies.values())
 
 
+def coming_soon(feats, now, days=62):
+    """Movies Cinema City has announced for the next ~2 months (SyncFeatures rows with a future premiere date)."""
+    today = now.astimezone(IL).date()
+    out = {}
+    for fid, f in feats.items():
+        p = f.get("payloadJson") or {}
+        if isinstance(p, str):
+            p = json.loads(p)
+        start = (f.get("dateStarted") or p.get("dateStarted") or "")[:10]
+        he = (f.get("name") or p.get("name") or "").strip()
+        en = (f.get("additionalName") or p.get("additionalName") or "").strip()
+        if not start or not en or re.search(r"[\u0400-\u04ff]", en) or FOREIGN_DUB_RE.search(he):
+            continue
+        if not (today < datetime.fromisoformat(start).date() <= today + timedelta(days=days)):
+            continue
+        if NOT_MOVIE_RE.search(f.get("categoryName") or "") or NOT_MOVIE_RE.search(he):
+            continue
+        en = VERSION_RE.sub("", en).strip() or en
+        m = out.setdefault(norm(en), {
+            "title": en, "title_he": VERSION_RE.sub("", he).strip(), "date_started": start,
+            "cc_id": fid, "cc_url": f"{SITE}/movie/{fid}", "poster": f.get("image"),
+            "genre": ", ".join(g for g in (f.get("categoryName") or "").split(",") if g and "SHOW" not in g),
+            "kids": "KIDSHOW" in (f.get("categoryName") or ""), "dubbed_only": True,
+        })
+        version = VERSION_RE.search(he).group(1) if VERSION_RE.search(he) else ""
+        if not version.startswith("מדובב"):
+            m["dubbed_only"] = False
+            if not version:  # prefer the plain original-language entry for link / poster
+                m.update(cc_id=fid, cc_url=f"{SITE}/movie/{fid}", poster=f.get("image") or m["poster"])
+        m["date_started"] = min(m["date_started"], start)
+    return list(out.values())
+
+
 # ---------- IMDb ----------
 
 def imdb_find(title, year_hint):
@@ -211,7 +244,7 @@ def imdb_find(title, year_hint):
 
 def imdb_details(tt):
     q = ('{title(id:"%s"){titleText{text} releaseYear{year} '
-         'ratingsSummary{aggregateRating voteCount} '
+         'ratingsSummary{aggregateRating voteCount} meterRanking{currentRank} '
          'principalCredits{category{id} credits{name{nameText{text}}}}}}' % tt)
     res = json.loads(http("https://caching.graphql.imdb.com/",
                           data=json.dumps({"query": q}).encode(),
@@ -228,6 +261,7 @@ def imdb_details(tt):
         "imdb_title": (t.get("titleText") or {}).get("text"),
         "year": (t.get("releaseYear") or {}).get("year"),
         "imdb": rs.get("aggregateRating"), "imdb_votes": rs.get("voteCount"),
+        "popularity": (t.get("meterRanking") or {}).get("currentRank"),
         "directors": credits.get("director", [])[:2],
         "actors": credits.get("cast", [])[:3],
     }
