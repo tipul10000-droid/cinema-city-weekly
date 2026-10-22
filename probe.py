@@ -12,3 +12,4 @@ for m in sorted(up, key=lambda m: m["date_started"]):
     d = s.imdb_details(hit["id"]) if hit else {}
     print(m["date_started"], m["title"], "|", m["title_he"], "| kids", m["kids"], "dub", m["dubbed_only"], "| rank", d.get("popularity"), "votes", d.get("imdb_votes"), d.get("year"), d.get("directors"), d.get("actors"))
     time.sleep(0.3)
+# rerun
