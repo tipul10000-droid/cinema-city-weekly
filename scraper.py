@@ -55,6 +55,10 @@ def norm(s):
 #   SyncFeatures: one row per movie (poster, premiere date) - nice to have
 # Wix rate-limits these queries, so pages are spaced out and SyncFeatures is optional.
 
+# "upcoming hits": this many IMDb users must already have the movie on their watchlist. In Oct 2026 this kept
+# Avengers: Doomsday (708K), Dune: Part Three (496K) and Hunger Games: Sunrise on the Reaping (337K), and cut
+# everything smaller (next was Wild Horse Nine at 221K)
+BIG_WATCHLIST = 250_000
 SPECIAL_HALLS = ("Lounge", "ONYX", "VIP", "Prime")
 # Oren only goes to the center: nothing north of Netanya or south of Rishon LeZion
 CENTRAL = {"גלילות", 'ראשל"צ', "כפר-סבא", "נתניה"}
@@ -187,6 +191,42 @@ def now_showing(pres, feats, now):
     return list(movies.values())
 
 
+def coming_soon(feats, now, days=62):
+    """Movies Cinema City has announced for the next ~2 months (SyncFeatures rows with a future premiere date)."""
+    today = now.astimezone(IL).date()
+    out = {}
+    for fid, f in feats.items():
+        p = f.get("payloadJson") or {}
+        if isinstance(p, str):
+            p = json.loads(p)
+        start = p.get("dateStarted") or f.get("dateStarted") or ""
+        start = (start.get("$date", "") if isinstance(start, dict) else str(start))[:10]
+        he = (f.get("name") or p.get("name") or "").strip()
+        en = (f.get("additionalName") or p.get("additionalName") or "").strip()
+        if not start or not en or re.search(r"[\u0400-\u04ff]", en) or FOREIGN_DUB_RE.search(he):
+            continue
+        if not (today < datetime.fromisoformat(start).date() <= today + timedelta(days=days)):
+            continue
+        cats = f.get("categoryName") or ""
+        cats = ",".join(map(str, cats)) if isinstance(cats, list) else str(cats)
+        if NOT_MOVIE_RE.search(cats) or NOT_MOVIE_RE.search(he):
+            continue
+        en = VERSION_RE.sub("", en).strip() or en
+        m = out.setdefault(norm(en), {
+            "title": en, "title_he": VERSION_RE.sub("", he).strip(), "date_started": start,
+            "cc_id": fid, "cc_url": f"{SITE}/movie/{fid}", "poster": f.get("image"),
+            "genre": ", ".join(f["genre"]) if isinstance(f.get("genre"), list) else "",
+            "kids": "KIDSHOW" in cats, "dubbed_only": True,
+        })
+        version = VERSION_RE.search(he).group(1) if VERSION_RE.search(he) else ""
+        if not version.startswith("מדובב"):
+            m["dubbed_only"] = False
+            if not version:  # prefer the plain original-language entry for link / poster
+                m.update(cc_id=fid, cc_url=f"{SITE}/movie/{fid}", poster=f.get("image") or m["poster"])
+        m["date_started"] = min(m["date_started"], start)
+    return list(out.values())
+
+
 # ---------- IMDb ----------
 
 def imdb_find(title, year_hint):
@@ -209,9 +249,21 @@ def imdb_find(title, year_hint):
     return pool[0] if exact else None
 
 
+def watchlist_count(t):
+    """IMDb users who added the title to their watchlist ("Added by 708K users"): the best public 'everyone is
+    waiting for it' signal for movies that haven't opened yet."""
+    text = ((((t.get("engagementStatistics") or {}).get("watchlistStatistics") or {})
+             .get("displayableCount") or {}).get("text") or "")
+    m = re.search(r"([\d.]+)\s*([KM]?)", text.replace(",", ""))
+    if not m:
+        return None
+    return int(float(m.group(1)) * {"K": 1e3, "M": 1e6, "": 1}[m.group(2)])
+
+
 def imdb_details(tt):
     q = ('{title(id:"%s"){titleText{text} releaseYear{year} '
          'ratingsSummary{aggregateRating voteCount} '
+         'engagementStatistics{watchlistStatistics{displayableCount{text}}} '
          'principalCredits{category{id} credits{name{nameText{text}}}}}}' % tt)
     res = json.loads(http("https://caching.graphql.imdb.com/",
                           data=json.dumps({"query": q}).encode(),
@@ -228,6 +280,7 @@ def imdb_details(tt):
         "imdb_title": (t.get("titleText") or {}).get("text"),
         "year": (t.get("releaseYear") or {}).get("year"),
         "imdb": rs.get("aggregateRating"), "imdb_votes": rs.get("voteCount"),
+        "watchlist": watchlist_count(t),
         "directors": credits.get("director", [])[:2],
         "actors": credits.get("cast", [])[:3],
     }
@@ -325,6 +378,35 @@ def is_leaving(m, now):
     return age is not None and age >= 28 and (cur <= 12 or len(m["cinemas"]) <= 1)
 
 
+def is_blockbuster(m):
+    """Only the titles everyone is waiting for; small and local films are left out on purpose."""
+    return (m.get("watchlist") or 0) >= BIG_WATCHLIST
+
+
+def upcoming_hits(feats, now, prev_upcoming):
+    if not feats:  # SyncFeatures was rate-limited this run: keep last week's list, minus what has opened
+        today = now.astimezone(IL).date().isoformat()
+        return [m for m in prev_upcoming if m["date_started"] > today]
+    hits = []
+    for m in coming_soon(feats, now):
+        try:
+            hit = imdb_find(m["title"], now.year)
+            if hit:
+                m.update(imdb_details(hit["id"]))
+                if not m.get("poster") and hit.get("i"):
+                    m["poster"] = hit["i"]["imageUrl"].replace("._V1_.", "._V1_UX300_.")
+        except Exception as e:
+            print("imdb fail", m["title"], e)
+        m["top_people"] = [p for p in m.get("directors") or [] if p in TOP_DIRECTORS] + \
+                          [p for p in m.get("actors") or [] if p in TOP_ACTORS]
+        big = is_blockbuster(m)
+        print("  soon" + (" ★" if big else "  "), m["date_started"], m["title"], "watchlist", m.get("watchlist"))
+        if big:
+            hits.append(m)
+        time.sleep(0.5)
+    return sorted(hits, key=lambda m: m["date_started"])
+
+
 def sort_key(m):
     return (m.get("imdb") is None, -(m.get("imdb") or 0), -(m.get("rt") or -1))
 
@@ -345,9 +427,10 @@ def main():
         except Exception:
             pass
     try:
-        prev_movies = {norm(x["title"]): x for x in json.load(open(DATA_PATH, encoding="utf-8"))["movies"]}
+        prev = json.load(open(DATA_PATH, encoding="utf-8"))
+        prev_movies, prev_upcoming = {norm(x["title"]): x for x in prev["movies"]}, prev.get("upcoming") or []
     except Exception:
-        prev_movies = {}
+        prev_movies, prev_upcoming = {}, []
     pres, feats = fetch_cinema_city()
     movies = now_showing(pres, feats, now)
     print(f"{len(movies)} movies now showing")
@@ -376,10 +459,12 @@ def main():
         print(" ", fmt_line(m))
         time.sleep(0.5)
     movies.sort(key=sort_key)
+    upcoming = upcoming_hits(feats, now, prev_upcoming)
+    print(f"{len(upcoming)} big premieres in the next two months")
     os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)
     with open(DATA_PATH, "w", encoding="utf-8") as f:
         json.dump({"generated_at": now.astimezone(IL).isoformat(timespec="minutes"),
-                   "movies": movies}, f, ensure_ascii=False, indent=1)
+                   "movies": movies, "upcoming": upcoming}, f, ensure_ascii=False, indent=1)
     if "--no-push" not in sys.argv:
         try:
             notify(movies)

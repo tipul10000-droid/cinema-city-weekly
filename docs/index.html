@@ -14,6 +14,7 @@
   :root { --bg:#0f1115; --card:#181b22; --line:#262a33; --text:#eceef2; --muted:#9aa1ad; --imdb:#f5c518; --good:#3fbf6f; --mid:#e0a43a; --bad:#e05a4f; }
   @media (prefers-color-scheme: light) { :root { --bg:#f6f6f4; --card:#fff; --line:#e4e4e0; --text:#16181d; --muted:#626873; } }
   * { box-sizing:border-box; }
+  [hidden] { display:none !important; }
   html, body { touch-action:pan-y; overflow-x:hidden; -webkit-text-size-adjust:100%; }
   body { margin:0; background:var(--bg); color:var(--text); font:15px/1.45 system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
   header { padding:20px 16px 8px; max-width:900px; margin:auto; }
@@ -56,6 +57,11 @@
   .push { margin-top:10px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; font-size:13px; color:var(--muted); }
   .push button { padding:8px 14px; border-radius:999px; border:0; background:var(--imdb); color:#000; font:inherit; font-weight:650; cursor:pointer; }
   .push button[disabled] { opacity:.6; cursor:default; }
+  .tabs { display:flex; gap:6px; max-width:900px; margin:auto; padding:8px 16px 4px; }
+  .tab { flex:1; padding:9px 10px; border-radius:10px; border:1px solid var(--line); background:var(--card); color:var(--text); font:inherit; font-weight:600; cursor:pointer; }
+  .tab.on { background:var(--imdb); color:#000; border-color:var(--imdb); }
+  .month { margin:16px 0 8px; font-size:14px; color:var(--muted); font-weight:600; }
+  .when { font-weight:700; font-size:14px; color:var(--good); white-space:nowrap; }
   .empty { color:var(--muted); text-align:center; padding:40px 0; }
 </style>
 </head>
@@ -65,7 +71,9 @@
   <div class="meta" id="meta">טוען…</div>
   <div class="push" id="push" hidden><button id="pushBtn">🔔 הפעל התראות</button><span id="pushMsg"></span></div>
 </header>
-<div class="bar">
+<nav class="tabs"><button class="tab on" data-tab="now">🎬 עכשיו בקולנוע</button><button class="tab" data-tab="soon">📅 בקרוב: הלהיטים</button></nav>
+<section id="soonView" hidden><main><div class="count">הסרטים הגדולים שסינמה סיטי הכריזה עליהם לחודשיים הקרובים. תאריכים עשויים להשתנות.</div><div id="soonList"></div></main></section>
+<div class="bar" id="nowBar">
   <input id="q" type="search" placeholder="חיפוש סרט, שחקן, במאי…">
   <div class="row"><span class="lbl2">מיון</span>
     <button class="chip" data-sort="imdb">IMDb</button>
@@ -85,7 +93,7 @@
     <button class="chip" data-f="premieres">🆕 בכורות השבוע</button>
   </div>
 </div>
-<main><div class="count" id="count"></div><div id="list"></div></main>
+<main id="nowView"><div class="count" id="count"></div><div id="list"></div></main>
 <script>
 let data = [];
 const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
@@ -189,6 +197,46 @@ function render() {
 }
 // big names are bold
 const people = (m, list) => list.map(p => (m.top_people || []).includes(p) ? `<strong>${esc(p)}</strong>` : esc(p)).join(", ");
+// upcoming blockbusters, grouped by month
+const MONTHS = ["ינואר","פברואר","מרץ","אפריל","מאי","יוני","יולי","אוגוסט","ספטמבר","אוקטובר","נובמבר","דצמבר"];
+let soon = [];
+function renderSoon() {
+  const rows = soon.filter(m => new Date(m.date_started + "T23:59:59") >= Date.now()).sort((a, b) => a.date_started.localeCompare(b.date_started));
+  let month = "";
+  document.getElementById("soonList").innerHTML = rows.length ? rows.map(m => {
+    const d = new Date(m.date_started + "T00:00:00"), days = Math.ceil((d - Date.now()) / DAY);
+    const head = MONTHS[d.getMonth()] !== month ? `<div class="month">${month = MONTHS[d.getMonth()]}</div>` : "";
+    return `${head}
+    <article class="m">
+      <a href="${esc(m.cc_url)}" target="_blank" rel="noopener"><img loading="lazy" src="${esc(m.poster)}" alt=""></a>
+      <div>
+        <div class="t" dir="ltr" style="text-align:right"><a href="${esc(m.cc_url)}" target="_blank" rel="noopener">${esc(m.title)}</a></div>
+        ${m.title_he && m.title_he !== m.title ? `<div class="he">${esc(m.title_he)}</div>` : ""}
+        ${m.directors?.length ? `<div class="ppl"><b>במאי:</b> <span dir="ltr">${people(m, m.directors)}</span></div>` : ""}
+        ${m.actors?.length ? `<div class="ppl"><b>שחקנים:</b> <span dir="ltr">${people(m, m.actors)}</span></div>` : ""}
+        <div class="tags">
+          ${m.genre ? `<span class="tag">${esc(m.genre)}</span>` : ""}
+          ${m.watchlist ? `<span class="tag hall" title="משתמשי IMDb ששמו את הסרט ברשימת הצפייה">👀 ${m.watchlist >= 1e6 ? (m.watchlist / 1e6).toFixed(1) + "M" : Math.round(m.watchlist / 1e3) + "K"} מחכים ב-IMDb</span>` : ""}
+          ${m.kids ? `<span class="tag">👨‍👧 ילדים</span>` : ""}
+          ${m.dubbed_only ? `<span class="tag">מדובב בלבד</span>` : ""}
+        </div>
+      </div>
+      <div class="scores">
+        <span class="when">${fmtDate(d)}</span>
+        <span class="he">${days <= 0 ? "היום" : days === 1 ? "מחר" : `בעוד ${days} ימים`}</span>
+        <div class="mark"><button class="${prefs.fav.includes(m.title) ? "on" : ""}" data-mark="fav" data-t="${esc(m.title)}" title="מועדף">${prefs.fav.includes(m.title) ? "★" : "☆"}</button></div>
+      </div>
+    </article>`;
+  }).join("") : `<div class="empty">אין כרגע להיטים גדולים מוכרזים לחודשיים הקרובים</div>`;
+}
+let tab = load("cc-tab", "now");
+function showTab() {
+  document.querySelectorAll("[data-tab]").forEach(x => x.classList.toggle("on", x.dataset.tab === tab));
+  document.getElementById("soonView").hidden = tab !== "soon";
+  document.getElementById("nowView").hidden = document.getElementById("nowBar").hidden = tab !== "now";
+}
+document.querySelectorAll("[data-tab]").forEach(b => b.onclick = () => { tab = b.dataset.tab; save("cc-tab", tab); showTab(); scrollTo(0, 0); });
+showTab();
 function syncChips() {
   document.querySelectorAll("[data-sort]").forEach(x => x.classList.toggle("on", x.dataset.sort === st.sort));
   document.querySelectorAll("[data-aud]").forEach(x => x.classList.toggle("on", x.dataset.aud === st.aud));
@@ -199,12 +247,12 @@ document.querySelectorAll("[data-sort]").forEach(b => b.onclick = () => { st.sor
 document.querySelectorAll("[data-aud]").forEach(b => b.onclick = () => { st.aud = b.dataset.aud; changed(); });
 document.querySelectorAll("[data-f]").forEach(b => b.onclick = () => { st[b.dataset.f] = !st[b.dataset.f]; changed(); });
 syncChips();
-document.getElementById("list").onclick = e => {
+document.getElementById("soonList").onclick = document.getElementById("list").onclick = e => {
   const b = e.target.closest("[data-mark]");
   if (!b) return;
   const list = prefs[b.dataset.mark], t = b.dataset.t, i = list.indexOf(t);
   i < 0 ? list.push(t) : list.splice(i, 1);
-  save("cc-prefs", prefs); save("cc-prefs-dirty", true); render(); pushPrefs();
+  save("cc-prefs", prefs); save("cc-prefs-dirty", true); render(); renderSoon(); pushPrefs();
 };
 // favorites and watched live on the server too, so the phone and the desktop see the same marks
 // and the weekly scan can warn when a favorite is about to leave
@@ -225,7 +273,7 @@ fetch(PREFS_API + "?action=prefs").then(r => r.ok ? r.json() : null).then(p => {
   prefs = local ? server : { fav: [...new Set([...server.fav, ...prefs.fav])], seen: [...new Set([...server.seen, ...prefs.seen])] };
   save("cc-prefs", prefs); save("cc-prefs-synced", true);
   if (!local && (prefs.fav.length > server.fav.length || prefs.seen.length > server.seen.length)) pushPrefs();
-  render();
+  render(); renderSoon();
 }).catch(() => {});
 document.getElementById("q").oninput = render;
 // no zoom: block pinch (iOS gesture events) and double-tap
@@ -265,6 +313,9 @@ const b64ToBytes = s => Uint8Array.from(atob((s + "=".repeat((4 - s.length % 4) 
 
 fetch("data.json?" + Date.now()).then(r => r.json()).then(d => {
   data = d.movies;
+  soon = d.upcoming || [];
+  if (soon.length) document.querySelector("[data-tab=soon]").textContent = `📅 בקרוב: הלהיטים (${soon.length})`;
+  renderSoon();
   scanDate = new Date(d.generated_at.slice(0, 10) + "T12:00:00");
   const np = data.filter(isPremiere).length;
   if (np) document.querySelector('[data-f=premieres]').textContent = `🆕 בכורות השבוע (${np})`;
