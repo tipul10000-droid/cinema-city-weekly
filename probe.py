@@ -1,17 +1,11 @@
-import json, sys, time
+# one-off: add the upcoming-hits list to the current data.json without rescanning screenings or notifying
+import json, sys
+from datetime import datetime, timezone
 sys.path.insert(0, ".")
 import scraper as s
-names = ["Avengers: Doomsday","Dune: Part Three","The Hunger Games: Sunrise on the Reaping","Wicker","Wildwood","Ramayana: Rise of a Legend","Hexed","The Cat In The Hat","Focker In-Law","Paper Tiger","THE FIX","Wild Horse Nine","Ebenezer","I Play Rocky","How to Rob a Bank","VIOLENT NIGHT 2","The Odyssey","Spider-Man: Brand New Day"]
-for n in names:
-    hit = s.imdb_find(n, 2026)
-    if not hit: print(n, "no hit"); continue
-    q = ('{title(id:"%s"){titleText{text} meterRanking{currentRank} '
-         'engagementStatistics{watchlistStatistics{displayableCount{text}}} '
-         'productionBudget{budget{amount currency}}}}' % hit["id"])
-    try:
-        r = s.http("https://caching.graphql.imdb.com/", data=json.dumps({"query": q}).encode(),
-            headers={"Content-Type": "application/json", "x-imdb-client-name": "imdb-web-next-localized", "Origin": "https://www.imdb.com", "Referer": "https://www.imdb.com/"})
-        print(n, r[:400])
-    except Exception as e:
-        print(n, "ERR", getattr(e, "read", lambda: b"")()[:400])
-    time.sleep(0.3)
+tokens = json.loads(s.http(f"{s.SITE}/_api/v1/access-tokens", tries=2, wait=20))
+inst = tokens["apps"][s.WIX_CODE_APP]["instance"]
+feats = {str(f.get("externalId")): f for f in s.wix_query(inst, "SyncFeatures")[0]}
+d = json.load(open(s.DATA_PATH, encoding="utf-8"))
+d["upcoming"] = s.upcoming_hits(feats, datetime.now(timezone.utc), [])
+json.dump(d, open(s.DATA_PATH, "w", encoding="utf-8"), ensure_ascii=False, indent=1)

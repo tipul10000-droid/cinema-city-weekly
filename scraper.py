@@ -55,8 +55,10 @@ def norm(s):
 #   SyncFeatures: one row per movie (poster, premiere date) - nice to have
 # Wix rate-limits these queries, so pages are spaced out and SyncFeatures is optional.
 
-# "upcoming hits": a title must be this high on IMDb's MOVIEmeter (1 = most-viewed title on IMDb right now)
-BIG_RANK = 60
+# "upcoming hits": this many IMDb users must already have the movie on their watchlist. In Oct 2026 this kept
+# Avengers: Doomsday (708K), Dune: Part Three (496K) and Hunger Games: Sunrise on the Reaping (337K), and cut
+# everything smaller (next was Wild Horse Nine at 221K)
+BIG_WATCHLIST = 250_000
 SPECIAL_HALLS = ("Lounge", "ONYX", "VIP", "Prime")
 # Oren only goes to the center: nothing north of Netanya or south of Rishon LeZion
 CENTRAL = {"גלילות", 'ראשל"צ', "כפר-סבא", "נתניה"}
@@ -247,9 +249,21 @@ def imdb_find(title, year_hint):
     return pool[0] if exact else None
 
 
+def watchlist_count(t):
+    """IMDb users who added the title to their watchlist ("Added by 708K users"): the best public 'everyone is
+    waiting for it' signal for movies that haven't opened yet."""
+    text = ((((t.get("engagementStatistics") or {}).get("watchlistStatistics") or {})
+             .get("displayableCount") or {}).get("text") or "")
+    m = re.search(r"([\d.]+)\s*([KM]?)", text.replace(",", ""))
+    if not m:
+        return None
+    return int(float(m.group(1)) * {"K": 1e3, "M": 1e6, "": 1}[m.group(2)])
+
+
 def imdb_details(tt):
     q = ('{title(id:"%s"){titleText{text} releaseYear{year} '
-         'ratingsSummary{aggregateRating voteCount} meterRanking{currentRank} '
+         'ratingsSummary{aggregateRating voteCount} '
+         'engagementStatistics{watchlistStatistics{displayableCount{text}}} '
          'principalCredits{category{id} credits{name{nameText{text}}}}}}' % tt)
     res = json.loads(http("https://caching.graphql.imdb.com/",
                           data=json.dumps({"query": q}).encode(),
@@ -266,7 +280,7 @@ def imdb_details(tt):
         "imdb_title": (t.get("titleText") or {}).get("text"),
         "year": (t.get("releaseYear") or {}).get("year"),
         "imdb": rs.get("aggregateRating"), "imdb_votes": rs.get("voteCount"),
-        "popularity": (t.get("meterRanking") or {}).get("currentRank"),
+        "watchlist": watchlist_count(t),
         "directors": credits.get("director", [])[:2],
         "actors": credits.get("cast", [])[:3],
     }
@@ -365,12 +379,8 @@ def is_leaving(m, now):
 
 
 def is_blockbuster(m):
-    """Only the titles everyone is waiting for: high on IMDb's popularity chart (MOVIEmeter), or a big director
-    with an already-buzzing title. Small and local films are left out on purpose."""
-    rank = m.get("popularity")
-    if rank and rank <= BIG_RANK:
-        return True
-    return bool(rank and rank <= BIG_RANK * 3 and any(p in TOP_DIRECTORS for p in m.get("directors") or []))
+    """Only the titles everyone is waiting for; small and local films are left out on purpose."""
+    return (m.get("watchlist") or 0) >= BIG_WATCHLIST
 
 
 def upcoming_hits(feats, now, prev_upcoming):
@@ -390,7 +400,7 @@ def upcoming_hits(feats, now, prev_upcoming):
         m["top_people"] = [p for p in m.get("directors") or [] if p in TOP_DIRECTORS] + \
                           [p for p in m.get("actors") or [] if p in TOP_ACTORS]
         big = is_blockbuster(m)
-        print("  soon" + (" ★" if big else "  "), m["date_started"], m["title"], "#", m.get("popularity"))
+        print("  soon" + (" ★" if big else "  "), m["date_started"], m["title"], "watchlist", m.get("watchlist"))
         if big:
             hits.append(m)
         time.sleep(0.5)

@@ -216,7 +216,7 @@ function renderSoon() {
         ${m.actors?.length ? `<div class="ppl"><b>שחקנים:</b> <span dir="ltr">${people(m, m.actors)}</span></div>` : ""}
         <div class="tags">
           ${m.genre ? `<span class="tag">${esc(m.genre)}</span>` : ""}
-          ${m.popularity ? `<span class="tag hall" title="דירוג הפופולריות ב-IMDb">🔥 #${m.popularity} ב-IMDb</span>` : ""}
+          ${m.watchlist ? `<span class="tag hall" title="משתמשי IMDb ששמו את הסרט ברשימת הצפייה">👀 ${m.watchlist >= 1e6 ? (m.watchlist / 1e6).toFixed(1) + "M" : Math.round(m.watchlist / 1e3) + "K"} מחכים ב-IMDb</span>` : ""}
           ${m.kids ? `<span class="tag">👨‍👧 ילדים</span>` : ""}
           ${m.dubbed_only ? `<span class="tag">מדובב בלבד</span>` : ""}
         </div>
