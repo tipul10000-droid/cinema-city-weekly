@@ -65,6 +65,18 @@
   .m img[data-full] { cursor:zoom-in; }
   #full { position:fixed; inset:0; z-index:9; background:rgba(0,0,0,.92); display:flex; align-items:center; justify-content:center; padding:16px; cursor:zoom-out; }
   #full img { max-width:100%; max-height:100%; object-fit:contain; border-radius:8px; }
+  #login { position:fixed; inset:0; z-index:10; background:var(--bg); display:flex; align-items:center; justify-content:center; padding:16px; }
+  #login .box { width:100%; max-width:360px; text-align:center; }
+  #login h2 { margin:0 0 16px; }
+  #login .users { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  #login button, #passForm button { padding:14px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--text); font:inherit; font-size:17px; font-weight:600; cursor:pointer; }
+  #login .users button.on { background:var(--imdb); color:#000; border-color:var(--imdb); }
+  #passForm { display:flex; gap:8px; margin-top:12px; }
+  #passForm input { flex:1; min-width:0; padding:12px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--text); font:inherit; font-size:17px; text-align:center; }
+  #who button { background:none; border:0; color:var(--muted); text-decoration:underline; font:inherit; cursor:pointer; padding:0; }
+  body.guest .mark, body.guest [data-f=fav], body.guest [data-f=hideSeen], body.guest [data-tab=seen] { display:none !important; }
+  body:not(.oren) .oren-only { display:none !important; }
+  .tag.wants { border-color:#e85d9b; color:#e85d9b; }
   .empty { color:var(--muted); text-align:center; padding:40px 0; }
 </style>
 </head>
@@ -72,13 +84,25 @@
 <header>
   <h1>🎬 מה בסינמה סיטי השבוע</h1>
   <div class="meta" id="meta">טוען…</div>
+  <div class="meta" id="who"></div>
   <div class="push" id="push" hidden><button id="pushBtn">🔔 הפעל התראות</button><span id="pushMsg"></span></div>
 </header>
 <nav class="tabs"><button class="tab on" data-tab="now">🎬 עכשיו</button><button class="tab" data-tab="soon">📅 בקרוב</button><button class="tab" data-tab="seen">✓ ראיתי</button></nav>
 <section id="seenView" hidden><main><div class="count">כל הסרטים שסימנת ✓, נשמרים לתמיד, גם אחרי שירדו מהקולנוע.</div><div id="seenList"></div></main></section>
-<section id="soonView" hidden><main><div class="count">הסרטים הגדולים שסינמה סיטי הכריזה עליהם לחודשיים הקרובים. תאריכים עשויים להשתנות.</div><div id="soonList"></div></main></section>
+<section id="soonView" hidden>
+  <div class="bar">
+    <div class="row"><span class="lbl2">מחכים</span>
+      <span class="seg"><button class="chip" data-wl="250000">250K+</button><button class="chip" data-wl="200000">200K+</button><button class="chip" data-wl="150000">150K+</button><button class="chip" data-wl="100000">100K+</button><button class="chip" data-wl="0">הכל</button></span>
+    </div>
+    <div class="row"><span class="lbl2">מיון</span>
+      <button class="chip" data-ssort="date">תאריך יציאה</button>
+      <button class="chip" data-ssort="wl">הכי מחכים</button>
+    </div>
+  </div>
+  <main><div class="count" id="soonCount"></div><div id="soonList"></div></main>
+</section>
 <div class="bar" id="nowBar">
-  <input id="q" type="search" placeholder="חיפוש באנגלית בלבד: סרט, שחקן, במאי…">
+  <input id="q" type="search" placeholder="חיפוש: שם סרט בעברית, כל השאר באנגלית">
   <div class="row"><span class="lbl2">מיון</span>
     <button class="chip" data-sort="imdb">IMDb</button>
     <button class="chip" data-sort="rt">🍅 Rotten Tomatoes</button>
@@ -88,8 +112,11 @@
     <span class="seg"><button class="chip" data-aud="all">הכל</button><button class="chip" data-aud="adults">מבוגרים</button><button class="chip" data-aud="kids">ילדים</button></span>
     <button class="chip" data-f="noDub">בלי מדובבים</button>
     <button class="chip" data-f="noForeign">בלי שפות זרות</button>
+    <button class="chip" data-f="noIsraeli">בלי ישראליים</button>
     <button class="chip" data-f="stars">🎭 שמות גדולים</button>
     <button class="chip" data-f="fav">★ מועדפים</button>
+    <button class="chip oren-only" data-f="lior">💗 ליאור רוצה</button>
+    <button class="chip oren-only" data-f="evyatar">💙 אביתר רוצה</button>
     <button class="chip" data-f="hideSeen">הסתר שראיתי</button>
     <button class="chip" data-f="special">אולמות מיוחדים</button>
     <button class="chip" data-f="leaving">⏳ לפני ירידה</button>
@@ -97,14 +124,34 @@
   </div>
 </div>
 <div id="full" hidden><img alt=""></div>
+<div id="login" hidden>
+  <div class="box">
+    <h2>🎬 מי צופה?</h2>
+    <div class="users"><button data-u="oren">אורן</button><button data-u="lior">ליאור</button><button data-u="evyatar">אביתר</button><button data-u="guest">אורח</button></div>
+    <form id="passForm" hidden><input id="pass" type="password" inputmode="numeric" placeholder="סיסמה" autocomplete="current-password"><button>כניסה</button></form>
+    <div class="meta" id="loginMsg"></div>
+  </div>
+</div>
 <main id="nowView"><div class="count" id="count"></div><div id="list"></div></main>
 <script>
 let data = [];
 const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
 const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
-const st = Object.assign({ sort: "imdb", aud: "all", noDub: false, noForeign: false, stars: false, fav: false, hideSeen: false, special: false, leaving: false, premieres: false }, load("cc-filters", {}));
+const st = Object.assign({ sort: "imdb", aud: "all", noDub: false, noForeign: false, noIsraeli: false, stars: false, fav: false, lior: false, evyatar: false, hideSeen: false, special: false, leaving: false, premieres: false }, load("cc-filters", {}));
 if (!(st.sort in { imdb: 1, rt: 1, new: 1 })) st.sort = "imdb";  // the name sort was removed
-let prefs = load("cc-prefs", { fav: [], seen: [] });  // English titles; synced with the server so phone and desktop match
+// who is using the page: oren / lior / evyatar (password) or guest (just browsing, no marks)
+const USER_NAMES = { oren: "אורן", lior: "ליאור", evyatar: "אביתר", guest: "אורח" };
+const user = load("cc-user", null), pass = load("cc-pass", "");
+const K = k => `${k}-${user}`;  // marks are kept per user on this device too
+if (user === "oren" && localStorage.getItem("cc-prefs") && !localStorage.getItem(K("cc-prefs")))  // before users existed
+  for (const k of ["cc-prefs", "cc-prefs-dirty", "cc-prefs-synced"]) { try { localStorage.setItem(K(k), localStorage.getItem(k)); } catch {} }
+let prefs = user && user !== "guest" ? load(K("cc-prefs"), { fav: [], seen: [] }) : { fav: [], seen: [] };  // English titles; synced with the server so phone and desktop match
+let others = { lior: [], evyatar: [] };  // what Lior and Evyatar want to watch: shown to Oren only
+document.body.classList.add(user || "nobody");
+if (!user || user === "guest") st.fav = st.hideSeen = false;
+if (user !== "oren") st.lior = st.evyatar = false;
+const wantsTags = m => user !== "oren" ? "" :
+  [["lior", "💗 ליאור רוצה"], ["evyatar", "💙 אביתר רוצה"]].filter(([u]) => others[u].includes(m.title)).map(([, t]) => `<span class="tag wants">${t}</span>`).join("");
 const LANG = { fr: "צרפתית", es: "ספרדית", it: "איטלקית", de: "גרמנית", ja: "יפנית", ko: "קוריאנית", hi: "הינדית", ru: "רוסית", zh: "סינית", ar: "ערבית", tr: "טורקית", pt: "פורטוגזית", sv: "שוודית", da: "דנית", pl: "פולנית" };
 const isKids = m => m.kids ?? /KID/.test(m.genre || "");
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -162,8 +209,11 @@ function render() {
     if (st.aud === "adults" && isKids(m)) return false;
     if (st.noDub && m.has_original === false) return false;
     if (st.noForeign && m.foreign) return false;
+    if (st.noIsraeli && (m.language === "he" || /ישראלי/.test(m.genre || ""))) return false;
     if (st.stars && !(m.top_people || []).length) return false;
     if (st.fav && !prefs.fav.includes(m.title)) return false;
+    if (st.lior && !others.lior.includes(m.title)) return false;
+    if (st.evyatar && !others.evyatar.includes(m.title)) return false;
     if (st.hideSeen && prefs.seen.includes(m.title)) return false;
     if (st.special && !Object.keys(m.halls || {}).length) return false;
     if (st.leaving && !isLeaving(m)) return false;
@@ -181,6 +231,7 @@ function render() {
         ${m.directors?.length ? `<div class="ppl"><b>במאי:</b> <span dir="ltr">${people(m, m.directors)}</span></div>` : ""}
         ${m.actors?.length ? `<div class="ppl"><b>שחקנים:</b> <span dir="ltr">${people(m, m.actors)}</span></div>` : ""}
         <div class="tags">
+          ${wantsTags(m)}
           ${m.genre ? `<span class="tag">${esc(m.genre)}</span>` : ""}
           ${m.duration ? `<span class="tag">${m.duration} דק׳</span>` : ""}
           ${m.foreign ? `<span class="tag">🌍 ${esc(LANG[m.language] || m.language)}</span>` : ""}
@@ -204,12 +255,23 @@ const people = (m, list) => list.map(p => (m.top_people || []).includes(p) ? `<s
 // upcoming blockbusters, grouped by month
 const MONTHS = ["ינואר","פברואר","מרץ","אפריל","מאי","יוני","יולי","אוגוסט","ספטמבר","אוקטובר","נובמבר","דצמבר"];
 let soon = [];
+// "מחכים" = IMDb users who put the movie on their watchlist; 200K+ by default (the titles everyone is waiting for)
+const soonSt = Object.assign({ wl: 200000, sort: "date" }, load("cc-soon", {}));
 function renderSoon() {
-  const rows = soon.filter(m => new Date(m.date_started + "T23:59:59") >= Date.now()).sort((a, b) => a.date_started.localeCompare(b.date_started));
+  document.querySelectorAll("[data-wl]").forEach(x => x.classList.toggle("on", +x.dataset.wl === soonSt.wl));
+  document.querySelectorAll("[data-ssort]").forEach(x => x.classList.toggle("on", x.dataset.ssort === soonSt.sort));
+  const open = soon.filter(m => new Date(m.date_started + "T23:59:59") >= Date.now());
+  // a movie someone starred stays visible whatever the bar
+  const rows = open.filter(m => (m.watchlist || 0) >= soonSt.wl || prefs.fav.includes(m.title) || others.lior.includes(m.title) || others.evyatar.includes(m.title))
+    .sort(soonSt.sort === "wl" ? (a, b) => (b.watchlist || 0) - (a.watchlist || 0) : (a, b) => a.date_started.localeCompare(b.date_started));
+  document.querySelector("[data-tab=soon]").textContent = `📅 בקרוב (${rows.length})`;
+  document.getElementById("soonCount").textContent = `${rows.length} מתוך ${open.length} הסרטים שסינמה סיטי הכריזה עליהם. ` +
+    (user && user !== "guest" ? "★ על סרט ותקבל התראה כשהוא יוצא. " : "") + "תאריכים עשויים להשתנות.";
   let month = "";
   document.getElementById("soonList").innerHTML = rows.length ? rows.map(m => {
     const d = new Date(m.date_started + "T00:00:00"), days = Math.ceil((d - Date.now()) / DAY);
-    const head = MONTHS[d.getMonth()] !== month ? `<div class="month">${month = MONTHS[d.getMonth()]}</div>` : "";
+    const label = MONTHS[d.getMonth()] + (d.getFullYear() !== new Date().getFullYear() ? ` ${d.getFullYear()}` : "");
+    const head = soonSt.sort === "date" && label !== month ? `<div class="month">${month = label}</div>` : "";
     return `${head}
     <article class="m">
       <img loading="lazy" src="${esc(m.poster)}" alt="" data-full data-alt="${esc(m.imdb_poster || "")}" onerror="posterError(this)">
@@ -219,6 +281,7 @@ function renderSoon() {
         ${m.directors?.length ? `<div class="ppl"><b>במאי:</b> <span dir="ltr">${people(m, m.directors)}</span></div>` : ""}
         ${m.actors?.length ? `<div class="ppl"><b>שחקנים:</b> <span dir="ltr">${people(m, m.actors)}</span></div>` : ""}
         <div class="tags">
+          ${wantsTags(m)}
           ${m.genre ? `<span class="tag">${esc(m.genre)}</span>` : ""}
           ${m.watchlist ? `<span class="tag hall" title="משתמשי IMDb ששמו את הסרט ברשימת הצפייה">👀 ${m.watchlist >= 1e6 ? (m.watchlist / 1e6).toFixed(1) + "M" : Math.round(m.watchlist / 1e3) + "K"} מחכים ב-IMDb</span>` : ""}
           ${m.kids ? `<span class="tag">👨‍👧 ילדים</span>` : ""}
@@ -266,6 +329,8 @@ function renderSeen() {
     </article>`).join("") : `<div class="empty">עוד לא סימנת סרטים. סמן ✓ על סרט שראית והוא יישמר כאן לתמיד.</div>`;
 }
 fetch("archive.json?" + Date.now()).then(r => r.ok ? r.json() : {}).then(a => { archive = a; renderSeen(); }).catch(() => {});
+document.querySelectorAll("[data-wl]").forEach(b => b.onclick = () => { soonSt.wl = +b.dataset.wl; save("cc-soon", soonSt); renderSoon(); });
+document.querySelectorAll("[data-ssort]").forEach(b => b.onclick = () => { soonSt.sort = b.dataset.ssort; save("cc-soon", soonSt); renderSoon(); });
 let tab = load("cc-tab", "now");
 function showTab() {
   document.querySelectorAll("[data-tab]").forEach(x => x.classList.toggle("on", x.dataset.tab === tab));
@@ -304,7 +369,7 @@ document.getElementById("seenList").onclick = document.getElementById("soonList"
   if (!b) return;
   const list = prefs[b.dataset.mark], t = b.dataset.t, i = list.indexOf(t);
   i < 0 ? list.push(t) : list.splice(i, 1);
-  save("cc-prefs", prefs); save("cc-prefs-dirty", true); render(); renderSoon(); renderSeen(); pushPrefs();
+  save(K("cc-prefs"), prefs); save(K("cc-prefs-dirty"), true); render(); renderSoon(); renderSeen(); pushPrefs();
 };
 // favorites and watched live on the server too, so the phone and the desktop see the same marks
 // and the weekly scan can warn when a favorite is about to leave
@@ -314,19 +379,49 @@ function pushPrefs() {
   clearTimeout(prefsTimer);
   prefsTimer = setTimeout(sendPrefs, 300);
 }
-const sendPrefs = () => fetch(PREFS_API + "?action=prefs", { method: "POST", keepalive: true, headers: { "Content-Type": "application/json" }, body: JSON.stringify(prefs) })
-  .then(r => { if (r.ok) save("cc-prefs-dirty", false); }).catch(() => {});
-addEventListener("pagehide", () => { if (load("cc-prefs-dirty", false)) sendPrefs(); });
-fetch(PREFS_API + "?action=prefs").then(r => r.ok ? r.json() : null).then(p => {
-  if (!p?.prefs) return;
-  if (load("cc-prefs-dirty", false)) { sendPrefs(); return; }  // this device has marks the server hasn't seen yet
-  const server = p.prefs, local = load("cc-prefs-synced", false);
-  // first visit on this device: merge in anything marked locally before sync existed
-  prefs = local ? server : { fav: [...new Set([...server.fav, ...prefs.fav])], seen: [...new Set([...server.seen, ...prefs.seen])] };
-  save("cc-prefs", prefs); save("cc-prefs-synced", true);
-  if (!local && (prefs.fav.length > server.fav.length || prefs.seen.length > server.seen.length)) pushPrefs();
-  render(); renderSoon(); renderSeen();
-}).catch(() => {});
+const AUTH = { "x-cinema-pass": pass };
+const sendPrefs = () => fetch(PREFS_API + `?action=prefs&user=${user}`, { method: "POST", keepalive: true, headers: { "Content-Type": "application/json", ...AUTH }, body: JSON.stringify(prefs) })
+  .then(r => { if (r.ok) save(K("cc-prefs-dirty"), false); }).catch(() => {});
+if (user && user !== "guest") {
+  addEventListener("pagehide", () => { if (load(K("cc-prefs-dirty"), false)) sendPrefs(); });
+  fetch(PREFS_API + `?action=prefs&user=${user}`, { headers: AUTH }).then(r => {
+    if (r.status === 401) { localStorage.removeItem("cc-user"); location.reload(); }  // password changed
+    return r.ok ? r.json() : null;
+  }).then(p => {
+    if (!p?.prefs) return;
+    if (p.others) others = Object.assign(others, p.others);
+    if (load(K("cc-prefs-dirty"), false)) { sendPrefs(); render(); renderSoon(); return; }  // this device has marks the server hasn't seen yet
+    const server = p.prefs, local = load(K("cc-prefs-synced"), false);
+    // first visit on this device: merge in anything marked locally before sync existed
+    prefs = local ? server : { fav: [...new Set([...server.fav, ...prefs.fav])], seen: [...new Set([...server.seen, ...prefs.seen])] };
+    save(K("cc-prefs"), prefs); save(K("cc-prefs-synced"), true);
+    if (!local && (prefs.fav.length > server.fav.length || prefs.seen.length > server.seen.length)) pushPrefs();
+    render(); renderSoon(); renderSeen();
+  }).catch(() => {});
+}
+// ---- login ----
+(() => {
+  const box = document.getElementById("login"), form = document.getElementById("passForm"), msg = document.getElementById("loginMsg");
+  document.getElementById("who").innerHTML = user ? `${user === "guest" ? "👀 מצב אורח" : `שלום ${USER_NAMES[user]}`} · <button id="switchUser">החלף משתמש</button>` : "";
+  document.getElementById("switchUser")?.addEventListener("click", () => { localStorage.removeItem("cc-user"); localStorage.removeItem("cc-pass"); location.reload(); });
+  if (user) return;
+  box.hidden = false;
+  let picked;
+  box.querySelectorAll("[data-u]").forEach(b => b.onclick = () => {
+    picked = b.dataset.u;
+    box.querySelectorAll("[data-u]").forEach(x => x.classList.toggle("on", x === b));
+    if (picked === "guest") { save("cc-user", "guest"); location.reload(); return; }
+    form.hidden = false; msg.textContent = ""; document.getElementById("pass").focus();
+  });
+  form.onsubmit = async e => {
+    e.preventDefault();
+    const p = document.getElementById("pass").value.trim();
+    msg.textContent = "בודק…";
+    const r = await fetch(PREFS_API + "?action=login", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ user: picked, pass: p }) }).catch(() => null);
+    if (r?.ok) { save("cc-user", picked); save("cc-pass", p); location.reload(); }
+    else msg.textContent = r ? "סיסמה שגויה" : "אין חיבור, נסה שוב";
+  };
+})();
 document.getElementById("q").oninput = render;
 // no zoom: block pinch (iOS gesture events) and double-tap
 document.addEventListener("gesturestart", e => e.preventDefault());
@@ -349,15 +444,22 @@ const b64ToBytes = s => Uint8Array.from(atob((s + "=".repeat((4 - s.length % 4) 
   }
   const existing = await reg.pushManager.getSubscription();
   const done = () => { btn.disabled = true; btn.textContent = "🔔 התראות פעילות"; msg.textContent = "כל יום ראשון ב-08:00"; };
-  if (existing && Notification.permission === "granted") done();
+  if (existing && Notification.permission === "granted") {
+    done();
+    // notifications follow the user: re-register this device after switching users
+    if (user && load("cc-push-user", "oren") !== user)
+      fetch(PUSH_API + "?action=subscribe", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ sub: existing, user, pass }) })
+        .then(r => r.ok && save("cc-push-user", user)).catch(() => {});
+  }
   btn.onclick = async () => {
     btn.disabled = true; msg.textContent = "מפעיל…";
     try {
       if (await Notification.requestPermission() !== "granted") throw new Error("לא ניתן אישור להתראות");
       const { publicKey } = await (await fetch(PUSH_API + "?action=pubkey")).json();
       const sub = existing || await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64ToBytes(publicKey) });
-      const r = await fetch(PUSH_API + "?action=subscribe", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(sub) });
+      const r = await fetch(PUSH_API + "?action=subscribe", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ sub, user, pass }) });
       if (!r.ok) throw new Error("השמירה נכשלה");
+      save("cc-push-user", user);
       done();
     } catch (e) { btn.disabled = false; msg.textContent = e.message; }
   };
@@ -366,7 +468,6 @@ const b64ToBytes = s => Uint8Array.from(atob((s + "=".repeat((4 - s.length % 4) 
 fetch("data.json?" + Date.now()).then(r => r.json()).then(d => {
   data = d.movies;
   soon = d.upcoming || [];
-  if (soon.length) document.querySelector("[data-tab=soon]").textContent = `📅 בקרוב (${soon.length})`;
   renderSoon(); renderSeen();
   scanDate = new Date(d.generated_at.slice(0, 10) + "T12:00:00");
   const np = data.filter(isPremiere).length;

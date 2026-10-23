@@ -1877,6 +1877,357 @@
  ],
  "upcoming": [
   {
+   "title": "CATANE",
+   "title_he": "קאטאנה",
+   "date_started": "2026-10-25",
+   "cc_id": "6644",
+   "cc_url": "https://www.cinema-city.co.il/movie/6644",
+   "poster": "posters/catane.jpg",
+   "genre": "דרמה, קומדיה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt38359047",
+   "imdb_url": "https://www.imdb.com/title/tt38359047/",
+   "imdb_title": "Catane",
+   "year": 2025,
+   "imdb": 7.5,
+   "imdb_votes": 866,
+   "watchlist": 1100,
+   "directors": [
+    "Ioana Mischie"
+   ],
+   "actors": [
+    "Iulia Lumânare",
+    "Cristian Bota",
+    "Mihai Mãlaimare"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOTlkNmZjZDktMTE5MS00NWNmLTkwNzUtOGJkNmFlZGI1ZDE2XkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "THE GUYS FROM LAW",
+   "title_he": "החבר'ה מהחוג למשפטים",
+   "date_started": "2026-10-25",
+   "cc_id": "6646",
+   "cc_url": "https://www.cinema-city.co.il/movie/6646",
+   "poster": "posters/theguysfromlaw.jpg",
+   "genre": "דרמה",
+   "kids": false,
+   "dubbed_only": false,
+   "top_people": []
+  },
+  {
+   "title": "THE DESERT CHILD",
+   "title_he": "G Kids – ילד המדבר",
+   "date_started": "2026-10-27",
+   "cc_id": "6612",
+   "cc_url": "https://www.cinema-city.co.il/movie/6612",
+   "poster": "posters/thedesertchild.jpg",
+   "genre": "הרפתקה",
+   "kids": true,
+   "dubbed_only": true,
+   "imdb_id": "tt37495239",
+   "imdb_url": "https://www.imdb.com/title/tt37495239/",
+   "imdb_title": "L'enfant du désert",
+   "year": 2026,
+   "imdb": 6.4,
+   "imdb_votes": 375,
+   "watchlist": 1700,
+   "directors": [
+    "Gilles de Maistre"
+   ],
+   "actors": [
+    "Nahel Tran",
+    "Nahil Bouazzaoui",
+    "Zayn Sekkat"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNjY1MDE1NjctNGVkZS00NDA4LWFjMWQtMTMxOWM5NTdlYzU2XkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "The Stranger",
+   "title_he": "הזר",
+   "date_started": "2026-10-29",
+   "cc_id": "6665",
+   "cc_url": "https://www.cinema-city.co.il/movie/6665",
+   "poster": "posters/thestranger.jpg",
+   "genre": "דרמה, פשע",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt36243564",
+   "imdb_url": "https://www.imdb.com/title/tt36243564/",
+   "imdb_title": "The Stranger",
+   "year": 2025,
+   "imdb": 7.1,
+   "imdb_votes": 7679,
+   "watchlist": 52100,
+   "directors": [
+    "François Ozon"
+   ],
+   "actors": [
+    "Benjamin Voisin",
+    "Rebecca Marder",
+    "Pierre Lottin"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOGE5ODZjNjgtNTdhZS00ZmM0LWI2NDYtYTBiYWY2NmI4YWMzXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "THE FIX",
+   "title_he": "שם קוד טהרן",
+   "date_started": "2026-10-29",
+   "cc_id": "6659",
+   "cc_url": "https://www.cinema-city.co.il/movie/6659",
+   "poster": "posters/thefix.jpg",
+   "genre": "מותחן, אקשן",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt9601292",
+   "imdb_url": "https://www.imdb.com/title/tt9601292/",
+   "imdb_title": "The Fix",
+   "year": 2026,
+   "imdb": 4.8,
+   "imdb_votes": 2489,
+   "watchlist": 40700,
+   "directors": [
+    "Guy Moshe"
+   ],
+   "actors": [
+    "Zachary Levi",
+    "Liam Neeson",
+    "Quincy Isaiah"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYjhiYzQ5YjQtZTlhZS00YTQ0LTk5YzMtNmRjY2EwYmFhYmIzXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "הסתברות לאהבה",
+   "title_he": "הסתברות לאהבה",
+   "date_started": "2026-10-29",
+   "cc_id": "6085",
+   "cc_url": "https://www.cinema-city.co.il/movie/6085",
+   "poster": "posters/הסתברותלאהבה.jpg",
+   "genre": "ישראלי, דרמה קומית",
+   "kids": false,
+   "dubbed_only": false,
+   "top_people": []
+  },
+  {
+   "title": "PIGLET",
+   "title_he": "חזרזיר: הלילה האחרון",
+   "date_started": "2026-10-29",
+   "cc_id": "6610",
+   "cc_url": "https://www.cinema-city.co.il/movie/6610",
+   "poster": "posters/piglet.jpg",
+   "genre": "אימה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt33050292",
+   "imdb_url": "https://www.imdb.com/title/tt33050292/",
+   "imdb_title": "Piglet",
+   "year": 2025,
+   "imdb": 2.6,
+   "imdb_votes": 1136,
+   "watchlist": 4200,
+   "directors": [
+    "Andrea M. Catinella"
+   ],
+   "actors": [
+    "Alexander Butler",
+    "Lauren Staerck",
+    "Alina Desmond"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMmM1MWRkYmEtMDU2YS00NDZiLTk2MDEtZjZmYjEyZGU4YjExXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "Wicker",
+   "title_he": "בעל בהזמנה",
+   "date_started": "2026-10-29",
+   "cc_id": "6594",
+   "cc_url": "https://www.cinema-city.co.il/movie/6594",
+   "poster": "posters/wicker.jpg",
+   "genre": "קומדיה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt29611136",
+   "imdb_url": "https://www.imdb.com/title/tt29611136/",
+   "imdb_title": "Wicker",
+   "year": 2026,
+   "imdb": 7.3,
+   "imdb_votes": 953,
+   "watchlist": 160000,
+   "directors": [
+    "Alex Huston Fischer",
+    "Eleanor Wilson"
+   ],
+   "actors": [
+    "Alexander Skarsgård",
+    "Olivia Colman",
+    "Richard E. Grant"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BODliMTEzMTUtOGFlZS00NTgxLThjODEtMzcwNTE1OWE5Mzg2XkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "Shrek (25 years)",
+   "title_he": "שרק-חגיגות 25 שנה!",
+   "date_started": "2026-11-05",
+   "cc_id": "6679",
+   "cc_url": "https://www.cinema-city.co.il/movie/6679",
+   "poster": "posters/shrek25years.jpg",
+   "genre": "קומדיה, אנימציה, הרפתקה",
+   "kids": false,
+   "dubbed_only": false,
+   "top_people": []
+  },
+  {
+   "title": "Beware Boiúna",
+   "title_he": "בויאונה: המפלצת מהאמזונס",
+   "date_started": "2026-11-05",
+   "cc_id": "6674",
+   "cc_url": "https://www.cinema-city.co.il/movie/6674",
+   "poster": "posters/bewareboiuna.jpg",
+   "genre": "מותחן, אקשן, אימה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt10377864",
+   "imdb_url": "https://www.imdb.com/title/tt10377864/",
+   "imdb_title": "Beware Boiúna",
+   "year": 2026,
+   "imdb": 6.1,
+   "imdb_votes": 1023,
+   "watchlist": 49900,
+   "directors": [
+    "Mike P. Nelson"
+   ],
+   "actors": [
+    "Jessica Rothe",
+    "Logan Marshall-Green",
+    "Kiana Madeira"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMDQxZDM1NGYtOTlmMS00ZDUxLWJlNDEtZjRiMGIyNzZmM2U0XkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "The richest woman in the world",
+   "title_he": "האישה העשירה בעולם",
+   "date_started": "2026-11-05",
+   "cc_id": "6671",
+   "cc_url": "https://www.cinema-city.co.il/movie/6671",
+   "poster": "posters/therichestwomanintheworld.jpg",
+   "genre": "דרמה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt32759477",
+   "imdb_url": "https://www.imdb.com/title/tt32759477/",
+   "imdb_title": "The Richest Woman in the World",
+   "year": 2025,
+   "imdb": 6.3,
+   "imdb_votes": 1770,
+   "watchlist": 8200,
+   "directors": [
+    "Thierry Klifa"
+   ],
+   "actors": [
+    "Isabelle Huppert",
+    "Laurent Lafitte",
+    "Marina Foïs"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOWY4NDRlMzAtMjcwYy00OTYxLWEwY2QtMmRjODhiNDJiMDg1XkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": [
+    "Isabelle Huppert"
+   ]
+  },
+  {
+   "title": "Perla",
+   "title_he": "פרלה",
+   "date_started": "2026-11-05",
+   "cc_id": "6647",
+   "cc_url": "https://www.cinema-city.co.il/movie/6647",
+   "poster": "posters/perla.jpg",
+   "genre": "דרמה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt33039055",
+   "imdb_url": "https://www.imdb.com/title/tt33039055/",
+   "imdb_title": "Perla",
+   "year": 2026,
+   "imdb": 8.9,
+   "imdb_votes": 17,
+   "watchlist": null,
+   "directors": [
+    "David Norris"
+   ],
+   "actors": [
+    "Mia Blakeman",
+    "Georgina Borri",
+    "Laura Carmine"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNGM2ZDk0ZmItZjEyMS00Y2QxLWIzMDEtYTcyNjU4OThkZjgzXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "The Beast",
+   "title_he": "החיה",
+   "date_started": "2026-11-05",
+   "cc_id": "6606",
+   "cc_url": "https://www.cinema-city.co.il/movie/6606",
+   "poster": "posters/thebeast.jpg",
+   "genre": "מותחן",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt29256561",
+   "imdb_url": "https://www.imdb.com/title/tt29256561/",
+   "imdb_title": "The Beast",
+   "year": 2026,
+   "imdb": 5.3,
+   "imdb_votes": 215,
+   "watchlist": 23800,
+   "directors": [
+    "Renny Harlin"
+   ],
+   "actors": [
+    "Samuel L. Jackson",
+    "Joel Kinnaman",
+    "Guy Burnet"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOTNmMTRlNTItYWExMC00ZDRjLWI1ZWItOGRlNGJhMDE0NTQ0XkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": [
+    "Samuel L. Jackson"
+   ]
+  },
+  {
+   "title": "Rolling Loud",
+   "title_he": "מאבדים שליטה ב-Rolling Loud",
+   "date_started": "2026-11-05",
+   "cc_id": "6583",
+   "cc_url": "https://www.cinema-city.co.il/movie/6583",
+   "poster": "posters/rollingloud.jpg",
+   "genre": "קומדיה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt33184695",
+   "imdb_url": "https://www.imdb.com/title/tt33184695/",
+   "imdb_title": "Rolling Loud",
+   "year": 2026,
+   "imdb": 5.7,
+   "imdb_votes": 262,
+   "watchlist": 16500,
+   "directors": [
+    "Jeremy Garelick"
+   ],
+   "actors": [
+    "Owen Wilson",
+    "Jolene",
+    "Christian Convery"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMWQ4MmQ2NzAtMDZhOC00MWNmLTljOTgtODRjZjI0M2VhMWJlXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": [
+    "Owen Wilson"
+   ]
+  },
+  {
    "title": "Wild Horse Nine",
    "title_he": "סוס פרא תשע",
    "date_started": "2026-11-05",
@@ -1891,7 +2242,7 @@
    "imdb_title": "Wild Horse Nine",
    "year": 2026,
    "imdb": 8.2,
-   "imdb_votes": 1109,
+   "imdb_votes": 1126,
    "watchlist": 221000,
    "directors": [
     "Martin McDonagh"
@@ -1901,8 +2252,326 @@
     "Sam Rockwell",
     "Steve Buscemi"
    ],
-   "top_people": [],
-   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOTlkOGFlYWYtN2VlNC00NjNhLWIxYmMtNDVhZTQ4YmQ4ZTdiXkEyXkFqcGc@._V1_UX500_.jpg"
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOTlkOGFlYWYtN2VlNC00NjNhLWIxYmMtNDVhZTQ4YmQ4ZTdiXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "Ramayana: Rise of a Legend",
+   "title_he": "ראמאיאנה: אגדה עולה",
+   "date_started": "2026-11-12",
+   "cc_id": "6676",
+   "cc_url": "https://www.cinema-city.co.il/movie/6676",
+   "poster": "posters/ramayanariseofalegend.jpg",
+   "genre": "פנטזיה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt27988879",
+   "imdb_url": "https://www.imdb.com/title/tt27988879/",
+   "imdb_title": "Ramayana: Rise of a Legend",
+   "year": 2026,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 41600,
+   "directors": [
+    "Nitesh Tiwari"
+   ],
+   "actors": [
+    "Ranbir Kapoor",
+    "Yash",
+    "Sai Pallavi"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYWE4NWVmZjItN2Y0ZC00YmMzLThhNWEtM2VkZjA3MmFlNjdmXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "Wildwood",
+   "title_he": "יער פרא",
+   "date_started": "2026-11-12",
+   "cc_id": "6672",
+   "cc_url": "https://www.cinema-city.co.il/movie/6672",
+   "poster": "posters/wildwood.jpg",
+   "genre": "אנימציה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt2056785",
+   "imdb_url": "https://www.imdb.com/title/tt2056785/",
+   "imdb_title": "Wildwood",
+   "year": 2026,
+   "imdb": 8.8,
+   "imdb_votes": 1251,
+   "watchlist": 131000,
+   "directors": [
+    "Travis Knight"
+   ],
+   "actors": [
+    "Carey Mulligan",
+    "Tantoo Cardinal",
+    "Marc Evan Jackson"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BN2JjOGQ1OGMtZmUwYS00YmQ2LTllNzQtZjU2YjY1NzM2NzJjXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "A Talent For Murder",
+   "title_he": "הכישרון של גברת הייסמית'",
+   "date_started": "2026-11-12",
+   "cc_id": "6673",
+   "cc_url": "https://www.cinema-city.co.il/movie/6673",
+   "poster": "posters/atalentformurder.jpg",
+   "genre": "מותחן, דרמה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt14129116",
+   "imdb_url": "https://www.imdb.com/title/tt14129116/",
+   "imdb_title": "A Talent for Murder",
+   "year": 2026,
+   "imdb": 6.7,
+   "imdb_votes": 392,
+   "watchlist": 27100,
+   "directors": [
+    "Anton Corbijn"
+   ],
+   "actors": [
+    "Olivia Cooke",
+    "Helen Mirren",
+    "Alden Ehrenreich"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOWI2M2I1OTItMWYwMC00N2I0LWFkMDUtNjZhNWZmYmQ0MzI1XkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "Ebenezer",
+   "title_he": "סקרוג'",
+   "date_started": "2026-11-12",
+   "cc_id": "6632",
+   "cc_url": "https://www.cinema-city.co.il/movie/6632",
+   "poster": "posters/ebenezer.jpg",
+   "genre": "פנטזיה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt38773219",
+   "imdb_url": "https://www.imdb.com/title/tt38773219/",
+   "imdb_title": "Ebenezer",
+   "year": 2026,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 134000,
+   "directors": [
+    "Ti West"
+   ],
+   "actors": [
+    "Arthur Conti",
+    "Johnny Depp",
+    "Rose Williams"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BY2Y0NWM2N2EtMjdkMS00NTc0LTg4NDctZmUyYTA4YWZlY2EwXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": [
+    "Johnny Depp"
+   ]
+  },
+  {
+   "title": "Cetait vmieux Demain",
+   "title_he": "מחר יהיה טוב",
+   "date_started": "2026-11-12",
+   "cc_id": "6120",
+   "cc_url": "https://www.cinema-city.co.il/movie/6120",
+   "poster": "posters/cetaitvmieuxdemain.jpg",
+   "genre": "דרמה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt33323667",
+   "imdb_url": "https://www.imdb.com/title/tt33323667/",
+   "imdb_title": "Cycle of Time",
+   "year": 2025,
+   "imdb": 5.8,
+   "imdb_votes": 1042,
+   "watchlist": 1800,
+   "directors": [
+    "Vinciane Millereau"
+   ],
+   "actors": [
+    "Elsa Zylberstein",
+    "Didier Bourdon",
+    "Mathilde Le Borgne"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BODZjOTg0MmMtOWNiOC00MWJhLTkzZDEtZjhlY2ZiN2ZhYWU0XkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "The Mongoose",
+   "title_he": "הנמלט",
+   "date_started": "2026-11-12",
+   "cc_id": "6568",
+   "cc_url": "https://www.cinema-city.co.il/movie/6568",
+   "poster": "posters/themongoose.jpg",
+   "genre": "אקשן",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt13611778",
+   "imdb_url": "https://www.imdb.com/title/tt13611778/",
+   "imdb_title": "The Mongoose",
+   "year": 2026,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 33000,
+   "directors": [
+    "Mark Vanselow"
+   ],
+   "actors": [
+    "Liam Neeson",
+    "Marisa Tomei",
+    "Ving Rhames"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNDBmN2E2YTQtMWE2Ni00ZjMxLWE4NGItODk2ZDZjZDU0MjdlXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "הבדחן",
+   "title_he": "הבדחן",
+   "date_started": "2026-11-12",
+   "cc_id": "6483",
+   "cc_url": "https://www.cinema-city.co.il/movie/6483",
+   "poster": "posters/הבדחן.jpg",
+   "genre": "דרמה קומית",
+   "kids": false,
+   "dubbed_only": false,
+   "top_people": []
+  },
+  {
+   "title": "How to Rob a Bank",
+   "title_he": "איך לשדוד בנק",
+   "date_started": "2026-11-12",
+   "cc_id": "6532",
+   "cc_url": "https://www.cinema-city.co.il/movie/6532",
+   "poster": "posters/howtorobabank.jpg",
+   "genre": "פשע",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt35866986",
+   "imdb_url": "https://www.imdb.com/title/tt35866986/",
+   "imdb_title": "How to Rob a Bank",
+   "year": 2026,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 129000,
+   "directors": [
+    "David Leitch"
+   ],
+   "actors": [
+    "Nicholas Hoult",
+    "Christian Slater",
+    "Zoë Kravitz"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMTk5MTAxYTItZjUzMC00NDk3LWI0OWMtZjM0YTU3ODUyMDk3XkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "Love in separate beds",
+   "title_he": "שיעור באהבה",
+   "date_started": "2026-11-19",
+   "cc_id": "6670",
+   "cc_url": "https://www.cinema-city.co.il/movie/6670",
+   "poster": "posters/loveinseparatebeds.jpg",
+   "genre": "דרמה",
+   "kids": false,
+   "dubbed_only": false,
+   "top_people": []
+  },
+  {
+   "title": "Jurassic Pet - The Lost Secret",
+   "title_he": "סודות פארק הדינוזאורים",
+   "date_started": "2026-11-19",
+   "cc_id": "6653",
+   "cc_url": "https://www.cinema-city.co.il/movie/6653",
+   "poster": "posters/jurassicpetthelostsecret.jpg",
+   "genre": "ילדים, הרפתקה",
+   "kids": true,
+   "dubbed_only": true,
+   "top_people": []
+  },
+  {
+   "title": "Where To",
+   "title_he": "לאן لوين",
+   "date_started": "2026-11-19",
+   "cc_id": "6631",
+   "cc_url": "https://www.cinema-city.co.il/movie/6631",
+   "poster": "posters/whereto.jpg",
+   "genre": "דרמה קומית",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt35253781",
+   "imdb_url": "https://www.imdb.com/title/tt35253781/",
+   "imdb_title": "Where To",
+   "year": 2026,
+   "imdb": 7.3,
+   "imdb_votes": 74,
+   "watchlist": null,
+   "directors": [
+    "Assaf Machnes"
+   ],
+   "actors": [
+    "Ehab Salami",
+    "Ido Tako",
+    "Derya Durmaz"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMjM1MjhhYWQtN2NiNi00MzcxLWExNzAtZTkxNzkyYmNjMmYwXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "Wolfgang",
+   "title_he": "וולפגנג",
+   "date_started": "2026-11-19",
+   "cc_id": "6076",
+   "cc_url": "https://www.cinema-city.co.il/movie/6076",
+   "poster": "posters/wolfgang.jpg",
+   "genre": "דרמה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt32676674",
+   "imdb_url": "https://www.imdb.com/title/tt32676674/",
+   "imdb_title": "Wolfgang",
+   "year": 2025,
+   "imdb": 6.4,
+   "imdb_votes": 988,
+   "watchlist": 1600,
+   "directors": [
+    "Javier Ruiz Caldera"
+   ],
+   "actors": [
+    "Miki Esparbé",
+    "Jordi Catalán",
+    "Àngels Gonyalons"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMGZhMWM3ZTMtMTFjYy00NzUwLTgzMDgtODQ5YjI0MTM0YjM1XkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "Young Washington",
+   "title_he": "וושינגטון הצעיר",
+   "date_started": "2026-11-19",
+   "cc_id": "6588",
+   "cc_url": "https://www.cinema-city.co.il/movie/6588",
+   "poster": "posters/youngwashington.jpg",
+   "genre": "דרמה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt32104007",
+   "imdb_url": "https://www.imdb.com/title/tt32104007/",
+   "imdb_title": "Young Washington",
+   "year": 2026,
+   "imdb": 6.8,
+   "imdb_votes": 14758,
+   "watchlist": 104000,
+   "directors": [
+    "Jon Erwin"
+   ],
+   "actors": [
+    "William Franklyn-Miller",
+    "Mary-Louise Parker",
+    "Leo Hanna"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNTE3NDY5OWUtZmM5Ny00NDJiLTlkZDQtN2E5MWFjZWUyMDZkXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
   },
   {
    "title": "The Hunger Games: Sunrise on the Reaping",
@@ -1929,10 +2598,397 @@
     "Mckenna Grace",
     "Jennifer Lawrence"
    ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNjEzYTE2ODEtNzY5Zi00ZmVmLWEyYzEtYjdlZWU2NjcyYzMzXkEyXkFqcGc@._V1_UX500_.jpg",
    "top_people": [
     "Jennifer Lawrence"
+   ]
+  },
+  {
+   "title": "The Christophers",
+   "title_he": "הכריסטופרים",
+   "date_started": "2026-11-19",
+   "cc_id": "6425",
+   "cc_url": "https://www.cinema-city.co.il/movie/6425",
+   "poster": "posters/thechristophers.jpg",
+   "genre": "דרמה קומית",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt34966562",
+   "imdb_url": "https://www.imdb.com/title/tt34966562/",
+   "imdb_title": "The Christophers",
+   "year": 2025,
+   "imdb": 6.8,
+   "imdb_votes": 6829,
+   "watchlist": 60300,
+   "directors": [
+    "Steven Soderbergh"
    ],
-   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNjEzYTE2ODEtNzY5Zi00ZmVmLWEyYzEtYjdlZWU2NjcyYzMzXkEyXkFqcGc@._V1_UX500_.jpg"
+   "actors": [
+    "Michaela Coel",
+    "Ian McKellen",
+    "Jessica Gunning"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMDY1YjgyOTAtYjRlNS00NmE4LWE2YTgtZDcxNTBhZGVmMGVlXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "What is to Come",
+   "title_he": "שעתיד לבוא",
+   "date_started": "2026-11-26",
+   "cc_id": "6628",
+   "cc_url": "https://www.cinema-city.co.il/movie/6628",
+   "poster": "posters/whatistocome.jpg",
+   "genre": "דרמה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt42048618",
+   "imdb_url": "https://www.imdb.com/title/tt42048618/",
+   "imdb_title": "What Is to Come",
+   "year": 2026,
+   "imdb": 7.2,
+   "imdb_votes": 8,
+   "watchlist": null,
+   "directors": [
+    "Ruthy Pribar"
+   ],
+   "actors": [
+    "Ronit Yudkevitz",
+    "Yaakov Zada-Daniel",
+    "Tovit Semay"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNWE4YTI3ZGQtY2ZmOS00Zjk2LWI0YjMtNjdkYjM3ZTcwOTViXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "PROTECTOR",
+   "title_he": "נעלמת ללא עקבות",
+   "date_started": "2026-11-26",
+   "cc_id": "6660",
+   "cc_url": "https://www.cinema-city.co.il/movie/6660",
+   "poster": "posters/protector.jpg",
+   "genre": "מותחן, אקשן",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt34471850",
+   "imdb_url": "https://www.imdb.com/title/tt34471850/",
+   "imdb_title": "Protector",
+   "year": 2025,
+   "imdb": 5.2,
+   "imdb_votes": 4803,
+   "watchlist": 26700,
+   "directors": [
+    "Adrian Grunberg"
+   ],
+   "actors": [
+    "Milla Jovovich",
+    "Isabel Myers",
+    "Shane Williams"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BY2Q0NzkzNmEtN2M5My00NjBjLWIyNDQtMDZmMzAyMTg0MjdkXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "Paper Tiger",
+   "title_he": "נמר של נייר",
+   "date_started": "2026-11-26",
+   "cc_id": "6597",
+   "cc_url": "https://www.cinema-city.co.il/movie/6597",
+   "poster": "posters/papertiger.jpg",
+   "genre": "מותחן, דרמה, פשע",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt34385689",
+   "imdb_url": "https://www.imdb.com/title/tt34385689/",
+   "imdb_title": "Paper Tiger",
+   "year": 2026,
+   "imdb": 7,
+   "imdb_votes": 806,
+   "watchlist": 122000,
+   "directors": [
+    "James Gray"
+   ],
+   "actors": [
+    "Adam Driver",
+    "Scarlett Johansson",
+    "Miles Teller"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZWU2MTI0M2MtZjc3My00MzhlLWJkMDMtN2E4ODNlYTg3ODJlXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": [
+    "Adam Driver",
+    "Scarlett Johansson"
+   ]
+  },
+  {
+   "title": "Focker In-Law",
+   "title_he": "פגוש את הכלה",
+   "date_started": "2026-11-26",
+   "cc_id": "6460",
+   "cc_url": "https://www.cinema-city.co.il/movie/6460",
+   "poster": "posters/fockerinlaw.jpg",
+   "genre": "קומדיה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt34966140",
+   "imdb_url": "https://www.imdb.com/title/tt34966140/",
+   "imdb_title": "Focker-in-Law",
+   "year": 2026,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 123000,
+   "directors": [
+    "John Hamburg"
+   ],
+   "actors": [
+    "Skyler Gisondo",
+    "Robert De Niro",
+    "Owen Wilson"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOGI0NjhmMmEtNDAxZC00MDFjLThlNzUtYTUwMDkzMjMxNGIzXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": [
+    "Robert De Niro",
+    "Owen Wilson"
+   ]
+  },
+  {
+   "title": "NORTH",
+   "title_he": "הקסם הצפוני",
+   "date_started": "2026-12-03",
+   "cc_id": "6666",
+   "cc_url": "https://www.cinema-city.co.il/movie/6666",
+   "poster": "posters/north.jpg",
+   "genre": "ילדים, הרפתקה",
+   "kids": true,
+   "dubbed_only": true,
+   "imdb_id": "tt0110687",
+   "imdb_url": "https://www.imdb.com/title/tt0110687/",
+   "imdb_title": "North",
+   "year": 1994,
+   "imdb": 4.6,
+   "imdb_votes": 15841,
+   "watchlist": 35800,
+   "directors": [
+    "Rob Reiner"
+   ],
+   "actors": [
+    "Elijah Wood",
+    "Bruce Willis",
+    "Jason Alexander"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNDcxMzM3NmMtNDBiZS00ZmNhLThiZWUtNmQ0YWE1ODdmMzE1XkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "A Mouse Hunt for Christmas",
+   "title_he": "הקרב על הבית",
+   "date_started": "2026-12-03",
+   "cc_id": "6655",
+   "cc_url": "https://www.cinema-city.co.il/movie/6655",
+   "poster": "posters/amousehuntforchristmas.jpg",
+   "genre": "קומדיה, ילדים",
+   "kids": true,
+   "dubbed_only": true,
+   "imdb_id": "tt35727399",
+   "imdb_url": "https://www.imdb.com/title/tt35727399/",
+   "imdb_title": "A Mouse Hunt for Christmas",
+   "year": 2025,
+   "imdb": 6,
+   "imdb_votes": 698,
+   "watchlist": 2300,
+   "directors": [
+    "Henrik Martin Dahlsbakken"
+   ],
+   "actors": [
+    "Vegard Strand Eide",
+    "Pål Sverre Hagen",
+    "Sara Khorami"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOTVjZDYzN2QtYzMzYi00OWRjLWI3ZjYtMThkODhiZmJkOTA5XkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "I Play Rocky",
+   "title_he": "אני רוקי",
+   "date_started": "2026-12-03",
+   "cc_id": "6650",
+   "cc_url": "https://www.cinema-city.co.il/movie/6650",
+   "poster": "posters/iplayrocky.jpg",
+   "genre": "דרמה, קומדיה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt11995650",
+   "imdb_url": "https://www.imdb.com/title/tt11995650/",
+   "imdb_title": "I Play Rocky",
+   "year": 2026,
+   "imdb": 7.9,
+   "imdb_votes": 628,
+   "watchlist": 139000,
+   "directors": [
+    "Peter Farrelly"
+   ],
+   "actors": [
+    "Anthony Ippolito",
+    "AnnaSophia Robb",
+    "P.J. Byrne"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMTY0MWFkODAtNDdhNS00MzIwLThhMjItMzczMDQ3OWUxMGI0XkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "VIOLENT NIGHT 2",
+   "title_he": "מי מפחד מסנטה? 2",
+   "date_started": "2026-12-03",
+   "cc_id": "6633",
+   "cc_url": "https://www.cinema-city.co.il/movie/6633",
+   "poster": "posters/violentnight2.jpg",
+   "genre": "קומדיה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt32432428",
+   "imdb_url": "https://www.imdb.com/title/tt32432428/",
+   "imdb_title": "Violent Night 2",
+   "year": 2026,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 66600,
+   "directors": [
+    "Tommy Wirkola"
+   ],
+   "actors": [
+    "Kristen Bell",
+    "David Harbour",
+    "Jared Harris"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNWY3ZmRhOTQtZDE4ZS00NmNlLWIwNjgtZTdkY2I4NjRmMjY5XkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "The Wrong Girls",
+   "title_he": "שבורות",
+   "date_started": "2026-12-03",
+   "cc_id": "6598",
+   "cc_url": "https://www.cinema-city.co.il/movie/6598",
+   "poster": "posters/thewronggirls.jpg",
+   "genre": "קומדיה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt35060353",
+   "imdb_url": "https://www.imdb.com/title/tt35060353/",
+   "imdb_title": "The Wrong Girls",
+   "year": 2026,
+   "imdb": 5.3,
+   "imdb_votes": 2434,
+   "watchlist": 48100,
+   "directors": [
+    "Dylan Meyer"
+   ],
+   "actors": [
+    "Kristen Stewart",
+    "Alia Shawkat",
+    "Cate Blanchett"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZDc5ZTZiMmQtMDRjYi00NDAzLWEyMTQtYWIxNTFkMmE5ZWZkXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": [
+    "Kristen Stewart",
+    "Cate Blanchett"
+   ]
+  },
+  {
+   "title": "The Cat In The Hat",
+   "title_he": "חתול תעלול",
+   "date_started": "2026-12-03",
+   "cc_id": "6023",
+   "cc_url": "https://www.cinema-city.co.il/movie/6023",
+   "poster": "posters/thecatinthehat.jpg",
+   "genre": "הרפתקה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt2321555",
+   "imdb_url": "https://www.imdb.com/title/tt2321555/",
+   "imdb_title": "The Cat in the Hat",
+   "year": 2026,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 57800,
+   "directors": [
+    "Alessandro Carloni",
+    "Erica Rivinoja"
+   ],
+   "actors": [
+    "Bill Hader",
+    "Xochitl Gomez",
+    "Tiago Martinez"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZmJhNzk4OGMtOTlmNC00ODAxLWFkYjYtY2RhYWVmNDg5YmViXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "Hexed",
+   "title_he": "הקס: עולם מכושף",
+   "date_started": "2026-12-03",
+   "cc_id": "6543",
+   "cc_url": "https://www.cinema-city.co.il/movie/6543",
+   "poster": "posters/hexed.jpg",
+   "genre": "ילדים, אנימציה, הרפתקה",
+   "kids": true,
+   "dubbed_only": false,
+   "imdb_id": "tt38077943",
+   "imdb_url": "https://www.imdb.com/title/tt38077943/",
+   "imdb_title": "Hexed",
+   "year": 2026,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 64599,
+   "directors": [
+    "Jason Hand",
+    "Fawn Veerasunthorn"
+   ],
+   "actors": [
+    "Hailee Steinfeld",
+    "Jodie Foster",
+    "Walton Goggins"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOWM2YjUxMGUtMWNmYi00N2ZjLWI3MWEtMDJjNWQ0ZmYzMmYwXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "פנתר כפול",
+   "title_he": "פנתר כפול",
+   "date_started": "2026-12-10",
+   "cc_id": "6626",
+   "cc_url": "https://www.cinema-city.co.il/movie/6626",
+   "poster": "posters/פנתרכפול.jpg",
+   "genre": "דרמה",
+   "kids": false,
+   "dubbed_only": false,
+   "top_people": []
+  },
+  {
+   "title": "The Rivals of Amziah King",
+   "title_he": "מלך הדבורים",
+   "date_started": "2026-12-10",
+   "cc_id": "6595",
+   "cc_url": "https://www.cinema-city.co.il/movie/6595",
+   "poster": "posters/therivalsofamziahking.jpg",
+   "genre": "פשע",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt27706593",
+   "imdb_url": "https://www.imdb.com/title/tt27706593/",
+   "imdb_title": "The Rivals of Amziah King",
+   "year": 2025,
+   "imdb": 6.6,
+   "imdb_votes": 8302,
+   "watchlist": 142000,
+   "directors": [
+    "Andrew Patterson"
+   ],
+   "actors": [
+    "Matthew McConaughey",
+    "Angelina LookingGlass",
+    "Kurt Russell"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOGVkMTY3OTMtMjEwOC00MGVmLTlmNmItZmZhNDNhYTEzOTQ0XkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
   },
   {
    "title": "Avengers: Doomsday",
@@ -1960,14 +3016,14 @@
     "Pedro Pascal",
     "Chris Hemsworth"
    ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNGEwYWZkN2UtOTQ5Mi00MGQzLWEzNjYtMWMyNDBkMTkzMWNkXkEyXkFqcGc@._V1_UX500_.jpg",
    "top_people": [
     "Anthony Russo",
     "Joe Russo",
     "Robert Downey Jr.",
     "Pedro Pascal",
     "Chris Hemsworth"
-   ],
-   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNGEwYWZkN2UtOTQ5Mi00MGQzLWEzNjYtMWMyNDBkMTkzMWNkXkEyXkFqcGc@._V1_UX500_.jpg"
+   ]
   },
   {
    "title": "Dune: Part Three",
@@ -1994,12 +3050,623 @@
     "Zendaya",
     "Jason Momoa"
    ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYjk1NjgwZDMtYzI5OS00Y2Q4LWI1NmItNTE5OGU2NDVmMTAxXkEyXkFqcGc@._V1_UX500_.jpg",
    "top_people": [
     "Denis Villeneuve",
     "Timothée Chalamet",
     "Zendaya"
+   ]
+  },
+  {
+   "title": "Prima Facie",
+   "title_he": "שתי פנים",
+   "date_started": "2026-12-24",
+   "cc_id": "6669",
+   "cc_url": "https://www.cinema-city.co.il/movie/6669",
+   "poster": "posters/primafacie.jpg",
+   "genre": "דרמה, פשע",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt27759858",
+   "imdb_url": "https://www.imdb.com/title/tt27759858/",
+   "imdb_title": "Prima Facie",
+   "year": 2026,
+   "imdb": 6.1,
+   "imdb_votes": 98,
+   "watchlist": 5400,
+   "directors": [
+    "Susanna White"
    ],
-   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYjk1NjgwZDMtYzI5OS00Y2Q4LWI1NmItNTE5OGU2NDVmMTAxXkEyXkFqcGc@._V1_UX500_.jpg"
+   "actors": [
+    "Daniel Ings",
+    "Cynthia Erivo",
+    "Harry Treadaway"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BM2UwM2MzNzEtYzJiNC00ZTUwLWIwNDItNmIzMmJkMWI1ZmZjXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "Louise",
+   "title_he": "נערה ללא שם",
+   "date_started": "2026-12-24",
+   "cc_id": "6579",
+   "cc_url": "https://www.cinema-city.co.il/movie/6579",
+   "poster": "posters/louise.jpg",
+   "genre": "דרמה",
+   "kids": false,
+   "dubbed_only": false,
+   "top_people": []
+  },
+  {
+   "title": "Angry Birds 3",
+   "title_he": "אנגרי בירדס 3",
+   "date_started": "2026-12-24",
+   "cc_id": "6539",
+   "cc_url": "https://www.cinema-city.co.il/movie/6539",
+   "poster": "posters/angrybirds3.jpg",
+   "genre": "ילדים, אנימציה, הרפתקה",
+   "kids": true,
+   "dubbed_only": false,
+   "imdb_id": "tt32557122",
+   "imdb_url": "https://www.imdb.com/title/tt32557122/",
+   "imdb_title": "The Angry Birds Movie 3",
+   "year": 2026,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 50600,
+   "directors": [
+    "John Rice"
+   ],
+   "actors": [
+    "Jason Sudeikis",
+    "Sam Richardson",
+    "Lily James"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNjk4N2IwMzUtZDI2Ny00NTE2LTk4ZTMtODVhYjU2YjUwZDM5XkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "IN THE HELL OF KABUL: 13 DAYS, 13 NIGHTS",
+   "title_he": "הבריחה מקאבול",
+   "date_started": "2026-12-31",
+   "cc_id": "6106",
+   "cc_url": "https://www.cinema-city.co.il/movie/6106",
+   "poster": "posters/inthehellofkabul13days13nights.jpg",
+   "genre": "דרמה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt28291010",
+   "imdb_url": "https://www.imdb.com/title/tt28291010/",
+   "imdb_title": "13 Days, 13 Nights",
+   "year": 2025,
+   "imdb": 6.7,
+   "imdb_votes": 3298,
+   "watchlist": 10700,
+   "directors": [
+    "Martin Bourboulon"
+   ],
+   "actors": [
+    "Roschdy Zem",
+    "Lyna Khoudri",
+    "Sidse Babett Knudsen"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYzM2MTAzNzEtNGJjYS00YTYxLWJlM2UtNTYzMmMzZjAwOGU3XkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "Jumanji: Open World",
+   "title_he": "ג'ומנג'י: הבריחה הגדולה",
+   "date_started": "2026-12-31",
+   "cc_id": "6551",
+   "cc_url": "https://www.cinema-city.co.il/movie/6551",
+   "poster": "posters/jumanjiopenworld.jpg",
+   "genre": "הרפתקה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt26735127",
+   "imdb_url": "https://www.imdb.com/title/tt26735127/",
+   "imdb_title": "Jumanji: Open World",
+   "year": 2026,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 167000,
+   "directors": [
+    "Jake Kasdan"
+   ],
+   "actors": [
+    "Dwayne Johnson",
+    "Karen Gillan",
+    "Madison Iseman"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMTkxNTFlMzktMmE4MS00MzE1LWIzYTEtYTY1OWVjZDRiZDdkXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": [
+    "Dwayne Johnson"
+   ]
+  },
+  {
+   "title": "Pendulum",
+   "title_he": "מטוטלת",
+   "date_started": "2027-01-07",
+   "cc_id": "6677",
+   "cc_url": "https://www.cinema-city.co.il/movie/6677",
+   "poster": "posters/pendulum.jpg",
+   "genre": "מותחן, אימה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt34378250",
+   "imdb_url": "https://www.imdb.com/title/tt34378250/",
+   "imdb_title": "Pendulum",
+   "year": 2026,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 19900,
+   "directors": [
+    "Mark Heyman"
+   ],
+   "actors": [
+    "Joseph Gordon-Levitt",
+    "Jena Malone",
+    "Norman Reedus"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMGQ1OWE4MDgtODc1MS00MjRmLWI2NGItOWFjN2FmMzVkMGYyXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "Werewolf",
+   "title_he": "קללת איש הזאב",
+   "date_started": "2027-01-07",
+   "cc_id": "6586",
+   "cc_url": "https://www.cinema-city.co.il/movie/6586",
+   "poster": "posters/werewolf.jpg",
+   "genre": "אימה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt0118137",
+   "imdb_url": "https://www.imdb.com/title/tt0118137/",
+   "imdb_title": "Werewolf",
+   "year": 1995,
+   "imdb": 1.7,
+   "imdb_votes": 4179,
+   "watchlist": 3100,
+   "directors": [
+    "Tony Zarindast"
+   ],
+   "actors": [
+    "Jorge Rivero",
+    "Richard Lynch",
+    "Federico Cavalli"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMjEwNTU1NjI5OF5BMl5BanBnXkFtZTcwMDQ5NjAyMQ@@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "Yellow Letters",
+   "title_he": "מכתבים צהובים",
+   "date_started": "2027-01-14",
+   "cc_id": "6648",
+   "cc_url": "https://www.cinema-city.co.il/movie/6648",
+   "poster": "posters/yellowletters.jpg",
+   "genre": "דרמה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt32888226",
+   "imdb_url": "https://www.imdb.com/title/tt32888226/",
+   "imdb_title": "Yellow Letters",
+   "year": 2026,
+   "imdb": 7.2,
+   "imdb_votes": 2471,
+   "watchlist": 15600,
+   "directors": [
+    "Ilker Çatak"
+   ],
+   "actors": [
+    "Özgü Namal",
+    "Tansu Biçer",
+    "Leyla Smyrna Cabas"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMTQ2Y2UzMDYtNTcyZC00ZTY5LTliMWEtZjgzMGQ1NWQxMjdmXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "Hershy",
+   "title_he": "הרשי",
+   "date_started": "2027-01-14",
+   "cc_id": "6587",
+   "cc_url": "https://www.cinema-city.co.il/movie/6587",
+   "poster": "posters/hershy.jpg",
+   "genre": "דרמה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt17055444",
+   "imdb_url": "https://www.imdb.com/title/tt17055444/",
+   "imdb_title": "Hershey",
+   "year": 2026,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 26900,
+   "directors": [
+    "Mark Waters"
+   ],
+   "actors": [
+    "Alexandra Daddario",
+    "Finn Wittrock",
+    "Alan Ruck"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BN2ViZTQ2N2QtZDRmMC00MTU2LTlhM2EtZjg2YzA0YzI4NzRkXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "The Money Maker",
+   "title_he": "הזייפן",
+   "date_started": "2027-01-14",
+   "cc_id": "6580",
+   "cc_url": "https://www.cinema-city.co.il/movie/6580",
+   "poster": "posters/themoneymaker.jpg",
+   "genre": "דרמה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt35495035",
+   "imdb_url": "https://www.imdb.com/title/tt35495035/",
+   "imdb_title": "The Money Maker",
+   "year": 2025,
+   "imdb": 7,
+   "imdb_votes": 2138,
+   "watchlist": 9600,
+   "directors": [
+    "Jean-Paul Salomé"
+   ],
+   "actors": [
+    "Reda Kateb",
+    "Sara Giraudeau",
+    "Bastien Bouillon"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BODJiNzA2MjAtYmJkYi00M2M3LWJlYTctYTc0ZWQ1ZDIxOTdiXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "The World Will Tremble",
+   "title_he": "העולם ירעד",
+   "date_started": "2027-01-28",
+   "cc_id": "6657",
+   "cc_url": "https://www.cinema-city.co.il/movie/6657",
+   "poster": "posters/theworldwilltremble.jpg",
+   "genre": "דרמה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt26595906",
+   "imdb_url": "https://www.imdb.com/title/tt26595906/",
+   "imdb_title": "The World Will Tremble",
+   "year": 2025,
+   "imdb": 6.8,
+   "imdb_votes": 3525,
+   "watchlist": 25300,
+   "directors": [
+    "Lior Geller"
+   ],
+   "actors": [
+    "Oliver Jackson-Cohen",
+    "Jeremy Neumark Jones",
+    "Charlie MacGechan"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYTlhYzMyZWMtNzg0Yy00ZmVjLTllNDItYTE5MThlMjg1NTlkXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "Slayground",
+   "title_he": "סליי גראונד",
+   "date_started": "2027-01-28",
+   "cc_id": "6656",
+   "cc_url": "https://www.cinema-city.co.il/movie/6656",
+   "poster": "posters/slayground.jpg",
+   "genre": "מותחן, אימה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt37360759",
+   "imdb_url": "https://www.imdb.com/title/tt37360759/",
+   "imdb_title": "Slayground",
+   "year": 2027,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 34600,
+   "directors": [
+    "Jeremy Saulnier"
+   ],
+   "actors": [
+    "Stephen Root",
+    "James Badge Dale",
+    "Imogen Poots"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYjRiY2VhMzAtZmZkNy00YWZiLWI0YjQtYTUwODJkZDk4YzNkXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "PRESSURE",
+   "title_he": "שעת האפס",
+   "date_started": "2027-02-04",
+   "cc_id": "6664",
+   "cc_url": "https://www.cinema-city.co.il/movie/6664",
+   "poster": "posters/pressure.jpg",
+   "genre": "מותחן, דרמה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt32547691",
+   "imdb_url": "https://www.imdb.com/title/tt32547691/",
+   "imdb_title": "Pressure",
+   "year": 2026,
+   "imdb": 7.3,
+   "imdb_votes": 40511,
+   "watchlist": 270000,
+   "directors": [
+    "Anthony Maras"
+   ],
+   "actors": [
+    "Andrew Scott",
+    "Brendan Fraser",
+    "Kerry Condon"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMjE2YjdkNDctMDg1MS00MjBjLWIyZjEtZWM1ZjczNTAzZGEyXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": [
+    "Brendan Fraser"
+   ]
+  },
+  {
+   "title": "Ice Age: Boiling Point",
+   "title_he": "עידן הקרח: חם אש",
+   "date_started": "2027-02-04",
+   "cc_id": "6535",
+   "cc_url": "https://www.cinema-city.co.il/movie/6535",
+   "poster": "posters/iceageboilingpoint.jpg",
+   "genre": "ילדים, אנימציה, הרפתקה",
+   "kids": true,
+   "dubbed_only": false,
+   "imdb_id": "tt34512981",
+   "imdb_url": "https://www.imdb.com/title/tt34512981/",
+   "imdb_title": "Ice Age: Boiling Point",
+   "year": 2027,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 83800,
+   "directors": [
+    "John C. Donkin"
+   ],
+   "actors": [
+    "John Leguizamo",
+    "Simon Pegg",
+    "Denis Leary"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMWUyNWFhZDctMTlmNy00ZDFhLWE4NDEtMWQzZGQxM2ZmM2NiXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "Narnia: The Magician's Nephew",
+   "title_he": "נרניה: אחיינו של הקוסם",
+   "date_started": "2027-02-11",
+   "cc_id": "6678",
+   "cc_url": "https://www.cinema-city.co.il/movie/6678",
+   "poster": "posters/narniathemagiciansnephew.jpg",
+   "genre": "פנטזיה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt9077514",
+   "imdb_url": "https://www.imdb.com/title/tt9077514/",
+   "imdb_title": "Narnia: The Magician's Nephew",
+   "year": 2027,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 127000,
+   "directors": [
+    "Greta Gerwig"
+   ],
+   "actors": [
+    "Emma Mackey",
+    "Ciarán Hinds",
+    "Daniel Craig"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZmNhODIzYTEtNTg0ZS00MmIwLWE5YzgtNWE2MmU0YzE5ZGNjXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": [
+    "Greta Gerwig",
+    "Daniel Craig"
+   ]
+  },
+  {
+   "title": "THE DINO FAMILY",
+   "title_he": "משתגעים על משפחת דינו",
+   "date_started": "2027-02-18",
+   "cc_id": "6663",
+   "cc_url": "https://www.cinema-city.co.il/movie/6663",
+   "poster": "posters/thedinofamily.jpg",
+   "genre": "קומדיה, ילדים, הרפתקה",
+   "kids": true,
+   "dubbed_only": true,
+   "imdb_id": "tt23767810",
+   "imdb_url": "https://www.imdb.com/title/tt23767810/",
+   "imdb_title": "Doktor Dinozavrov",
+   "year": 2025,
+   "imdb": 6.1,
+   "imdb_votes": 74,
+   "watchlist": null,
+   "directors": [
+    "Maya Turkina",
+    "Maksim Volkov"
+   ],
+   "actors": [
+    "Vladimir Voytyuk",
+    "Vasilisa Savkina",
+    "Diomid Vinogradov"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYmU4ODQ0NmMtMmE5YS00NmQ1LTk5YWYtMzRhZjVjZTU4MmU5XkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "Spider Island",
+   "title_he": "ספיידר איילנד",
+   "date_started": "2027-02-25",
+   "cc_id": "6567",
+   "cc_url": "https://www.cinema-city.co.il/movie/6567",
+   "poster": "posters/spiderisland.jpg",
+   "genre": "אימה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt22406048",
+   "imdb_url": "https://www.imdb.com/title/tt22406048/",
+   "imdb_title": "Spider Island",
+   "year": 2026,
+   "imdb": 4.2,
+   "imdb_votes": 1272,
+   "watchlist": 6100,
+   "directors": [
+    "Christopher Smith"
+   ],
+   "actors": [
+    "Rose Williams",
+    "Tim McInnerny",
+    "Avani Gregg"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNjFmZjE5ZDAtOTYxYi00M2U2LWI2YWEtZjM5NTQyMDA2ZjNmXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "Gatto",
+   "title_he": "גאטו",
+   "date_started": "2027-03-04",
+   "cc_id": "6537",
+   "cc_url": "https://www.cinema-city.co.il/movie/6537",
+   "poster": "posters/gatto.jpg",
+   "genre": "ילדים, אנימציה, הרפתקה",
+   "kids": true,
+   "dubbed_only": false,
+   "imdb_id": "tt26443610",
+   "imdb_url": "https://www.imdb.com/title/tt26443610/",
+   "imdb_title": "Gatto",
+   "year": 2027,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 50400,
+   "directors": [
+    "Enrico Casarosa"
+   ],
+   "actors": [
+    "Mark Ruffalo",
+    "Laurence Fishburne",
+    "Enrico Casarosa"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYmU4ZTMxNmUtYzQxNS00YzdlLTllOWItNGZkOWFjMWZkMTA4XkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "The Thomas Crown Affair",
+   "title_he": "השוד המושלם",
+   "date_started": "2027-03-04",
+   "cc_id": "6554",
+   "cc_url": "https://www.cinema-city.co.il/movie/6554",
+   "poster": "posters/thethomascrownaffair.jpg",
+   "genre": "אקשן",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt5500064",
+   "imdb_url": "https://www.imdb.com/title/tt5500064/",
+   "imdb_title": "The Thomas Crown Affair",
+   "year": 2027,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 107000,
+   "directors": [
+    "Michael B. Jordan"
+   ],
+   "actors": [
+    "Kenneth Branagh",
+    "Danai Gurira",
+    "Adria Arjona"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYjQ0ZDU2NmEtMTU1ZC00NDQyLTgyNDQtM2RkZTE3NTI4NzIxXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "SHREK 5",
+   "title_he": "שרק 5",
+   "date_started": "2027-07-01",
+   "cc_id": "6681",
+   "cc_url": "https://www.cinema-city.co.il/movie/6681",
+   "poster": "posters/shrek5.jpg",
+   "genre": "קומדיה, אנימציה, הרפתקה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt6113186",
+   "imdb_url": "https://www.imdb.com/title/tt6113186/",
+   "imdb_title": "Shrek 5",
+   "year": 2027,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 188000,
+   "directors": [
+    "Walt Dohrn",
+    "Conrad Vernon"
+   ],
+   "actors": [
+    "Mike Myers",
+    "Cameron Diaz",
+    "Eddie Murphy"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNmNkNmRkNDAtOTMzNC00MWYzLWJhNjMtYjNkZTNjODVhOTg2XkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": [
+    "Eddie Murphy"
+   ]
+  },
+  {
+   "title": "The Bluey Movie",
+   "title_he": "בלואי הסרט",
+   "date_started": "2027-08-05",
+   "cc_id": "6574",
+   "cc_url": "https://www.cinema-city.co.il/movie/6574",
+   "poster": "posters/theblueymovie.jpg",
+   "genre": "ילדים, אנימציה, הרפתקה",
+   "kids": true,
+   "dubbed_only": true,
+   "imdb_id": "tt35050152",
+   "imdb_url": "https://www.imdb.com/title/tt35050152/",
+   "imdb_title": "The Bluey Movie",
+   "year": 2027,
+   "imdb": null,
+   "imdb_votes": 0,
+   "watchlist": 16900,
+   "directors": [
+    "Joe Brumm",
+    "Richard Jeffery"
+   ],
+   "actors": [
+    "Melanie Zanetti",
+    "David McCormack"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZWNhNjg1N2EtZDBmZi00YjFiLTk3YzQtMzM2ZmU1OGY1YzEzXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
+  },
+  {
+   "title": "Moss & Freud",
+   "title_he": "מוס ופרויד",
+   "date_started": "2027-12-30",
+   "cc_id": "6590",
+   "cc_url": "https://www.cinema-city.co.il/movie/6590",
+   "poster": "posters/mossandfreud.jpg",
+   "genre": "דרמה",
+   "kids": false,
+   "dubbed_only": false,
+   "imdb_id": "tt20355310",
+   "imdb_url": "https://www.imdb.com/title/tt20355310/",
+   "imdb_title": "Moss & Freud",
+   "year": 2025,
+   "imdb": 5.4,
+   "imdb_votes": 270,
+   "watchlist": 2800,
+   "directors": [
+    "James Lucas"
+   ],
+   "actors": [
+    "Jasmine Blackborow",
+    "Ellie Bamber",
+    "Derek Jacobi"
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BY2RlZTYxNzAtYWQ1MC00OTM2LWFmYWMtNzc5ZTY1NDk4MThiXkEyXkFqcGc@._V1_UX500_.jpg",
+   "top_people": []
   }
  ]
 }
