@@ -8,6 +8,10 @@
 //   POST ?action=unsubscribe        -> {endpoint}: forget that device
 //   GET  ?action=prefs&user=        -> (x-cinema-pass header) own favorites/watched; Oren also gets the others' favorites
 //   POST ?action=prefs&user=        -> save own marks; a new favorite from Lior/Evyatar pushes a note to Oren
+// Public app (docs/app/): anonymous visitors, one random id per browser, in their own tables
+// (cinema_public_prefs, cinema_public_push), kept apart from the family's.
+//   GET/POST ?action=pprefs&id=<uuid> -> that visitor's favorites/watched
+//   POST ?action=subscribe          -> {sub, pid}: a public visitor's device
 //   POST ?action=send               -> push the latest scan (docs/data.json on main) to every subscriber, once per scan,
 //                                      tailored to each user's taste, plus premieres and leaving-soon favorites
 import webpush from "npm:web-push@3.6.7";
@@ -17,6 +21,9 @@ const PAGE_URL = "https://tipul10000-droid.github.io/cinema-city-weekly/";
 // GitHub API (not raw.githubusercontent) so a just-committed scan is never served from cache
 const DATA_URL = "https://api.github.com/repos/tipul10000-droid/cinema-city-weekly/contents/docs/data.json?ref=main";
 const USERS = ["oren", "lior", "evyatar"];
+const PUBLIC_URL = PAGE_URL + "app/";
+const isUuid = (s: unknown) => typeof s === "string" && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(s);
+const clean = (a: unknown) => Array.isArray(a) ? [...new Set(a.filter((x) => typeof x === "string" && x.length < 200))].slice(0, 2000) : [];
 const NAMES: Record<string, string> = { oren: "אורן", lior: "ליאור", evyatar: "אביתר", guest: "אורח" };
 // Lior likes romantic comedies, romance, drama and "special" films (e.g. Verity, Heart of the Beast);
 // Oren and Evyatar share a taste: everything for grown-ups
@@ -59,7 +66,7 @@ function line(m: any) {
 }
 const dm = (iso: string) => { const [, mo, d] = iso.slice(0, 10).split("-"); return `${+d}.${+mo}`; };
 
-async function push(sb: any, subs: any[], payload: object) {
+async function push(sb: any, subs: any[], payload: object, table = "cinema_push") {
   let sent = 0;
   await Promise.allSettled(subs.map(async (s: any) => {
     try {
@@ -70,7 +77,7 @@ async function push(sb: any, subs: any[], payload: object) {
       );
       sent++;
     } catch (e: any) {
-      if (e?.statusCode === 404 || e?.statusCode === 410) await sb.from("cinema_push").delete().eq("endpoint", s.endpoint);
+      if (e?.statusCode === 404 || e?.statusCode === 410) await sb.from(table).delete().eq("endpoint", s.endpoint);
     }
   }));
   return sent;
@@ -100,7 +107,6 @@ Deno.serve(async (req) => {
     const { data: row } = await sb.from("cinema_prefs").select("fav,seen").eq("id", user).maybeSingle();
     if (req.method === "POST") {
       const b = await req.json().catch(() => null);
-      const clean = (a: unknown) => Array.isArray(a) ? [...new Set(a.filter((x) => typeof x === "string" && x.length < 200))].slice(0, 2000) : [];
       if (!b) return json({ ok: false }, 400);
       const fav = clean(b.fav), seen = clean(b.seen);
       await sb.from("cinema_prefs").upsert({ id: user, fav, seen, updated_at: new Date().toISOString() });
@@ -124,10 +130,33 @@ Deno.serve(async (req) => {
     return json(out);
   }
 
+  if (action === "pprefs") {
+    const id = url.searchParams.get("id");
+    if (!isUuid(id)) return json({ ok: false }, 400);
+    if (req.method === "POST") {
+      const b = await req.json().catch(() => null);
+      if (!b) return json({ ok: false }, 400);
+      await sb.from("cinema_public_prefs").upsert({ id, fav: clean(b.fav), seen: clean(b.seen), updated_at: new Date().toISOString() });
+      return json({ ok: true });
+    }
+    const { data: row } = await sb.from("cinema_public_prefs").select("fav,seen").eq("id", id).maybeSingle();
+    return json({ prefs: { fav: row?.fav || [], seen: row?.seen || [] } });
+  }
+
   if (action === "subscribe" && req.method === "POST") {
     const b = await req.json().catch(() => null);
     const s = b?.sub || b;  // older pages posted the bare subscription
     if (!s?.endpoint?.startsWith("https://") || !s?.keys?.p256dh || !s?.keys?.auth) return json({ ok: false }, 400);
+    if (isUuid(b?.pid)) {  // the public app
+      const row = { endpoint: s.endpoint, p256dh: s.keys.p256dh, auth: s.keys.auth, pid: b.pid };
+      await sb.from("cinema_public_push").upsert(row);
+      const sent = await push(sb, [row], {
+        title: "🎬 ההתראות פעילות",
+        body: "כל יום ראשון: מה חדש בסינמה סיטי, ובכורות גדולות כשהן מגיעות",
+        url: PUBLIC_URL, tag: "cinema-welcome",
+      }, "cinema_public_push");
+      return json({ ok: true, sent, user: "public" });
+    }
     const user = authed(b?.user, b?.pass) ? b.user : "guest";
     const row = { endpoint: s.endpoint, p256dh: s.keys.p256dh, auth: s.keys.auth, user_id: user };
     await sb.from("cinema_push").upsert(row);
@@ -145,6 +174,7 @@ Deno.serve(async (req) => {
     const b = await req.json().catch(() => null);
     if (!b?.endpoint?.startsWith("https://")) return json({ ok: false }, 400);
     await sb.from("cinema_push").delete().eq("endpoint", b.endpoint);
+    await sb.from("cinema_public_push").delete().eq("endpoint", b.endpoint);
     return json({ ok: true });
   }
 
@@ -204,6 +234,39 @@ Deno.serve(async (req) => {
           body: leaving.map((m: any) => `${m.title}: ${m.screenings} הקרנות השבוע${m.prev_screenings ? ` (היו ${m.prev_screenings})` : ""}, ${(m.cinemas || []).join(", ")}`).join("\n"),
           url: PAGE_URL, tag: `cinema-leaving-${data.generated_at}`,
         });
+      }
+    }
+    // the public app: everyone gets the general list; starred and leaving notes per visitor
+    const { data: psubs } = await sb.from("cinema_public_push").select("*");
+    if (psubs?.length) {
+      const list = movies.filter(forUser("public"));
+      const premieres = list.filter((m: any) => m.premiere_week).map((m: any) => m.title);
+      const head = [
+        openingNow.length ? `🎬 בכורה גדולה השבוע: ${openingNow.map((m: any) => `${m.title} (${dm(m.date_started)})`).join(", ")}` : "",
+        premieres.length ? `🆕 בכורות השבוע: ${premieres.join(", ")}` : "",
+      ].filter(Boolean).join("\n");
+      sent += await push(sb, psubs, {
+        title: `🎬 מה בסינמה סיטי השבוע: ${movies.length} סרטים`,
+        body: (head ? head + "\n\n" : "") + list.slice(0, 10).map(line).join("\n") + (list.length > 10 ? `\n…ועוד ${list.length - 10} בדף` : ""),
+        url: PUBLIC_URL, tag: `cinema-${data.generated_at}`,
+      }, "cinema_public_push");
+      const pids = [...new Set(psubs.map((s: any) => s.pid).filter(Boolean))];
+      const { data: pprefs } = pids.length ? await sb.from("cinema_public_prefs").select("id,fav,seen").in("id", pids) : { data: [] };
+      for (const p of pprefs || []) {
+        const mine = psubs.filter((s: any) => s.pid === p.id);
+        const fav = new Set(p.fav || []), seen = new Set(p.seen || []);
+        const starred = allUpcoming.filter((m: any) => fav.has(m.title) && m.date_started >= scanDay && m.date_started < weekEnd);
+        if (starred.length) await push(sb, mine, {
+          title: starred.length === 1 ? `★ ${starred[0].title} יוצא השבוע` : `★ ${starred.length} סרטים שסימנת יוצאים השבוע`,
+          body: starred.map((m: any) => `${m.title}${m.title_he ? ` (${m.title_he})` : ""}: בכורה ב-${dm(m.date_started)}`).join("\n"),
+          url: PUBLIC_URL, tag: `cinema-starred-${data.generated_at}`,
+        }, "cinema_public_push");
+        const leaving = movies.filter((m: any) => m.leaving && fav.has(m.title) && !seen.has(m.title));
+        if (leaving.length) await push(sb, mine, {
+          title: leaving.length === 1 ? `⏳ ${leaving[0].title} עומד לרדת מהמסכים` : `⏳ ${leaving.length} סרטים מהמועדפים עומדים לרדת`,
+          body: leaving.map((m: any) => `${m.title}: ${m.screenings} הקרנות השבוע, ${(m.cinemas || []).join(", ")}`).join("\n"),
+          url: PUBLIC_URL, tag: `cinema-leaving-${data.generated_at}`,
+        }, "cinema_public_push");
       }
     }
     await sb.from("cinema_push_log").update({ sent }).eq("generated_at", data.generated_at);

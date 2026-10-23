@@ -1,0 +1,25 @@
+name: Sync public app
+
+# docs/app/ (the public app) is generated from docs/index.html; keep it in step with every change
+on:
+  push:
+    branches: [main]
+    paths: [docs/index.html, docs/sw.js, docs/manifest.json, tools/make_public.py]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build docs/app
+        run: python3 tools/make_public.py
+      - name: Commit
+        run: |
+          git config user.name "cinema-bot"
+          git config user.email "cinema-bot@users.noreply.github.com"
+          git add docs/app
+          git diff --cached --quiet || (git commit -m "Sync public app" && git push)
