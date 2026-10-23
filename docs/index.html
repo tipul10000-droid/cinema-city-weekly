@@ -33,7 +33,10 @@
   .mark button.on { color:var(--imdb); border-color:var(--imdb); }
   .mark button.seen.on { color:var(--good); border-color:var(--good); }
   .m.watched { opacity:.55; }
-  .count { color:var(--muted); font-size:12px; margin:2px 0 8px; }
+  .stat { display:flex; align-items:center; gap:10px; width:100%; }
+  .count { color:var(--text); font-size:13px; font-weight:650; font-variant-numeric:tabular-nums; }
+  .count .of { color:var(--muted); font-weight:400; }
+  #reset { margin-inline-start:auto; padding:7px 14px; border-radius:999px; border:0; background:var(--bad); color:#fff; font:inherit; font-size:13px; font-weight:700; cursor:pointer; }
   .bar input { flex:1 1 160px; min-width:0; padding:8px 10px; border-radius:8px; border:1px solid var(--line); background:var(--card); color:var(--text); font:inherit; }
   .chip { padding:7px 12px; border-radius:999px; border:1px solid var(--line); background:var(--card); color:var(--text); cursor:pointer; font:inherit; font-size:13px; }
   .chip.on { background:var(--text); color:var(--bg); }
@@ -57,6 +60,7 @@
   .push { margin-top:10px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; font-size:13px; color:var(--muted); }
   .push button { padding:8px 14px; border-radius:999px; border:0; background:var(--imdb); color:#000; font:inherit; font-weight:650; cursor:pointer; }
   .push button[disabled] { opacity:.6; cursor:default; }
+  .push button.ghost { background:none; border:1px solid var(--line); color:var(--muted); font-weight:500; }
   .tabs { display:flex; gap:6px; max-width:900px; margin:auto; padding:8px 16px 4px; }
   .tab { flex:1; white-space:nowrap; padding:9px 6px; border-radius:10px; border:1px solid var(--line); background:var(--card); color:var(--text); font:inherit; font-weight:600; cursor:pointer; }
   .tab.on { background:var(--imdb); color:#000; border-color:var(--imdb); }
@@ -85,7 +89,7 @@
   <h1>🎬 מה בסינמה סיטי השבוע</h1>
   <div class="meta" id="meta">טוען…</div>
   <div class="meta" id="who"></div>
-  <div class="push" id="push" hidden><button id="pushBtn">🔔 הפעל התראות</button><span id="pushMsg"></span></div>
+  <div class="push" id="push" hidden><button id="pushBtn">🔔 הפעל התראות</button><button id="pushOff" class="ghost" hidden>בטל התראות</button><span id="pushMsg"></span></div>
 </header>
 <nav class="tabs"><button class="tab on" data-tab="now">🎬 עכשיו</button><button class="tab" data-tab="soon">📅 בקרוב</button><button class="tab" data-tab="seen">✓ ראיתי</button></nav>
 <section id="seenView" hidden><main><div class="count">כל הסרטים שסימנת ✓, נשמרים לתמיד, גם אחרי שירדו מהקולנוע.</div><div id="seenList"></div></main></section>
@@ -122,6 +126,7 @@
     <button class="chip" data-f="leaving">⏳ לפני ירידה</button>
     <button class="chip" data-f="premieres">🆕 בכורות השבוע</button>
   </div>
+  <div class="stat"><span class="count" id="count"></span><button id="reset" hidden>✕ נקה הכל</button></div>
 </div>
 <div id="full" hidden><img alt=""></div>
 <div id="login" hidden>
@@ -132,12 +137,13 @@
     <div class="meta" id="loginMsg"></div>
   </div>
 </div>
-<main id="nowView"><div class="count" id="count"></div><div id="list"></div></main>
+<main id="nowView"><div id="list"></div></main>
 <script>
 let data = [];
 const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
 const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
-const st = Object.assign({ sort: "imdb", aud: "all", noDub: false, noForeign: false, noIsraeli: false, stars: false, fav: false, lior: false, evyatar: false, hideSeen: false, special: false, leaving: false, premieres: false }, load("cc-filters", {}));
+const DEFAULTS = { sort: "imdb", aud: "all", noDub: false, noForeign: false, noIsraeli: false, stars: false, fav: false, lior: false, evyatar: false, hideSeen: false, special: false, leaving: false, premieres: false };
+const st = Object.assign({}, DEFAULTS, load("cc-filters", {}));
 if (!(st.sort in { imdb: 1, rt: 1, new: 1 })) st.sort = "imdb";  // the name sort was removed
 // who is using the page: oren / lior / evyatar (password) or guest (just browsing, no marks)
 const USER_NAMES = { oren: "אורן", lior: "ליאור", evyatar: "אביתר", guest: "אורח" };
@@ -221,7 +227,8 @@ function render() {
     if (!q) return true;
     return [m.title, m.title_he, ...(m.actors||[]), ...(m.directors||[]), m.genre].join(" ").toLowerCase().includes(q);
   }).sort(sorters[st.sort]);
-  document.getElementById("count").textContent = rows.length === data.length ? "" : `מוצגים ${rows.length} מתוך ${data.length}`;
+  document.getElementById("count").innerHTML = rows.length === data.length ? `${data.length} סרטים` : `${rows.length} סרטים <span class="of">מתוך ${data.length}</span>`;
+  document.getElementById("reset").hidden = !q && Object.keys(DEFAULTS).every(k => k === "sort" || st[k] === DEFAULTS[k]);
   document.getElementById("list").innerHTML = rows.length ? rows.map(m => `
     <article class="m${prefs.seen.includes(m.title) ? " watched" : ""}">
       <img loading="lazy" src="${esc(m.poster)}" alt="" data-full data-alt="${esc(m.imdb_poster || "")}" onerror="posterError(this)">
@@ -349,6 +356,7 @@ const changed = () => { save("cc-filters", st); syncChips(); render(); };
 document.querySelectorAll("[data-sort]").forEach(b => b.onclick = () => { st.sort = b.dataset.sort; changed(); });
 document.querySelectorAll("[data-aud]").forEach(b => b.onclick = () => { st.aud = b.dataset.aud; changed(); });
 document.querySelectorAll("[data-f]").forEach(b => b.onclick = () => { st[b.dataset.f] = !st[b.dataset.f]; changed(); });
+document.getElementById("reset").onclick = () => { Object.assign(st, DEFAULTS, { sort: st.sort }); document.getElementById("q").value = ""; changed(); };
 syncChips();
 // a dead poster link: try the IMDb poster, else show an empty frame instead of a broken image
 function posterError(img) {
@@ -442,26 +450,48 @@ const b64ToBytes = s => Uint8Array.from(atob((s + "=".repeat((4 - s.length % 4) 
     msg.textContent = ios && !standalone ? "להתראות: שתף ← הוסף למסך הבית, ופתח משם" : "הדפדפן הזה לא תומך בהתראות";
     return;
   }
-  const existing = await reg.pushManager.getSubscription();
-  const done = () => { btn.disabled = true; btn.textContent = "🔔 התראות פעילות"; msg.textContent = "כל יום ראשון ב-08:00"; };
-  if (existing && Notification.permission === "granted") {
-    done();
-    // notifications follow the user: re-register this device after switching users
-    if (user && load("cc-push-user", "oren") !== user)
-      fetch(PUSH_API + "?action=subscribe", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ sub: existing, user, pass }) })
-        .then(r => r.ok && save("cc-push-user", user)).catch(() => {});
-  }
-  btn.onclick = async () => {
-    btn.disabled = true; msg.textContent = "מפעיל…";
-    try {
-      if (await Notification.requestPermission() !== "granted") throw new Error("לא ניתן אישור להתראות");
-      const { publicKey } = await (await fetch(PUSH_API + "?action=pubkey")).json();
-      const sub = existing || await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64ToBytes(publicKey) });
-      const r = await fetch(PUSH_API + "?action=subscribe", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ sub, user, pass }) });
+  const off = document.getElementById("pushOff");
+  const NAME = { oren: "אורן", lior: "ליאור", evyatar: "אביתר", guest: "אורח" };
+  let existing = await reg.pushManager.getSubscription();
+  const subscribe = sub => fetch(PUSH_API + "?action=subscribe", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ sub, user, pass }) })
+    .then(async r => {
       if (!r.ok) throw new Error("השמירה נכשלה");
       save("cc-push-user", user);
-      done();
-    } catch (e) { btn.disabled = false; msg.textContent = e.message; }
+      if (!(await r.json()).sent) throw new Error("ההתראה לא הגיעה למכשיר. בטל והפעל מחדש");
+    });
+  const on = () => {
+    btn.disabled = false; btn.textContent = "🔔 שלח התראת בדיקה"; off.hidden = false;
+    msg.textContent = `פעילות עבור ${NAME[user] || "אורח"} · כל יום ראשון ב-08:00`;
+  };
+  const idle = t => { btn.disabled = false; btn.textContent = "🔔 הפעל התראות"; off.hidden = true; msg.textContent = t || ""; };
+  if (existing && Notification.permission === "granted") {
+    on();
+    // notifications follow the user: re-register this device after switching users
+    if (user && load("cc-push-user", "oren") !== user) subscribe(existing).catch(() => {});
+  }
+  // with a subscription the button re-registers this device for the current user, which also sends a test notification
+  btn.onclick = async () => {
+    btn.disabled = true; msg.textContent = existing ? "שולח בדיקה…" : "מפעיל…";
+    try {
+      if (await Notification.requestPermission() !== "granted") throw new Error("לא ניתן אישור להתראות");
+      if (!existing) {
+        const { publicKey } = await (await fetch(PUSH_API + "?action=pubkey")).json();
+        existing = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64ToBytes(publicKey) });
+      }
+      await subscribe(existing);
+      on();
+    } catch (e) { btn.disabled = false; msg.textContent = e.message; off.hidden = !existing; }
+  };
+  off.onclick = async () => {
+    off.disabled = true;
+    try {
+      if (existing) {
+        await fetch(PUSH_API + "?action=unsubscribe", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ endpoint: existing.endpoint }) });
+        await existing.unsubscribe();
+      }
+      existing = null; save("cc-push-user", null); idle("ההתראות בוטלו במכשיר הזה");
+    } catch (e) { msg.textContent = "הביטול נכשל"; }
+    off.disabled = false;
   };
 })();
 

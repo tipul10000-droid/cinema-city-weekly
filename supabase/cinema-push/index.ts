@@ -5,6 +5,7 @@
 //   GET  ?action=pubkey             -> VAPID public key for the page
 //   POST ?action=login              -> {user, pass} -> ok or 401
 //   POST ?action=subscribe          -> {sub, user, pass}: store a PushSubscription for that user (guest without pass)
+//   POST ?action=unsubscribe        -> {endpoint}: forget that device
 //   GET  ?action=prefs&user=        -> (x-cinema-pass header) own favorites/watched; Oren also gets the others' favorites
 //   POST ?action=prefs&user=        -> save own marks; a new favorite from Lior/Evyatar pushes a note to Oren
 //   POST ?action=send               -> push the latest scan (docs/data.json on main) to every subscriber, once per scan,
@@ -131,13 +132,20 @@ Deno.serve(async (req) => {
     const row = { endpoint: s.endpoint, p256dh: s.keys.p256dh, auth: s.keys.auth, user_id: user };
     await sb.from("cinema_push").upsert(row);
     const sent = await push(sb, [row], {
-      title: "🎬 ההתראות פעילות",
+      title: `🎬 ההתראות פעילות · ${NAMES[user] || "אורח"}`,
       body: user === "oren"
         ? "סרטים חדשים, בכורות, ומה שליאור ואביתר מסמנים ★"
         : "כל יום ראשון: מה חדש בסינמה סיטי, ובכורות גדולות כשהן מגיעות",
       url: PAGE_URL, tag: "cinema-welcome",
     });
     return json({ ok: true, sent, user });
+  }
+
+  if (action === "unsubscribe" && req.method === "POST") {
+    const b = await req.json().catch(() => null);
+    if (!b?.endpoint?.startsWith("https://")) return json({ ok: false }, 400);
+    await sb.from("cinema_push").delete().eq("endpoint", b.endpoint);
+    return json({ ok: true });
   }
 
   if (action === "send" && req.method === "POST") {
