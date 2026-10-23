@@ -24,7 +24,9 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(ROOT, "docs", "data.json")
 # every movie any scan has ever listed, kept forever so the "watched" log can show movies long after they left
 ARCHIVE_PATH = os.path.join(ROOT, "docs", "archive.json")
-ARCHIVE_FIELDS = ("title", "title_he", "poster", "cc_url", "genre", "kids", "date_started", "year", "imdb", "imdb_url",
+# posters are copied into the site: Cinema City's image links expire (403) after a while
+POSTER_DIR = os.path.join(ROOT, "docs", "posters")
+ARCHIVE_FIELDS = ("title", "title_he", "poster", "imdb_poster", "cc_url", "genre", "kids", "date_started", "year", "imdb", "imdb_url",
                   "rt", "rt_url", "directors", "actors", "top_people")
 PAGE_URL = os.environ.get("PAGE_URL", "https://tipul10000-droid.github.io/cinema-city-weekly/")
 
@@ -397,18 +399,48 @@ def upcoming_hits(feats, now, prev_upcoming):
             hit = imdb_find(m["title"], now.year)
             if hit:
                 m.update(imdb_details(hit["id"]))
-                if not m.get("poster") and hit.get("i"):
-                    m["poster"] = hit["i"]["imageUrl"].replace("._V1_.", "._V1_UX300_.")
+                if hit.get("i"):
+                    m["imdb_poster"] = hit["i"]["imageUrl"].replace("._V1_.", "._V1_UX500_.")
         except Exception as e:
             print("imdb fail", m["title"], e)
         m["top_people"] = [p for p in m.get("directors") or [] if p in TOP_DIRECTORS] + \
                           [p for p in m.get("actors") or [] if p in TOP_ACTORS]
         big = is_blockbuster(m)
+        if big:
+            mirror_poster(m)
         print("  soon" + (" ★" if big else "  "), m["date_started"], m["title"], "watchlist", m.get("watchlist"))
         if big:
             hits.append(m)
         time.sleep(0.5)
     return sorted(hits, key=lambda m: m["date_started"])
+
+
+def mirror_poster(m):
+    """Keep a copy of the poster in docs/posters and point the page at it. Tries Cinema City's image first,
+    then IMDb's. A movie that already has a copy keeps it."""
+    name = norm(m["title"]) + ".jpg"
+    path = os.path.join(POSTER_DIR, name)
+    if os.path.exists(path) and os.path.getsize(path) > 1000:
+        m["poster"] = f"posters/{name}"
+        return
+    for url in (m.get("poster"), m.get("imdb_poster")):
+        if not url or not url.startswith("http"):
+            continue
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA})
+            with urllib.request.urlopen(req, timeout=30) as r:
+                body = r.read()
+                if not r.headers.get("Content-Type", "").startswith("image/") or len(body) < 1000:
+                    continue
+            os.makedirs(POSTER_DIR, exist_ok=True)
+            with open(path, "wb") as f:
+                f.write(body)
+            m["poster"] = f"posters/{name}"
+            return
+        except Exception as e:
+            print("poster fail", m["title"], url.split("?")[0][-60:], e)
+    if m.get("imdb_poster"):  # nothing could be copied; at least don't point at a dead Cinema City link
+        m["poster"] = m["imdb_poster"]
 
 
 def update_archive(movies, scan_date, path=ARCHIVE_PATH):
@@ -472,8 +504,9 @@ def main():
         m["prev_screenings"] = old.get("screenings") if set(old.get("cinemas") or ["?"]) <= CENTRAL else None
         m["leaving"] = is_leaving(m, now)
         m["premiere_week"] = is_premiere_week(m, now, bool(prev_movies) and not old)
-        if not m.get("poster") and hit and hit.get("i"):
-            m["poster"] = hit["i"]["imageUrl"].replace("._V1_.", "._V1_UX300_.")
+        if hit and hit.get("i"):
+            m["imdb_poster"] = hit["i"]["imageUrl"].replace("._V1_.", "._V1_UX500_.")
+        mirror_poster(m)
         print(" ", fmt_line(m))
         time.sleep(0.5)
     movies.sort(key=sort_key)

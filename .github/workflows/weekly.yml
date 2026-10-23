@@ -29,7 +29,7 @@ jobs:
         run: |
           git config user.name "cinema-bot"
           git config user.email "cinema-bot@users.noreply.github.com"
-          git add docs/data.json docs/archive.json
+          git add docs/data.json docs/archive.json docs/posters
           git diff --cached --quiet || (git commit -m "Weekly movie scan $(date -u +%F)" && git push)
       - name: Send web push
         run: curl -sS -X POST "https://emgtyfksnofzzlutngbf.supabase.co/functions/v1/cinema-push?action=send" || true
