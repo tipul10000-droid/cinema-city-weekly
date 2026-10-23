@@ -6,7 +6,7 @@
    "title_he": "האודיסאה",
    "cc_id": "6286",
    "cc_url": "https://www.cinema-city.co.il/movie/6286",
-   "poster": "https://cdn.presglobal.pro/nlc/feature/cb867e5a-7837-4d34-9dca-53e66ce95cac",
+   "poster": "posters/theodyssey.jpg",
    "genre": "אקשן",
    "duration": 172,
    "language": "en",
@@ -50,14 +50,15 @@
    ],
    "prev_screenings": 17,
    "leaving": true,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNTcyNmJlZmQtNDUwYy00NDBjLTg1NGQtYTY2Y2UxMWM3NmI1XkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "SPIDERMAN: BRAND NEW DAY",
    "title_he": "ספיידרמן: יום חדש",
    "cc_id": "6381",
    "cc_url": "https://www.cinema-city.co.il/movie/6381",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/ff521b7c-31fe-42d9-9161-c1d2dff69c98",
+   "poster": "posters/spidermanbrandnewday.jpg",
    "genre": "פנטזיה",
    "duration": 150,
    "language": "en",
@@ -100,14 +101,15 @@
    ],
    "prev_screenings": 11,
    "leaving": true,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOWNjYWM3NWItOGE0ZS00MWRjLThiZWEtYjc4ZmNmMmU5ZTVmXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Forgotten Island",
    "title_he": "האי הנעלם",
    "cc_id": "6467",
    "cc_url": "https://www.cinema-city.co.il/movie/6467",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/50334792-8783-4a16-a9f8-385b1e14ae00",
+   "poster": "posters/forgottenisland.jpg",
    "genre": "ילדים, אנימציה, הרפתקה",
    "duration": 109,
    "language": null,
@@ -151,14 +153,15 @@
    "top_people": [],
    "prev_screenings": 63,
    "leaving": true,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMWJlY2JiNTMtYTAwYy00NGFiLTkwYTEtM2VmNDc4MzM5YmJiXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Matchmaking 3",
    "title_he": "בחורים טובים 3",
    "cc_id": "6555",
    "cc_url": "https://www.cinema-city.co.il/movie/6555",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/1db58658-06e9-47b8-bc26-909e91fd4b41",
+   "poster": "posters/matchmaking3.jpg",
    "genre": "קומדיה",
    "duration": 105,
    "language": "he",
@@ -201,14 +204,15 @@
    "top_people": [],
    "prev_screenings": 143,
    "leaving": false,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZWZjNmE3MjEtMmNjNy00OWVmLTkyMGEtODBmNjkzYTZjZmM1XkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Resident Evil",
    "title_he": "האויב שבפנים",
    "cc_id": "6433",
    "cc_url": "https://www.cinema-city.co.il/movie/6433",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/f92ac40b-c230-42b9-b27b-df41e5d9f29a",
+   "poster": "posters/residentevil.jpg",
    "genre": "אימה",
    "duration": 90,
    "language": "en",
@@ -251,14 +255,15 @@
    ],
    "prev_screenings": 13,
    "leaving": true,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOGZjZWI1NTItOGUwZC00YWZkLWIxZWEtNzE2ZTIxODdjNmZmXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Tell Me Everything",
    "title_he": "עצמאות",
    "cc_id": "6541",
    "cc_url": "https://www.cinema-city.co.il/movie/6541",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/1e97a4c1-9b5a-4d4a-a8ce-da57143c23c3",
+   "poster": "posters/tellmeeverything.jpg",
    "genre": "דרמה",
    "duration": 109,
    "language": "he",
@@ -302,14 +307,15 @@
    "top_people": [],
    "prev_screenings": 71,
    "leaving": false,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BODhkMzZhNTUtOTY4NS00NzhkLTk2MzgtYzkzZGY5ZjY3NDI4XkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "קופה ראשית: הסרט",
    "title_he": "קופה ראשית: הסרט",
    "cc_id": "6419",
    "cc_url": "https://www.cinema-city.co.il/movie/6419",
-   "poster": "https://cdn.presglobal.pro/nlc/feature/dfea8349-5299-4ec2-a980-9dca2ed5fb6d",
+   "poster": "posters/קופהראשיתהסרט.jpg",
    "genre": "קומדיה",
    "duration": 91,
    "language": "he",
@@ -349,14 +355,15 @@
    "top_people": [],
    "prev_screenings": 44,
    "leaving": false,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNzYyMjM1N2QtYTY2MS00NTcxLWFkNGItOGE1MDU1M2QzNGViXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "WAVES",
    "title_he": "גלים של תקווה",
    "cc_id": "6589",
    "cc_url": "https://www.cinema-city.co.il/movie/6589",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/5656f618-5fa9-4421-ab8d-45c5c0ce6810",
+   "poster": "posters/waves.jpg",
    "genre": "דרמה",
    "duration": 131,
    "language": "cs",
@@ -393,14 +400,15 @@
    ],
    "prev_screenings": 16,
    "leaving": false,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNmFlNmQyYzctMzE3Ni00NjRkLWFiYzctYmZjMDllZTdkY2VjXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Digger",
    "title_he": "דיגר",
    "cc_id": "6531",
    "cc_url": "https://www.cinema-city.co.il/movie/6531",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/999abd82-c696-42c5-ac29-647da4c2b3de",
+   "poster": "posters/digger.jpg",
    "genre": "קומדיה",
    "duration": 128,
    "language": "en",
@@ -441,14 +449,15 @@
    ],
    "prev_screenings": 21,
    "leaving": false,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BN2E0YTg1M2YtOGQyYi00NDFkLTk3NzUtYmEyNTZhYThhZDQ0XkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Left-Handed Girl",
    "title_he": "הילדה השמאלית",
    "cc_id": "6620",
    "cc_url": "https://www.cinema-city.co.il/movie/6620",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/f041f15a-628f-4b96-b3fb-4da8cee87fed",
+   "poster": "posters/lefthandedgirl.jpg",
    "genre": "דרמה",
    "duration": 108,
    "language": "zh",
@@ -483,14 +492,15 @@
    "top_people": [],
    "prev_screenings": 4,
    "leaving": false,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYTE2OWQxZWMtNjdjNC00NGNhLWE5OTUtZDA2ZjhhMjk0MmRmXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Coyote vs. Acme",
    "title_he": "לוני טונס מציגים: קיוטי נגד אקמי",
    "cc_id": "6492",
    "cc_url": "https://www.cinema-city.co.il/movie/6492",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/adc97e2b-4738-4c16-90cc-2fd55db33fa0",
+   "poster": "posters/coyotevsacme.jpg",
    "genre": "קומדיה, אנימציה",
    "duration": 101,
    "language": null,
@@ -526,14 +536,15 @@
    "top_people": [],
    "prev_screenings": 12,
    "leaving": true,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMDg5NDFkNTctZWE2ZC00MDYzLThlYjItZTljZDY3NTcwNjA3XkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Toy Story 5",
    "title_he": "צעצוע של סיפור 5",
    "cc_id": "6306",
    "cc_url": "https://www.cinema-city.co.il/movie/6306",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/5a28d91f-9c25-4353-81e3-7d367ebc9fb3",
+   "poster": "posters/toystory5.jpg",
    "genre": "אנימציה",
    "duration": 102,
    "language": null,
@@ -574,14 +585,15 @@
    ],
    "prev_screenings": 9,
    "leaving": true,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZTI1YTBiNmEtYWUxZi00YzFkLWIzNjMtMmZjMmY2NzM0ZWMzXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Shaun the Sheep: The Beast of Mossy Bottom",
    "title_he": "שון כבשון: מצמרר מצחוק",
    "cc_id": "6624",
    "cc_url": "https://www.cinema-city.co.il/movie/6624",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/99f5da3f-7d14-4b3a-8fe8-5eff40d0b270",
+   "poster": "posters/shaunthesheepthebeastofmossybottom.jpg",
    "genre": "ילדים, אנימציה, הרפתקה",
    "duration": 81,
    "language": null,
@@ -621,14 +633,15 @@
    "top_people": [],
    "prev_screenings": 73,
    "leaving": false,
-   "premiere_week": true
+   "premiere_week": true,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOTA5NWIxODktNjcwOC00MjNjLWE1ZDctNWNmODkzYzc2Y2RhXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "HEART OF THE BEAST",
    "title_he": "בלב הפרא",
    "cc_id": "6528",
    "cc_url": "https://www.cinema-city.co.il/movie/6528",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/03e10a08-c455-40d4-a7a2-faac708d78cd",
+   "poster": "posters/heartofthebeast.jpg",
    "genre": "מותחן",
    "duration": 101,
    "language": "en",
@@ -676,14 +689,15 @@
    ],
    "prev_screenings": 66,
    "leaving": false,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMDVlMTRhMjgtMjdmZi00NjJhLWExMmYtODExNWJkZGZjNjdhXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Primavera",
    "title_he": "פרימוורה",
    "cc_id": "6400",
    "cc_url": "https://www.cinema-city.co.il/movie/6400",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/a653d8b8-a440-4b10-a1df-84bb92c62544",
+   "poster": "posters/primavera.jpg",
    "genre": "דרמה",
    "duration": 110,
    "language": "it",
@@ -717,14 +731,15 @@
    "top_people": [],
    "prev_screenings": 1,
    "leaving": false,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZmJmODZjODctZjdmOS00YmYwLWJjMzMtZmI3YWY4MGU2YzQzXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "The Weight",
    "title_he": "משא כבד",
    "cc_id": "6593",
    "cc_url": "https://www.cinema-city.co.il/movie/6593",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/612986ef-d346-4410-9ba4-3f99e8d89079",
+   "poster": "posters/theweight.jpg",
    "genre": "מותחן, אקשן, דרמה",
    "duration": 112,
    "language": "en",
@@ -768,14 +783,15 @@
    ],
    "prev_screenings": 97,
    "leaving": false,
-   "premiere_week": true
+   "premiere_week": true,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZWU1NWY0MzctYmFiYS00MDU3LWFlNDItZDc5ZGY3Y2JiYTI4XkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Whalefall",
    "title_he": "נפילת הלוויתן",
    "cc_id": "6533",
    "cc_url": "https://www.cinema-city.co.il/movie/6533",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/a6525196-daa7-4061-afc7-d4888575e2fb",
+   "poster": "posters/whalefall.jpg",
    "genre": "מותחן, דרמה",
    "duration": 106,
    "language": "en",
@@ -818,14 +834,15 @@
    ],
    "prev_screenings": 74,
    "leaving": false,
-   "premiere_week": true
+   "premiere_week": true,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOWJkMjA4M2MtODRkMi00NzI4LTk4MDQtNDZlODdhNDdkYmM3XkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "The Social Reckoning",
    "title_he": "החשבון החברתי",
    "cc_id": "6542",
    "cc_url": "https://www.cinema-city.co.il/movie/6542",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/f215d4c4-bc44-4710-be4e-3f807db25ac1",
+   "poster": "posters/thesocialreckoning.jpg",
    "genre": "דרמה",
    "duration": 112,
    "language": "en",
@@ -866,14 +883,15 @@
    ],
    "prev_screenings": 25,
    "leaving": false,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYjdlZTgzZDUtMmVjYy00M2EyLWFlNGMtNjVhYjM2ODNmZjEzXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "By Any Means",
    "title_he": "בכל מחיר",
    "cc_id": "6523",
    "cc_url": "https://www.cinema-city.co.il/movie/6523",
-   "poster": "https://cdn.presglobal.pro/nlc/feature/e9321030-bc1f-451f-a30e-09d59fb7292c",
+   "poster": "posters/byanymeans.jpg",
    "genre": "מותחן",
    "duration": 106,
    "language": "en",
@@ -910,14 +928,15 @@
    ],
    "prev_screenings": 3,
    "leaving": true,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZTUwODQ5N2QtMGM3Ny00YTk1LWJlZTctMTE5ZTAzNTMwOGQxXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "VOTEMOS",
    "title_he": "מי בעד",
    "cc_id": "6622",
    "cc_url": "https://www.cinema-city.co.il/movie/6622",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/102858f8-36d5-4f30-b629-d1da4163a10f",
+   "poster": "posters/votemos.jpg",
    "genre": "דרמה",
    "duration": 88,
    "language": "es",
@@ -952,14 +971,15 @@
    "top_people": [],
    "prev_screenings": 14,
    "leaving": false,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNmU3NDU3NmMtMGU1ZS00N2UzLTkyMDctODRhZmMwM2MwNDZjXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "THE DESERT CHILD",
    "title_he": "ילד המדבר",
    "cc_id": "6524",
    "cc_url": "https://www.cinema-city.co.il/movie/6524",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/a6b05991-3d2c-4759-9595-42aa08488c57",
+   "poster": "posters/thedesertchild.jpg",
    "genre": "הרפתקה",
    "duration": 92,
    "language": null,
@@ -1000,14 +1020,15 @@
    "top_people": [],
    "prev_screenings": 29,
    "leaving": false,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNjY1MDE1NjctNGVkZS00NDA4LWFjMWQtMTMxOWM5NTdlYzU2XkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Minions & Monsters",
    "title_he": "מיניונים ומפלצות",
    "cc_id": "6367",
    "cc_url": "https://www.cinema-city.co.il/movie/6367",
-   "poster": "https://cdn.presglobal.pro/nlc/feature/500c0b23-b405-4f9f-8429-d87499eed520",
+   "poster": "posters/minionsandmonsters.jpg",
    "genre": "אנימציה",
    "duration": 90,
    "language": null,
@@ -1045,14 +1066,15 @@
    "top_people": [],
    "prev_screenings": 11,
    "leaving": true,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYzBjMDg4YjctYzg3ZS00ZDFmLWI1YjctM2RkZGVjZWEyYWQ0XkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Runner",
    "title_he": "ראנר",
    "cc_id": "6572",
    "cc_url": "https://www.cinema-city.co.il/movie/6572",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/186ab42d-db19-4dcc-bb31-2a9e9b69dee1",
+   "poster": "posters/runner.jpg",
    "genre": "קומדיית אקשן",
    "duration": 93,
    "language": "en",
@@ -1089,14 +1111,15 @@
    ],
    "prev_screenings": 5,
    "leaving": true,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOThmN2YyMzMtN2Y2Zi00MjViLTg2NzQtNGM0ZDU3ZDAyYThhXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "STREET FIGHTER",
    "title_he": "סטריט פייטר",
    "cc_id": "6546",
    "cc_url": "https://www.cinema-city.co.il/movie/6546",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/3c5c50ab-9eaa-4f1b-b7a3-015d58c1b981",
+   "poster": "posters/streetfighter.jpg",
    "genre": "אקשן",
    "duration": 119,
    "language": "en",
@@ -1135,14 +1158,15 @@
    ],
    "prev_screenings": 87,
    "leaving": false,
-   "premiere_week": true
+   "premiere_week": true,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYjhlN2EyNGUtY2U4YS00ZTQ3LTg0NTgtNGIxZmVhMDlmMjIyXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "The Wizard of the Kremlin",
    "title_he": "סודות מהקרמלין",
    "cc_id": "6651",
    "cc_url": "https://www.cinema-city.co.il/movie/6651",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/bf01ff39-2848-4e6b-9b71-2cc222ae73b9",
+   "poster": "posters/thewizardofthekremlin.jpg",
    "genre": "מותחן, דרמה, פשע",
    "duration": 143,
    "language": "en",
@@ -1182,14 +1206,15 @@
    "top_people": [],
    "prev_screenings": 25,
    "leaving": false,
-   "premiere_week": true
+   "premiere_week": true,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNDU0NDYyYTUtYzJiMC00OGZmLWIxNjItN2FmOWMzZjgxMWI3XkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Verity",
    "title_he": "תעתוע",
    "cc_id": "6424",
    "cc_url": "https://www.cinema-city.co.il/movie/6424",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/cbc9c343-011f-4e86-8611-79b7acbcaab4",
+   "poster": "posters/verity.jpg",
    "genre": "מותחן",
    "duration": 116,
    "language": "en",
@@ -1238,14 +1263,15 @@
    ],
    "prev_screenings": 76,
    "leaving": false,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZmE0OWRiNzktY2MwMy00YzQ5LWFkMzctNjI1ZWQ1NTRiZGM3XkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Parallel Tales",
    "title_he": "מעשיות מקבילות",
    "cc_id": "6614",
    "cc_url": "https://www.cinema-city.co.il/movie/6614",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/b965d7e6-c2b0-4e83-b610-c27b85c1145f",
+   "poster": "posters/paralleltales.jpg",
    "genre": "דרמה",
    "duration": 139,
    "language": "fr",
@@ -1283,14 +1309,15 @@
    ],
    "prev_screenings": 14,
    "leaving": false,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BODdjMzdiMTgtNmMxZS00MDVjLTg0ZTUtODI0ODU0M2NjZDQ0XkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "MUTINY",
    "title_he": "נקמה בלב ים",
    "cc_id": "6510",
    "cc_url": "https://www.cinema-city.co.il/movie/6510",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/3c519096-abac-4f24-8896-e6a8d06c8b98",
+   "poster": "posters/mutiny.jpg",
    "genre": "אקשן",
    "duration": 95,
    "language": "en",
@@ -1327,14 +1354,15 @@
    ],
    "prev_screenings": 13,
    "leaving": true,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BY2FhN2NlNWMtZDM3OC00MjQzLWEwYzYtMmJhNTY1YmRjZTNmXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "The Cut",
    "title_he": "עד הקצה",
    "cc_id": "6613",
    "cc_url": "https://www.cinema-city.co.il/movie/6613",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/cc36c23b-98ed-46d7-abb0-e238f1082420",
+   "poster": "posters/thecut.jpg",
    "genre": "דרמה",
    "duration": 99,
    "language": "en",
@@ -1376,14 +1404,15 @@
    "top_people": [],
    "prev_screenings": 49,
    "leaving": false,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZTMzMmZkNTctMGQyNy00OGJiLThlZjMtM2VjMTgyMzM3OTdjXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Fall 2: Deadpoint",
    "title_he": "תלויה באוויר 2",
    "cc_id": "6558",
    "cc_url": "https://www.cinema-city.co.il/movie/6558",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/021ab6ee-aeaa-48ff-b336-057a49e70d12",
+   "poster": "posters/fall2deadpoint.jpg",
    "genre": "מותחן",
    "duration": 98,
    "language": "en",
@@ -1425,14 +1454,15 @@
    "top_people": [],
    "prev_screenings": 29,
    "leaving": false,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOTI4MjNjNDgtOWY2ZC00YTdjLThhMGItZjZiYjRhNmVhY2JhXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Other Mommy",
    "title_he": "אין כמו אמא",
    "cc_id": "6604",
    "cc_url": "https://www.cinema-city.co.il/movie/6604",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/037609ab-dd76-4140-8965-875bda8bab94",
+   "poster": "posters/othermommy.jpg",
    "genre": "אימה",
    "duration": 93,
    "language": "en",
@@ -1478,14 +1508,15 @@
    ],
    "prev_screenings": 74,
    "leaving": false,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOGUyODYyYTctMmY0Mi00ZWIwLThjYWItZDJmODY4NGU1YjY1XkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "CHARLIE THE WONDERDOG",
    "title_he": "וונדר-דוג",
    "cc_id": "6519",
    "cc_url": "https://www.cinema-city.co.il/movie/6519",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/355da70c-6c53-4d68-a0a7-cd44677f8abd",
+   "poster": "posters/charliethewonderdog.jpg",
    "genre": "ילדים, אנימציה, הרפתקה",
    "duration": 92,
    "language": null,
@@ -1526,14 +1557,15 @@
    ],
    "prev_screenings": 62,
    "leaving": false,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMWQ1ZDI5MjYtZmJiNS00NjM4LWJmNmMtODJiNjMzNTBlNmQ0XkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "SPA WEEKEND",
    "title_he": "ספא וויקנד",
    "cc_id": "6458",
    "cc_url": "https://www.cinema-city.co.il/movie/6458",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/aac4e924-32d2-447a-8b1c-8f791f808a54",
+   "poster": "posters/spaweekend.jpg",
    "genre": "קומדיה",
    "duration": 97,
    "language": "en",
@@ -1569,14 +1601,15 @@
    "top_people": [],
    "prev_screenings": 17,
    "leaving": true,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNTcwYjQwMzEtMTAwMS00MjQxLTg5NTEtNzExNzI1ODQzNmQ4XkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Her Private Hell",
    "title_he": "הגיהנום שבפנים",
    "cc_id": "6565",
    "cc_url": "https://www.cinema-city.co.il/movie/6565",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/8f384e10-644f-497b-a0c8-e3c6fe7a61e4",
+   "poster": "posters/herprivatehell.jpg",
    "genre": "אימה",
    "duration": 109,
    "language": "en",
@@ -1613,14 +1646,15 @@
    ],
    "prev_screenings": 10,
    "leaving": false,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BM2NlMzRhNWItYzQ4MC00MDIwLWJlNDctMWUzNzYwYzgwZWJhXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "The Bay",
    "title_he": "מפרץ האימה",
    "cc_id": "6592",
    "cc_url": "https://www.cinema-city.co.il/movie/6592",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/a5cd7288-688c-450b-86b9-f67f886e2e9c",
+   "poster": "posters/thebay.jpg",
    "genre": "אימה",
    "duration": 86,
    "language": "en",
@@ -1660,14 +1694,15 @@
    "top_people": [],
    "prev_screenings": 39,
    "leaving": false,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BY2ZlZDc3YjItNjMxNi00ZGQwLWFkMzUtMDVlODg5NDI4NGZlXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Before We Leave Tuscany",
    "title_he": "להתאהב בטוסקנה",
    "cc_id": "6573",
    "cc_url": "https://www.cinema-city.co.il/movie/6573",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/ca3d93d4-b676-4253-9e8d-cde75d87e407",
+   "poster": "posters/beforeweleavetuscany.jpg",
    "genre": "רומנטי",
    "duration": 91,
    "language": "en",
@@ -1705,14 +1740,15 @@
    "top_people": [],
    "prev_screenings": 42,
    "leaving": false,
-   "premiere_week": false
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZjc5NGY1NGItNzA1Mi00MGZlLThlNTAtM2E1MGY3ZGU5MTY2XkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "האהבות שלנו",
    "title_he": "האהבות שלנו",
    "cc_id": "6553",
    "cc_url": "https://www.cinema-city.co.il/movie/6553",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/14ae8e88-8825-40d7-8156-5ac4f02c5f91",
+   "poster": "posters/האהבותשלנו.jpg",
    "genre": "דרמה",
    "duration": 117,
    "language": "he",
@@ -1750,7 +1786,7 @@
    "title_he": "גבעה 338",
    "cc_id": "6525",
    "cc_url": "https://www.cinema-city.co.il/movie/6525",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/fd0b7d80-84ee-4ca3-86a4-fdd9b7d56aa2",
+   "poster": "posters/גבעה338.jpg",
    "genre": "קומדיה",
    "duration": 106,
    "language": "he",
@@ -1781,7 +1817,7 @@
    "title_he": "תמונות יפואיות 2",
    "cc_id": "6450",
    "cc_url": "https://www.cinema-city.co.il/movie/6450",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/80f765fb-7d88-4e82-bf3a-d2d128297f51",
+   "poster": "posters/תמונותיפואיות2.jpg",
    "genre": "ישראלי, קומדיה",
    "duration": 87,
    "language": "he",
@@ -1814,7 +1850,7 @@
    "title_he": "סולטיז הסרט-וולוג ה-100",
    "cc_id": "6508",
    "cc_url": "https://www.cinema-city.co.il/movie/6508",
-   "poster": "https://cdn.presglobal.pro/nlc/feature/62ede9f4-6b65-428c-ab89-51ea9526dba5",
+   "poster": "posters/סולטיזהסרט.jpg",
    "genre": "הרפתקה",
    "duration": 100,
    "language": "he",
@@ -1846,7 +1882,7 @@
    "date_started": "2026-11-05",
    "cc_id": "6534",
    "cc_url": "https://www.cinema-city.co.il/movie/6534",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/40a738d1-eee2-4e4d-b975-7e3f803569a0",
+   "poster": "posters/wildhorsenine.jpg",
    "genre": "קומדיה",
    "kids": false,
    "dubbed_only": false,
@@ -1865,7 +1901,8 @@
     "Sam Rockwell",
     "Steve Buscemi"
    ],
-   "top_people": []
+   "top_people": [],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOTlkOGFlYWYtN2VlNC00NjNhLWIxYmMtNDVhZTQ4YmQ4ZTdiXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "The Hunger Games: Sunrise on the Reaping",
@@ -1873,7 +1910,7 @@
    "date_started": "2026-11-19",
    "cc_id": "6305",
    "cc_url": "https://www.cinema-city.co.il/movie/6305",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/f7ad5a12-4838-4080-b104-c058ddb05db2",
+   "poster": "posters/thehungergamessunriseonthereaping.jpg",
    "genre": "מדע בדיוני",
    "kids": false,
    "dubbed_only": false,
@@ -1894,7 +1931,8 @@
    ],
    "top_people": [
     "Jennifer Lawrence"
-   ]
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNjEzYTE2ODEtNzY5Zi00ZmVmLWEyYzEtYjdlZWU2NjcyYzMzXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Avengers: Doomsday",
@@ -1902,7 +1940,7 @@
    "date_started": "2026-12-16",
    "cc_id": "6304",
    "cc_url": "https://www.cinema-city.co.il/movie/6304",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/57e9cc6e-74af-4001-9066-97dcfb8707ee",
+   "poster": "posters/avengersdoomsday.jpg",
    "genre": "מדע בדיוני",
    "kids": false,
    "dubbed_only": false,
@@ -1928,7 +1966,8 @@
     "Robert Downey Jr.",
     "Pedro Pascal",
     "Chris Hemsworth"
-   ]
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNGEwYWZkN2UtOTQ5Mi00MGQzLWEzNjYtMWMyNDBkMTkzMWNkXkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "Dune: Part Three",
@@ -1936,7 +1975,7 @@
    "date_started": "2026-12-16",
    "cc_id": "6464",
    "cc_url": "https://www.cinema-city.co.il/movie/6464",
-   "poster": "https://cdn.presglobal.pro/nlc-prod/feature/5090dfb5-b841-4b54-8887-4e69f40d5fc4",
+   "poster": "posters/dunepartthree.jpg",
    "genre": "מדע בדיוני",
    "kids": false,
    "dubbed_only": false,
@@ -1959,7 +1998,8 @@
     "Denis Villeneuve",
     "Timothée Chalamet",
     "Zendaya"
-   ]
+   ],
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYjk1NjgwZDMtYzI5OS00Y2Q4LWI1NmItNTE5OGU2NDVmMTAxXkEyXkFqcGc@._V1_UX500_.jpg"
   }
  ]
 }

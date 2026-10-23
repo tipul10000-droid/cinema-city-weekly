@@ -3,7 +3,7 @@
   "first_shown": "2026-10-15",
   "title": "Avengers: Endgame",
   "title_he": "הנוקמים: סוף המשחק הדרן",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/0519eec6-04db-4149-8022-ade418cccd5b",
+  "poster": "posters/avengersendgame.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6576",
   "genre": "מדע בדיוני",
   "date_started": "2026-09-24",
@@ -28,13 +28,14 @@
    "Joe Russo",
    "Robert Downey Jr.",
    "Chris Evans"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_UX500_.jpg"
  },
  "beforeweleavetuscany": {
   "first_shown": "2026-10-15",
   "title": "Before We Leave Tuscany",
   "title_he": "להתאהב בטוסקנה",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/ca3d93d4-b676-4253-9e8d-cde75d87e407",
+  "poster": "posters/beforeweleavetuscany.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6573",
   "genre": "רומנטי",
   "date_started": "2026-09-17",
@@ -51,13 +52,14 @@
    "Paolo Spezzaferri"
   ],
   "last_shown": "2026-10-18",
-  "kids": false
+  "kids": false,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZjc5NGY1NGItNzA1Mi00MGZlLThlNTAtM2E1MGY3ZGU5MTY2XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "byanymeans": {
   "first_shown": "2026-10-15",
   "title": "By Any Means",
   "title_he": "בכל מחיר",
-  "poster": "https://cdn.presglobal.pro/nlc/feature/e9321030-bc1f-451f-a30e-09d59fb7292c",
+  "poster": "posters/byanymeans.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6523",
   "genre": "מותחן",
   "date_started": "2026-09-03",
@@ -78,13 +80,14 @@
   "kids": false,
   "top_people": [
    "Mark Wahlberg"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZTUwODQ5N2QtMGM3Ny00YTk1LWJlZTctMTE5ZTAzNTMwOGQxXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "charliethewonderdog": {
   "first_shown": "2026-10-15",
   "title": "CHARLIE THE WONDERDOG",
   "title_he": "וונדר-דוג",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/355da70c-6c53-4d68-a0a7-cd44677f8abd",
+  "poster": "posters/charliethewonderdog.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6519",
   "genre": "ילדים, אנימציה, הרפתקה",
   "date_started": "2026-09-24",
@@ -105,13 +108,14 @@
   "kids": true,
   "top_people": [
    "Owen Wilson"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMWQ1ZDI5MjYtZmJiNS00NjM4LWJmNmMtODJiNjMzNTBlNmQ0XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "coyotevsacme": {
   "first_shown": "2026-10-15",
   "title": "Coyote vs. Acme",
   "title_he": "לוני טונס מציגים: קיוטי נגד אקמי",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/adc97e2b-4738-4c16-90cc-2fd55db33fa0",
+  "poster": "posters/coyotevsacme.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6492",
   "genre": "קומדיה, אנימציה",
   "date_started": "2026-08-20",
@@ -129,13 +133,14 @@
    "John Cena"
   ],
   "last_shown": "2026-10-18",
-  "kids": true
+  "kids": true,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMDg5NDFkNTctZWE2ZC00MDYzLThlYjItZTljZDY3NTcwNjA3XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "digger": {
   "first_shown": "2026-10-15",
   "title": "Digger",
   "title_he": "דיגר",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/999abd82-c696-42c5-ac29-647da4c2b3de",
+  "poster": "posters/digger.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6531",
   "genre": "קומדיה",
   "date_started": "2026-10-01",
@@ -158,13 +163,14 @@
    "Alejandro G. Iñárritu",
    "Tom Cruise",
    "Riz Ahmed"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BN2E0YTg1M2YtOGQyYi00NDFkLTk3NzUtYmEyNTZhYThhZDQ0XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "fall2deadpoint": {
   "first_shown": "2026-10-15",
   "title": "Fall 2: Deadpoint",
   "title_he": "תלויה באוויר 2",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/021ab6ee-aeaa-48ff-b336-057a49e70d12",
+  "poster": "posters/fall2deadpoint.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6558",
   "genre": "מותחן",
   "date_started": "2026-09-17",
@@ -183,13 +189,14 @@
    "Tom Brittney"
   ],
   "last_shown": "2026-10-18",
-  "kids": false
+  "kids": false,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOTI4MjNjNDgtOWY2ZC00YTdjLThhMGItZjZiYjRhNmVhY2JhXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "forgottenisland": {
   "first_shown": "2026-10-15",
   "title": "Forgotten Island",
   "title_he": "האי הנעלם",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/50334792-8783-4a16-a9f8-385b1e14ae00",
+  "poster": "posters/forgottenisland.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6467",
   "genre": "ילדים, אנימציה, הרפתקה",
   "date_started": "2026-09-24",
@@ -208,13 +215,14 @@
    "Dave Franco"
   ],
   "last_shown": "2026-10-18",
-  "kids": true
+  "kids": true,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMWJlY2JiNTMtYTAwYy00NGFiLTkwYTEtM2VmNDc4MzM5YmJiXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "heartofthebeast": {
   "first_shown": "2026-10-15",
   "title": "HEART OF THE BEAST",
   "title_he": "בלב הפרא",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/03e10a08-c455-40d4-a7a2-faac708d78cd",
+  "poster": "posters/heartofthebeast.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6528",
   "genre": "מותחן",
   "date_started": "2026-09-24",
@@ -236,13 +244,14 @@
   "top_people": [
    "David Ayer",
    "Brad Pitt"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMDVlMTRhMjgtMjdmZi00NjJhLWExMmYtODExNWJkZGZjNjdhXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "herprivatehell": {
   "first_shown": "2026-10-15",
   "title": "Her Private Hell",
   "title_he": "הגיהנום שבפנים",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/8f384e10-644f-497b-a0c8-e3c6fe7a61e4",
+  "poster": "posters/herprivatehell.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6565",
   "genre": "אימה",
   "date_started": "2026-10-01",
@@ -263,13 +272,14 @@
   "kids": false,
   "top_people": [
    "Nicolas Winding Refn"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BM2NlMzRhNWItYzQ4MC00MDIwLWJlNDctMWUzNzYwYzgwZWJhXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "icecreamman": {
   "first_shown": "2026-10-15",
   "title": "Ice Cream Man",
   "title_he": "איש הגלידה",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/4266aa1b-16ca-4b24-8b84-da80b15a05cc",
+  "poster": "posters/icecreamman.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6489",
   "genre": "אימה",
   "date_started": "2026-08-06",
@@ -290,13 +300,14 @@
   "kids": false,
   "top_people": [
    "Eli Roth"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZWMxMzRhY2YtYzNlNC00OTdjLWFmODgtMTU0ODc0NmQ1OWI3XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "lefthandedgirl": {
   "first_shown": "2026-10-15",
   "title": "Left-Handed Girl",
   "title_he": "הילדה השמאלית",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/f041f15a-628f-4b96-b3fb-4da8cee87fed",
+  "poster": "posters/lefthandedgirl.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6620",
   "genre": "דרמה",
   "date_started": "2026-10-08",
@@ -314,13 +325,14 @@
    "Nina Ye"
   ],
   "last_shown": "2026-10-18",
-  "kids": false
+  "kids": false,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYTE2OWQxZWMtNjdjNC00NGNhLWE5OTUtZDA2ZjhhMjk0MmRmXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "madamabutterfly": {
   "first_shown": "2026-10-15",
   "title": "Madama Butterfly",
   "title_he": "אופרה בשלייקס: מאדאם באטרפליי",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/50cf9a0f-844a-45ad-867c-8d8939fa94cd",
+  "poster": "posters/madamabutterfly.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6619",
   "date_started": "2026-10-06",
   "year": 1975,
@@ -336,13 +348,14 @@
    "Christa Ludwig"
   ],
   "last_shown": "2026-10-16",
-  "genre": "SHOW"
+  "genre": "SHOW",
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMDAwMGVlNWMtN2FmMC00Yjc2LWEzZWMtYTk0ZmZmZjE4YTAwXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "mashaandthebearwonderpark": {
   "first_shown": "2026-10-15",
   "title": "MASHA & THE BEAR – WONDER PARK",
   "title_he": "מאשה והדוב-ההרפתקה הגדולה",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/4bbab8fc-2b2a-4dd4-b718-bff5e8b60ae8",
+  "poster": "posters/mashaandthebearwonderpark.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6357",
   "genre": "אנימציה",
   "date_started": "2026-07-16",
@@ -359,13 +372,14 @@
    "Sofia Calasso"
   ],
   "last_shown": "2026-10-16",
-  "kids": true
+  "kids": true,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYzc2YzU5MmMtZmI5Yi00OGYwLWEwMTQtMzYwNTk3OWNhMmZkXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "matchmaking3": {
   "first_shown": "2026-10-15",
   "title": "Matchmaking 3",
   "title_he": "בחורים טובים 3",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/1db58658-06e9-47b8-bc26-909e91fd4b41",
+  "poster": "posters/matchmaking3.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6555",
   "genre": "קומדיה",
   "date_started": "2026-09-24",
@@ -381,13 +395,14 @@
    "Irit Kaplan"
   ],
   "last_shown": "2026-10-18",
-  "kids": false
+  "kids": false,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZWZjNmE3MjEtMmNjNy00OWVmLTkyMGEtODBmNjkzYTZjZmM1XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "minionsandmonsters": {
   "first_shown": "2026-10-15",
   "title": "Minions & Monsters",
   "title_he": "מיניונים ומפלצות",
-  "poster": "https://cdn.presglobal.pro/nlc/feature/500c0b23-b405-4f9f-8429-d87499eed520",
+  "poster": "posters/minionsandmonsters.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6367",
   "genre": "אנימציה",
   "date_started": "2026-07-01",
@@ -406,13 +421,14 @@
    "Allison Janney"
   ],
   "last_shown": "2026-10-18",
-  "kids": true
+  "kids": true,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYzBjMDg4YjctYzg3ZS00ZDFmLWI1YjctM2RkZGVjZWEyYWQ0XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "mutiny": {
   "first_shown": "2026-10-15",
   "title": "MUTINY",
   "title_he": "נקמה בלב ים",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/3c519096-abac-4f24-8896-e6a8d06c8b98",
+  "poster": "posters/mutiny.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6510",
   "genre": "אקשן",
   "date_started": "2026-08-20",
@@ -433,13 +449,14 @@
   "kids": false,
   "top_people": [
    "Jason Statham"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BY2FhN2NlNWMtZDM3OC00MjQzLWEwYzYtMmJhNTY1YmRjZTNmXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "othermommy": {
   "first_shown": "2026-10-15",
   "title": "Other Mommy",
   "title_he": "אין כמו אמא",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/037609ab-dd76-4140-8965-875bda8bab94",
+  "poster": "posters/othermommy.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6604",
   "genre": "אימה",
   "date_started": "2026-10-08",
@@ -460,13 +477,14 @@
   "kids": false,
   "top_people": [
    "Jessica Chastain"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOGUyODYyYTctMmY0Mi00ZWIwLThjYWItZDJmODY4NGU1YjY1XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "paralleltales": {
   "first_shown": "2026-10-15",
   "title": "Parallel Tales",
   "title_he": "מעשיות מקבילות",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/b965d7e6-c2b0-4e83-b610-c27b85c1145f",
+  "poster": "posters/paralleltales.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6614",
   "genre": "דרמה",
   "date_started": "2026-10-08",
@@ -488,13 +506,14 @@
   "top_people": [
    "Asghar Farhadi",
    "Isabelle Huppert"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BODdjMzdiMTgtNmMxZS00MDVjLTg0ZTUtODI0ODU0M2NjZDQ0XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "pawpatrolthedinomovie": {
   "first_shown": "2026-10-15",
   "title": "Paw Patrol: The Dino Movie",
   "title_he": "מפרץ ההרפתקאות: אי הדינוזאורים",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/a735c539-2c61-4024-b29f-9cdc013df7ee",
+  "poster": "posters/pawpatrolthedinomovie.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6459",
   "genre": "הרפתקה",
   "date_started": "2026-08-06",
@@ -512,13 +531,14 @@
    "Terry Crews"
   ],
   "last_shown": "2026-10-16",
-  "kids": true
+  "kids": true,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BY2E2Y2Q0Y2ItZTUyZS00MzllLTkwYmQtYjdmNzM3NGRiYjFmXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "primavera": {
   "first_shown": "2026-10-15",
   "title": "Primavera",
   "title_he": "פרימוורה",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/a653d8b8-a440-4b10-a1df-84bb92c62544",
+  "poster": "posters/primavera.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6400",
   "genre": "דרמה",
   "date_started": "2026-09-24",
@@ -535,13 +555,14 @@
    "Andrea Pennacchi"
   ],
   "last_shown": "2026-10-18",
-  "kids": false
+  "kids": false,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZmJmODZjODctZjdmOS00YmYwLWJjMzMtZmI3YWY4MGU2YzQzXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "residentevil": {
   "first_shown": "2026-10-15",
   "title": "Resident Evil",
   "title_he": "האויב שבפנים",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/f92ac40b-c230-42b9-b27b-df41e5d9f29a",
+  "poster": "posters/residentevil.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6433",
   "genre": "אימה",
   "date_started": "2026-09-17",
@@ -562,13 +583,14 @@
   "kids": false,
   "top_people": [
    "Zach Cregger"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOGZjZWI1NTItOGUwZC00YWZkLWIxZWEtNzE2ZTIxODdjNmZmXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "runner": {
   "first_shown": "2026-10-15",
   "title": "Runner",
   "title_he": "ראנר",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/186ab42d-db19-4dcc-bb31-2a9e9b69dee1",
+  "poster": "posters/runner.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6572",
   "genre": "קומדיית אקשן",
   "date_started": "2026-09-17",
@@ -590,13 +612,14 @@
   "top_people": [
    "Alan Ritchson",
    "Owen Wilson"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOThmN2YyMzMtN2Y2Zi00MjViLTg2NzQtNGM0ZDU3ZDAyYThhXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "shaunthesheepthebeastofmossybottom": {
   "first_shown": "2026-10-15",
   "title": "Shaun the Sheep: The Beast of Mossy Bottom",
   "title_he": "שון כבשון: מצמרר מצחוק",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/99f5da3f-7d14-4b3a-8fe8-5eff40d0b270",
+  "poster": "posters/shaunthesheepthebeastofmossybottom.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6624",
   "genre": "ילדים, אנימציה, הרפתקה",
   "date_started": "2026-10-15",
@@ -615,13 +638,14 @@
    "Nina Sosanya"
   ],
   "last_shown": "2026-10-18",
-  "kids": true
+  "kids": true,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOTA5NWIxODktNjcwOC00MjNjLWE1ZDctNWNmODkzYzc2Y2RhXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "spaweekend": {
   "first_shown": "2026-10-15",
   "title": "SPA WEEKEND",
   "title_he": "ספא וויקנד",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/aac4e924-32d2-447a-8b1c-8f791f808a54",
+  "poster": "posters/spaweekend.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6458",
   "genre": "קומדיה",
   "date_started": "2026-08-20",
@@ -640,13 +664,14 @@
    "Michelle Buteau"
   ],
   "last_shown": "2026-10-18",
-  "kids": false
+  "kids": false,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNTcwYjQwMzEtMTAwMS00MjQxLTg5NTEtNzExNzI1ODQzNmQ4XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "spidermanbrandnewday": {
   "first_shown": "2026-10-15",
   "title": "SPIDERMAN: BRAND NEW DAY",
   "title_he": "ספיידרמן: יום חדש",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/ff521b7c-31fe-42d9-9161-c1d2dff69c98",
+  "poster": "posters/spidermanbrandnewday.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6381",
   "genre": "פנטזיה",
   "date_started": "2026-07-29",
@@ -669,13 +694,14 @@
    "Destin Daniel Cretton",
    "Tom Holland",
    "Zendaya"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOWNjYWM3NWItOGE0ZS00MWRjLThiZWEtYjc4ZmNmMmU5ZTVmXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "spinned": {
   "first_shown": "2026-10-15",
   "title": "Spinned",
   "title_he": "מרגלים מהאגדות",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/fb5445ed-2234-4074-b568-fcc9a836068c",
+  "poster": "posters/spinned.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6603",
   "genre": "ילדים, אנימציה, הרפתקה",
   "date_started": "2026-09-24",
@@ -692,13 +718,14 @@
    "Tyler Bunch"
   ],
   "last_shown": "2026-10-16",
-  "kids": true
+  "kids": true,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNWM5ZWI4NGItMDdhNi00MTIyLWE3NmQtODMwZjA4NWRlYmNlXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "stichhead": {
   "first_shown": "2026-10-15",
   "title": "STICH HEAD",
   "title_he": "פרנקי והמפלצות",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/d249ef69-f6ed-401a-8b2d-97f1a8fa3a14",
+  "poster": "posters/stichhead.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6477",
   "genre": "ילדים, אנימציה",
   "date_started": "2026-08-06",
@@ -714,13 +741,14 @@
    "Tia Bannon"
   ],
   "last_shown": "2026-10-16",
-  "kids": true
+  "kids": true,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYWUwNWE1YjctMDYyOC00YmJjLWFkZTMtYzhjNmI3NTI4ZTMxXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "streetfighter": {
   "first_shown": "2026-10-15",
   "title": "STREET FIGHTER",
   "title_he": "סטריט פייטר",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/3c5c50ab-9eaa-4f1b-b7a3-015d58c1b981",
+  "poster": "posters/streetfighter.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6546",
   "genre": "אקשן",
   "date_started": "2026-10-15",
@@ -741,13 +769,14 @@
   "kids": false,
   "top_people": [
    "Noah Centineo"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYjhlN2EyNGUtY2U4YS00ZTQ3LTg0NTgtNGIxZmVhMDlmMjIyXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "tadandthemagiclamp": {
   "first_shown": "2026-10-15",
   "title": "Tad and the Magic Lamp",
   "title_he": "טד החוקר ומנורת הקסמים",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/7e6a517c-a8d2-4e13-af40-651af58a5dc0",
+  "poster": "posters/tadandthemagiclamp.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6561",
   "genre": "ילדים, אנימציה, הרפתקה",
   "date_started": "2026-09-10",
@@ -764,13 +793,14 @@
    "Michelle Jenner"
   ],
   "last_shown": "2026-10-16",
-  "kids": true
+  "kids": true,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNDhlOWQ2YjYtNTVkZC00NDE2LTgyODUtMGJlM2FiYWE5OTk3XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "tellmeeverything": {
   "first_shown": "2026-10-15",
   "title": "Tell Me Everything",
   "title_he": "עצמאות",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/1e97a4c1-9b5a-4d4a-a8ce-da57143c23c3",
+  "poster": "posters/tellmeeverything.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6541",
   "genre": "דרמה",
   "date_started": "2026-09-03",
@@ -788,13 +818,14 @@
    "Assi Cohen"
   ],
   "last_shown": "2026-10-18",
-  "kids": false
+  "kids": false,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BODhkMzZhNTUtOTY4NS00NzhkLTk2MzgtYzkzZGY5ZjY3NDI4XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "thebay": {
   "first_shown": "2026-10-15",
   "title": "The Bay",
   "title_he": "מפרץ האימה",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/a5cd7288-688c-450b-86b9-f67f886e2e9c",
+  "poster": "posters/thebay.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6592",
   "genre": "אימה",
   "date_started": "2026-10-08",
@@ -811,13 +842,14 @@
    "Alexander Wraith"
   ],
   "last_shown": "2026-10-18",
-  "kids": false
+  "kids": false,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BY2ZlZDc3YjItNjMxNi00ZGQwLWFkMzUtMDVlODg5NDI4NGZlXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "thecut": {
   "first_shown": "2026-10-15",
   "title": "The Cut",
   "title_he": "עד הקצה",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/cc36c23b-98ed-46d7-abb0-e238f1082420",
+  "poster": "posters/thecut.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6613",
   "genre": "דרמה",
   "date_started": "2026-10-08",
@@ -835,13 +867,14 @@
    "Orlando Bloom"
   ],
   "last_shown": "2026-10-18",
-  "kids": false
+  "kids": false,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZTMzMmZkNTctMGQyNy00OGJiLThlZjMtM2VjMTgyMzM3OTdjXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "thedesertchild": {
   "first_shown": "2026-10-15",
   "title": "THE DESERT CHILD",
   "title_he": "ילד המדבר",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/a6b05991-3d2c-4759-9595-42aa08488c57",
+  "poster": "posters/thedesertchild.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6524",
   "genre": "הרפתקה",
   "date_started": "2026-09-10",
@@ -857,13 +890,14 @@
    "Zayn Sekkat"
   ],
   "last_shown": "2026-10-18",
-  "kids": true
+  "kids": true,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNjY1MDE1NjctNGVkZS00NDA4LWFjMWQtMTMxOWM5NTdlYzU2XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "thelandofsometimes": {
   "first_shown": "2026-10-15",
   "title": "The Land of Sometimes",
   "title_he": "אספן המשאלות",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/00f7ec24-99ca-4022-84a9-5f981e372f7e",
+  "poster": "posters/thelandofsometimes.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6578",
   "genre": "ילדים, אנימציה, הרפתקה",
   "date_started": "2026-09-24",
@@ -884,13 +918,14 @@
   "top_people": [
    "Ewan McGregor",
    "Helena Bonham Carter"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNWExNmFlNTEtYmQzNC00NzQ4LWFlMjQtZjVjZjEyMTJiNDY4XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "themagicfarawaytree": {
   "first_shown": "2026-10-15",
   "title": "The Magic Faraway Tree",
   "title_he": "המסע המופלא לעץ הקסמים",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/1791c38b-5e9e-41b0-a663-9d8651fa33fc",
+  "poster": "posters/themagicfarawaytree.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6486",
   "genre": "הרפתקה",
   "date_started": "2026-07-30",
@@ -911,13 +946,14 @@
   "kids": true,
   "top_people": [
    "Andrew Garfield"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZThiYWI3ZTYtMjZmYy00Njc5LWE4OGYtNTlmNTQyYWZmYjQ0XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "theodyssey": {
   "first_shown": "2026-10-15",
   "title": "THE ODYSSEY",
   "title_he": "האודיסאה",
-  "poster": "https://cdn.presglobal.pro/nlc/feature/cb867e5a-7837-4d34-9dca-53e66ce95cac",
+  "poster": "posters/theodyssey.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6286",
   "genre": "אקשן",
   "date_started": "2026-07-16",
@@ -941,13 +977,14 @@
    "Matt Damon",
    "Tom Holland",
    "Anne Hathaway"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNTcyNmJlZmQtNDUwYy00NDBjLTg1NGQtYTY2Y2UxMWM3NmI1XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "thepoutpoutfish": {
   "first_shown": "2026-10-15",
   "title": "THE POUT POUT FISH",
   "title_he": "דג ושמו באסה",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/e7725afe-779e-4640-8d9c-6ed080e77a80",
+  "poster": "posters/thepoutpoutfish.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6521",
   "genre": "קומדיה,ילדים,אנימציה,KIDSHOW",
   "date_started": "2026-08-20",
@@ -965,13 +1002,14 @@
    "Nadine Bates",
    "Nick Offerman"
   ],
-  "last_shown": "2026-10-16"
+  "last_shown": "2026-10-16",
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BN2FmNDE3ZmItNDE0MC00NTFhLWIxN2QtOTY3MTc3Yjk0YzM5XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "thesocialreckoning": {
   "first_shown": "2026-10-15",
   "title": "The Social Reckoning",
   "title_he": "החשבון החברתי",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/f215d4c4-bc44-4710-be4e-3f807db25ac1",
+  "poster": "posters/thesocialreckoning.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6542",
   "genre": "דרמה",
   "date_started": "2026-10-08",
@@ -994,13 +1032,14 @@
    "Aaron Sorkin",
    "Jeremy Allen White",
    "Mikey Madison"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYjdlZTgzZDUtMmVjYy00M2EyLWFlNGMtNjVhYjM2ODNmZjEzXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "theweight": {
   "first_shown": "2026-10-15",
   "title": "The Weight",
   "title_he": "משא כבד",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/612986ef-d346-4410-9ba4-3f99e8d89079",
+  "poster": "posters/theweight.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6593",
   "genre": "מותחן, אקשן, דרמה",
   "date_started": "2026-10-15",
@@ -1022,13 +1061,14 @@
   "top_people": [
    "Ethan Hawke",
    "Russell Crowe"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZWU1NWY0MzctYmFiYS00MDU3LWFlNDItZDc5ZGY3Y2JiYTI4XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "thewizardofthekremlin": {
   "first_shown": "2026-10-15",
   "title": "The Wizard of the Kremlin",
   "title_he": "סודות מהקרמלין",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/bf01ff39-2848-4e6b-9b71-2cc222ae73b9",
+  "poster": "posters/thewizardofthekremlin.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6651",
   "genre": "מותחן, דרמה, פשע",
   "date_started": "2026-10-15",
@@ -1046,13 +1086,14 @@
    "Tom Sturridge"
   ],
   "last_shown": "2026-10-18",
-  "kids": false
+  "kids": false,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNDU0NDYyYTUtYzJiMC00OGZmLWIxNjItN2FmOWMzZjgxMWI3XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "toystory5": {
   "first_shown": "2026-10-15",
   "title": "Toy Story 5",
   "title_he": "צעצוע של סיפור 5",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/5a28d91f-9c25-4353-81e3-7d367ebc9fb3",
+  "poster": "posters/toystory5.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6306",
   "genre": "אנימציה",
   "date_started": "2026-06-18",
@@ -1075,13 +1116,14 @@
   "top_people": [
    "Andrew Stanton",
    "Tom Hanks"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZTI1YTBiNmEtYWUxZi00YzFkLWIzNjMtMmZjMmY2NzM0ZWMzXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "verity": {
   "first_shown": "2026-10-15",
   "title": "Verity",
   "title_he": "תעתוע",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/cbc9c343-011f-4e86-8611-79b7acbcaab4",
+  "poster": "posters/verity.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6424",
   "genre": "מותחן",
   "date_started": "2026-10-01",
@@ -1104,13 +1146,14 @@
    "Michael Showalter",
    "Anne Hathaway",
    "Dakota Johnson"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZmE0OWRiNzktY2MwMy00YzQ5LWFkMzctNjI1ZWQ1NTRiZGM3XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "votemos": {
   "first_shown": "2026-10-15",
   "title": "VOTEMOS",
   "title_he": "מי בעד",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/102858f8-36d5-4f30-b629-d1da4163a10f",
+  "poster": "posters/votemos.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6622",
   "genre": "דרמה",
   "date_started": "2026-10-08",
@@ -1126,13 +1169,14 @@
    "Tito Valverde"
   ],
   "last_shown": "2026-10-18",
-  "kids": false
+  "kids": false,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNmU3NDU3NmMtMGU1ZS00N2UzLTkyMDctODRhZmMwM2MwNDZjXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "waves": {
   "first_shown": "2026-10-15",
   "title": "WAVES",
   "title_he": "גלים של תקווה",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/5656f618-5fa9-4421-ab8d-45c5c0ce6810",
+  "poster": "posters/waves.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6589",
   "genre": "דרמה",
   "date_started": "2026-10-08",
@@ -1153,13 +1197,14 @@
   "kids": false,
   "top_people": [
    "Trey Edward Shults"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNmFlNmQyYzctMzE3Ni00NjRkLWFiYzctYmZjMDllZTdkY2VjXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "whalefall": {
   "first_shown": "2026-10-15",
   "title": "Whalefall",
   "title_he": "נפילת הלוויתן",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/a6525196-daa7-4061-afc7-d4888575e2fb",
+  "poster": "posters/whalefall.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6533",
   "genre": "מותחן, דרמה",
   "date_started": "2026-10-15",
@@ -1180,13 +1225,14 @@
   "kids": false,
   "top_people": [
    "Josh Brolin"
-  ]
+  ],
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOWJkMjA4M2MtODRkMi00NzI4LTk4MDQtNDZlODdhNDdkYmM3XkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "גבעה338": {
   "first_shown": "2026-10-15",
   "title": "גבעה 338",
   "title_he": "גבעה 338",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/fd0b7d80-84ee-4ca3-86a4-fdd9b7d56aa2",
+  "poster": "posters/גבעה338.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6525",
   "genre": "קומדיה",
   "date_started": "2026-08-06",
@@ -1197,7 +1243,7 @@
   "first_shown": "2026-10-15",
   "title": "האהבות שלנו",
   "title_he": "האהבות שלנו",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/14ae8e88-8825-40d7-8156-5ac4f02c5f91",
+  "poster": "posters/האהבותשלנו.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6553",
   "genre": "דרמה",
   "date_started": "2026-10-15",
@@ -1208,7 +1254,7 @@
   "first_shown": "2026-10-15",
   "title": "סולטיז הסרט",
   "title_he": "סולטיז הסרט-וולוג ה-100",
-  "poster": "https://cdn.presglobal.pro/nlc/feature/62ede9f4-6b65-428c-ab89-51ea9526dba5",
+  "poster": "posters/סולטיזהסרט.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6508",
   "genre": "הרפתקה",
   "date_started": "2026-07-15",
@@ -1219,7 +1265,7 @@
   "first_shown": "2026-10-15",
   "title": "קופה ראשית: הסרט",
   "title_he": "קופה ראשית: הסרט",
-  "poster": "https://cdn.presglobal.pro/nlc/feature/dfea8349-5299-4ec2-a980-9dca2ed5fb6d",
+  "poster": "posters/קופהראשיתהסרט.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6419",
   "genre": "קומדיה",
   "date_started": "2026-06-17",
@@ -1235,13 +1281,14 @@
    "Amir Shurush"
   ],
   "last_shown": "2026-10-18",
-  "kids": false
+  "kids": false,
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNzYyMjM1N2QtYTY2MS00NTcxLWFkNGItOGE1MDU1M2QzNGViXkEyXkFqcGc@._V1_UX500_.jpg"
  },
  "תמונותיפואיות2": {
   "first_shown": "2026-10-15",
   "title": "תמונות יפואיות 2",
   "title_he": "תמונות יפואיות 2",
-  "poster": "https://cdn.presglobal.pro/nlc-prod/feature/80f765fb-7d88-4e82-bf3a-d2d128297f51",
+  "poster": "posters/תמונותיפואיות2.jpg",
   "cc_url": "https://www.cinema-city.co.il/movie/6450",
   "genre": "ישראלי, קומדיה",
   "date_started": "2026-10-22",
