@@ -3,9 +3,16 @@ on:
   push:
     branches: [claude/project-thread-kx0hr8]
     paths: [probe.py]
+permissions:
+  contents: write
 jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 probe.py
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: python probe.py
+      - run: |
+          git config user.name "cinema-bot"; git config user.email "cinema-bot@users.noreply.github.com"
+          git add docs && git commit -m "All announced premieres" && git push

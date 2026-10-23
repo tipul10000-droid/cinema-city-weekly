@@ -89,7 +89,18 @@
 </header>
 <nav class="tabs"><button class="tab on" data-tab="now">🎬 עכשיו</button><button class="tab" data-tab="soon">📅 בקרוב</button><button class="tab" data-tab="seen">✓ ראיתי</button></nav>
 <section id="seenView" hidden><main><div class="count">כל הסרטים שסימנת ✓, נשמרים לתמיד, גם אחרי שירדו מהקולנוע.</div><div id="seenList"></div></main></section>
-<section id="soonView" hidden><main><div class="count">הסרטים הגדולים שסינמה סיטי הכריזה עליהם לחודשיים הקרובים. תאריכים עשויים להשתנות.</div><div id="soonList"></div></main></section>
+<section id="soonView" hidden>
+  <div class="bar">
+    <div class="row"><span class="lbl2">מחכים</span>
+      <span class="seg"><button class="chip" data-wl="250000">250K+</button><button class="chip" data-wl="200000">200K+</button><button class="chip" data-wl="150000">150K+</button><button class="chip" data-wl="100000">100K+</button><button class="chip" data-wl="0">הכל</button></span>
+    </div>
+    <div class="row"><span class="lbl2">מיון</span>
+      <button class="chip" data-ssort="date">תאריך יציאה</button>
+      <button class="chip" data-ssort="wl">הכי מחכים</button>
+    </div>
+  </div>
+  <main><div class="count" id="soonCount"></div><div id="soonList"></div></main>
+</section>
 <div class="bar" id="nowBar">
   <input id="q" type="search" placeholder="חיפוש: שם סרט בעברית, כל השאר באנגלית">
   <div class="row"><span class="lbl2">מיון</span>
@@ -244,12 +255,23 @@ const people = (m, list) => list.map(p => (m.top_people || []).includes(p) ? `<s
 // upcoming blockbusters, grouped by month
 const MONTHS = ["ינואר","פברואר","מרץ","אפריל","מאי","יוני","יולי","אוגוסט","ספטמבר","אוקטובר","נובמבר","דצמבר"];
 let soon = [];
+// "מחכים" = IMDb users who put the movie on their watchlist; 200K+ by default (the titles everyone is waiting for)
+const soonSt = Object.assign({ wl: 200000, sort: "date" }, load("cc-soon", {}));
 function renderSoon() {
-  const rows = soon.filter(m => new Date(m.date_started + "T23:59:59") >= Date.now()).sort((a, b) => a.date_started.localeCompare(b.date_started));
+  document.querySelectorAll("[data-wl]").forEach(x => x.classList.toggle("on", +x.dataset.wl === soonSt.wl));
+  document.querySelectorAll("[data-ssort]").forEach(x => x.classList.toggle("on", x.dataset.ssort === soonSt.sort));
+  const open = soon.filter(m => new Date(m.date_started + "T23:59:59") >= Date.now());
+  // a movie someone starred stays visible whatever the bar
+  const rows = open.filter(m => (m.watchlist || 0) >= soonSt.wl || prefs.fav.includes(m.title) || others.lior.includes(m.title) || others.evyatar.includes(m.title))
+    .sort(soonSt.sort === "wl" ? (a, b) => (b.watchlist || 0) - (a.watchlist || 0) : (a, b) => a.date_started.localeCompare(b.date_started));
+  document.querySelector("[data-tab=soon]").textContent = `📅 בקרוב (${rows.length})`;
+  document.getElementById("soonCount").textContent = `${rows.length} מתוך ${open.length} הסרטים שסינמה סיטי הכריזה עליהם. ` +
+    (user && user !== "guest" ? "★ על סרט ותקבל התראה כשהוא יוצא. " : "") + "תאריכים עשויים להשתנות.";
   let month = "";
   document.getElementById("soonList").innerHTML = rows.length ? rows.map(m => {
     const d = new Date(m.date_started + "T00:00:00"), days = Math.ceil((d - Date.now()) / DAY);
-    const head = MONTHS[d.getMonth()] !== month ? `<div class="month">${month = MONTHS[d.getMonth()]}</div>` : "";
+    const label = MONTHS[d.getMonth()] + (d.getFullYear() !== new Date().getFullYear() ? ` ${d.getFullYear()}` : "");
+    const head = soonSt.sort === "date" && label !== month ? `<div class="month">${month = label}</div>` : "";
     return `${head}
     <article class="m">
       <img loading="lazy" src="${esc(m.poster)}" alt="" data-full data-alt="${esc(m.imdb_poster || "")}" onerror="posterError(this)">
@@ -307,6 +329,8 @@ function renderSeen() {
     </article>`).join("") : `<div class="empty">עוד לא סימנת סרטים. סמן ✓ על סרט שראית והוא יישמר כאן לתמיד.</div>`;
 }
 fetch("archive.json?" + Date.now()).then(r => r.ok ? r.json() : {}).then(a => { archive = a; renderSeen(); }).catch(() => {});
+document.querySelectorAll("[data-wl]").forEach(b => b.onclick = () => { soonSt.wl = +b.dataset.wl; save("cc-soon", soonSt); renderSoon(); });
+document.querySelectorAll("[data-ssort]").forEach(b => b.onclick = () => { soonSt.sort = b.dataset.ssort; save("cc-soon", soonSt); renderSoon(); });
 let tab = load("cc-tab", "now");
 function showTab() {
   document.querySelectorAll("[data-tab]").forEach(x => x.classList.toggle("on", x.dataset.tab === tab));
@@ -444,7 +468,6 @@ const b64ToBytes = s => Uint8Array.from(atob((s + "=".repeat((4 - s.length % 4) 
 fetch("data.json?" + Date.now()).then(r => r.json()).then(d => {
   data = d.movies;
   soon = d.upcoming || [];
-  if (soon.length) document.querySelector("[data-tab=soon]").textContent = `📅 בקרוב (${soon.length})`;
   renderSoon(); renderSeen();
   scanDate = new Date(d.generated_at.slice(0, 10) + "T12:00:00");
   const np = data.filter(isPremiere).length;

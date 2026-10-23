@@ -61,10 +61,6 @@ def norm(s):
 #   SyncFeatures: one row per movie (poster, premiere date) - nice to have
 # Wix rate-limits these queries, so pages are spaced out and SyncFeatures is optional.
 
-# "upcoming hits": this many IMDb users must already have the movie on their watchlist (Oren's bar: 200K).
-# In Oct 2026 that kept Avengers: Doomsday (708K), Dune: Part Three (496K), Hunger Games: Sunrise on the
-# Reaping (337K) and Wild Horse Nine (221K); the next title down was Wicker at 160K
-BIG_WATCHLIST = 200_000
 SPECIAL_HALLS = ("Lounge", "ONYX", "VIP", "Prime")
 # Oren only goes to the center: nothing north of Netanya or south of Rishon LeZion
 CENTRAL = {"גלילות", 'ראשל"צ', "כפר-סבא", "נתניה"}
@@ -197,8 +193,8 @@ def now_showing(pres, feats, now):
     return list(movies.values())
 
 
-def coming_soon(feats, now, days=62):
-    """Movies Cinema City has announced for the next ~2 months (SyncFeatures rows with a future premiere date)."""
+def coming_soon(feats, now):
+    """Every movie Cinema City has announced (SyncFeatures rows with a future premiere date)."""
     today = now.astimezone(IL).date()
     out = {}
     for fid, f in feats.items():
@@ -211,7 +207,7 @@ def coming_soon(feats, now, days=62):
         en = (f.get("additionalName") or p.get("additionalName") or "").strip()
         if not start or not en or re.search(r"[\u0400-\u04ff]", en) or FOREIGN_DUB_RE.search(he):
             continue
-        if not (today < datetime.fromisoformat(start).date() <= today + timedelta(days=days)):
+        if datetime.fromisoformat(start).date() <= today:
             continue
         cats = f.get("categoryName") or ""
         cats = ",".join(map(str, cats)) if isinstance(cats, list) else str(cats)
@@ -384,16 +380,13 @@ def is_leaving(m, now):
     return age is not None and age >= 28 and (cur <= 12 or len(m["cinemas"]) <= 1)
 
 
-def is_blockbuster(m):
-    """Only the titles everyone is waiting for; small and local films are left out on purpose."""
-    return (m.get("watchlist") or 0) >= BIG_WATCHLIST
-
-
-def upcoming_hits(feats, now, prev_upcoming):
+def upcoming(feats, now, prev_upcoming):
+    """All announced movies with their IMDb watchlist count ("Added by 708K users"). The page filters by it
+    (200K+ by default: the titles everyone is waiting for), so nothing is dropped here."""
     if not feats:  # SyncFeatures was rate-limited this run: keep last week's list, minus what has opened
         today = now.astimezone(IL).date().isoformat()
         return [m for m in prev_upcoming if m["date_started"] > today]
-    hits = []
+    out = []
     for m in coming_soon(feats, now):
         try:
             hit = imdb_find(m["title"], now.year)
@@ -405,14 +398,11 @@ def upcoming_hits(feats, now, prev_upcoming):
             print("imdb fail", m["title"], e)
         m["top_people"] = [p for p in m.get("directors") or [] if p in TOP_DIRECTORS] + \
                           [p for p in m.get("actors") or [] if p in TOP_ACTORS]
-        big = is_blockbuster(m)
-        if big:
-            mirror_poster(m)
-        print("  soon" + (" ★" if big else "  "), m["date_started"], m["title"], "watchlist", m.get("watchlist"))
-        if big:
-            hits.append(m)
+        mirror_poster(m)
+        print("  soon", m["date_started"], m["title"], "watchlist", m.get("watchlist"))
+        out.append(m)
         time.sleep(0.5)
-    return sorted(hits, key=lambda m: m["date_started"])
+    return sorted(out, key=lambda m: m["date_started"])
 
 
 def mirror_poster(m):
@@ -510,12 +500,12 @@ def main():
         print(" ", fmt_line(m))
         time.sleep(0.5)
     movies.sort(key=sort_key)
-    upcoming = upcoming_hits(feats, now, prev_upcoming)
-    print(f"{len(upcoming)} big premieres in the next two months")
+    soon = upcoming(feats, now, prev_upcoming)
+    print(f"{len(soon)} announced premieres")
     os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)
     with open(DATA_PATH, "w", encoding="utf-8") as f:
         json.dump({"generated_at": now.astimezone(IL).isoformat(timespec="minutes"),
-                   "movies": movies, "upcoming": upcoming}, f, ensure_ascii=False, indent=1)
+                   "movies": movies, "upcoming": soon}, f, ensure_ascii=False, indent=1)
     update_archive(movies, now.astimezone(IL).date().isoformat())
     if "--no-push" not in sys.argv:
         try:

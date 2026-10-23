@@ -151,8 +151,11 @@ Deno.serve(async (req) => {
     const prefs = Object.fromEntries((prefRows || []).map((r: any) => [r.id, r]));
     const scanDay = data.generated_at.slice(0, 10);
     const weekEnd = new Date(Date.parse(scanDay) + 7 * 864e5).toISOString().slice(0, 10);
-    // big premieres opening this week, and blockbusters newly announced since the last scan
-    const upcoming = data.upcoming || [];
+    // big premieres (200K+ IMDb watchlist, the page's default bar) opening this week, and blockbusters newly
+    // announced since the last scan; data.upcoming holds every announced movie
+    const BIG = 200_000;
+    const allUpcoming = data.upcoming || [];
+    const upcoming = allUpcoming.filter((m: any) => (m.watchlist || 0) >= BIG);
     const openingNow = upcoming.filter((m: any) => m.date_started >= scanDay && m.date_started < weekEnd);
     const known = new Set(JSON.parse(map.upcoming_known || "[]"));
     const announced = map.upcoming_known ? upcoming.filter((m: any) => !known.has(m.title)) : [];
@@ -177,6 +180,15 @@ Deno.serve(async (req) => {
       const p = prefs[user];
       if (!p) continue;
       const fav = new Set(p.fav || []), seen = new Set(p.seen || []);
+      // movies this user starred before they came out, opening this week
+      const starred = allUpcoming.filter((m: any) => fav.has(m.title) && m.date_started >= scanDay && m.date_started < weekEnd);
+      if (starred.length) {
+        await push(sb, mine, {
+          title: starred.length === 1 ? `★ ${starred[0].title} יוצא השבוע` : `★ ${starred.length} סרטים שסימנת יוצאים השבוע`,
+          body: starred.map((m: any) => `${m.title}${m.title_he ? ` (${m.title_he})` : ""}: בכורה ב-${dm(m.date_started)}`).join("\n"),
+          url: PAGE_URL, tag: `cinema-starred-${data.generated_at}`,
+        });
+      }
       const leaving = movies.filter((m: any) => m.leaving && fav.has(m.title) && !seen.has(m.title));
       if (leaving.length) {
         await push(sb, mine, {

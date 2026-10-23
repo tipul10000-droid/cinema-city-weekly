@@ -1,15 +1,11 @@
-import json, urllib.request
-API = "https://emgtyfksnofzzlutngbf.supabase.co/functions/v1/cinema-push"
-def call(q, body=None, headers={}):
-    req = urllib.request.Request(API + q, data=json.dumps(body).encode() if body is not None else None,
-                                 headers={"Content-Type": "application/json", **headers})
-    try:
-        with urllib.request.urlopen(req, timeout=30) as r: return r.status, r.read().decode()[:400]
-    except urllib.error.HTTPError as e: return e.code, e.read().decode()[:200]
-print("login ok", call("?action=login", {"user": "oren", "pass": "1121"}))
-print("login bad", call("?action=login", {"user": "oren", "pass": "1"}))
-print("login guest", call("?action=login", {"user": "guest", "pass": "1121"}))
-print("prefs oren", call("?action=prefs&user=oren", headers={"x-cinema-pass": "1121"}))
-print("prefs lior", call("?action=prefs&user=lior", headers={"x-cinema-pass": "1121"}))
-print("prefs nopass", call("?action=prefs&user=oren"))
-print("prefs old client", call("?action=prefs"))
+# one-off: refresh data.json's upcoming list with every announced movie (no rescan of screenings, no push)
+import json, sys
+from datetime import datetime, timezone
+sys.path.insert(0, ".")
+import scraper as s
+tokens = json.loads(s.http(f"{s.SITE}/_api/v1/access-tokens", tries=2, wait=20))
+inst = tokens["apps"][s.WIX_CODE_APP]["instance"]
+feats = {str(f.get("externalId")): f for f in s.wix_query(inst, "SyncFeatures")[0]}
+d = json.load(open(s.DATA_PATH, encoding="utf-8"))
+d["upcoming"] = s.upcoming(feats, datetime.now(timezone.utc), [])
+json.dump(d, open(s.DATA_PATH, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
