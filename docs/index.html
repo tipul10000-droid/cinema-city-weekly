@@ -128,6 +128,14 @@
   .note.about { color:var(--text); }
   .note .small { font-size:12px; color:var(--muted); }
   .regions .chip[disabled] { opacity:.5; cursor:default; }
+  .share { max-width:900px; margin:8px auto 0; padding:20px 16px calc(28px + env(safe-area-inset-bottom)); border-top:1px solid var(--line); display:flex; flex-direction:column; gap:10px; }
+  .shareTitle { font-weight:650; font-size:14px; }
+  .shareRow { display:flex; gap:8px; }
+  .ghostBtn2 { flex:1; padding:12px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--text); font:inherit; font-weight:600; cursor:pointer; }
+  .aboutLink { background:none; border:0; color:var(--muted); font:inherit; font-size:13px; text-decoration:underline; cursor:pointer; padding:4px 0; align-self:center; }
+  body.public .family-only, body.guest .family-only, body.nobody .family-only { display:none !important; }
+  body.public .oren-only { display:none !important; }
+  #toast { position:fixed; bottom:calc(76px + env(safe-area-inset-bottom)); left:50%; transform:translateX(-50%); z-index:11; background:var(--text); color:var(--bg); padding:10px 16px; border-radius:999px; font-size:14px; font-weight:600; }
   .sheetFoot { display:flex; gap:8px; position:sticky; bottom:calc(-16px - env(safe-area-inset-bottom)); background:var(--bg); padding:8px 0 4px; }
   .mainBtn, .ghostBtn { flex:1; padding:12px; border-radius:12px; font:inherit; font-weight:700; cursor:pointer; }
   .mainBtn { border:0; background:var(--imdb); color:#000; }
@@ -199,6 +207,7 @@
   </div>
   <main><div class="count" id="soonCount"></div><div id="soonList" class="cards"></div></main>
 </section>
+<div id="toast" hidden></div>
 <div class="sheet" id="filters" hidden>
   <div class="sheetBox">
     <div class="grab"></div>
@@ -269,12 +278,22 @@
 <div id="login" hidden>
   <div class="box">
     <h2>🎬 מי צופה?</h2>
-    <div class="users"><button data-u="oren">אורן</button><button data-u="lior">ליאור</button><button data-u="evyatar">אביתר</button><button data-u="guest">אורח</button></div>
+    <div class="users"><button data-u="oren">אורן</button><button data-u="lior">ליאור</button><button data-u="evyatar">אביתר</button></div>
+    <div class="meta" style="margin-top:12px">לא מהמשפחה? <a href="app/">לאפליקציה הציבורית</a></div>
     <form id="passForm" hidden><input id="pass" type="password" inputmode="numeric" placeholder="סיסמה" autocomplete="current-password"><button>כניסה</button></form>
     <div class="meta" id="loginMsg"></div>
   </div>
 </div>
 <main id="nowView"><div id="list" class="cards"></div></main>
+<footer class="share">
+  <div class="shareTitle">📤 אהבת? שתף עם חברים שאוהבים קולנוע</div>
+  <div class="shareRow"><button class="mainBtn" data-share="public">שתף</button><button class="ghostBtn2" data-copy="public">העתק לינק</button></div>
+  <div class="family-only">
+    <div class="shareTitle">👨‍👩‍👦 לינק משפחתי (אורן, ליאור, אביתר)</div>
+    <div class="shareRow"><button class="mainBtn" data-share="family">שתף</button><button class="ghostBtn2" data-copy="family">העתק לינק</button></div>
+  </div>
+  <button class="aboutLink" onclick="document.getElementById('info').click()">ℹ️ אודות האפליקציה</button>
+</footer>
 <script>
 let data = [];
 const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
@@ -283,8 +302,14 @@ const DEFAULTS = { sort: "imdb", aud: "all", noDub: false, noForeign: false, noI
 const st = Object.assign({}, DEFAULTS, load("cc-filters", {}));
 if (!(st.sort in { imdb: 1, rt: 1, new: 1 })) st.sort = "imdb";  // the name sort was removed
 // who is using the page: oren / lior / evyatar (password) or guest (just browsing, no marks)
-const USER_NAMES = { oren: "אורן", lior: "ליאור", evyatar: "אביתר", guest: "אורח" };
-const user = load("cc-user", null), pass = load("cc-pass", "");
+const USER_NAMES = { oren: "אורן", lior: "ליאור", evyatar: "אביתר", guest: "אורח", public: "אורח" };
+// two apps from this one file: the family app (this folder, Oren/Lior/Evyatar with a password) and the public app
+// (app/, a copy made by tools/make_public.py): every public visitor is an anonymous user of their own,
+// with a random id kept in this browser and separate tables on the server
+const PUBLIC = /\/app\/(index\.html)?$/.test(location.pathname);
+const FAMILY_URL = "https://tipul10000-droid.github.io/cinema-city-weekly/", PUBLIC_URL = FAMILY_URL + "app/";
+const pid = PUBLIC ? load("cc-pid", null) || (() => { const id = crypto.randomUUID(); save("cc-pid", id); return id; })() : null;
+const user = PUBLIC ? "public" : load("cc-user", null), pass = PUBLIC ? "" : load("cc-pass", "");
 const K = k => `${k}-${user}`;  // marks are kept per user on this device too
 if (user === "oren" && localStorage.getItem("cc-prefs") && !localStorage.getItem(K("cc-prefs")))  // before users existed
   for (const k of ["cc-prefs", "cc-prefs-dirty", "cc-prefs-synced"]) { try { localStorage.setItem(K(k), localStorage.getItem(k)); } catch {} }
@@ -693,6 +718,26 @@ document.addEventListener("touchend", e => {
   const order = ["now", "soon", ...(user && user !== "guest" ? ["seen"] : [])], i = order.indexOf(tab) + (dx > 0 ? 1 : -1);
   if (order[i]) goTab(order[i]);
 }, { passive: true });
+// share: the iPhone share sheet where there is one, else copy the link
+const SHARE = {
+  public: { url: PUBLIC_URL, title: "מה בסינמה סיטי השבוע", text: "כל הסרטים השבוע בסינמה סיטי עם ציוני IMDb ו-Rotten Tomatoes, במקום אחד" },
+  family: { url: FAMILY_URL, title: "סרטים - משפחה", text: "האפליקציה המשפחתית שלנו לסרטים" },
+};
+function toast(t) {
+  const el = document.getElementById("toast");
+  el.textContent = t; el.hidden = false;
+  clearTimeout(toast.timer); toast.timer = setTimeout(() => el.hidden = true, 2000);
+}
+async function copyLink(k) {
+  try { await navigator.clipboard.writeText(SHARE[k].url); toast("הלינק הועתק"); }
+  catch { prompt("העתק את הלינק:", SHARE[k].url); }
+}
+document.querySelectorAll("[data-share]").forEach(b => b.onclick = async () => {
+  const k = b.dataset.share;
+  if (navigator.share) { try { await navigator.share(SHARE[k]); } catch {} }
+  else copyLink(k);
+});
+document.querySelectorAll("[data-copy]").forEach(b => b.onclick = () => copyLink(b.dataset.copy));
 // back to top, once the list is long
 const toTop = document.getElementById("toTop");
 addEventListener("scroll", () => { toTop.hidden = scrollY < 900; }, { passive: true });
@@ -706,12 +751,13 @@ function pushPrefs() {
   prefsTimer = setTimeout(sendPrefs, 300);
 }
 const AUTH = { "x-cinema-pass": pass };
-const sendPrefs = () => fetch(PREFS_API + `?action=prefs&user=${user}`, { method: "POST", keepalive: true, headers: { "Content-Type": "application/json", ...AUTH }, body: JSON.stringify(prefs) })
+const PREFS_URL = PREFS_API + (PUBLIC ? `?action=pprefs&id=${pid}` : `?action=prefs&user=${user}`);
+const sendPrefs = () => fetch(PREFS_URL, { method: "POST", keepalive: true, headers: { "Content-Type": "application/json", ...AUTH }, body: JSON.stringify(prefs) })
   .then(r => { if (r.ok) save(K("cc-prefs-dirty"), false); }).catch(() => {});
 if (user && user !== "guest") {
   addEventListener("pagehide", () => { if (load(K("cc-prefs-dirty"), false)) sendPrefs(); });
-  fetch(PREFS_API + `?action=prefs&user=${user}`, { headers: AUTH }).then(r => {
-    if (r.status === 401) { localStorage.removeItem("cc-user"); location.reload(); }  // password changed
+  fetch(PREFS_URL, { headers: AUTH }).then(r => {
+    if (r.status === 401 && !PUBLIC) { localStorage.removeItem("cc-user"); location.reload(); }  // password changed
     return r.ok ? r.json() : null;
   }).then(p => {
     if (!p?.prefs) return;
@@ -728,6 +774,7 @@ if (user && user !== "guest") {
 // ---- login ----
 (() => {
   const box = document.getElementById("login"), form = document.getElementById("passForm"), msg = document.getElementById("loginMsg");
+  if (PUBLIC) { document.getElementById("who").hidden = true; return; }
   document.getElementById("who").innerHTML = user ? `${user === "guest" ? "👀 מצב אורח" : `מחובר כ${USER_NAMES[user]}`} · <button id="switchUser">החלף משתמש</button>` : "";
   document.getElementById("switchUser")?.addEventListener("click", () => { localStorage.removeItem("cc-user"); localStorage.removeItem("cc-pass"); location.reload(); });
   if (user) return;
@@ -761,7 +808,7 @@ const b64ToBytes = s => Uint8Array.from(atob((s + "=".repeat((4 - s.length % 4) 
   const ios = /iPhone|iPad|iPod/.test(navigator.userAgent);
   const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone;
   if (!("serviceWorker" in navigator)) return;
-  const reg = await navigator.serviceWorker.register("sw.js");
+  const reg = await navigator.serviceWorker.register(PUBLIC ? "app/sw.js" : "sw.js");  // separate registrations, so each app has its own push subscription
   box.hidden = false;
   const dot = document.getElementById("gearDot");
   dot.hidden = false;  // a red dot on ⚙️ while notifications are off
@@ -773,7 +820,7 @@ const b64ToBytes = s => Uint8Array.from(atob((s + "=".repeat((4 - s.length % 4) 
   const off = document.getElementById("pushOff");
   const NAME = { oren: "אורן", lior: "ליאור", evyatar: "אביתר", guest: "אורח" };
   let existing = await reg.pushManager.getSubscription();
-  const subscribe = sub => fetch(PUSH_API + "?action=subscribe", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ sub, user, pass }) })
+  const subscribe = sub => fetch(PUSH_API + "?action=subscribe", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(PUBLIC ? { sub, pid } : { sub, user, pass }) })
     .then(async r => {
       if (!r.ok) throw new Error("השמירה נכשלה");
       save("cc-push-user", user);
@@ -781,13 +828,13 @@ const b64ToBytes = s => Uint8Array.from(atob((s + "=".repeat((4 - s.length % 4) 
     });
   const on = () => {
     btn.disabled = false; btn.textContent = "🔔 שלח התראת בדיקה"; off.hidden = false; dot.hidden = true;
-    msg.textContent = `פעילות עבור ${NAME[user] || "אורח"} · כל יום ראשון ב-08:00`;
+    msg.textContent = `${PUBLIC ? "פעילות במכשיר הזה" : `פעילות עבור ${NAME[user] || "אורח"}`} · כל יום ראשון ב-08:00`;
   };
   const idle = t => { btn.disabled = false; btn.textContent = "🔔 הפעל התראות"; off.hidden = true; dot.hidden = false; msg.textContent = t || ""; };
   if (existing && Notification.permission === "granted") {
     on();
     // notifications follow the user: re-register this device after switching users
-    if (user && load("cc-push-user", "oren") !== user) subscribe(existing).catch(() => {});
+    if (!PUBLIC && user && load("cc-push-user", "oren") !== user) subscribe(existing).catch(() => {});
   }
   // with a subscription the button re-registers this device for the current user, which also sends a test notification
   btn.onclick = async () => {
