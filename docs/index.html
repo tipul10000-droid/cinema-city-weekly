@@ -33,22 +33,23 @@
   .mark button.on { color:var(--imdb); border-color:var(--imdb); }
   .mark button.seen.on { color:var(--good); border-color:var(--good); }
   .m.watched { opacity:.55; }
-  .stat { display:flex; align-items:center; gap:10px; width:100%; }
+  .stat { display:flex; align-items:center; gap:8px; width:100%; }
   .count { color:var(--text); font-size:13px; font-weight:650; font-variant-numeric:tabular-nums; }
   .count .of { color:var(--muted); font-weight:400; }
-  #reset { margin-inline-start:auto; padding:7px 14px; border-radius:999px; border:0; background:var(--bad); color:#fff; font:inherit; font-size:13px; font-weight:700; cursor:pointer; }
+  #reset { padding:7px 12px; border-radius:999px; border:0; background:var(--bad); color:#fff; font:inherit; font-size:13px; font-weight:700; cursor:pointer; }
   .bar input { flex:1 1 160px; min-width:0; padding:8px 10px; border-radius:8px; border:1px solid var(--line); background:var(--card); color:var(--text); font:inherit; }
   .chip { padding:7px 12px; border-radius:999px; border:1px solid var(--line); background:var(--card); color:var(--text); cursor:pointer; font:inherit; font-size:13px; }
   .chip.on { background:var(--text); color:var(--bg); }
   main { max-width:900px; margin:auto; padding:8px 16px 40px; }
-  .m { display:grid; grid-template-columns:64px 1fr auto; gap:12px; padding:12px; background:var(--card); border:1px solid var(--line); border-radius:12px; margin-bottom:10px; align-items:start; }
+  .m { display:grid; grid-template-columns:64px 1fr auto; gap:10px; padding:10px; background:var(--card); border:1px solid var(--line); border-radius:12px; margin-bottom:8px; align-items:start; }
   .m img { width:64px; height:92px; object-fit:cover; border-radius:6px; background:var(--line); }
   .t { font-weight:650; font-size:16px; }
   .t a { color:inherit; text-decoration:none; }
   .he { color:var(--muted); font-size:13px; }
-  .ppl { font-size:13px; margin-top:4px; }
+  .ppl { font-size:13px; margin-top:3px; text-align:right; }
+  .ppl .dir { color:var(--muted); }
   .ppl b { color:var(--muted); font-weight:500; }
-  .tags { margin-top:6px; display:flex; gap:6px; flex-wrap:wrap; }
+  .tags { margin-top:6px; display:flex; gap:4px; flex-wrap:wrap; }
   .tag { font-size:11px; padding:2px 7px; border-radius:6px; border:1px solid var(--line); color:var(--muted); }
   .tag.new { border-color:var(--good); color:var(--good); }
   .tag.old { border-color:var(--mid); color:var(--mid); }
@@ -66,9 +67,6 @@
   .tab.on { background:var(--imdb); color:#000; border-color:var(--imdb); }
   .month { margin:16px 0 8px; font-size:14px; color:var(--muted); font-weight:600; }
   .when { font-weight:700; font-size:14px; color:var(--good); white-space:nowrap; }
-  .m img[data-full] { cursor:zoom-in; }
-  #full { position:fixed; inset:0; z-index:9; background:rgba(0,0,0,.92); display:flex; align-items:center; justify-content:center; padding:16px; cursor:zoom-out; }
-  #full img { max-width:100%; max-height:100%; object-fit:contain; border-radius:8px; }
   #login { position:fixed; inset:0; z-index:10; background:var(--bg); display:flex; align-items:center; justify-content:center; padding:16px; }
   #login .box { width:100%; max-width:360px; text-align:center; }
   #login h2 { margin:0 0 16px; }
@@ -81,18 +79,106 @@
   body.guest .mark, body.guest [data-f=fav], body.guest [data-f=hideSeen], body.guest [data-tab=seen] { display:none !important; }
   body:not(.oren) .oren-only { display:none !important; }
   .tag.wants { border-color:#e85d9b; color:#e85d9b; }
-  .empty { color:var(--muted); text-align:center; padding:40px 0; }
+  .empty { color:var(--muted); text-align:center; padding:40px 0; grid-column:1/-1; }
+  /* header, sticky top bar */
+  .hrow { display:flex; align-items:center; gap:8px; }
+  .hrow h1 { flex:1; }
+  button.icon { position:relative; flex:none; width:40px; height:40px; border-radius:50%; border:1px solid var(--line); background:var(--card); color:var(--text); font-size:18px; cursor:pointer; padding:0; }
+  #gearDot { position:absolute; top:2px; left:2px; width:10px; height:10px; border-radius:50%; background:var(--bad); }
+  .top { position:sticky; top:0; z-index:3; background:var(--bg); border-bottom:1px solid var(--line); padding-top:env(safe-area-inset-top); }
+  .top .tabs { padding:8px 16px 6px; }
+  .top .tab { padding:8px 6px; }
+  .tools { max-width:900px; margin:auto; padding:0 16px 8px; display:flex; flex-direction:column; gap:6px; }
+  .tools input { width:100%; padding:8px 10px; border-radius:8px; border:1px solid var(--line); background:var(--card); color:var(--text); font:inherit; }
+  body:not(.tab-now) .now-only { display:none !important; }
+  #filterBtn b { margin-inline-start:6px; background:var(--imdb); color:#000; border-radius:999px; padding:0 6px; font-size:12px; }
+  #filterBtn.on b { background:var(--bg); color:var(--text); }
+  .seg.view { margin-inline-start:auto; }
+  .seg.view .chip { padding:7px 10px; font-size:15px; line-height:1; }
+  .stat > * { white-space:nowrap; flex:none; }
+  #toTop { position:fixed; bottom:calc(16px + env(safe-area-inset-bottom)); left:16px; z-index:4; width:46px; height:46px; border-radius:50%; border:0; background:var(--imdb); color:#000; font-size:22px; font-weight:800; box-shadow:0 4px 14px rgba(0,0,0,.35); cursor:pointer; }
+  body.locked { overflow:hidden; }
+  /* poster with the "tap & swipe" mark */
+  .pw { position:relative; display:block; cursor:zoom-in; }
+  .pw img { display:block; }
+  .pw .zh { position:absolute; left:3px; bottom:3px; width:20px; height:20px; border-radius:50%; background:rgba(0,0,0,.6); color:#fff; font-size:11px; display:flex; align-items:center; justify-content:center; pointer-events:none; }
+  /* grid view: three posters a row */
+  body.view-grid .cards { display:grid; grid-template-columns:repeat(3, 1fr); gap:10px 8px; }
+  body.view-grid .cards .month { grid-column:1/-1; margin:8px 0 0; }
+  .tile { cursor:pointer; min-width:0; }
+  .tile .pw { cursor:pointer; }
+  .tile img { display:block; width:100%; aspect-ratio:2/3; object-fit:cover; border-radius:8px; background:var(--line); }
+  .tile.watched { opacity:.55; }
+  .tile .badge { position:absolute; bottom:5px; right:5px; background:rgba(0,0,0,.72); color:#fff; font-size:12px; font-weight:700; padding:1px 6px; border-radius:6px; font-variant-numeric:tabular-nums; }
+  .tile .badge.imdbb { color:var(--imdb); }
+  .tile .mk { position:absolute; top:5px; left:5px; display:flex; gap:3px; }
+  .tile .mk span { background:rgba(0,0,0,.72); color:var(--imdb); font-size:12px; border-radius:6px; padding:0 5px; }
+  .tile .mk span.s { color:var(--good); }
+  .tile .tt { font-size:12px; font-weight:600; margin-top:4px; line-height:1.25; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; text-align:right; }
+  /* bottom sheets: filters, settings, movie details */
+  .sheet { position:fixed; inset:0; z-index:8; background:rgba(0,0,0,.5); display:flex; align-items:flex-end; justify-content:center; }
+  .sheetBox { position:relative; width:100%; max-width:640px; max-height:88dvh; overflow-y:auto; overscroll-behavior:contain; background:var(--bg); border-radius:18px 18px 0 0; padding:8px 16px calc(16px + env(safe-area-inset-bottom)); display:flex; flex-direction:column; gap:10px; animation:up .22s ease-out; }
+  @keyframes up { from { transform:translateY(40px); opacity:.4; } }
+  .grab { width:40px; height:5px; border-radius:3px; background:var(--line); margin:2px auto 4px; flex:none; }
+  .sheetBox h3 { margin:0; font-size:17px; }
+  .sheetFoot { display:flex; gap:8px; position:sticky; bottom:calc(-16px - env(safe-area-inset-bottom)); background:var(--bg); padding:8px 0 4px; }
+  .mainBtn, .ghostBtn { flex:1; padding:12px; border-radius:12px; font:inherit; font-weight:700; cursor:pointer; }
+  .mainBtn { border:0; background:var(--imdb); color:#000; }
+  .ghostBtn { border:1px solid var(--bad); background:none; color:var(--bad); }
+  .sheetBox .close { position:absolute; top:10px; left:12px; width:34px; height:34px; font-size:15px; }
+  /* movie details: big poster on top */
+  #detailBody .m { grid-template-columns:1fr auto; border:0; background:none; padding:4px 0 0; }
+  #detailBody .m > .pw { grid-column:1/-1; width:min(62%, 260px); margin:0 auto 4px; }
+  #detailBody .m > .pw img { width:100%; height:auto; aspect-ratio:2/3; border-radius:10px; }
+  #detailBody .pw .zh { width:auto; height:auto; left:8px; bottom:8px; padding:4px 9px; border-radius:999px; font-size:12px; font-weight:700; gap:4px; }
+  #detailBody .pw .zh::after { content:"הקש והחלק"; }
+  #detailBody .t { font-size:19px; }
+  /* full-screen swipe view */
+  #viewer { position:fixed; inset:0; z-index:9; background:#000; color:#fff; display:flex; flex-direction:column; padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom); touch-action:none; user-select:none; -webkit-user-select:none; }
+  .vtop { display:flex; align-items:center; justify-content:space-between; padding:8px 12px; }
+  .vtop .icon { background:rgba(255,255,255,.12); border:0; color:#fff; width:36px; height:36px; font-size:15px; }
+  #vPos { font-size:13px; color:#bbb; font-variant-numeric:tabular-nums; }
+  #vFacts { padding:0 16px 8px; text-align:center; }
+  #vFacts .vt { font-size:18px; font-weight:700; }
+  #vFacts .he { color:#aaa; }
+  #vFacts .vrow { display:flex; gap:14px; justify-content:center; align-items:center; margin-top:6px; flex-wrap:wrap; }
+  #vFacts .sc { color:#fff; }
+  #vFacts .mark button { border-color:#444; color:#bbb; }
+  #vFacts .mark button.on { color:var(--imdb); border-color:var(--imdb); }
+  #vFacts .mark button.seen.on { color:var(--good); border-color:var(--good); }
+  .vstage { flex:1; min-height:0; display:flex; align-items:center; position:relative; }
+  .vimg { flex:1; height:100%; min-width:0; position:relative; overflow:hidden; }
+  .vimg img { -webkit-user-drag:none; -webkit-touch-callout:none; position:absolute; inset:0; width:100%; height:100%; object-fit:contain; transition:transform .24s ease, opacity .24s ease; cursor:pointer; }
+  .vimg img.from-l { transform:translateX(-100%); opacity:0; }
+  .vimg img.from-r { transform:translateX(100%); opacity:0; }
+  .vnav { position:absolute; z-index:1; top:50%; transform:translateY(-50%); width:40px; height:64px; border:0; border-radius:10px; background:rgba(255,255,255,.12); color:#fff; font-size:30px; cursor:pointer; }
+  .vnav:first-child { left:6px; }
+  .vnav:last-child { right:6px; }
+  .vnav[disabled] { opacity:.2; }
+  .vhint { text-align:center; font-size:12px; color:#888; padding:8px; }
 </style>
 </head>
 <body>
 <header>
-  <h1>🎬 מה בסינמה סיטי השבוע</h1>
+  <div class="hrow">
+    <h1>🎬 מה בסינמה סיטי השבוע</h1>
+    <button id="gear" class="icon" aria-label="הגדרות">⚙️<i id="gearDot" hidden></i></button>
+  </div>
   <div class="meta" id="meta">טוען…</div>
-  <div class="meta" id="who"></div>
-  <div class="push" id="push" hidden><button id="pushBtn">🔔 הפעל התראות</button><button id="pushOff" class="ghost" hidden>בטל התראות</button><span id="pushMsg"></span></div>
 </header>
-<nav class="tabs"><button class="tab on" data-tab="now">🎬 עכשיו</button><button class="tab" data-tab="soon">📅 בקרוב</button><button class="tab" data-tab="seen">✓ ראיתי</button></nav>
-<section id="seenView" hidden><main><div class="count">כל הסרטים שסימנת ✓, נשמרים לתמיד, גם אחרי שירדו מהקולנוע.</div><div id="seenList"></div></main></section>
+<div class="top" id="top">
+  <nav class="tabs"><button class="tab on" data-tab="now">🎬 עכשיו</button><button class="tab" data-tab="soon">📅 בקרוב</button><button class="tab" data-tab="seen">✓ ראיתי</button></nav>
+  <div class="tools">
+    <input id="q" class="now-only" type="search" placeholder="חיפוש: שם סרט בעברית, כל השאר באנגלית">
+    <div class="stat">
+      <button id="filterBtn" class="chip now-only">⚙︎ סינון<b id="fCount" hidden></b></button>
+      <button id="reset" class="now-only" hidden>✕ נקה</button>
+      <span class="count now-only" id="count"></span>
+      <span class="seg view" aria-label="תצוגה"><button class="chip" data-view="list" aria-label="רשימה">☰</button><button class="chip" data-view="grid" aria-label="רשת">▦</button><button class="chip" data-view="swipe" aria-label="סווייפ במסך מלא">⇆</button></span>
+    </div>
+  </div>
+</div>
+<section id="seenView" hidden><main><div class="count">כל הסרטים שסימנת ✓, נשמרים לתמיד, גם אחרי שירדו מהקולנוע.</div><div id="seenList" class="cards"></div></main></section>
 <section id="soonView" hidden>
   <div class="bar">
     <div class="row"><span class="lbl2">מחכים</span>
@@ -103,32 +189,60 @@
       <button class="chip" data-ssort="wl">הכי מחכים</button>
     </div>
   </div>
-  <main><div class="count" id="soonCount"></div><div id="soonList"></div></main>
+  <main><div class="count" id="soonCount"></div><div id="soonList" class="cards"></div></main>
 </section>
-<div class="bar" id="nowBar">
-  <input id="q" type="search" placeholder="חיפוש: שם סרט בעברית, כל השאר באנגלית">
-  <div class="row"><span class="lbl2">מיון</span>
-    <button class="chip" data-sort="imdb">IMDb</button>
-    <button class="chip" data-sort="rt">🍅 Rotten Tomatoes</button>
-    <button class="chip" data-sort="new">חדשים קודם</button>
+<div class="sheet" id="filters" hidden>
+  <div class="sheetBox">
+    <div class="grab"></div>
+    <h3>סינון ומיון</h3>
+    <div class="row"><span class="lbl2">מיון</span>
+      <button class="chip" data-sort="imdb">IMDb</button>
+      <button class="chip" data-sort="rt">🍅 Rotten Tomatoes</button>
+      <button class="chip" data-sort="new">חדשים קודם</button>
+    </div>
+    <div class="row"><span class="lbl2">קהל</span>
+      <span class="seg"><button class="chip" data-aud="all">הכל</button><button class="chip" data-aud="adults">מבוגרים</button><button class="chip" data-aud="kids">ילדים</button></span>
+    </div>
+    <div class="row"><span class="lbl2">שפה</span>
+      <button class="chip" data-f="noDub">בלי מדובבים</button>
+      <button class="chip" data-f="noForeign">בלי שפות זרות</button>
+      <button class="chip" data-f="noIsraeli">בלי ישראליים</button>
+    </div>
+    <div class="row"><span class="lbl2">שלי</span>
+      <button class="chip" data-f="fav">★ מועדפים</button>
+      <button class="chip" data-f="hideSeen">הסתר שראיתי</button>
+      <button class="chip oren-only" data-f="lior">💗 ליאור רוצה</button>
+      <button class="chip oren-only" data-f="evyatar">💙 אביתר רוצה</button>
+    </div>
+    <div class="row"><span class="lbl2">עוד</span>
+      <button class="chip" data-f="stars">🎭 שמות גדולים</button>
+      <button class="chip" data-f="special">אולמות מיוחדים</button>
+      <button class="chip" data-f="leaving">⏳ לפני ירידה</button>
+      <button class="chip" data-f="premieres">🆕 בכורות השבוע</button>
+    </div>
+    <div class="sheetFoot"><button id="reset2" class="ghostBtn">✕ נקה הכל</button><button id="showBtn" class="mainBtn">הצג</button></div>
   </div>
-  <div class="row"><span class="lbl2">סינון</span>
-    <span class="seg"><button class="chip" data-aud="all">הכל</button><button class="chip" data-aud="adults">מבוגרים</button><button class="chip" data-aud="kids">ילדים</button></span>
-    <button class="chip" data-f="noDub">בלי מדובבים</button>
-    <button class="chip" data-f="noForeign">בלי שפות זרות</button>
-    <button class="chip" data-f="noIsraeli">בלי ישראליים</button>
-    <button class="chip" data-f="stars">🎭 שמות גדולים</button>
-    <button class="chip" data-f="fav">★ מועדפים</button>
-    <button class="chip oren-only" data-f="lior">💗 ליאור רוצה</button>
-    <button class="chip oren-only" data-f="evyatar">💙 אביתר רוצה</button>
-    <button class="chip" data-f="hideSeen">הסתר שראיתי</button>
-    <button class="chip" data-f="special">אולמות מיוחדים</button>
-    <button class="chip" data-f="leaving">⏳ לפני ירידה</button>
-    <button class="chip" data-f="premieres">🆕 בכורות השבוע</button>
-  </div>
-  <div class="stat"><span class="count" id="count"></span><button id="reset" hidden>✕ נקה הכל</button></div>
 </div>
-<div id="full" hidden><img alt=""></div>
+<div class="sheet" id="settings" hidden>
+  <div class="sheetBox">
+    <div class="grab"></div>
+    <h3>הגדרות</h3>
+    <div class="meta" id="who"></div>
+    <div class="push" id="push" hidden><button id="pushBtn">🔔 הפעל התראות</button><button id="pushOff" class="ghost" hidden>בטל התראות</button><span id="pushMsg"></span></div>
+  </div>
+</div>
+<div class="sheet" id="detail" hidden><div class="sheetBox"><div class="grab"></div><button class="icon close" data-close aria-label="סגור">✕</button><div id="detailBody"></div></div></div>
+<div id="viewer" hidden>
+  <div class="vtop"><button class="icon" data-close aria-label="סגור">✕</button><span id="vPos" dir="ltr"></span><span></span></div>
+  <div id="vFacts"></div>
+  <div class="vstage" dir="ltr">
+    <button class="vnav" data-step="1" aria-label="הסרט הבא">‹</button>
+    <div class="vimg" id="vImg"></div>
+    <button class="vnav" data-step="-1" aria-label="הסרט הקודם">›</button>
+  </div>
+  <div class="vhint">החלק לסרט הבא · הקש על הפוסטר לפרטים</div>
+</div>
+<button id="toTop" aria-label="חזרה למעלה" hidden>↑</button>
 <div id="login" hidden>
   <div class="box">
     <h2>🎬 מי צופה?</h2>
@@ -137,7 +251,7 @@
     <div class="meta" id="loginMsg"></div>
   </div>
 </div>
-<main id="nowView"><div id="list"></div></main>
+<main id="nowView"><div id="list" class="cards"></div></main>
 <script>
 let data = [];
 const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
@@ -185,7 +299,7 @@ function runTag(m) {
   const weeks = Math.floor(days / 7) + 1;
   // few screenings after a month in cinemas (or two months in, regardless) = probably leaving soon
   const leaving = isLeaving(m, weeks);
-  if (leaving) return `<span class="tag old">⏳ שבוע ${weeks}, ${m.screenings} הקרנות השבוע${m.prev_screenings ? ` (היו ${m.prev_screenings})` : ""}, כנראה לקראת ירידה</span>`;
+  if (leaving) return `<span class="tag old" title="כנראה לקראת ירידה">⏳ שבוע ${weeks} · ${m.screenings} הקרנות${m.prev_screenings ? ` (היו ${m.prev_screenings})` : ""}</span>`;
   return `<span class="tag">שבוע ${weeks} בקולנוע</span>`;
 }
 // non-standard halls, with where they are
@@ -201,7 +315,7 @@ const HALL_INFO = {
   "Infinity Vision": "אולם מסך ענק",
 };
 const hallTags = m => Object.entries(m.halls || {}).map(([h, locs]) =>
-  `<span class="tag hall" title="${esc(HALL_INFO[h] || "")}">${HALLS[h]?.[0] || "✨"} ${esc(HALLS[h]?.[1] || h)}: ${esc(locs.join(", "))}</span>`).join("");
+  `<span class="tag hall" title="${esc(HALL_INFO[h] || "")}">${HALLS[h]?.[0] || "✨"} ${esc(HALLS[h]?.[1] || h)} ${esc(locs.join(", "))}</span>`).join("");
 const VERSION_LABEL = { "מדובב": "יש גם מדובב", "אנגלית": "יש גם באנגלית" };
 const sorters = {
   imdb: (a, b) => (b.imdb ?? -1) - (a.imdb ?? -1) || (b.rt ?? -1) - (a.rt ?? -1),
@@ -227,16 +341,25 @@ function render() {
     if (!q) return true;
     return [m.title, m.title_he, ...(m.actors||[]), ...(m.directors||[]), m.genre].join(" ").toLowerCase().includes(q);
   }).sort(sorters[st.sort]);
-  document.getElementById("count").innerHTML = rows.length === data.length ? `${data.length} סרטים` : `${rows.length} סרטים <span class="of">מתוך ${data.length}</span>`;
+  document.getElementById("count").innerHTML = rows.length === data.length ? `${data.length} סרטים` : `${rows.length} <span class="of">מתוך ${data.length}</span>`;
   document.getElementById("reset").hidden = !q && Object.keys(DEFAULTS).every(k => k === "sort" || st[k] === DEFAULTS[k]);
-  document.getElementById("list").innerHTML = rows.length ? rows.map(m => `
+  rowsBy.now = rows;
+  document.getElementById("showBtn").textContent = `הצג ${rows.length} סרטים`;
+  document.getElementById("list").innerHTML = rows.length ? rows.map(m => view === "grid" ? tile(m, imdbBadge(m)) : nowCard(m)).join("") : `<div class="empty">אין תוצאות</div>`;
+  refreshLayers();
+}
+const scores = m => `
+        <a class="sc imdb" href="${esc(m.imdb_url || "#")}" target="_blank" rel="noopener"><span class="lbl">IMDb</span>${m.imdb ? m.imdb.toFixed(1) : '<span class="na">–</span>'}</a>
+        <a class="sc rt" href="${esc(m.rt_url || "#")}" target="_blank" rel="noopener">🍅 ${m.rt != null ? m.rt + "%" : '<span class="na">–</span>'}</a>`;
+const favBtn = m => `<button class="${prefs.fav.includes(m.title) ? "on" : ""}" data-mark="fav" data-t="${esc(m.title)}" title="מועדף">${prefs.fav.includes(m.title) ? "★" : "☆"}</button>`;
+const seenBtn = m => `<button class="seen ${prefs.seen.includes(m.title) ? "on" : ""}" data-mark="seen" data-t="${esc(m.title)}" title="ראיתי">✓</button>`;
+const nowCard = m => `
     <article class="m${prefs.seen.includes(m.title) ? " watched" : ""}">
-      <img loading="lazy" src="${esc(m.poster)}" alt="" data-full data-alt="${esc(m.imdb_poster || "")}" onerror="posterError(this)">
+      ${poster(m)}
       <div>
         <div class="t" dir="ltr" style="text-align:right"><a href="${esc(m.cc_url)}" target="_blank" rel="noopener">${esc(m.title)}</a>${m.year ? ` <span class="he">(${m.year})</span>` : ""}</div>
         ${m.title_he && m.title_he !== m.title ? `<div class="he">${esc(m.title_he)}</div>` : ""}
-        ${m.directors?.length ? `<div class="ppl"><b>במאי:</b> <span dir="ltr">${people(m, m.directors)}</span></div>` : ""}
-        ${m.actors?.length ? `<div class="ppl"><b>שחקנים:</b> <span dir="ltr">${people(m, m.actors)}</span></div>` : ""}
+        ${pplLine(m)}
         <div class="tags">
           ${wantsTags(m)}
           ${m.genre ? `<span class="tag">${esc(m.genre)}</span>` : ""}
@@ -247,16 +370,19 @@ function render() {
           ${m.has_original !== false ? m.versions.map(v => `<span class="tag">${esc(VERSION_LABEL[v] || v)}</span>`).join("") : `<span class="tag">מדובב בלבד</span>`}
         </div>
       </div>
-      <div class="scores">
-        <a class="sc imdb" href="${esc(m.imdb_url || "#")}" target="_blank" rel="noopener"><span class="lbl">IMDb</span>${m.imdb ? m.imdb.toFixed(1) : '<span class="na">–</span>'}</a>
-        <a class="sc rt" href="${esc(m.rt_url || "#")}" target="_blank" rel="noopener">🍅 ${m.rt != null ? m.rt + "%" : '<span class="na">–</span>'}</a>
-        <div class="mark">
-          <button class="${prefs.fav.includes(m.title) ? "on" : ""}" data-mark="fav" data-t="${esc(m.title)}" title="מועדף">${prefs.fav.includes(m.title) ? "★" : "☆"}</button>
-          <button class="seen ${prefs.seen.includes(m.title) ? "on" : ""}" data-mark="seen" data-t="${esc(m.title)}" title="ראיתי">✓</button>
-        </div>
+      <div class="scores">${scores(m)}
+        <div class="mark">${favBtn(m)}${seenBtn(m)}</div>
       </div>
-    </article>`).join("") : `<div class="empty">אין תוצאות</div>`;
-}
+    </article>`;
+// poster: tap opens the full-screen swipe view (🔍 marks it)
+const poster = m => `<span class="pw" data-full data-t="${esc(m.title)}"><img loading="lazy" src="${esc(m.poster)}" alt="" data-alt="${esc(m.imdb_poster || "")}" onerror="posterError(this)"><span class="zh">🔍</span></span>`;
+// director, then the actors, on one line
+const pplLine = m => m.directors?.length || m.actors?.length ? `<div class="ppl" dir="ltr">${m.directors?.length ? `<span class="dir">🎬 ${people(m, m.directors)}</span>${m.actors?.length ? " · " : ""}` : ""}${people(m, m.actors || [])}</div>` : "";
+// grid view: poster, score badge, title; tap opens the movie card
+const imdbBadge = m => m.imdb ? `<span class="badge imdbb">★ ${m.imdb.toFixed(1)}</span>` : "";
+const tile = (m, badge) => `<div class="tile${prefs.seen.includes(m.title) ? " watched" : ""}" data-open data-t="${esc(m.title)}">
+    <span class="pw"><img loading="lazy" src="${esc(m.poster)}" alt="" data-alt="${esc(m.imdb_poster || "")}" onerror="posterError(this)">${badge}<span class="mk">${prefs.fav.includes(m.title) ? "<span>★</span>" : ""}${prefs.seen.includes(m.title) ? '<span class="s">✓</span>' : ""}</span></span>
+    <div class="tt" dir="ltr">${esc(m.title)}</div></div>`;
 // big names are bold
 const people = (m, list) => list.map(p => (m.top_people || []).includes(p) ? `<strong>${esc(p)}</strong>` : esc(p)).join(", ");
 // upcoming blockbusters, grouped by month
@@ -275,22 +401,29 @@ function renderSoon() {
   document.getElementById("soonCount").textContent = `${rows.length} מתוך ${open.length} הסרטים שסינמה סיטי הכריזה עליהם. ` +
     (user && user !== "guest" ? "★ על סרט ותקבל התראה כשהוא יוצא. " : "") + "תאריכים עשויים להשתנות.";
   let month = "";
+  rowsBy.soon = rows;
   document.getElementById("soonList").innerHTML = rows.length ? rows.map(m => {
-    const d = new Date(m.date_started + "T00:00:00"), days = Math.ceil((d - Date.now()) / DAY);
+    const d = new Date(m.date_started + "T00:00:00");
     const label = MONTHS[d.getMonth()] + (d.getFullYear() !== new Date().getFullYear() ? ` ${d.getFullYear()}` : "");
     const head = soonSt.sort === "date" && label !== month ? `<div class="month">${month = label}</div>` : "";
-    return `${head}
+    return head + (view === "grid" ? tile(m, `<span class="badge">${fmtDate(d)}</span>`) : soonCard(m));
+  }).join("") : `<div class="empty">אין כרגע להיטים גדולים מוכרזים לחודשיים הקרובים</div>`;
+  refreshLayers();
+}
+const wlText = n => n >= 1e6 ? (n / 1e6).toFixed(1) + "M" : Math.round(n / 1e3) + "K";
+function soonCard(m) {
+  const d = new Date(m.date_started + "T00:00:00"), days = Math.ceil((d - Date.now()) / DAY);
+  return `
     <article class="m">
-      <img loading="lazy" src="${esc(m.poster)}" alt="" data-full data-alt="${esc(m.imdb_poster || "")}" onerror="posterError(this)">
+      ${poster(m)}
       <div>
         <div class="t" dir="ltr" style="text-align:right"><a href="${esc(m.cc_url)}" target="_blank" rel="noopener">${esc(m.title)}</a></div>
         ${m.title_he && m.title_he !== m.title ? `<div class="he">${esc(m.title_he)}</div>` : ""}
-        ${m.directors?.length ? `<div class="ppl"><b>במאי:</b> <span dir="ltr">${people(m, m.directors)}</span></div>` : ""}
-        ${m.actors?.length ? `<div class="ppl"><b>שחקנים:</b> <span dir="ltr">${people(m, m.actors)}</span></div>` : ""}
+        ${pplLine(m)}
         <div class="tags">
           ${wantsTags(m)}
           ${m.genre ? `<span class="tag">${esc(m.genre)}</span>` : ""}
-          ${m.watchlist ? `<span class="tag hall" title="משתמשי IMDb ששמו את הסרט ברשימת הצפייה">👀 ${m.watchlist >= 1e6 ? (m.watchlist / 1e6).toFixed(1) + "M" : Math.round(m.watchlist / 1e3) + "K"} מחכים ב-IMDb</span>` : ""}
+          ${m.watchlist ? `<span class="tag hall" title="משתמשי IMDb ששמו את הסרט ברשימת הצפייה">👀 ${wlText(m.watchlist)} מחכים ב-IMDb</span>` : ""}
           ${m.kids ? `<span class="tag">👨‍👧 ילדים</span>` : ""}
           ${m.dubbed_only ? `<span class="tag">מדובב בלבד</span>` : ""}
         </div>
@@ -298,10 +431,9 @@ function renderSoon() {
       <div class="scores">
         <span class="when">${fmtDate(d)}</span>
         <span class="he">${days <= 0 ? "היום" : days === 1 ? "מחר" : `בעוד ${days} ימים`}</span>
-        <div class="mark"><button class="${prefs.fav.includes(m.title) ? "on" : ""}" data-mark="fav" data-t="${esc(m.title)}" title="מועדף">${prefs.fav.includes(m.title) ? "★" : "☆"}</button></div>
+        <div class="mark">${favBtn(m)}</div>
       </div>
     </article>`;
-  }).join("") : `<div class="empty">אין כרגע להיטים גדולים מוכרזים לחודשיים הקרובים</div>`;
 }
 // watched log: every ✓ ever marked, with details from this week's list or the all-time archive
 let archive = {};
@@ -315,70 +447,229 @@ function renderSeen() {
     return Object.assign({ title: t }, a, cur || {}, { first_shown: a.first_shown || (cur && today), last_shown: cur ? today : a.last_shown });
   }).sort((a, b) => (b.last_shown || "").localeCompare(a.last_shown || ""));
   document.querySelector("[data-tab=seen]").textContent = `✓ ראיתי (${rows.length})`;
-  document.getElementById("seenList").innerHTML = rows.length ? rows.map(m => `
+  rowsBy.seen = rows;
+  document.getElementById("seenList").innerHTML = rows.length ? rows.map(m => view === "grid" ? tile(m, imdbBadge(m)) : seenCard(m)).join("") : `<div class="empty">עוד לא סימנת סרטים. סמן ✓ על סרט שראית והוא יישמר כאן לתמיד.</div>`;
+  refreshLayers();
+}
+const seenCard = m => `
     <article class="m">
-      <img loading="lazy" src="${esc(m.poster)}" alt="" data-full data-alt="${esc(m.imdb_poster || "")}" onerror="posterError(this)">
+      ${poster(m)}
       <div>
         <div class="t" dir="ltr" style="text-align:right"><a href="${esc(m.cc_url || m.imdb_url || "#")}" target="_blank" rel="noopener">${esc(m.title)}</a>${m.year ? ` <span class="he">(${m.year})</span>` : ""}</div>
         ${m.title_he && m.title_he !== m.title ? `<div class="he">${esc(m.title_he)}</div>` : ""}
-        ${m.directors?.length ? `<div class="ppl"><b>במאי:</b> <span dir="ltr">${people(m, m.directors)}</span></div>` : ""}
-        ${m.actors?.length ? `<div class="ppl"><b>שחקנים:</b> <span dir="ltr">${people(m, m.actors)}</span></div>` : ""}
+        ${pplLine(m)}
         <div class="tags">
           ${m.genre ? `<span class="tag">${esc(m.genre)}</span>` : ""}
           ${m.last_shown ? `<span class="tag">🎬 בקולנוע: ${monthYear(m.first_shown) === monthYear(m.last_shown) ? monthYear(m.last_shown) : `${monthYear(m.first_shown)} – ${monthYear(m.last_shown)}`}</span>` : ""}
         </div>
       </div>
-      <div class="scores">
-        <a class="sc imdb" href="${esc(m.imdb_url || "#")}" target="_blank" rel="noopener"><span class="lbl">IMDb</span>${m.imdb ? m.imdb.toFixed(1) : '<span class="na">–</span>'}</a>
-        <a class="sc rt" href="${esc(m.rt_url || "#")}" target="_blank" rel="noopener">🍅 ${m.rt != null ? m.rt + "%" : '<span class="na">–</span>'}</a>
+      <div class="scores">${scores(m)}
         <div class="mark"><button class="seen on" data-mark="seen" data-t="${esc(m.title)}" title="הסר מהיומן">✓</button></div>
       </div>
-    </article>`).join("") : `<div class="empty">עוד לא סימנת סרטים. סמן ✓ על סרט שראית והוא יישמר כאן לתמיד.</div>`;
-}
+    </article>`;
 fetch("archive.json?" + Date.now()).then(r => r.ok ? r.json() : {}).then(a => { archive = a; renderSeen(); }).catch(() => {});
 document.querySelectorAll("[data-wl]").forEach(b => b.onclick = () => { soonSt.wl = +b.dataset.wl; save("cc-soon", soonSt); renderSoon(); });
 document.querySelectorAll("[data-ssort]").forEach(b => b.onclick = () => { soonSt.sort = b.dataset.ssort; save("cc-soon", soonSt); renderSoon(); });
 let tab = load("cc-tab", "now");
+if (tab === "seen" && (!user || user === "guest")) tab = "now";
 function showTab() {
   document.querySelectorAll("[data-tab]").forEach(x => x.classList.toggle("on", x.dataset.tab === tab));
+  for (const t of ["now", "soon", "seen"]) document.body.classList.toggle("tab-" + t, tab === t);
   document.getElementById("soonView").hidden = tab !== "soon";
   document.getElementById("seenView").hidden = tab !== "seen";
-  document.getElementById("nowView").hidden = document.getElementById("nowBar").hidden = tab !== "now";
+  document.getElementById("nowView").hidden = tab !== "now";
 }
-document.querySelectorAll("[data-tab]").forEach(b => b.onclick = () => { tab = b.dataset.tab; save("cc-tab", tab); showTab(); scrollTo(0, 0); });
+const goTab = t => { tab = t; save("cc-tab", tab); showTab(); scrollTo(0, 0); };
+document.querySelectorAll("[data-tab]").forEach(b => b.onclick = () => goTab(b.dataset.tab));
 showTab();
 function syncChips() {
   document.querySelectorAll("[data-sort]").forEach(x => x.classList.toggle("on", x.dataset.sort === st.sort));
   document.querySelectorAll("[data-aud]").forEach(x => x.classList.toggle("on", x.dataset.aud === st.aud));
   document.querySelectorAll("[data-f]").forEach(x => x.classList.toggle("on", !!st[x.dataset.f]));
+  const n = Object.keys(DEFAULTS).filter(k => k !== "sort" && st[k] !== DEFAULTS[k]).length;
+  const fc = document.getElementById("fCount");
+  fc.hidden = !n; fc.textContent = n;
+  document.getElementById("filterBtn").classList.toggle("on", !!n);
 }
 const changed = () => { save("cc-filters", st); syncChips(); render(); };
 document.querySelectorAll("[data-sort]").forEach(b => b.onclick = () => { st.sort = b.dataset.sort; changed(); });
 document.querySelectorAll("[data-aud]").forEach(b => b.onclick = () => { st.aud = b.dataset.aud; changed(); });
 document.querySelectorAll("[data-f]").forEach(b => b.onclick = () => { st[b.dataset.f] = !st[b.dataset.f]; changed(); });
-document.getElementById("reset").onclick = () => { Object.assign(st, DEFAULTS, { sort: st.sort }); document.getElementById("q").value = ""; changed(); };
+document.getElementById("reset").onclick = document.getElementById("reset2").onclick = () => { Object.assign(st, DEFAULTS, { sort: st.sort }); document.getElementById("q").value = ""; changed(); };
 syncChips();
 // a dead poster link: try the IMDb poster, else show an empty frame instead of a broken image
 function posterError(img) {
   if (img.dataset.alt) { img.src = img.dataset.alt; img.dataset.alt = ""; }
   else { img.onerror = null; img.removeAttribute("src"); }
 }
-// tap a poster to see it full screen; tap anywhere to close
-const full = document.getElementById("full");
-full.onclick = () => full.hidden = true;
-document.getElementById("seenList").onclick = document.getElementById("soonList").onclick = document.getElementById("list").onclick = e => {
-  const img = e.target.closest("[data-full]");
-  if (img && img.src) {  // IMDb posters: load full size instead of the 300px thumbnail
-    full.firstElementChild.src = img.src.replace(/\._V1_[^.]*\./, "._V1_.");
-    full.hidden = false;
+// ---- views: list / grid, plus the full-screen swipe view ----
+const rowsBy = { now: [], soon: [], seen: [] };
+const cardBy = { now: m => nowCard(m), soon: m => soonCard(m), seen: m => seenCard(m) };
+let view = load("cc-view", "list");
+if (view !== "grid") view = "list";
+function setView(v) {
+  view = v; save("cc-view", v);
+  document.body.classList.toggle("view-grid", v === "grid");
+  document.querySelectorAll("[data-view]").forEach(x => x.classList.toggle("on", x.dataset.view === v));
+  render(); renderSoon(); renderSeen();
+}
+document.body.classList.toggle("view-grid", view === "grid");
+document.querySelectorAll("[data-view]").forEach(x => x.classList.toggle("on", x.dataset.view === view));
+document.querySelectorAll("[data-view]").forEach(b => b.onclick = () => {
+  if (b.dataset.view === "swipe") openViewer(tab, 0);
+  else setView(b.dataset.view);
+});
+// sheets and the swipe view sit on the history stack, so the phone's back gesture closes them
+const layers = [];
+function openLayer(el) {
+  el.hidden = false; layers.push(el);
+  document.body.classList.add("locked");
+  history.pushState({ layer: layers.length }, "");
+}
+function swapLayer(from, to) {  // e.g. swipe view -> movie card, without growing the history
+  from.hidden = true; to.hidden = false;
+  layers[layers.lastIndexOf(from)] = to;
+}
+const closeLayer = () => { if (layers.length) history.back(); };
+addEventListener("popstate", () => {
+  const el = layers.pop();
+  if (el) el.hidden = true;
+  if (!layers.length) document.body.classList.remove("locked");
+});
+document.querySelectorAll(".sheet").forEach(sh => sh.addEventListener("click", e => {
+  if (e.target === sh || e.target.closest("[data-close]")) closeLayer();
+}));
+document.getElementById("filterBtn").onclick = () => openLayer(document.getElementById("filters"));
+document.getElementById("showBtn").onclick = closeLayer;
+document.getElementById("gear").onclick = () => openLayer(document.getElementById("settings"));
+// movie card (from the grid, or by tapping the poster in the swipe view)
+const detail = document.getElementById("detail");
+let detailOf = null;  // [tab, title]
+function paintDetail() {
+  const [t, title] = detailOf, m = rowsBy[t].find(x => x.title === title) || viewerSeq.find(x => x.title === title);
+  if (m) document.getElementById("detailBody").innerHTML = cardBy[t](m);
+}
+function openDetail(t, title, fromViewer) {
+  detailOf = [t, title]; paintDetail();
+  detail.querySelector(".sheetBox").scrollTop = 0;
+  fromViewer ? swapLayer(viewer, detail) : openLayer(detail);
+}
+// full-screen swipe view: next movie comes in from the left (Hebrew reading order)
+const viewer = document.getElementById("viewer"), vImg = document.getElementById("vImg");
+let viewerSeq = [], viewerTab = "now", vi = 0;
+const bigSrc = src => (src || "").replace(/\._V1_[^.]*\./, "._V1_.");  // IMDb: full size instead of the thumbnail
+function vFacts(m) {
+  const soonOne = viewerTab === "soon";
+  return `<div class="vt" dir="ltr">${esc(m.title)}${m.year && !soonOne ? ` <span class="he">(${m.year})</span>` : ""}</div>
+    ${m.title_he && m.title_he !== m.title ? `<div class="he">${esc(m.title_he)}</div>` : ""}
+    <div class="vrow">
+      ${soonOne ? `<span class="when">📅 ${fmtDate(new Date(m.date_started + "T00:00:00"))}</span>${m.watchlist ? `<span class="he">👀 ${wlText(m.watchlist)} מחכים</span>` : ""}` : scores(m)}
+      <div class="mark">${favBtn(m)}${soonOne ? "" : seenBtn(m)}</div>
+    </div>`;
+}
+function vImgEl(m) {
+  const img = new Image();
+  img.alt = ""; img.draggable = false;
+  img.src = bigSrc(m.poster || m.imdb_poster);
+  img.dataset.alt = m.poster && m.imdb_poster ? bigSrc(m.imdb_poster) : "";
+  img.onerror = () => posterError(img);
+  return img;
+}
+function paintViewer() {
+  const m = viewerSeq[vi];
+  document.getElementById("vPos").textContent = `${vi + 1} / ${viewerSeq.length}`;
+  document.getElementById("vFacts").innerHTML = vFacts(m);
+  viewer.querySelector('[data-step="1"]').disabled = vi >= viewerSeq.length - 1;
+  viewer.querySelector('[data-step="-1"]').disabled = vi <= 0;
+  [vi - 1, vi + 1].forEach(i => { const n = viewerSeq[i]; if (n) new Image().src = bigSrc(n.poster || n.imdb_poster); });  // preload neighbours
+}
+function openViewer(t, i, from) {
+  viewerTab = t; viewerSeq = rowsBy[t].slice(); vi = i;
+  if (!viewerSeq.length) return;
+  vImg.replaceChildren(vImgEl(viewerSeq[vi]));
+  paintViewer();
+  from ? swapLayer(from, viewer) : openLayer(viewer);
+}
+function step(d) {
+  const ni = vi + d;
+  if (ni < 0 || ni >= viewerSeq.length) return;
+  const old = vImg.lastElementChild, img = vImgEl(viewerSeq[ni]);
+  // next (d=1) slides in from the left and pushes the current poster to the right
+  img.className = d > 0 ? "from-l" : "from-r";
+  vImg.append(img);
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    img.className = "";
+    if (old) old.className = d > 0 ? "from-r" : "from-l";
+  }));
+  setTimeout(() => { if (old && old !== vImg.lastElementChild) old.remove(); }, 260);
+  vi = ni; paintViewer();
+}
+viewer.querySelectorAll("[data-step]").forEach(b => b.onclick = () => step(+b.dataset.step));
+viewer.querySelector("[data-close]").onclick = closeLayer;
+let vx = null, vy = null, swipedAt = 0;
+vImg.addEventListener("pointerdown", e => { vx = e.clientX; vy = e.clientY; });
+vImg.addEventListener("pointercancel", () => { vx = null; });
+vImg.addEventListener("pointerup", e => {
+  if (vx == null) return;
+  const dx = e.clientX - vx, dy = e.clientY - vy; vx = null;
+  if (Math.abs(dx) >= 44 && Math.abs(dx) > Math.abs(dy)) { swipedAt = Date.now(); step(dx > 0 ? 1 : -1); }
+  else if (dy > 90) closeLayer();  // swipe down closes
+});
+vImg.addEventListener("click", () => {
+  if (Date.now() - swipedAt < 350) return;  // the click some phones fire right after a swipe
+  openDetail(viewerTab, viewerSeq[vi].title, true);
+});
+addEventListener("keydown", e => {
+  if (viewer.hidden) return;
+  if (e.key === "ArrowLeft") step(1);
+  if (e.key === "ArrowRight") step(-1);
+  if (e.key === "Escape") closeLayer();
+});
+// after a ★/✓ change, open layers show the new state
+function refreshLayers() {
+  if (!detail.hidden && detailOf) paintDetail();
+  if (!viewer.hidden && viewerSeq[vi]) document.getElementById("vFacts").innerHTML = vFacts(viewerSeq[vi]);
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-mark]");
+  if (b) {
+    const list = prefs[b.dataset.mark], t = b.dataset.t, i = list.indexOf(t);
+    i < 0 ? list.push(t) : list.splice(i, 1);
+    save(K("cc-prefs"), prefs); save(K("cc-prefs-dirty"), true); render(); renderSoon(); renderSeen(); pushPrefs();
     return;
   }
-  const b = e.target.closest("[data-mark]");
-  if (!b) return;
-  const list = prefs[b.dataset.mark], t = b.dataset.t, i = list.indexOf(t);
-  i < 0 ? list.push(t) : list.splice(i, 1);
-  save(K("cc-prefs"), prefs); save(K("cc-prefs-dirty"), true); render(); renderSoon(); renderSeen(); pushPrefs();
-};
+  if (!e.target.closest(".cards")) return;
+  const card = e.target.closest("[data-full], [data-open]");
+  if (!card) return;
+  const i = rowsBy[tab].findIndex(m => m.title === card.dataset.t);
+  if (i < 0) return;
+  if (card.matches("[data-open]")) openDetail(tab, card.dataset.t);
+  else openViewer(tab, i);
+});
+// the detail card's poster opens the swipe view at that movie
+detail.addEventListener("click", e => {
+  if (!e.target.closest("[data-full]")) return;
+  const [t, title] = detailOf, i = rowsBy[t].findIndex(m => m.title === title);
+  if (i < 0) return;
+  openViewer(t, i, detail);
+});
+// swipe sideways on the list to move between tabs (right = the next tab, as the tabs read right to left)
+let tx = null, ty = null;
+document.addEventListener("touchstart", e => {
+  if (layers.length || e.touches.length > 1 || e.target.closest(".top, input")) { tx = null; return; }
+  tx = e.touches[0].clientX; ty = e.touches[0].clientY;
+}, { passive: true });
+document.addEventListener("touchend", e => {
+  if (tx == null) return;
+  const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty; tx = null;
+  if (Math.abs(dx) < 80 || Math.abs(dx) < Math.abs(dy) * 2) return;
+  const order = ["now", "soon", ...(user && user !== "guest" ? ["seen"] : [])], i = order.indexOf(tab) + (dx > 0 ? 1 : -1);
+  if (order[i]) goTab(order[i]);
+}, { passive: true });
+// back to top, once the list is long
+const toTop = document.getElementById("toTop");
+addEventListener("scroll", () => { toTop.hidden = scrollY < 900; }, { passive: true });
+toTop.onclick = () => scrollTo({ top: 0, behavior: "smooth" });
 // favorites and watched live on the server too, so the phone and the desktop see the same marks
 // and the weekly scan can warn when a favorite is about to leave
 const PREFS_API = "https://emgtyfksnofzzlutngbf.supabase.co/functions/v1/cinema-push";
@@ -410,7 +701,7 @@ if (user && user !== "guest") {
 // ---- login ----
 (() => {
   const box = document.getElementById("login"), form = document.getElementById("passForm"), msg = document.getElementById("loginMsg");
-  document.getElementById("who").innerHTML = user ? `${user === "guest" ? "👀 מצב אורח" : `שלום ${USER_NAMES[user]}`} · <button id="switchUser">החלף משתמש</button>` : "";
+  document.getElementById("who").innerHTML = user ? `${user === "guest" ? "👀 מצב אורח" : `מחובר כ${USER_NAMES[user]}`} · <button id="switchUser">החלף משתמש</button>` : "";
   document.getElementById("switchUser")?.addEventListener("click", () => { localStorage.removeItem("cc-user"); localStorage.removeItem("cc-pass"); location.reload(); });
   if (user) return;
   box.hidden = false;
@@ -434,7 +725,7 @@ document.getElementById("q").oninput = render;
 // no zoom: block pinch (iOS gesture events) and double-tap
 document.addEventListener("gesturestart", e => e.preventDefault());
 let lastTap = 0;
-document.addEventListener("touchend", e => { const t = Date.now(); if (t - lastTap < 300) e.preventDefault(); lastTap = t; }, { passive: false });
+document.addEventListener("touchend", e => { if (e.target.closest?.("#viewer")) return; const t = Date.now(); if (t - lastTap < 300) e.preventDefault(); lastTap = t; }, { passive: false });
 // ---- web push ----
 const PUSH_API = "https://emgtyfksnofzzlutngbf.supabase.co/functions/v1/cinema-push";
 const b64ToBytes = s => Uint8Array.from(atob((s + "=".repeat((4 - s.length % 4) % 4)).replace(/-/g, "+").replace(/_/g, "/")), c => c.charCodeAt(0));
@@ -445,6 +736,8 @@ const b64ToBytes = s => Uint8Array.from(atob((s + "=".repeat((4 - s.length % 4) 
   if (!("serviceWorker" in navigator)) return;
   const reg = await navigator.serviceWorker.register("sw.js");
   box.hidden = false;
+  const dot = document.getElementById("gearDot");
+  dot.hidden = false;  // a red dot on ⚙️ while notifications are off
   if (!("PushManager" in window)) {
     btn.hidden = true;
     msg.textContent = ios && !standalone ? "להתראות: שתף ← הוסף למסך הבית, ופתח משם" : "הדפדפן הזה לא תומך בהתראות";
@@ -460,10 +753,10 @@ const b64ToBytes = s => Uint8Array.from(atob((s + "=".repeat((4 - s.length % 4) 
       if (!(await r.json()).sent) throw new Error("ההתראה לא הגיעה למכשיר. בטל והפעל מחדש");
     });
   const on = () => {
-    btn.disabled = false; btn.textContent = "🔔 שלח התראת בדיקה"; off.hidden = false;
+    btn.disabled = false; btn.textContent = "🔔 שלח התראת בדיקה"; off.hidden = false; dot.hidden = true;
     msg.textContent = `פעילות עבור ${NAME[user] || "אורח"} · כל יום ראשון ב-08:00`;
   };
-  const idle = t => { btn.disabled = false; btn.textContent = "🔔 הפעל התראות"; off.hidden = true; msg.textContent = t || ""; };
+  const idle = t => { btn.disabled = false; btn.textContent = "🔔 הפעל התראות"; off.hidden = true; dot.hidden = false; msg.textContent = t || ""; };
   if (existing && Notification.permission === "granted") {
     on();
     // notifications follow the user: re-register this device after switching users
