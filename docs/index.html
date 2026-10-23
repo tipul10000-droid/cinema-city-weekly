@@ -174,7 +174,7 @@ function render() {
   document.getElementById("count").textContent = rows.length === data.length ? "" : `מוצגים ${rows.length} מתוך ${data.length}`;
   document.getElementById("list").innerHTML = rows.length ? rows.map(m => `
     <article class="m${prefs.seen.includes(m.title) ? " watched" : ""}">
-      <img loading="lazy" src="${esc(m.poster)}" alt="" data-full>
+      <img loading="lazy" src="${esc(m.poster)}" alt="" data-full data-alt="${esc(m.imdb_poster || "")}" onerror="posterError(this)">
       <div>
         <div class="t" dir="ltr" style="text-align:right"><a href="${esc(m.cc_url)}" target="_blank" rel="noopener">${esc(m.title)}</a>${m.year ? ` <span class="he">(${m.year})</span>` : ""}</div>
         ${m.title_he && m.title_he !== m.title ? `<div class="he">${esc(m.title_he)}</div>` : ""}
@@ -212,7 +212,7 @@ function renderSoon() {
     const head = MONTHS[d.getMonth()] !== month ? `<div class="month">${month = MONTHS[d.getMonth()]}</div>` : "";
     return `${head}
     <article class="m">
-      <img loading="lazy" src="${esc(m.poster)}" alt="" data-full>
+      <img loading="lazy" src="${esc(m.poster)}" alt="" data-full data-alt="${esc(m.imdb_poster || "")}" onerror="posterError(this)">
       <div>
         <div class="t" dir="ltr" style="text-align:right"><a href="${esc(m.cc_url)}" target="_blank" rel="noopener">${esc(m.title)}</a></div>
         ${m.title_he && m.title_he !== m.title ? `<div class="he">${esc(m.title_he)}</div>` : ""}
@@ -247,7 +247,7 @@ function renderSeen() {
   document.querySelector("[data-tab=seen]").textContent = `✓ ראיתי (${rows.length})`;
   document.getElementById("seenList").innerHTML = rows.length ? rows.map(m => `
     <article class="m">
-      <img loading="lazy" src="${esc(m.poster)}" alt="" data-full>
+      <img loading="lazy" src="${esc(m.poster)}" alt="" data-full data-alt="${esc(m.imdb_poster || "")}" onerror="posterError(this)">
       <div>
         <div class="t" dir="ltr" style="text-align:right"><a href="${esc(m.cc_url || m.imdb_url || "#")}" target="_blank" rel="noopener">${esc(m.title)}</a>${m.year ? ` <span class="he">(${m.year})</span>` : ""}</div>
         ${m.title_he && m.title_he !== m.title ? `<div class="he">${esc(m.title_he)}</div>` : ""}
@@ -285,6 +285,11 @@ document.querySelectorAll("[data-sort]").forEach(b => b.onclick = () => { st.sor
 document.querySelectorAll("[data-aud]").forEach(b => b.onclick = () => { st.aud = b.dataset.aud; changed(); });
 document.querySelectorAll("[data-f]").forEach(b => b.onclick = () => { st[b.dataset.f] = !st[b.dataset.f]; changed(); });
 syncChips();
+// a dead poster link: try the IMDb poster, else show an empty frame instead of a broken image
+function posterError(img) {
+  if (img.dataset.alt) { img.src = img.dataset.alt; img.dataset.alt = ""; }
+  else { img.onerror = null; img.removeAttribute("src"); }
+}
 // tap a poster to see it full screen; tap anywhere to close
 const full = document.getElementById("full");
 full.onclick = () => full.hidden = true;
