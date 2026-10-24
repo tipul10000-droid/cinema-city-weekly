@@ -14,6 +14,8 @@
 //   POST ?action=subscribe          -> {sub, pid}: a public visitor's device
 //   POST ?action=send               -> push the latest scan (docs/data.json on main) to every subscriber, once per scan,
 //                                      tailored to each user's taste, plus premieres and leaving-soon favorites
+//   POST ?action=released           -> daily: a starred upcoming movie has opened today -> "go see it" (each user,
+//                                      Oren also for Lior's and Evyatar's stars; public visitors too)
 import webpush from "npm:web-push@3.6.7";
 import { createClient } from "npm:@supabase/supabase-js@2";
 
@@ -271,6 +273,49 @@ Deno.serve(async (req) => {
     }
     await sb.from("cinema_push_log").update({ sent }).eq("generated_at", data.generated_at);
     return json({ ok: true, sent, subscribers: (subs || []).length, opening: openingNow.length, announced: announced.length });
+  }
+
+  if (action === "released" && req.method === "POST") {
+    const data = await (await fetch(DATA_URL, { headers: { Accept: "application/vnd.github.raw+json", "User-Agent": "cinema-push" } })).json();
+    const today = new Date().toLocaleDateString("sv-SE", { timeZone: "Asia/Jerusalem" });
+    // everything that opened after the last run, so a missed day still notifies, and nothing twice
+    const day = (n: number) => new Date(Date.parse(today) - n * 864e5).toISOString().slice(0, 10);
+    const last = !map.released_last ? day(1) : map.released_last > day(7) ? map.released_last : day(7);
+    if (last >= today) return json({ ok: true, result: "already_sent", today });
+    await sb.from("cinema_secrets").upsert({ name: "released_last", value: today });
+    const opened = [...(data.upcoming || []), ...(data.movies || [])]
+      .filter((m: any) => m.date_started > last && m.date_started <= today);
+    const byTitle = new Map(opened.map((m: any) => [m.title, m]));
+    if (!byTitle.size) return json({ ok: true, sent: 0, today });
+    const note = (ms: any[], url: string, who = "") => ({
+      title: ms.length === 1 ? `🎬 ${ms[0].title} יצא!${who}` : `🎬 ${ms.length} סרטים מהמועדפים יצאו!${who}`,
+      body: ms.map((m: any) => `${m.title}${m.title_he ? ` (${m.title_he})` : ""}`).join("\n") + "\nקדימה, אפשר ללכת לראות",
+      url, tag: `cinema-released-${today}`,
+    });
+    const { data: subs } = await sb.from("cinema_push").select("*");
+    const { data: prefRows } = await sb.from("cinema_prefs").select("id,fav");
+    const favOf = (u: string) => (prefRows || []).find((r: any) => r.id === u)?.fav || [];
+    let sent = 0;
+    for (const user of USERS) {
+      const mine = (subs || []).filter((s: any) => s.user_id === user);
+      if (!mine.length) continue;
+      const own = favOf(user).filter((t: string) => byTitle.has(t));
+      if (own.length) sent += await push(sb, mine, note(own.map((t: string) => byTitle.get(t)), PAGE_URL));
+      if (user !== "oren") continue;
+      // Oren goes to the movies with Lior and Evyatar, so he hears about theirs too
+      for (const other of ["lior", "evyatar"]) {
+        const theirs = favOf(other).filter((t: string) => byTitle.has(t) && !own.includes(t));
+        if (theirs.length) sent += await push(sb, mine, { ...note(theirs.map((t: string) => byTitle.get(t)), PAGE_URL, ` · ★ של ${NAMES[other]}`), tag: `cinema-released-${other}-${today}` });
+      }
+    }
+    const { data: psubs } = await sb.from("cinema_public_push").select("*");
+    const pids = [...new Set((psubs || []).map((s: any) => s.pid).filter(Boolean))];
+    const { data: pprefs } = pids.length ? await sb.from("cinema_public_prefs").select("id,fav").in("id", pids) : { data: [] };
+    for (const p of pprefs || []) {
+      const own = (p.fav || []).filter((t: string) => byTitle.has(t));
+      if (own.length) sent += await push(sb, psubs!.filter((s: any) => s.pid === p.id), note(own.map((t: string) => byTitle.get(t)), PUBLIC_URL), "cinema_public_push");
+    }
+    return json({ ok: true, sent, today, opened: byTitle.size });
   }
 
   return json({ ok: false, error: "unknown action" }, 400);
