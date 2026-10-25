@@ -1,4 +1,29 @@
 {
+ "aligwhoizi": {
+  "first_shown": "2026-10-25",
+  "title": "Ali G: Who Iz I?",
+  "title_he": "עלי ג'י: אני מי?",
+  "poster": "posters/aligwhoizi.jpg",
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYjIyYWYyMzEtMDkwOC00NDk0LWEwYzItNTk1NWYxNWEwMjA5XkEyXkFqcGc@._V1_UX500_.jpg",
+  "cc_url": "https://www.cinema-city.co.il/movie/6591",
+  "genre": "קומדיה",
+  "kids": false,
+  "date_started": "2026-10-23",
+  "year": 2026,
+  "imdb": 6.3,
+  "imdb_url": "https://www.imdb.com/title/tt43655467/",
+  "rt": 50,
+  "rt_url": "https://www.rottentomatoes.com/m/ali_g_who_iz_i",
+  "directors": [
+   "Sacha Baron Cohen"
+  ],
+  "actors": [
+   "Sacha Baron Cohen",
+   "Morgana Robinson",
+   "Stewart Rodeheaver"
+  ],
+  "last_shown": "2026-10-25"
+ },
  "avengersendgame": {
   "first_shown": "2026-10-15",
   "title": "Avengers: Endgame",
@@ -21,7 +46,7 @@
    "Chris Evans",
    "Mark Ruffalo"
   ],
-  "last_shown": "2026-10-16",
+  "last_shown": "2026-10-25",
   "kids": false,
   "top_people": [
    "Anthony Russo",
@@ -51,7 +76,7 @@
    "Steve Pound",
    "Paolo Spezzaferri"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZjc5NGY1NGItNzA1Mi00MGZlLThlNTAtM2E1MGY3ZGU5MTY2XkEyXkFqcGc@._V1_UX500_.jpg"
  },
@@ -101,15 +126,40 @@
   ],
   "actors": [
    "Owen Wilson",
-   "Tabitha St. Germain",
-   "Sebastian Billingsley-Rodriguez"
+   "Sebastian Billingsley-Rodriguez",
+   "Tabitha St. Germain"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": true,
   "top_people": [
    "Owen Wilson"
   ],
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMWQ1ZDI5MjYtZmJiNS00NjM4LWJmNmMtODJiNjMzNTBlNmQ0XkEyXkFqcGc@._V1_UX500_.jpg"
+ },
+ "clayface": {
+  "first_shown": "2026-10-25",
+  "title": "Clayface",
+  "title_he": "קלייפייס",
+  "poster": "posters/clayface.jpg",
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMjNlMjM4NTAtYjE5YS00ZGYyLWEyMTYtNjFlMmIxZDEzYjhhXkEyXkFqcGc@._V1_UX500_.jpg",
+  "cc_url": "https://www.cinema-city.co.il/movie/6462",
+  "genre": "אימה",
+  "kids": false,
+  "date_started": "2026-10-22",
+  "year": 2026,
+  "imdb": 7.6,
+  "imdb_url": "https://www.imdb.com/title/tt34890576/",
+  "rt": 75,
+  "rt_url": "https://www.rottentomatoes.com/m/clayface",
+  "directors": [
+   "James Watkins"
+  ],
+  "actors": [
+   "Tom Rhys Harries",
+   "Ruby Sear",
+   "Naomi Ackie"
+  ],
+  "last_shown": "2026-10-25"
  },
  "coyotevsacme": {
   "first_shown": "2026-10-15",
@@ -132,7 +182,7 @@
    "Lana Condor",
    "John Cena"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": true,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMDg5NDFkNTctZWE2ZC00MDYzLThlYjItZTljZDY3NTcwNjA3XkEyXkFqcGc@._V1_UX500_.jpg"
  },
@@ -157,7 +207,7 @@
    "Riz Ahmed",
    "John Goodman"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "top_people": [
    "Alejandro G. Iñárritu",
@@ -188,9 +238,32 @@
    "Arsema Thomas",
    "Tom Brittney"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOTI4MjNjNDgtOWY2ZC00YTdjLThhMGItZjZiYjRhNmVhY2JhXkEyXkFqcGc@._V1_UX500_.jpg"
+ },
+ "finnik2": {
+  "first_shown": "2026-10-25",
+  "title": "Finnik 2",
+  "title_he": "פיניק: להציל את המפלצות",
+  "poster": "posters/finnik2.jpg",
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZWM4OTdhOWItYWE3OC00ODZmLTg4NzQtODJmMDVkNWI5NjI1XkEyXkFqcGc@._V1_UX500_.jpg",
+  "cc_url": "https://www.cinema-city.co.il/movie/6623",
+  "genre": "ילדים, אנימציה, הרפתקה",
+  "kids": true,
+  "date_started": "2026-10-22",
+  "year": 2025,
+  "imdb": 5.8,
+  "imdb_url": "https://www.imdb.com/title/tt28779965/",
+  "directors": [
+   "Denis Chernov"
+  ],
+  "actors": [
+   "Yuri Kolokolnikov",
+   "Marc Thompson",
+   "Wayne Grayson"
+  ],
+  "last_shown": "2026-10-25"
  },
  "forgottenisland": {
   "first_shown": "2026-10-15",
@@ -203,7 +276,7 @@
   "year": 2026,
   "imdb": 7.7,
   "imdb_url": "https://www.imdb.com/title/tt36583977/",
-  "rt": 94,
+  "rt": 95,
   "rt_url": "https://www.rottentomatoes.com/m/forgotten_island",
   "directors": [
    "Joel Crawford",
@@ -214,7 +287,7 @@
    "Liza Soberano",
    "Dave Franco"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": true,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMWJlY2JiNTMtYTAwYy00NGFiLTkwYTEtM2VmNDc4MzM5YmJiXkEyXkFqcGc@._V1_UX500_.jpg"
  },
@@ -239,7 +312,7 @@
    "J.K. Simmons",
    "Anna Lambe"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "top_people": [
    "David Ayer",
@@ -268,7 +341,7 @@
    "Charles Melton",
    "Havana Rose Liu"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "top_people": [
    "Nicolas Winding Refn"
@@ -296,7 +369,7 @@
    "Carina Battrick",
    "Charlie Zeltzer"
   ],
-  "last_shown": "2026-10-16",
+  "last_shown": "2026-10-25",
   "kids": false,
   "top_people": [
    "Eli Roth"
@@ -324,7 +397,7 @@
    "Shih-Yuan Ma",
    "Nina Ye"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYTE2OWQxZWMtNjdjNC00NGNhLWE5OTUtZDA2ZjhhMjk0MmRmXkEyXkFqcGc@._V1_UX500_.jpg"
  },
@@ -360,7 +433,7 @@
   "genre": "אנימציה",
   "date_started": "2026-07-16",
   "year": 2024,
-  "imdb": 6.2,
+  "imdb": 6.1,
   "imdb_url": "https://www.imdb.com/title/tt30060761/",
   "directors": [
    "Vasiliy Bedoshvili",
@@ -371,7 +444,7 @@
    "Matvey Berkovskiy",
    "Sofia Calasso"
   ],
-  "last_shown": "2026-10-16",
+  "last_shown": "2026-10-25",
   "kids": true,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYzc2YzU5MmMtZmI5Yi00OGYwLWEwMTQtMzYwNTk3OWNhMmZkXkEyXkFqcGc@._V1_UX500_.jpg"
  },
@@ -384,7 +457,7 @@
   "genre": "קומדיה",
   "date_started": "2026-09-24",
   "year": 2026,
-  "imdb": 7.7,
+  "imdb": 7.6,
   "imdb_url": "https://www.imdb.com/title/tt46437739/",
   "directors": [
    "Erez Tadmor"
@@ -394,7 +467,7 @@
    "Niv Sultan",
    "Irit Kaplan"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZWZjNmE3MjEtMmNjNy00OWVmLTkyMGEtODBmNjkzYTZjZmM1XkEyXkFqcGc@._V1_UX500_.jpg"
  },
@@ -420,7 +493,7 @@
    "Trey Parker",
    "Allison Janney"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": true,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYzBjMDg4YjctYzg3ZS00ZDFmLWI1YjctM2RkZGVjZWEyYWQ0XkEyXkFqcGc@._V1_UX500_.jpg"
  },
@@ -445,7 +518,7 @@
    "Chaneil Kular",
    "Ramon Tikaram"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "top_people": [
    "Jason Statham"
@@ -463,7 +536,7 @@
   "year": 2026,
   "imdb": 5.3,
   "imdb_url": "https://www.imdb.com/title/tt36586020/",
-  "rt": 17,
+  "rt": 19,
   "rt_url": "https://www.rottentomatoes.com/m/other_mommy",
   "directors": [
    "Rob Savage"
@@ -473,12 +546,36 @@
    "Jay Duplass",
    "Arabella Olivia Clark"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "top_people": [
    "Jessica Chastain"
   ],
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOGUyODYyYTctMmY0Mi00ZWIwLThjYWItZDJmODY4NGU1YjY1XkEyXkFqcGc@._V1_UX500_.jpg"
+ },
+ "outoflove": {
+  "first_shown": "2026-10-25",
+  "title": "Out of love",
+  "title_he": "מתוך אהבה",
+  "poster": "posters/outoflove.jpg",
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYWIyNzFlZGItNWIzZC00ZjYxLWFjNDgtM2NkNWM4NDJmMzQyXkEyXkFqcGc@._V1_UX500_.jpg",
+  "cc_url": "https://www.cinema-city.co.il/movie/6621",
+  "genre": "דרמה",
+  "kids": false,
+  "date_started": "2026-10-22",
+  "year": 2025,
+  "imdb": 6.8,
+  "imdb_url": "https://www.imdb.com/title/tt35455855/",
+  "rt_url": "https://www.rottentomatoes.com/m/out_of_love_2025",
+  "directors": [
+   "Nathan Ambrosioni"
+  ],
+  "actors": [
+   "Camille Cottin",
+   "Monia Chokri",
+   "Juliette Armanet"
+  ],
+  "last_shown": "2026-10-25"
  },
  "paralleltales": {
   "first_shown": "2026-10-15",
@@ -501,7 +598,7 @@
    "Virginie Efira",
    "Vincent Cassel"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "top_people": [
    "Asghar Farhadi",
@@ -530,7 +627,7 @@
    "Mckenna Grace",
    "Terry Crews"
   ],
-  "last_shown": "2026-10-16",
+  "last_shown": "2026-10-25",
   "kids": true,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BY2E2Y2Q0Y2ItZTUyZS00MzllLTkwYmQtYjdmNzM3NGRiYjFmXkEyXkFqcGc@._V1_UX500_.jpg"
  },
@@ -554,7 +651,7 @@
    "Tecla Insolia",
    "Andrea Pennacchi"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZmJmODZjODctZjdmOS00YmYwLWJjMzMtZmI3YWY4MGU2YzQzXkEyXkFqcGc@._V1_UX500_.jpg"
  },
@@ -579,7 +676,7 @@
    "Zach Cherry",
    "Kali Reis"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "top_people": [
    "Zach Cregger"
@@ -595,7 +692,7 @@
   "genre": "קומדיית אקשן",
   "date_started": "2026-09-17",
   "year": 2026,
-  "imdb": 6.3,
+  "imdb": 6.2,
   "imdb_url": "https://www.imdb.com/title/tt31349844/",
   "rt": 78,
   "rt_url": "https://www.rottentomatoes.com/m/runner_2026",
@@ -607,7 +704,7 @@
    "Owen Wilson",
    "Rodrigo Santoro"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "top_people": [
    "Alan Ritchson",
@@ -637,9 +734,34 @@
    "John Sparkes",
    "Nina Sosanya"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": true,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOTA5NWIxODktNjcwOC00MjNjLWE1ZDctNWNmODkzYzc2Y2RhXkEyXkFqcGc@._V1_UX500_.jpg"
+ },
+ "sheepinthebox": {
+  "first_shown": "2026-10-25",
+  "title": "Sheep in the Box",
+  "title_he": "כבשה בקופסה",
+  "poster": "posters/sheepinthebox.jpg",
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMjliMTBlYWUtMDMwNy00MzQyLWI5NDAtNzZhZTAwN2FiZGFkXkEyXkFqcGc@._V1_UX500_.jpg",
+  "cc_url": "https://www.cinema-city.co.il/movie/6652",
+  "genre": "דרמה",
+  "kids": false,
+  "date_started": "2026-10-22",
+  "year": 2026,
+  "imdb": 5.9,
+  "imdb_url": "https://www.imdb.com/title/tt38551209/",
+  "rt": 43,
+  "rt_url": "https://www.rottentomatoes.com/m/sheep_in_the_box",
+  "directors": [
+   "Hirokazu Koreeda"
+  ],
+  "actors": [
+   "Haruka Ayase",
+   "Daigo Yamamoto",
+   "Rimu Kuwaki"
+  ],
+  "last_shown": "2026-10-25"
  },
  "spaweekend": {
   "first_shown": "2026-10-15",
@@ -663,7 +785,7 @@
    "Isla Fisher",
    "Michelle Buteau"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNTcwYjQwMzEtMTAwMS00MjQxLTg5NTEtNzExNzI1ODQzNmQ4XkEyXkFqcGc@._V1_UX500_.jpg"
  },
@@ -688,7 +810,7 @@
    "Zendaya",
    "Mark Ruffalo"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "top_people": [
    "Destin Daniel Cretton",
@@ -705,7 +827,7 @@
   "cc_url": "https://www.cinema-city.co.il/movie/6603",
   "genre": "ילדים, אנימציה, הרפתקה",
   "date_started": "2026-09-24",
-  "year": 2025,
+  "year": 2026,
   "imdb": 6.7,
   "imdb_url": "https://www.imdb.com/title/tt36435943/",
   "rt_url": "https://www.rottentomatoes.com/m/spinned",
@@ -713,11 +835,11 @@
    "Alex Tsitsilin"
   ],
   "actors": [
-   "Marc Thompson",
-   "Mike Pollock",
-   "Tyler Bunch"
+   "Tyler Bunch",
+   "Nicholas Corda",
+   "Lauren Delgenio"
   ],
-  "last_shown": "2026-10-16",
+  "last_shown": "2026-10-25",
   "kids": true,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNWM5ZWI4NGItMDdhNi00MTIyLWE3NmQtODMwZjA4NWRlYmNlXkEyXkFqcGc@._V1_UX500_.jpg"
  },
@@ -755,7 +877,7 @@
   "year": 2026,
   "imdb": 6.2,
   "imdb_url": "https://www.imdb.com/title/tt27419420/",
-  "rt": 40,
+  "rt": 41,
   "rt_url": "https://www.rottentomatoes.com/m/street_fighter_2026",
   "directors": [
    "Kitao Sakurai"
@@ -765,7 +887,7 @@
    "Andrew Koji",
    "Callina Liang"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "top_people": [
    "Noah Centineo"
@@ -792,7 +914,7 @@
    "Luis Posada",
    "Michelle Jenner"
   ],
-  "last_shown": "2026-10-16",
+  "last_shown": "2026-10-25",
   "kids": true,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNDhlOWQ2YjYtNTVkZC00NDE2LTgyODUtMGJlM2FiYWE5OTk3XkEyXkFqcGc@._V1_UX500_.jpg"
  },
@@ -817,7 +939,7 @@
    "Ido Tako",
    "Assi Cohen"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BODhkMzZhNTUtOTY4NS00NzhkLTk2MzgtYzkzZGY5ZjY3NDI4XkEyXkFqcGc@._V1_UX500_.jpg"
  },
@@ -838,10 +960,10 @@
   ],
   "actors": [
    "Francesca Eastwood",
-   "Dani Oliveros",
-   "Alexander Wraith"
+   "Alexander Wraith",
+   "Dani Oliveros"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BY2ZlZDc3YjItNjMxNi00ZGQwLWFkMzUtMDVlODg5NDI4NGZlXkEyXkFqcGc@._V1_UX500_.jpg"
  },
@@ -866,7 +988,7 @@
    "John Turturro",
    "Orlando Bloom"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BZTMzMmZkNTctMGQyNy00OGJiLThlZjMtM2VjMTgyMzM3OTdjXkEyXkFqcGc@._V1_UX500_.jpg"
  },
@@ -889,9 +1011,45 @@
    "Nahil Bouazzaoui",
    "Zayn Sekkat"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": true,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNjY1MDE1NjctNGVkZS00NDA4LWFjMWQtMTMxOWM5NTdlYzU2XkEyXkFqcGc@._V1_UX500_.jpg"
+ },
+ "thefix": {
+  "first_shown": "2026-10-25",
+  "title": "THE FIX",
+  "title_he": "שם קוד טהרן",
+  "poster": "posters/thefix.jpg",
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYjhiYzQ5YjQtZTlhZS00YTQ0LTk5YzMtNmRjY2EwYmFhYmIzXkEyXkFqcGc@._V1_UX500_.jpg",
+  "cc_url": "https://www.cinema-city.co.il/movie/6659",
+  "genre": "מותחן, אקשן",
+  "kids": false,
+  "date_started": "2026-10-29",
+  "year": 2026,
+  "imdb": 4.8,
+  "imdb_url": "https://www.imdb.com/title/tt9601292/",
+  "rt": 16,
+  "rt_url": "https://www.rottentomatoes.com/m/the_fix_2026",
+  "directors": [
+   "Guy Moshe"
+  ],
+  "actors": [
+   "Zachary Levi",
+   "Liam Neeson",
+   "Quincy Isaiah"
+  ],
+  "last_shown": "2026-10-25"
+ },
+ "theguysfromlaw": {
+  "first_shown": "2026-10-25",
+  "title": "THE GUYS FROM LAW",
+  "title_he": "החבר'ה מהחוג למשפטים",
+  "poster": "posters/theguysfromlaw.jpg",
+  "cc_url": "https://www.cinema-city.co.il/movie/6646",
+  "genre": "דרמה",
+  "kids": false,
+  "date_started": "2026-10-25",
+  "last_shown": "2026-10-25"
  },
  "thelandofsometimes": {
   "first_shown": "2026-10-15",
@@ -942,7 +1100,7 @@
    "Claire Foy",
    "Nonso Anozie"
   ],
-  "last_shown": "2026-10-16",
+  "last_shown": "2026-10-25",
   "kids": true,
   "top_people": [
    "Andrew Garfield"
@@ -970,7 +1128,7 @@
    "Tom Holland",
    "Anne Hathaway"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "top_people": [
    "Christopher Nolan",
@@ -1026,7 +1184,7 @@
    "Mikey Madison",
    "Wunmi Mosaku"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "top_people": [
    "Aaron Sorkin",
@@ -1044,7 +1202,7 @@
   "genre": "מותחן, אקשן, דרמה",
   "date_started": "2026-10-15",
   "year": 2026,
-  "imdb": 6.9,
+  "imdb": 6.7,
   "imdb_url": "https://www.imdb.com/title/tt10794054/",
   "rt": 94,
   "rt_url": "https://www.rottentomatoes.com/m/the_weight_2026",
@@ -1056,7 +1214,7 @@
    "Russell Crowe",
    "Julia Jones"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "top_people": [
    "Ethan Hawke",
@@ -1085,7 +1243,7 @@
    "Alicia Vikander",
    "Tom Sturridge"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNDU0NDYyYTUtYzJiMC00OGZmLWIxNjItN2FmOWMzZjgxMWI3XkEyXkFqcGc@._V1_UX500_.jpg"
  },
@@ -1109,7 +1267,7 @@
    "Tim Allen",
    "Joan Cusack"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "rt": 92,
   "rt_url": "https://www.rottentomatoes.com/m/toy_story_5",
   "kids": true,
@@ -1140,7 +1298,7 @@
    "Dakota Johnson",
    "Josh Hartnett"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "top_people": [
    "Michael Showalter",
@@ -1168,7 +1326,7 @@
    "Clara Lago",
    "Tito Valverde"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNmU3NDU3NmMtMGU1ZS00N2UzLTkyMDctODRhZmMwM2MwNDZjXkEyXkFqcGc@._V1_UX500_.jpg"
  },
@@ -1209,24 +1367,50 @@
   "genre": "מותחן, דרמה",
   "date_started": "2026-10-15",
   "year": 2026,
-  "imdb": 6.8,
+  "imdb": 6.7,
   "imdb_url": "https://www.imdb.com/title/tt28535715/",
-  "rt": 71,
+  "rt": 73,
   "rt_url": "https://www.rottentomatoes.com/m/whalefall",
   "directors": [
    "Brian Duffield"
   ],
   "actors": [
    "Austin Abrams",
-   "Elisabeth Shue",
-   "Josh Brolin"
+   "Josh Brolin",
+   "Elisabeth Shue"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "top_people": [
    "Josh Brolin"
   ],
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOWJkMjA4M2MtODRkMi00NzI4LTk4MDQtNDZlODdhNDdkYmM3XkEyXkFqcGc@._V1_UX500_.jpg"
+ },
+ "wicker": {
+  "first_shown": "2026-10-25",
+  "title": "Wicker",
+  "title_he": "בעל בהזמנה",
+  "poster": "posters/wicker.jpg",
+  "imdb_poster": "https://m.media-amazon.com/images/M/MV5BODliMTEzMTUtOGFlZS00NTgxLThjODEtMzcwNTE1OWE5Mzg2XkEyXkFqcGc@._V1_UX500_.jpg",
+  "cc_url": "https://www.cinema-city.co.il/movie/6594",
+  "genre": "קומדיה",
+  "kids": false,
+  "date_started": "2026-10-29",
+  "year": 2026,
+  "imdb": 7.4,
+  "imdb_url": "https://www.imdb.com/title/tt29611136/",
+  "rt": 94,
+  "rt_url": "https://www.rottentomatoes.com/m/wicker",
+  "directors": [
+   "Alex Huston Fischer",
+   "Eleanor Wilson"
+  ],
+  "actors": [
+   "Alexander Skarsgård",
+   "Olivia Colman",
+   "Richard E. Grant"
+  ],
+  "last_shown": "2026-10-25"
  },
  "גבעה338": {
   "first_shown": "2026-10-15",
@@ -1236,7 +1420,7 @@
   "cc_url": "https://www.cinema-city.co.il/movie/6525",
   "genre": "קומדיה",
   "date_started": "2026-08-06",
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false
  },
  "האהבותשלנו": {
@@ -1247,8 +1431,19 @@
   "cc_url": "https://www.cinema-city.co.il/movie/6553",
   "genre": "דרמה",
   "date_started": "2026-10-15",
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false
+ },
+ "הסתברותלאהבה": {
+  "first_shown": "2026-10-25",
+  "title": "הסתברות לאהבה",
+  "title_he": "הסתברות לאהבה",
+  "poster": "posters/הסתברותלאהבה.jpg",
+  "cc_url": "https://www.cinema-city.co.il/movie/6085",
+  "genre": "ישראלי, דרמה קומית",
+  "kids": false,
+  "date_started": "2026-10-29",
+  "last_shown": "2026-10-25"
  },
  "סולטיזהסרט": {
   "first_shown": "2026-10-15",
@@ -1258,7 +1453,7 @@
   "cc_url": "https://www.cinema-city.co.il/movie/6508",
   "genre": "הרפתקה",
   "date_started": "2026-07-15",
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false
  },
  "קופהראשיתהסרט": {
@@ -1280,7 +1475,7 @@
    "Noa Koler",
    "Amir Shurush"
   ],
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false,
   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNzYyMjM1N2QtYTY2MS00NTcxLWFkNGItOGE1MDU1M2QzNGViXkEyXkFqcGc@._V1_UX500_.jpg"
  },
@@ -1292,7 +1487,7 @@
   "cc_url": "https://www.cinema-city.co.il/movie/6450",
   "genre": "ישראלי, קומדיה",
   "date_started": "2026-10-22",
-  "last_shown": "2026-10-18",
+  "last_shown": "2026-10-25",
   "kids": false
  }
 }
