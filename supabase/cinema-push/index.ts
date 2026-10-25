@@ -14,6 +14,8 @@
 //   POST ?action=subscribe          -> {sub, pid}: a public visitor's device
 //   POST ?action=send               -> push the latest scan (docs/data.json on main) to every subscriber, once per scan,
 //                                      tailored to each user's taste, plus premieres and leaving-soon favorites
+//   POST ?action=released           -> (daily) a starred movie opened today or in the last few days: tell whoever
+//                                      starred it, once; Oren also hears about Lior's and Evyatar's
 import webpush from "npm:web-push@3.6.7";
 import { createClient } from "npm:@supabase/supabase-js@2";
 
@@ -271,6 +273,39 @@ Deno.serve(async (req) => {
     }
     await sb.from("cinema_push_log").update({ sent }).eq("generated_at", data.generated_at);
     return json({ ok: true, sent, subscribers: (subs || []).length, opening: openingNow.length, announced: announced.length });
+  }
+
+  if (action === "released" && req.method === "POST") {
+    const data = await (await fetch(DATA_URL, { headers: { Accept: "application/vnd.github.raw+json", "User-Agent": "cinema-push" } })).json();
+    const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Jerusalem" }).format(new Date());
+    const from = new Date(Date.parse(today) - 6 * 864e5).toISOString().slice(0, 10);
+    // the scan is weekly, so a movie that opened since may still sit in upcoming; after the scan it's in movies
+    const byTitle = new Map<string, any>();
+    for (const m of [...(data.upcoming || []), ...(data.movies || [])]) byTitle.set(m.title, m);
+    const opened = [...byTitle.values()].filter((m: any) => m.date_started && m.date_started.slice(0, 10) >= from && m.date_started.slice(0, 10) <= today);
+    const { data: prefRows } = await sb.from("cinema_prefs").select("id,fav,seen");
+    const prefs = Object.fromEntries((prefRows || []).map((r: any) => [r.id, r]));
+    const wants = (u: string, t: string) => (prefs[u]?.fav || []).includes(t) && !(prefs[u]?.seen || []).includes(t);
+    const done = new Set<string>(JSON.parse(map.released_sent || "[]"));
+    const { data: subs } = await sb.from("cinema_push").select("*");
+    let sent = 0;
+    for (const user of USERS) {
+      const items = opened.map((m: any) => {
+        const others = user === "oren" ? ["lior", "evyatar"].filter((o) => wants(o, m.title)) : [];
+        return { m, others, mine: wants(user, m.title) };
+      }).filter((x) => (x.mine || x.others.length) && !done.has(`${user}|${x.m.title}`));
+      if (!items.length) continue;
+      items.forEach((x) => done.add(`${user}|${x.m.title}`));
+      const mine = (subs || []).filter((s: any) => s.user_id === user);
+      sent += await push(sb, mine, {
+        title: items.length === 1 ? `🎬 ${items[0].m.title} יצא! קדימה, אפשר ללכת לראות` : `🎬 ${items.length} סרטים מהמועדפים יצאו! קדימה, אפשר ללכת לראות`,
+        body: items.map(({ m, others }) => `${m.title}${m.title_he ? ` (${m.title_he})` : ""}: בקולנוע מ-${dm(m.date_started)}`
+          + (others.length ? ` · ברשימה של ${others.map((o) => NAMES[o]).join(" ו")}` : "")).join("\n"),
+        url: PAGE_URL, tag: `cinema-released-${user}-${today}`,
+      });
+    }
+    await sb.from("cinema_secrets").upsert({ name: "released_sent", value: JSON.stringify([...done]) });
+    return json({ ok: true, sent, today, opened: opened.map((m: any) => m.title) });
   }
 
   return json({ ok: false, error: "unknown action" }, 400);

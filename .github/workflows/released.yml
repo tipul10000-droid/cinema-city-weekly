@@ -1,0 +1,15 @@
+name: Starred movie is out
+
+# Every morning: if a movie someone starred before it came out has opened, push "it's out, go see it".
+# The function remembers what it already sent, so the later slot only catches a missed run.
+on:
+  schedule:
+    - cron: "0 7 * * *"
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -sS -X POST "https://emgtyfksnofzzlutngbf.supabase.co/functions/v1/cinema-push?action=released"
