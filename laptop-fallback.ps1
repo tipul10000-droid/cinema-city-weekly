@@ -3,7 +3,10 @@
 # run the same scraper from the laptop's home connection and publish it.
 $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot
-git pull -q
+# The page is served from main; make sure the laptop's clone publishes there (it was left on an old branch once)
+git checkout -q main
+if ($LASTEXITCODE) { throw "checkout main failed" }
+git pull -q origin main
 $today = (Get-Date).ToString("yyyy-MM-dd")
 $data = Get-Content docs/data.json -Raw -Encoding UTF8 | ConvertFrom-Json
 if ($data.generated_at.StartsWith($today)) { "scan for $today already published"; exit 0 }
@@ -14,7 +17,7 @@ if ($LASTEXITCODE) { throw "scraper failed" }
 git add docs/data.json docs/archive.json docs/posters
 git -c user.name="cinema-bot (laptop)" -c user.email="tipul10000-droid@users.noreply.github.com" commit -q -m "Weekly movie scan $today (laptop)"
 if ($LASTEXITCODE) { throw "commit failed" }
-git push -q
+git push -q origin main
 if ($LASTEXITCODE) { throw "push failed" }
 Invoke-RestMethod -Method Post "https://emgtyfksnofzzlutngbf.supabase.co/functions/v1/cinema-push?action=send" | Out-Null
 "published from laptop"

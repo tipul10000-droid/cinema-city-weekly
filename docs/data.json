@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T08:40+02:00",
+ "generated_at": "2026-11-01T13:37+02:00",
  "movies": [
   {
    "title": "THE ODYSSEY",
@@ -31,7 +31,7 @@
    "imdb_title": "The Odyssey",
    "year": 2026,
    "imdb": 8.4,
-   "imdb_votes": 541283,
+   "imdb_votes": 541471,
    "watchlist": 1400000,
    "directors": [
     "Christopher Nolan"
@@ -83,7 +83,7 @@
    "imdb_title": "Avengers: Endgame",
    "year": 2019,
    "imdb": 8.4,
-   "imdb_votes": 1504816,
+   "imdb_votes": 1504871,
    "watchlist": 2900000,
    "directors": [
     "Anthony Russo",
@@ -132,7 +132,7 @@
    "imdb_title": "Spider-Man: Brand New Day",
    "year": 2026,
    "imdb": 7.9,
-   "imdb_votes": 372801,
+   "imdb_votes": 373087,
    "watchlist": 842000,
    "directors": [
     "Destin Daniel Cretton"
@@ -170,7 +170,7 @@
    ],
    "has_original": false,
    "next_show": "2026-11-01 14:00",
-   "screenings": 24,
+   "screenings": 25,
    "cinemas": [
     "גלילות",
     "כפר-סבא",
@@ -188,7 +188,7 @@
    "imdb_title": "Forgotten Island",
    "year": 2026,
    "imdb": 7.6,
-   "imdb_votes": 9208,
+   "imdb_votes": 9294,
    "watchlist": 74500,
    "directors": [
     "Joel Crawford",
@@ -335,7 +335,7 @@
    "imdb_title": "Resident Evil",
    "year": 2026,
    "imdb": 7.5,
-   "imdb_votes": 120564,
+   "imdb_votes": 120827,
    "watchlist": 531000,
    "directors": [
     "Zach Cregger"
@@ -350,7 +350,7 @@
    "top_people": [
     "Zach Cregger"
    ],
-   "prev_screenings": 9,
+   "prev_screenings": 8,
    "leaving": true,
    "premiere_week": false,
    "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOGZjZWI1NTItOGUwZC00YWZkLWIxZWEtNzE2ZTIxODdjNmZmXkEyXkFqcGc@._V1_UX500_.jpg"
@@ -380,7 +380,7 @@
    "imdb_title": "Waves",
    "year": 2019,
    "imdb": 7.5,
-   "imdb_votes": 39515,
+   "imdb_votes": 39519,
    "watchlist": 369000,
    "directors": [
     "Trey Edward Shults"
@@ -414,7 +414,7 @@
    "versions": [],
    "has_original": true,
    "next_show": "2026-11-01 14:00",
-   "screenings": 46,
+   "screenings": 45,
    "cinemas": [
     "גלילות",
     "כפר-סבא",
@@ -428,9 +428,6 @@
     "Prime": [
      "כפר-סבא",
      "נתניה"
-    ],
-    "VIP": [
-     "גלילות"
     ]
    },
    "foreign": false,
@@ -439,7 +436,7 @@
    "imdb_title": "Clayface",
    "year": 2026,
    "imdb": 7.5,
-   "imdb_votes": 35345,
+   "imdb_votes": 36045,
    "watchlist": 323000,
    "directors": [
     "James Watkins"
@@ -452,7 +449,7 @@
    "rt": 77,
    "rt_url": "https://www.rottentomatoes.com/m/clayface",
    "top_people": [],
-   "prev_screenings": 64,
+   "prev_screenings": 61,
    "leaving": false,
    "premiere_week": false,
    "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMjNlMjM4NTAtYjE5YS00ZGYyLWEyMTYtNjFlMmIxZDEzYjhhXkEyXkFqcGc@._V1_UX500_.jpg"
@@ -483,7 +480,7 @@
    "imdb_title": "Digger",
    "year": 2026,
    "imdb": 7.5,
-   "imdb_votes": 45503,
+   "imdb_votes": 45569,
    "watchlist": 491000,
    "directors": [
     "Alejandro G. Iñárritu"
@@ -533,7 +530,7 @@
    "imdb_title": "Wicker",
    "year": 2026,
    "imdb": 7.4,
-   "imdb_votes": 3798,
+   "imdb_votes": 3935,
    "watchlist": 191000,
    "directors": [
     "Alex Huston Fischer",
@@ -581,7 +578,7 @@
    "imdb_title": "Coyote vs. Acme",
    "year": 2026,
    "imdb": 7.3,
-   "imdb_votes": 48562,
+   "imdb_votes": 48654,
    "watchlist": 286000,
    "directors": [
     "Dave Green"
@@ -594,7 +591,7 @@
    "rt": 96,
    "rt_url": "https://www.rottentomatoes.com/m/coyote_vs_acme",
    "top_people": [],
-   "prev_screenings": 19,
+   "prev_screenings": 18,
    "leaving": true,
    "premiere_week": false,
    "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMDg5NDFkNTctZWE2ZC00MDYzLThlYjItZTljZDY3NTcwNjA3XkEyXkFqcGc@._V1_UX500_.jpg"
@@ -632,7 +629,7 @@
    "imdb_title": "Toy Story 5",
    "year": 2026,
    "imdb": 7.3,
-   "imdb_votes": 105033,
+   "imdb_votes": 105115,
    "watchlist": 397000,
    "directors": [
     "Andrew Stanton",
@@ -719,7 +716,7 @@
    "versions": [],
    "has_original": true,
    "next_show": "2026-11-01 16:50",
-   "screenings": 30,
+   "screenings": 31,
    "cinemas": [
     "גלילות",
     "כפר-סבא",
@@ -741,7 +738,7 @@
    "imdb_title": "Heart of the Beast",
    "year": 2026,
    "imdb": 7.2,
-   "imdb_votes": 32894,
+   "imdb_votes": 32979,
    "watchlist": 425000,
    "directors": [
     "David Ayer"
@@ -757,7 +754,7 @@
     "David Ayer",
     "Brad Pitt"
    ],
-   "prev_screenings": 34,
+   "prev_screenings": 32,
    "leaving": false,
    "premiere_week": false,
    "imdb_poster": "https://m.media-amazon.com/images/M/MV5BMDVlMTRhMjgtMjdmZi00NjJhLWExMmYtODExNWJkZGZjNjdhXkEyXkFqcGc@._V1_UX500_.jpg"
@@ -796,7 +793,7 @@
    "imdb_title": "Shaun the Sheep: The Beast of Mossy Bottom",
    "year": 2026,
    "imdb": 7.1,
-   "imdb_votes": 2957,
+   "imdb_votes": 2991,
    "watchlist": 30700,
    "directors": [
     "Steve Cox",
@@ -840,7 +837,7 @@
    "imdb_title": "The Stranger",
    "year": 2025,
    "imdb": 7.1,
-   "imdb_votes": 7782,
+   "imdb_votes": 7786,
    "watchlist": 52500,
    "directors": [
     "François Ozon"
@@ -927,7 +924,7 @@
    "imdb_title": "Out of Love",
    "year": 2025,
    "imdb": 6.8,
-   "imdb_votes": 1076,
+   "imdb_votes": 1077,
    "watchlist": 4000,
    "directors": [
     "Nathan Ambrosioni"
@@ -959,7 +956,7 @@
    "versions": [],
    "has_original": true,
    "next_show": "2026-11-01 14:00",
-   "screenings": 33,
+   "screenings": 34,
    "cinemas": [
     "גלילות",
     "כפר-סבא",
@@ -977,7 +974,7 @@
    "imdb_title": "The Weight",
    "year": 2026,
    "imdb": 6.7,
-   "imdb_votes": 7481,
+   "imdb_votes": 7540,
    "watchlist": 153000,
    "directors": [
     "Padraic McKinley"
@@ -1028,7 +1025,7 @@
    "imdb_title": "The Social Reckoning",
    "year": 2026,
    "imdb": 6.7,
-   "imdb_votes": 10085,
+   "imdb_votes": 10110,
    "watchlist": 235000,
    "directors": [
     "Aaron Sorkin"
@@ -1126,7 +1123,7 @@
    "imdb_title": "Whalefall",
    "year": 2026,
    "imdb": 6.6,
-   "imdb_votes": 9712,
+   "imdb_votes": 9757,
    "watchlist": 150000,
    "directors": [
     "Brian Duffield"
@@ -1136,15 +1133,60 @@
     "Josh Brolin",
     "Elisabeth Shue"
    ],
-   "rt": 73,
+   "rt": 74,
    "rt_url": "https://www.rottentomatoes.com/m/whalefall",
    "top_people": [
     "Josh Brolin"
    ],
-   "prev_screenings": 23,
-   "leaving": true,
+   "prev_screenings": 15,
+   "leaving": false,
    "premiere_week": false,
    "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOWJkMjA4M2MtODRkMi00NzI4LTk4MDQtNDZlODdhNDdkYmM3XkEyXkFqcGc@._V1_UX500_.jpg"
+  },
+  {
+   "title": "Tad and the Magic Lamp",
+   "title_he": "טד החוקר ומנורת הקסמים",
+   "cc_id": "6561",
+   "cc_url": "https://www.cinema-city.co.il/movie/6561",
+   "poster": "posters/tadandthemagiclamp.jpg",
+   "genre": "ילדים, אנימציה, הרפתקה",
+   "duration": 94,
+   "language": null,
+   "kids": true,
+   "date_started": "2026-09-10",
+   "versions": [
+    "מדובב"
+   ],
+   "has_original": false,
+   "next_show": "2026-11-01 17:00",
+   "screenings": 3,
+   "cinemas": [
+    "ראשל\"צ"
+   ],
+   "halls": {},
+   "foreign": false,
+   "imdb_id": "tt36164852",
+   "imdb_url": "https://www.imdb.com/title/tt36164852/",
+   "imdb_title": "Tad and the Magic Lamp",
+   "year": 2026,
+   "imdb": 6.4,
+   "imdb_votes": 475,
+   "watchlist": 1900,
+   "directors": [
+    "Enrique Gato"
+   ],
+   "actors": [
+    "Óscar Barberán",
+    "Luis Posada",
+    "Michelle Jenner"
+   ],
+   "rt": null,
+   "rt_url": "https://www.rottentomatoes.com/m/tad_and_the_magic_lamp",
+   "top_people": [],
+   "prev_screenings": 2,
+   "leaving": true,
+   "premiere_week": false,
+   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNDhlOWQ2YjYtNTVkZC00NDE2LTgyODUtMGJlM2FiYWE5OTk3XkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
    "title": "THE DESERT CHILD",
@@ -1193,51 +1235,6 @@
    "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNjY1MDE1NjctNGVkZS00NDA4LWFjMWQtMTMxOWM5NTdlYzU2XkEyXkFqcGc@._V1_UX500_.jpg"
   },
   {
-   "title": "Tad and the Magic Lamp",
-   "title_he": "טד החוקר ומנורת הקסמים",
-   "cc_id": "6561",
-   "cc_url": "https://www.cinema-city.co.il/movie/6561",
-   "poster": "posters/tadandthemagiclamp.jpg",
-   "genre": "ילדים, אנימציה, הרפתקה",
-   "duration": 94,
-   "language": null,
-   "kids": true,
-   "date_started": "2026-09-10",
-   "versions": [
-    "מדובב"
-   ],
-   "has_original": false,
-   "next_show": "2026-11-03 14:50",
-   "screenings": 1,
-   "cinemas": [
-    "ראשל\"צ"
-   ],
-   "halls": {},
-   "foreign": false,
-   "imdb_id": "tt36164852",
-   "imdb_url": "https://www.imdb.com/title/tt36164852/",
-   "imdb_title": "Tad and the Magic Lamp",
-   "year": 2026,
-   "imdb": 6.4,
-   "imdb_votes": 475,
-   "watchlist": 1900,
-   "directors": [
-    "Enrique Gato"
-   ],
-   "actors": [
-    "Óscar Barberán",
-    "Luis Posada",
-    "Michelle Jenner"
-   ],
-   "rt": null,
-   "rt_url": "https://www.rottentomatoes.com/m/tad_and_the_magic_lamp",
-   "top_people": [],
-   "prev_screenings": 2,
-   "leaving": true,
-   "premiere_week": false,
-   "imdb_poster": "https://m.media-amazon.com/images/M/MV5BNDhlOWQ2YjYtNTVkZC00NDE2LTgyODUtMGJlM2FiYWE5OTk3XkEyXkFqcGc@._V1_UX500_.jpg"
-  },
-  {
    "title": "Minions & Monsters",
    "title_he": "מיניונים ומפלצות",
    "cc_id": "6367",
@@ -1269,7 +1266,7 @@
    "imdb_title": "Minions & Monsters",
    "year": 2026,
    "imdb": 6.3,
-   "imdb_votes": 36293,
+   "imdb_votes": 36352,
    "watchlist": 180000,
    "directors": [
     "Pierre Coffin",
@@ -1314,7 +1311,7 @@
    "imdb_title": "Street Fighter",
    "year": 2026,
    "imdb": 6.2,
-   "imdb_votes": 20095,
+   "imdb_votes": 20204,
    "watchlist": 260000,
    "directors": [
     "Kitao Sakurai"
@@ -1324,12 +1321,12 @@
     "Andrew Koji",
     "Callina Liang"
    ],
-   "rt": 41,
+   "rt": 42,
    "rt_url": "https://www.rottentomatoes.com/m/street_fighter_2026",
    "top_people": [
     "Noah Centineo"
    ],
-   "prev_screenings": 16,
+   "prev_screenings": 13,
    "leaving": true,
    "premiere_week": false,
    "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYjhlN2EyNGUtY2U4YS00ZTQ3LTg0NTgtNGIxZmVhMDlmMjIyXkEyXkFqcGc@._V1_UX500_.jpg"
@@ -1365,7 +1362,7 @@
    "imdb_title": "The Wizard of the Kremlin",
    "year": 2025,
    "imdb": 6.1,
-   "imdb_votes": 7840,
+   "imdb_votes": 7846,
    "watchlist": 62100,
    "directors": [
     "Olivier Assayas"
@@ -1415,7 +1412,7 @@
    "imdb_title": "PAW Patrol: The Dino Movie",
    "year": 2026,
    "imdb": 6,
-   "imdb_votes": 2967,
+   "imdb_votes": 2969,
    "watchlist": 22300,
    "directors": [
     "Cal Brunker"
@@ -1447,7 +1444,7 @@
    "versions": [],
    "has_original": true,
    "next_show": "2026-11-01 15:50",
-   "screenings": 36,
+   "screenings": 35,
    "cinemas": [
     "גלילות",
     "כפר-סבא",
@@ -1464,9 +1461,6 @@
     "Prime": [
      "כפר-סבא",
      "נתניה"
-    ],
-    "VIP": [
-     "גלילות"
     ]
    },
    "foreign": false,
@@ -1475,7 +1469,7 @@
    "imdb_title": "Verity",
    "year": 2026,
    "imdb": 6,
-   "imdb_votes": 27992,
+   "imdb_votes": 28360,
    "watchlist": 316000,
    "directors": [
     "Michael Showalter"
@@ -1523,7 +1517,7 @@
    "imdb_title": "Sheep in the Box",
    "year": 2026,
    "imdb": 5.9,
-   "imdb_votes": 1280,
+   "imdb_votes": 1282,
    "watchlist": 14600,
    "directors": [
     "Hirokazu Koreeda"
@@ -1618,7 +1612,7 @@
    "imdb_title": "Stitch Head",
    "year": 2025,
    "imdb": 5.8,
-   "imdb_votes": 1279,
+   "imdb_votes": 1280,
    "watchlist": 9300,
    "directors": [
     "Steve Hudson"
@@ -1659,7 +1653,7 @@
    "imdb_title": "Mutiny",
    "year": 2026,
    "imdb": 5.7,
-   "imdb_votes": 25370,
+   "imdb_votes": 25392,
    "watchlist": 136000,
    "directors": [
     "Jean-François Richet"
@@ -1708,7 +1702,7 @@
    "imdb_title": "Rolling Loud",
    "year": 2026,
    "imdb": 5.7,
-   "imdb_votes": 288,
+   "imdb_votes": 289,
    "watchlist": 16800,
    "directors": [
     "Jeremy Garelick"
@@ -1752,7 +1746,7 @@
    "imdb_title": "The Cut",
    "year": 2024,
    "imdb": 5.5,
-   "imdb_votes": 2353,
+   "imdb_votes": 2354,
    "watchlist": 17100,
    "directors": [
     "Sean Ellis"
@@ -1796,7 +1790,7 @@
    "imdb_title": "Fall 2: Deadpoint",
    "year": 2026,
    "imdb": 5.3,
-   "imdb_votes": 13403,
+   "imdb_votes": 13441,
    "watchlist": 78400,
    "directors": [
     "Michael Spierig",
@@ -1847,7 +1841,7 @@
    "imdb_title": "Other Mommy",
    "year": 2026,
    "imdb": 5.3,
-   "imdb_votes": 14426,
+   "imdb_votes": 14479,
    "watchlist": 225000,
    "directors": [
     "Rob Savage"
@@ -1862,7 +1856,7 @@
    "top_people": [
     "Jessica Chastain"
    ],
-   "prev_screenings": 35,
+   "prev_screenings": 30,
    "leaving": false,
    "premiere_week": false,
    "imdb_poster": "https://m.media-amazon.com/images/M/MV5BOGUyODYyYTctMmY0Mi00ZWIwLThjYWItZDJmODY4NGU1YjY1XkEyXkFqcGc@._V1_UX500_.jpg"
@@ -1961,7 +1955,7 @@
    "imdb_title": "Ali G: Who Iz I?",
    "year": 2026,
    "imdb": 5.1,
-   "imdb_votes": 6806,
+   "imdb_votes": 7123,
    "watchlist": 37700,
    "directors": [
     "Sacha Baron Cohen"
@@ -1974,7 +1968,7 @@
    "rt": 40,
    "rt_url": "https://www.rottentomatoes.com/m/ali_g_who_iz_i",
    "top_people": [],
-   "prev_screenings": 12,
+   "prev_screenings": 42,
    "leaving": false,
    "premiere_week": false,
    "imdb_poster": "https://m.media-amazon.com/images/M/MV5BYjIyYWYyMzEtMDkwOC00NDk0LWEwYzItNTk1NWYxNWEwMjA5XkEyXkFqcGc@._V1_UX500_.jpg"
@@ -2009,7 +2003,7 @@
    "imdb_title": "Spa Weekend",
    "year": 2026,
    "imdb": 5.1,
-   "imdb_votes": 3134,
+   "imdb_votes": 3138,
    "watchlist": 46300,
    "directors": [
     "Jon Lucas",
@@ -2042,7 +2036,7 @@
    "versions": [],
    "has_original": true,
    "next_show": "2026-11-01 14:30",
-   "screenings": 51,
+   "screenings": 52,
    "cinemas": [
     "גלילות",
     "כפר-סבא",
@@ -2066,7 +2060,7 @@
    "imdb_title": "The Fix",
    "year": 2026,
    "imdb": 4.8,
-   "imdb_votes": 2792,
+   "imdb_votes": 2804,
    "watchlist": 41600,
    "directors": [
     "Guy Moshe"
@@ -2109,7 +2103,7 @@
    "imdb_title": "Ice Cream Man",
    "year": 2026,
    "imdb": 4,
-   "imdb_votes": 9099,
+   "imdb_votes": 9126,
    "watchlist": 71600,
    "directors": [
     "Eli Roth"
@@ -2156,7 +2150,7 @@
    "imdb_title": "The Bay",
    "year": 2026,
    "imdb": 3.8,
-   "imdb_votes": 1468,
+   "imdb_votes": 1474,
    "watchlist": 6500,
    "directors": [
     "Phil Volken"
@@ -2258,7 +2252,7 @@
    },
    "foreign": false,
    "top_people": [],
-   "prev_screenings": 100,
+   "prev_screenings": 99,
    "leaving": false,
    "premiere_week": false
   },
@@ -2290,7 +2284,7 @@
    },
    "foreign": false,
    "top_people": [],
-   "prev_screenings": 87,
+   "prev_screenings": 85,
    "leaving": false,
    "premiere_week": false
   },
@@ -2321,7 +2315,7 @@
    },
    "foreign": false,
    "top_people": [],
-   "prev_screenings": 15,
+   "prev_screenings": 14,
    "leaving": true,
    "premiere_week": false
   },
@@ -2433,7 +2427,7 @@
    "imdb_title": "Beware Boiúna",
    "year": 2026,
    "imdb": 6,
-   "imdb_votes": 1131,
+   "imdb_votes": 1135,
    "watchlist": 52600,
    "directors": [
     "Mike P. Nelson"
@@ -2461,7 +2455,7 @@
    "imdb_title": "The Richest Woman in the World",
    "year": 2025,
    "imdb": 6.3,
-   "imdb_votes": 1793,
+   "imdb_votes": 1794,
    "watchlist": 8200,
    "directors": [
     "Thierry Klifa"
@@ -2519,7 +2513,7 @@
    "imdb_title": "The Beast",
    "year": 2026,
    "imdb": 5.2,
-   "imdb_votes": 240,
+   "imdb_votes": 242,
    "watchlist": 24100,
    "directors": [
     "Renny Harlin"
@@ -2549,7 +2543,7 @@
    "imdb_title": "Rolling Loud",
    "year": 2026,
    "imdb": 5.7,
-   "imdb_votes": 288,
+   "imdb_votes": 289,
    "watchlist": 16800,
    "directors": [
     "Jeremy Garelick"
@@ -2579,7 +2573,7 @@
    "imdb_title": "Wild Horse Nine",
    "year": 2026,
    "imdb": 8.1,
-   "imdb_votes": 1741,
+   "imdb_votes": 1778,
    "watchlist": 246000,
    "directors": [
     "Martin McDonagh"
@@ -2665,7 +2659,7 @@
    "imdb_title": "Wildwood",
    "year": 2026,
    "imdb": 8.7,
-   "imdb_votes": 13838,
+   "imdb_votes": 14290,
    "watchlist": 204000,
    "directors": [
     "Travis Knight"
@@ -2693,7 +2687,7 @@
    "imdb_title": "A Talent for Murder",
    "year": 2026,
    "imdb": 6.8,
-   "imdb_votes": 676,
+   "imdb_votes": 682,
    "watchlist": 32700,
    "directors": [
     "Anton Corbijn"
@@ -2779,7 +2773,7 @@
    "imdb_title": "The Mongoose",
    "year": 2026,
    "imdb": 4.9,
-   "imdb_votes": 370,
+   "imdb_votes": 405,
    "watchlist": 36400,
    "directors": [
     "Mark Vanselow"
@@ -2943,7 +2937,7 @@
    "imdb_title": "Young Washington",
    "year": 2026,
    "imdb": 6.8,
-   "imdb_votes": 14954,
+   "imdb_votes": 14959,
    "watchlist": 104000,
    "directors": [
     "Jon Erwin"
@@ -3001,7 +2995,7 @@
    "imdb_title": "The Christophers",
    "year": 2025,
    "imdb": 6.8,
-   "imdb_votes": 6977,
+   "imdb_votes": 6983,
    "watchlist": 60500,
    "directors": [
     "Steven Soderbergh"
@@ -3029,7 +3023,7 @@
    "imdb_title": "You Can See Everything",
    "year": 2026,
    "imdb": 9.2,
-   "imdb_votes": 22823,
+   "imdb_votes": 23224,
    "watchlist": 478000,
    "directors": [
     "Nathan Fielder",
@@ -3058,7 +3052,7 @@
    "imdb_title": "Club Kid",
    "year": 2026,
    "imdb": 8.2,
-   "imdb_votes": 884,
+   "imdb_votes": 886,
    "watchlist": 43300,
    "directors": [
     "Jordan Firstman"
@@ -3114,7 +3108,7 @@
    "imdb_title": "Protector",
    "year": 2025,
    "imdb": 5.2,
-   "imdb_votes": 4844,
+   "imdb_votes": 4846,
    "watchlist": 26800,
    "directors": [
     "Adrian Grunberg"
@@ -3142,7 +3136,7 @@
    "imdb_title": "Paper Tiger",
    "year": 2026,
    "imdb": 7,
-   "imdb_votes": 893,
+   "imdb_votes": 895,
    "watchlist": 126000,
    "directors": [
     "James Gray"
@@ -3288,7 +3282,7 @@
    "imdb_title": "I Play Rocky",
    "year": 2026,
    "imdb": 7.8,
-   "imdb_votes": 934,
+   "imdb_votes": 943,
    "watchlist": 165000,
    "directors": [
     "Peter Farrelly"
@@ -3344,7 +3338,7 @@
    "imdb_title": "The Wrong Girls",
    "year": 2026,
    "imdb": 5.3,
-   "imdb_votes": 2511,
+   "imdb_votes": 2516,
    "watchlist": 48300,
    "directors": [
     "Dylan Meyer"
@@ -3445,7 +3439,7 @@
    "imdb_title": "The Rivals of Amziah King",
    "year": 2025,
    "imdb": 6.6,
-   "imdb_votes": 8740,
+   "imdb_votes": 8750,
    "watchlist": 144000,
    "directors": [
     "Andrew Patterson"
@@ -3636,7 +3630,7 @@
    "imdb_title": "13 Days, 13 Nights",
    "year": 2025,
    "imdb": 6.7,
-   "imdb_votes": 3338,
+   "imdb_votes": 3339,
    "watchlist": 10700,
    "directors": [
     "Martin Bourboulon"
@@ -3750,7 +3744,7 @@
    "imdb_title": "Yellow Letters",
    "year": 2026,
    "imdb": 7.2,
-   "imdb_votes": 2551,
+   "imdb_votes": 2552,
    "watchlist": 15800,
    "directors": [
     "Ilker Çatak"
@@ -3777,8 +3771,8 @@
    "imdb_url": "https://www.imdb.com/title/tt17055444/",
    "imdb_title": "Hershey",
    "year": 2026,
-   "imdb": 7.9,
-   "imdb_votes": 21,
+   "imdb": 8.1,
+   "imdb_votes": 22,
    "watchlist": 28700,
    "directors": [
     "Mark Waters"
@@ -3806,7 +3800,7 @@
    "imdb_title": "The Money Maker",
    "year": 2025,
    "imdb": 7,
-   "imdb_votes": 2216,
+   "imdb_votes": 2218,
    "watchlist": 10000,
    "directors": [
     "Jean-Paul Salomé"
@@ -3834,7 +3828,7 @@
    "imdb_title": "The World Will Tremble",
    "year": 2025,
    "imdb": 6.8,
-   "imdb_votes": 3558,
+   "imdb_votes": 3561,
    "watchlist": 25400,
    "directors": [
     "Lior Geller"
@@ -3890,7 +3884,7 @@
    "imdb_title": "Pressure",
    "year": 2026,
    "imdb": 7.3,
-   "imdb_votes": 41826,
+   "imdb_votes": 41883,
    "watchlist": 275000,
    "directors": [
     "Anthony Maras"
@@ -3948,7 +3942,7 @@
    "imdb_title": "Lucky Strike",
    "year": 2026,
    "imdb": 5.3,
-   "imdb_votes": 3496,
+   "imdb_votes": 3513,
    "watchlist": 40300,
    "directors": [
     "Rod Lurie"
@@ -4036,7 +4030,7 @@
    "imdb_title": "Spider Island",
    "year": 2026,
    "imdb": 4.2,
-   "imdb_votes": 1322,
+   "imdb_votes": 1323,
    "watchlist": 6200,
    "directors": [
     "Christopher Smith"
