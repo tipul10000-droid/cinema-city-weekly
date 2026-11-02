@@ -52,6 +52,10 @@
   .ppl .dir { color:var(--muted); }
   .ppl b { color:var(--muted); font-weight:500; }
   .tags { margin-top:6px; display:flex; gap:4px; flex-wrap:wrap; }
+  .ccBtn { display:inline-flex; align-items:center; gap:6px; margin-top:8px; padding:3px 10px 3px 4px; border:1px solid var(--line); border-radius:999px; font-size:12px; font-weight:600; color:var(--text); text-decoration:none; background:var(--bg); }
+  .ccLogo { display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%; background:#e30613; color:#fff; font:800 9px/1 system-ui, sans-serif; letter-spacing:-.3px; }
+  .cards article.m[data-row] { cursor:pointer; }
+  #detailBody article.m[data-row] { cursor:default; }
   .tag { font-size:11px; padding:2px 7px; border-radius:6px; border:1px solid var(--line); color:var(--muted); }
   .tag.new { border-color:var(--good); color:var(--good); }
   .tag.old { border-color:var(--mid); color:var(--mid); }
@@ -132,10 +136,10 @@
   .note .small { font-size:12px; color:var(--muted); }
   .regions .chip[disabled] { opacity:.5; cursor:default; }
   .shareTitle { font-weight:650; font-size:14px; }
+  #shareSheet .family-only { display:flex; flex-direction:column; gap:10px; margin-top:8px; }
   .shareRow { display:flex; gap:8px; }
   .ghostBtn2 { flex:1; padding:12px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--text); font:inherit; font-weight:600; cursor:pointer; }
   button.icon svg { width:18px; height:18px; vertical-align:middle; }
-  .aboutShare { border-top:1px solid var(--line); padding-top:12px; display:flex; flex-direction:column; gap:10px; }
   body.public .family-only, body.guest .family-only, body.nobody .family-only { display:none !important; }
   body.public .oren-only { display:none !important; }
   #toast { position:fixed; bottom:calc(76px + env(safe-area-inset-bottom)); left:50%; transform:translateX(-50%); z-index:11; background:var(--text); color:var(--bg); padding:10px 16px; border-radius:999px; font-size:14px; font-weight:600; }
@@ -271,14 +275,19 @@
       <p>נוצר על ידי <b>אורן</b>, חובב קולנוע, בחינם לכל מי שאוהב סרטים.</p>
       <p class="small">האפליקציה עצמאית ולא קשורה לסינמה סיטי. המידע נאסף מהאתר הציבורי של סינמה סיטי, מ-IMDb ומ-Rotten Tomatoes, ויכול להשתנות. לפני שיוצאים כדאי לבדוק שעות באתר הרשת.</p>
     </div>
-    <div class="aboutShare" id="shareSec">
-      <div class="shareTitle">📤 אהבת? שתף עם חברים שאוהבים קולנוע</div>
+  </div>
+</div>
+<div class="sheet" id="shareSheet" hidden>
+  <div class="sheetBox">
+    <div class="grab"></div>
+    <button class="icon close" data-close aria-label="סגור">✕</button>
+    <h3>📤 שיתוף</h3>
+      <div class="shareTitle">🌍 לינק ציבורי, לחברים שאוהבים קולנוע</div>
       <div class="shareRow"><button class="mainBtn" data-share="public">שתף</button><button class="ghostBtn2" data-copy="public">העתק לינק</button></div>
       <div class="family-only">
         <div class="shareTitle">👨‍👩‍👦 לינק משפחתי (אורן, ליאור, אביתר)</div>
         <div class="shareRow"><button class="mainBtn" data-share="family">שתף</button><button class="ghostBtn2" data-copy="family">העתק לינק</button></div>
       </div>
-    </div>
   </div>
 </div>
 <div class="sheet" id="detail" hidden><div class="sheetBox"><div class="grab"></div><button class="icon close" data-close aria-label="סגור">✕</button><div id="detailBody"></div></div></div>
@@ -410,8 +419,10 @@ const scores = m => `
         <a class="sc rt" href="${esc(m.rt_url || "#")}" target="_blank" rel="noopener">🍅 ${m.rt != null ? m.rt + "%" : '<span class="na">–</span>'}</a>`;
 const favBtn = m => `<button class="${prefs.fav.includes(m.title) ? "on" : ""}" data-mark="fav" data-t="${esc(m.title)}" title="מועדף">${prefs.fav.includes(m.title) ? "★" : "☆"}</button>`;
 const seenBtn = m => `<button class="seen ${prefs.seen.includes(m.title) ? "on" : ""}" data-mark="seen" data-t="${esc(m.title)}" title="ראיתי">✓</button>`;
+// Cinema City movie page: trailer and tickets
+const ccBtn = m => m.cc_url ? `<a class="ccBtn" href="${esc(m.cc_url)}" target="_blank" rel="noopener"><span class="ccLogo" aria-hidden="true">CC</span>טריילר והזמנת כרטיס</a>` : "";
 const nowCard = m => `
-    <article class="m${prefs.seen.includes(m.title) ? " watched" : ""}">
+    <article class="m${prefs.seen.includes(m.title) ? " watched" : ""}" data-row data-t="${esc(m.title)}">
       ${poster(m)}
       <div>
         <div class="t" dir="ltr" style="text-align:right"><a href="${esc(m.cc_url)}" target="_blank" rel="noopener">${esc(m.title)}</a>${m.year ? ` <span class="he">(${m.year})</span>` : ""}</div>
@@ -426,6 +437,7 @@ const nowCard = m => `
           ${hallTags(m)}
           ${m.has_original !== false ? m.versions.map(v => `<span class="tag">${esc(VERSION_LABEL[v] || v)}</span>`).join("") : `<span class="tag">מדובב בלבד</span>`}
         </div>
+        ${ccBtn(m)}
       </div>
       <div class="scores">${scores(m)}
         <div class="mark">${favBtn(m)}${seenBtn(m)}</div>
@@ -471,7 +483,7 @@ const wlText = n => n >= 1e6 ? (n / 1e6).toFixed(1) + "M" : Math.round(n / 1e3) 
 function soonCard(m) {
   const d = new Date(m.date_started + "T00:00:00"), days = Math.ceil((d - Date.now()) / DAY);
   return `
-    <article class="m">
+    <article class="m" data-row data-t="${esc(m.title)}">
       ${poster(m)}
       <div>
         <div class="t" dir="ltr" style="text-align:right"><a href="${esc(m.cc_url)}" target="_blank" rel="noopener">${esc(m.title)}</a></div>
@@ -484,6 +496,7 @@ function soonCard(m) {
           ${m.kids ? `<span class="tag">👨‍👧 ילדים</span>` : ""}
           ${m.dubbed_only ? `<span class="tag">מדובב בלבד</span>` : ""}
         </div>
+        ${ccBtn(m)}
       </div>
       <div class="scores">
         <span class="when">${fmtDate(d)}</span>
@@ -509,7 +522,7 @@ function renderSeen() {
   refreshLayers();
 }
 const seenCard = m => `
-    <article class="m">
+    <article class="m" data-row data-t="${esc(m.title)}">
       ${poster(m)}
       <div>
         <div class="t" dir="ltr" style="text-align:right"><a href="${esc(m.cc_url || m.imdb_url || "#")}" target="_blank" rel="noopener">${esc(m.title)}</a>${m.year ? ` <span class="he">(${m.year})</span>` : ""}</div>
@@ -709,11 +722,12 @@ document.addEventListener("click", e => {
     return;
   }
   if (!e.target.closest(".cards")) return;
-  const card = e.target.closest("[data-full], [data-open]");
+  if (e.target.closest("a, button")) return;
+  const card = e.target.closest("[data-full], [data-open], [data-row]");
   if (!card) return;
   const i = rowsBy[tab].findIndex(m => m.title === card.dataset.t);
   if (i < 0) return;
-  if (card.matches("[data-open]")) openDetail(tab, card.dataset.t);
+  if (card.matches("[data-open], [data-row]")) openDetail(tab, card.dataset.t);
   else openViewer(tab, i);
 });
 // the detail card's poster opens the swipe view at that movie
@@ -755,7 +769,7 @@ document.querySelectorAll("[data-share]").forEach(b => b.onclick = async () => {
   if (navigator.share) { try { await navigator.share(SHARE[k]); } catch {} }
   else copyLink(k);
 });
-document.getElementById("shareBtn").onclick = () => document.querySelector('[data-share="public"]').click();
+document.getElementById("shareBtn").onclick = () => openLayer(document.getElementById("shareSheet"));
 document.querySelectorAll("[data-copy]").forEach(b => b.onclick = () => copyLink(b.dataset.copy));
 // back to top, once the list is long
 const toTop = document.getElementById("toTop");
