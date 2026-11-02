@@ -100,7 +100,7 @@
   .seg.view .chip { padding:7px 10px; font-size:15px; line-height:1; }
   .stat > * { white-space:nowrap; flex:none; }
   #toTop { position:fixed; bottom:calc(16px + env(safe-area-inset-bottom)); left:16px; z-index:4; width:46px; height:46px; border-radius:50%; border:0; background:var(--imdb); color:#000; font-size:22px; font-weight:800; box-shadow:0 4px 14px rgba(0,0,0,.35); cursor:pointer; }
-  body.locked { overflow:hidden; }
+  body.locked { overflow:hidden; position:fixed; left:0; right:0; width:100%; }
   /* poster with the "tap & swipe" mark */
   .pw { position:relative; display:block; cursor:zoom-in; }
   .pw img { display:block; }
@@ -121,6 +121,7 @@
   /* bottom sheets: filters, settings, movie details */
   .sheet { position:fixed; inset:0; z-index:8; background:rgba(0,0,0,.5); display:flex; align-items:flex-end; justify-content:center; }
   .sheetBox { position:relative; width:100%; max-width:640px; max-height:88dvh; overflow-y:auto; overscroll-behavior:contain; background:var(--bg); border-radius:18px 18px 0 0; padding:8px 16px calc(16px + env(safe-area-inset-bottom)); display:flex; flex-direction:column; gap:10px; animation:up .22s ease-out; }
+  .sheetBox > * { flex-shrink:0; }
   @keyframes up { from { transform:translateY(40px); opacity:.4; } }
   .grab { width:40px; height:5px; border-radius:3px; background:var(--line); margin:2px auto 4px; flex:none; }
   .sheetBox h3 { margin:0; font-size:17px; }
@@ -130,11 +131,11 @@
   .note.about { color:var(--text); }
   .note .small { font-size:12px; color:var(--muted); }
   .regions .chip[disabled] { opacity:.5; cursor:default; }
-  .share { max-width:900px; margin:8px auto 0; padding:20px 16px calc(28px + env(safe-area-inset-bottom)); border-top:1px solid var(--line); display:flex; flex-direction:column; gap:10px; }
   .shareTitle { font-weight:650; font-size:14px; }
   .shareRow { display:flex; gap:8px; }
   .ghostBtn2 { flex:1; padding:12px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--text); font:inherit; font-weight:600; cursor:pointer; }
-  .aboutLink { background:none; border:0; color:var(--muted); font:inherit; font-size:13px; text-decoration:underline; cursor:pointer; padding:4px 0; align-self:center; }
+  button.icon svg { width:18px; height:18px; vertical-align:middle; }
+  .aboutShare { border-top:1px solid var(--line); padding-top:12px; display:flex; flex-direction:column; gap:10px; }
   body.public .family-only, body.guest .family-only, body.nobody .family-only { display:none !important; }
   body.public .oren-only { display:none !important; }
   #toast { position:fixed; bottom:calc(76px + env(safe-area-inset-bottom)); left:50%; transform:translateX(-50%); z-index:11; background:var(--text); color:var(--bg); padding:10px 16px; border-radius:999px; font-size:14px; font-weight:600; }
@@ -180,6 +181,7 @@
   <div class="hrow">
     <h1>🎬 מה בסינמה סיטי השבוע</h1>
     <button id="info" class="icon" aria-label="אודות">ℹ️</button>
+    <button id="shareBtn" class="icon" aria-label="שיתוף"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M6 11H5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-1"/></svg></button>
     <button id="gear" class="icon" aria-label="הגדרות">⚙️<i id="gearDot" hidden></i></button>
   </div>
   <div class="meta" id="meta">טוען…</div>
@@ -256,12 +258,26 @@
       <button class="chip" disabled>חדרה והצפון · בקרוב</button>
     </div>
     <div class="note">האזור קובע גם אילו סרטים מוצגים וכמה הקרנות יש להם, וגם אילו עולמות מיוחדים זמינים (Lounge, VIP, Prime, ONYX, Infinity Vision). כרגע: סינמה סיטי גלילות, ראשון לציון, כפר סבא ונתניה.</div>
-    <h4 id="about">ℹ️ אודות</h4>
+  </div>
+</div>
+<div class="sheet" id="aboutSheet" hidden>
+  <div class="sheetBox">
+    <div class="grab"></div>
+    <button class="icon close" data-close aria-label="סגור">✕</button>
+    <h3>ℹ️ אודות</h3>
     <div class="note about">
       <p><b>מה בסינמה סיטי השבוע</b> מראה במקום אחד את כל הסרטים שמוקרנים השבוע בסינמה סיטי באזור שלך, עם ציון IMDb וציון Rotten Tomatoes ליד כל סרט. ככה רואים במבט אחד מה שווה ללכת אליו.</p>
       <p>הרשימה מתעדכנת אוטומטית בכל יום ראשון בבוקר. אפשר לסנן (מבוגרים או ילדים, בלי מדובבים, אולמות מיוחדים), לראות מה עומד לרדת מהמסכים, מה מגיע בקרוב, לסמן ★ סרטים שרוצים לראות ולקבל התראה שבועית.</p>
       <p>נוצר על ידי <b>אורן</b>, חובב קולנוע, בחינם לכל מי שאוהב סרטים.</p>
       <p class="small">האפליקציה עצמאית ולא קשורה לסינמה סיטי. המידע נאסף מהאתר הציבורי של סינמה סיטי, מ-IMDb ומ-Rotten Tomatoes, ויכול להשתנות. לפני שיוצאים כדאי לבדוק שעות באתר הרשת.</p>
+    </div>
+    <div class="aboutShare" id="shareSec">
+      <div class="shareTitle">📤 אהבת? שתף עם חברים שאוהבים קולנוע</div>
+      <div class="shareRow"><button class="mainBtn" data-share="public">שתף</button><button class="ghostBtn2" data-copy="public">העתק לינק</button></div>
+      <div class="family-only">
+        <div class="shareTitle">👨‍👩‍👦 לינק משפחתי (אורן, ליאור, אביתר)</div>
+        <div class="shareRow"><button class="mainBtn" data-share="family">שתף</button><button class="ghostBtn2" data-copy="family">העתק לינק</button></div>
+      </div>
     </div>
   </div>
 </div>
@@ -287,15 +303,6 @@
   </div>
 </div>
 <main id="nowView"><div id="list" class="cards"></div></main>
-<footer class="share">
-  <div class="shareTitle">📤 אהבת? שתף עם חברים שאוהבים קולנוע</div>
-  <div class="shareRow"><button class="mainBtn" data-share="public">שתף</button><button class="ghostBtn2" data-copy="public">העתק לינק</button></div>
-  <div class="family-only">
-    <div class="shareTitle">👨‍👩‍👦 לינק משפחתי (אורן, ליאור, אביתר)</div>
-    <div class="shareRow"><button class="mainBtn" data-share="family">שתף</button><button class="ghostBtn2" data-copy="family">העתק לינק</button></div>
-  </div>
-  <button class="aboutLink" onclick="document.getElementById('info').click()">ℹ️ אודות האפליקציה</button>
-</footer>
 <script>
 let data = [];
 const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
@@ -571,9 +578,17 @@ document.querySelectorAll("[data-view]").forEach(b => b.onclick = () => {
 });
 // sheets and the swipe view sit on the history stack, so the phone's back gesture closes them
 const layers = [];
+let lockY = 0;
+function unlock() {
+  document.body.classList.remove("locked"); document.body.style.top = "";
+  scrollTo(0, lockY);
+}
 function openLayer(el) {
   el.hidden = false; layers.push(el);
-  document.body.classList.add("locked");
+  if (!document.body.classList.contains("locked")) {
+    lockY = scrollY; document.body.style.top = -lockY + "px";
+    document.body.classList.add("locked");
+  }
   history.pushState({ layer: layers.length }, "");
 }
 function swapLayer(from, to) {  // e.g. swipe view -> movie card, without growing the history
@@ -584,7 +599,7 @@ const closeLayer = () => { if (layers.length) history.back(); };
 addEventListener("popstate", () => {
   const el = layers.pop();
   if (el) el.hidden = true;
-  if (!layers.length) document.body.classList.remove("locked");
+  if (!layers.length) unlock();
 });
 document.querySelectorAll(".sheet").forEach(sh => sh.addEventListener("click", e => {
   if (e.target === sh || e.target.closest("[data-close]")) closeLayer();
@@ -593,8 +608,9 @@ document.getElementById("filterBtn").onclick = () => openLayer(document.getEleme
 document.getElementById("showBtn").onclick = closeLayer;
 document.getElementById("gear").onclick = () => openLayer(document.getElementById("settings"));
 document.getElementById("info").onclick = () => {
-  openLayer(document.getElementById("settings"));
-  requestAnimationFrame(() => document.getElementById("about").scrollIntoView({ block: "start" }));
+  const sh = document.getElementById("aboutSheet");
+  sh.querySelector(".sheetBox").scrollTop = 0;
+  openLayer(sh);
 };
 // movie card (from the grid, or by tapping the poster in the swipe view)
 const detail = document.getElementById("detail");
@@ -739,6 +755,7 @@ document.querySelectorAll("[data-share]").forEach(b => b.onclick = async () => {
   if (navigator.share) { try { await navigator.share(SHARE[k]); } catch {} }
   else copyLink(k);
 });
+document.getElementById("shareBtn").onclick = () => document.querySelector('[data-share="public"]').click();
 document.querySelectorAll("[data-copy]").forEach(b => b.onclick = () => copyLink(b.dataset.copy));
 // back to top, once the list is long
 const toTop = document.getElementById("toTop");
