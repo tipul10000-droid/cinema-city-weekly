@@ -52,8 +52,8 @@
   .ppl .dir { color:var(--muted); }
   .ppl b { color:var(--muted); font-weight:500; }
   .tags { margin-top:6px; display:flex; gap:4px; flex-wrap:wrap; }
-  .ccBtn { display:inline-flex; align-items:center; gap:6px; margin-top:8px; padding:3px 10px 3px 4px; border:1px solid var(--line); border-radius:999px; font-size:12px; font-weight:600; color:var(--text); text-decoration:none; background:var(--bg); }
-  .ccLogo { display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%; background:#e30613; color:#fff; font:800 9px/1 system-ui, sans-serif; letter-spacing:-.3px; }
+  .ccBtn { white-space:nowrap; display:inline-flex; align-items:center; gap:6px; margin-top:8px; padding:3px 10px 3px 4px; border:1px solid var(--line); border-radius:999px; font-size:12px; font-weight:600; color:var(--text); text-decoration:none; background:var(--bg); }
+  .m img.ccLogo, img.ccLogo { flex:none; width:24px; height:24px; object-fit:contain; background:#fff; border-radius:50%; padding:1px; box-sizing:border-box; }
   .cards article.m[data-row] { cursor:pointer; }
   #detailBody article.m[data-row] { cursor:default; }
   .tag { font-size:11px; padding:2px 7px; border-radius:6px; border:1px solid var(--line); color:var(--muted); }
@@ -420,7 +420,7 @@ const scores = m => `
 const favBtn = m => `<button class="${prefs.fav.includes(m.title) ? "on" : ""}" data-mark="fav" data-t="${esc(m.title)}" title="מועדף">${prefs.fav.includes(m.title) ? "★" : "☆"}</button>`;
 const seenBtn = m => `<button class="seen ${prefs.seen.includes(m.title) ? "on" : ""}" data-mark="seen" data-t="${esc(m.title)}" title="ראיתי">✓</button>`;
 // Cinema City movie page: trailer and tickets
-const ccBtn = m => m.cc_url ? `<a class="ccBtn" href="${esc(m.cc_url)}" target="_blank" rel="noopener"><span class="ccLogo" aria-hidden="true">CC</span>טריילר והזמנת כרטיס</a>` : "";
+const ccBtn = m => m.cc_url ? `<a class="ccBtn" href="${esc(m.cc_url)}" target="_blank" rel="noopener"><img class="ccLogo" src="cc-logo.png" alt="" aria-hidden="true">טריילר והזמנת כרטיס</a>` : "";
 const nowCard = m => `
     <article class="m${prefs.seen.includes(m.title) ? " watched" : ""}" data-row data-t="${esc(m.title)}">
       ${poster(m)}
